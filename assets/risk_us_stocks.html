@@ -321,7 +321,7 @@ for stock in stocks:
 display(AAPL.head(2)), display(AMZN.head(2)), display(GOOG.head(2)), display(MSFT.head(2))
 </div>
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/1.PNG" style="width: 50%;">       
+  <img src="risk_us_stocks_assets/1.png" style="width: 50%;">       
 </div>
 
 
@@ -347,7 +347,7 @@ plt.title('Historical adjusted closing prices');
 </div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/2.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/2.png" style="width: 60%;">       
 </div>
 
 During the observed period, Microsoft (MSFT) consistently demonstrated higher adjusted closing prices compared to the other stocks, reaching its peak on 2023-11-16 at 376.17. Apple (AAPL) followed suit, achieving a stable adjusted closing price of 182.09 on 2023-11-16. On the other hand, Google (GOOG) and Amazon (AMZN) exhibited similar adjusted closing price trends, converging on 2023-11-16 with Google at 138.70 and Amazon at 3634.05. This parallel movement indicates a comparable performance between Google and Amazon.
@@ -371,7 +371,7 @@ Average trading volume (trailing 12 months) for APPLE: 27007968 shares.
 </div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/3.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/3.png" style="width: 60%;">       
 </div>
 
 
@@ -394,7 +394,7 @@ plt.ylabel('Adjusted closing price');
 </div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/4.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/4.png" style="width: 60%;">       
 </div>
 
 <div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
@@ -416,7 +416,7 @@ for i, stock_symbol in enumerate(stocks, start = 1):
 </div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/5.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/5.png" style="width: 60%;">       
 </div>
   
 
@@ -433,7 +433,7 @@ plt.xlabel('Date')
 plt.ylabel('Return');
 </div>
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/6.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/6.png" style="width: 60%;">       
 </div>
 
 Now let's get an overall look at the average daily return using a histogram. We'll use seaborn to create both a histogram and kde plot on the same figure.
@@ -450,7 +450,7 @@ plt.xlabel('Return');
 </div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/7.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/7.png" style="width: 60%;">       
 </div>
 
 <div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
@@ -460,7 +460,7 @@ display(all_close)
 </div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/85.PNG" style="width: 40%;">       
+  <img src="risk_us_stocks_assets/85.png" style="width: 40%;">       
 </div>
 
 Now, we can assess the correlation by comparing the daily returns of the two stocks.
@@ -469,7 +469,7 @@ sns.jointplot( data = all_close, x = 'AAPL', y = 'AMZN', alpha = 1, color = '#7c
 </div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/9.PNG" style="width: 40%;">       
+  <img src="risk_us_stocks_assets/9.png" style="width: 40%;">       
 </div>
 Finally, we could also do a correlation plot, to get actual numerical values for the correlation between the stocks' daily return values.
 
@@ -478,7 +478,7 @@ Finally, we could also do a correlation plot, to get actual numerical values for
 sns.pairplot( data = all_close, plot_kws = {'s': 8}, height = 1.245);</div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/10.PNG" style="width: 40%;">       
+  <img src="risk_us_stocks_assets/10.png" style="width: 40%;">       
 </div>
 
 We've done some daily return analysis, let's go ahead and start looking deeper into actual risk analysis.
@@ -503,7 +503,7 @@ for column in ['AAPL', 'AMZN', 'GOOG', 'MSFT']:
 display(all_returns)
 </div>
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/11.PNG" style="width: 40%;">       
+  <img src="risk_us_stocks_assets/11.png" style="width: 40%;">       
 </div>
 
 <div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
@@ -517,7 +517,7 @@ for i, stock_symbol in enumerate(stocks, start = 1):
     sns.histplot(data = all_returns[stock_symbol]
 </div>
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/12.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/12.png" style="width: 60%;">       
 </div>
 
 
@@ -576,7 +576,7 @@ Loss will not exceed:
    *   $6.69 per share (99% confidence)
 </div>
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/13.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/13.png" style="width: 60%;">       
 </div>
 
 
@@ -595,7 +595,7 @@ Loss will not exceed:
 </div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/14.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/14.png" style="width: 60%;">       
 </div>
 
 
@@ -612,7 +612,7 @@ Loss will not exceed:
    *   $12.46 per share (99% confidence)
 </div>
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/15.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/15.png" style="width: 60%;">       
 </div>
 
 <div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
@@ -629,7 +629,7 @@ Loss will not exceed:
    *   $10.49 per share (99% confidence)
 </div>
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/16.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/16.png" style="width: 60%;">       
 </div>
 
 
@@ -785,7 +785,7 @@ def price_montecarlo(company, days):
 price_montecarlo('AMZN', 252)</div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/17.PNG" style="width: 40%;">       
+  <img src="risk_us_stocks_assets/17.png" style="width: 40%;">       
 </div>
 
 
@@ -817,7 +817,7 @@ plt.ylabel("Price")
 plt.title(f'Monte Carlo simulation for {company} stock price, {rep} repetitions');</div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/18.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/18.png" style="width: 60%;">       
 </div>
 
 
@@ -881,7 +881,7 @@ Loss will not exceed:
 </div>
 
 <div style="text-align: center; margin: 1%;">
-  <img src="risk_us_stocks_assets/19.PNG" style="width: 60%;">       
+  <img src="risk_us_stocks_assets/19.png" style="width: 60%;">       
 </div>
 <hr style="margin: 50px 0;">
 
