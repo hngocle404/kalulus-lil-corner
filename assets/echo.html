@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<style>
+:root {
+  --gradient-start: #b43072;
+  --gradient-end: #ee5c39;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-monospace: 'JetBrains Mono', monospace;
+  --font-size-monospace: 14px;
+}
+.monospace {
+  font-family: var(--font-monospace);
+  font-size: var(--font-size-monospace);
+}
+</style>
+<html lang="en" data-color-mode="light" data-light-theme="light" data-dark-theme="dark_tritanopia" data-a11y-animated-images="system" data-a11y-link-underlines="true">
+<head>
+<meta charset="utf-8">
+<link rel="dns-prefetch" href="https://github.githubassets.com">
+<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
+<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
+<link rel="preconnect" href="https://avatars.githubusercontent.com">
+<link rel="preload" href="https://github.githubassets.com/assets/mona-sans-d1bf285e9b9b.woff2" as="font" type="font/woff2" crossorigin>
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/light-3e154969b9f9.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark-9c5b7a476542.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-primitives-4cf0d59ab51a.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-0a1f715ee9fb.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/global-e41ff91f8baa.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/github-d3b66f11d613.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/site-ae5a61253375.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/customer-stories-09cf584c51b5.css">
+<title>Kelly's project</title>
+<meta name="route-pattern" content="/customer-stories/:category(.:format)" data-turbo-transient>
+<meta name="route-controller" content="site_customer_stories_categories" data-turbo-transient>
+<meta name="route-action" content="show" data-turbo-transient>
+<meta name="current-catalog-service-hash" content="3b3a86e94adb1936974b9e80c6c5c959f35b1d5f75b93677737ffa36daf92bbd">
+<meta name="request-id" content="FBBE:375F07:29FA1C7:2D8E300:6738E40A" data-turbo-transient="true">
+<meta name="html-safe-nonce" content="7718a22384d9155d0b0d663cd6c3811f07bd74e9f25385c6a5835a9ce8cde730" data-turbo-transient="true">
+<meta name="visitor-payload" content="eyJyZWZlcnJlciI6bnVsbCwicmVxdWVzdF9pZCI6IkZCQkU6Mzc1RjA3OjI5RkExQzc6MkQ4RTMwMDo2NzM4RTQwQSIsInZpc2l0b3JfaWQiOiI2OTc5NjQwMjQzNjUxODg2Njc4IiwicmVnaW9uX2VkZ2UiOiJzb3V0aGVhc3Rhc2lhIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-turbo-transient="true">
+<meta name="visitor-hmac" content="f412d9b159278e6ef9cfa2d1d685c6a5481a2e4087cff04b412eee070844a57c" data-turbo-transient="true">
+<meta name="github-keyboard-shortcuts" content="copilot" data-turbo-transient="true">
+<meta name="selected-link" value="/customer-stories" data-turbo-transient>
+<link rel="assets" href="https://github.githubassets.com/">
+<meta name="google-site-verification" content="Apib7-x98H0j5cPqHWwSMm6dNU4GmODRoqxLiDzdx9I">
+<meta name="octolytics-url" content="https://collector.github.com/github/collect">
+<meta name="octolytics-actor-id" content="143296151">
+<meta name="octolytics-actor-login" content="kellyle404">
+<meta name="octolytics-actor-hash" content="8e55b6cadf3719984c3f5da8f3f206f6c4f3184a8db4d267ca160337ba6e4546">
+<meta name="user-login" content="kellyle404">
+<link rel="sudo-modal" href="/sessions/sudo_modal">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Everything teams need to build software faster.">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+<meta property="fb:app_id" content="1401488693436528">
+<meta name="apple-itunes-app" content="app-id=1477376905, app-argument=https://github.com/customer-stories/team">
+<meta name="twitter:image" content="https://github.githubassets.com/assets/github-for-teams-534e938e1667.png">
+<meta name="twitter:site" content="@github">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GitHub Team">
+<meta name="twitter:description" content="Everything teams need to build software faster.">
+<meta property="og:image" content="https://github.githubassets.com/assets/github-for-teams-534e938e1667.png">
+<meta property="og:image:alt" content="Everything teams need to build software faster.">
+<meta property="og:site_name" content="GitHub">
+<meta property="og:type" content="object">
+<meta property="og:title" content="GitHub Team">
+<meta property="og:url" content="https://github.com/customer-stories/team">
+<meta property="og:description" content="Everything teams need to build software faster.">
+<link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/143296151/ws?session=eyJ2IjoiVjMiLCJ1IjoxNDMyOTYxNTEsInMiOjE0ODc1ODg3OTYsImMiOjM5NjQ5NTQwMTMsInQiOjE3MzE3ODE2NjN9--1bb3aba94a6876034dd0639aafce3bc1669f2a67a1322692ef89a94ac4c16b08" data-refresh-url="/_alive" data-session-id="b1e621398e60518a75991092f671ad66d4e3c2a69e831a8d6ae9ac5a9e929f96">
+<link rel="shared-web-socket-src" href="/assets-cdn/worker/socket-worker-1a9b1a7a6108.js">
+<meta name="hostname" content="github.com">
+<meta name="keyboard-shortcuts-preference" content="all">
+<meta name="hovercards-preference" content="true">
+<meta name="announcement-preference-hovercard" content="true">
+<meta name="expected-hostname" content="github.com">
+<meta http-equiv="x-pjax-version" content="b14f9bed8bcb58999c61db9db89f39608e04f94ca60f6a04ced4459797b62a3c" data-turbo-track="reload">
+<meta http-equiv="x-pjax-csp-version" content="e65f73639260fc681a0bf8f4760ae205c6b58843ca829716610ed381b5b6a6f2" data-turbo-track="reload">
+<meta http-equiv="x-pjax-css-version" content="8398350d1d0ef6e93d9da6426e7284d6ab45465c7d6d88b7a103ba8107e702f6" data-turbo-track="reload">
+<meta http-equiv="x-pjax-js-version" content="d42f4c5fac065532596b04948000db3da631ef1d9ea3eae5a4acc73ccd77724d" data-turbo-track="reload">
+<meta name="turbo-cache-control" content="no-preview" data-turbo-transient="">
+<meta name="is_logged_out_page" content="true">
+<meta name="octolytics-page-type" content="marketing">
+<link rel="canonical" href="https://github.com/customer-stories/team" data-turbo-transient>
+<meta name="turbo-body-classes" content="logged-in env-production page-responsive f4">
+<meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+<meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+<link rel="mask-icon" href="https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg" color="#000000">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+<meta name="theme-color" content="#1e2327">
+<meta name="color-scheme" content="light dark" />
+<meta name="msapplication-TileImage" content="/windows-tile.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+</head>
+<body class="logged-in env-production page-responsive f4" style="word-wrap: break-word;">
+<div data-turbo-body class="logged-in env-production page-responsive f4" style="word-wrap: break-word;">
+<div class="position-relative header-wrapper js-header-wrapper ">
+<a href="#start-of-content" data-skip-target-assigned="false" class="p-3 color-bg-accent-emphasis color-fg-on-emphasis show-on-focus js-skip-to-content">Skip to content</a>
+
+<span data-view-component="true" class="progress-pjax-loader Progress position-fixed width-full">
+<span style="width: 0%;" data-view-component="true" class="Progress-item progress-pjax-loader-bar left-0 top-0 color-bg-accent-emphasis"></span>
+</span>      
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/primer-react-765944243383.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-core-705befca9f47.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-lib-7b7b5264f6c1.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/octicons-react-45c3a19dd792.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-0e630d-04276437489b.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js-4896ddd4b7bb.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_catalyst_lib_index_js-node_modules_github_hotkey_dist_index_js-no-d67c7f-bd7d077cdcb1.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_ui-commands_ui-commands_ts-d25fac54a6bc.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-cb3d4f30c9ed.js"></script>
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-react.9fa170e9435ed4b922b9.module.css" />
+
+<!-- HEADER BAR -->
+  <div
+    class="application-main "
+    data-commit-hovercards-enabled
+    data-discussion-hovercards-enabled
+    data-issue-and-pr-hovercards-enabled
+  >
+        <main class="font-mktg" >
+
+  <div class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-state position-sticky width-full sub-nav-mktg-shadow ctas-always-visible">
+    <div class="sub-nav-mktg-wrapper d-flex flex-items-center py-3 px-3 px-md-4 px-lg-5">
+      <a class="sub-nav-title-link Link--primary no-underline f3-mktg d-inline-block text-bold mr-4" 
+        href="https://hngocle404.github.io/portfolio/about.html">
+        Kelly Le</a>
+      <style>
+        .sub-nav-title-link:hover {
+          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      </style>
+      <button
+        type="button"
+        class="btn-octicon sub-nav-mktg-toggle d-lg-none p-1 flex-order-1 float-right js-toggler-target mr-n1"
+        aria-controls="sub-nav-dropdown"
+        aria-label="Page navigation"
+        aria-expanded="false"
+      >
+        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-chevron-down on-hidden">
+    <path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path>
+</svg>
+        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-chevron-up on-visible">
+    <path d="M18.78 15.78a.749.749 0 0 1-1.06 0L12 10.061 6.28 15.78a.749.749 0 1 1-1.06-1.06l6.25-6.25a.749.749 0 0 1 1.06 0l6.25 6.25a.749.749 0 0 1 0 1.06Z"></path>
+</svg>
+      </button>
+      <div class="sub-nav-mktg-links flex-auto f4-mktg d-flex flex-column flex-lg-row with-title gap-4" id="sub-nav-dropdown">
+        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/about.html">About</a>
+        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2 active" href="https://hngocle404.github.io/portfolio/assets/resume.pdf">Resume</a>
+        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/index.html">Projects</a>
+      </div>
+      <style>
+        .sub-nav-mktg-link {
+          color: var(--gradient-start);
+          position: relative;
+        }
+        .sub-nav-mktg-link::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: all 0.3s ease-in-out;
+        }
+        .sub-nav-mktg-link:hover::after {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+        .sub-nav-mktg-link:hover {
+          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      </style>
+        <a href="#footer" class="btn-mktg ml-lg-2 mt-2 mt-lg-0 d-block d-lg-inline-block btn-muted-mktg">
+          Contact
+        </a>
+    </div>
+</div>
+<!-- ==================================================================================== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="border-bottom">
+  <div class="pt-9 pb-4 overflow-hidden px-3">
+  <div class="container-xl">
+    
+    <div class="p-responsive">
+      
+      <p  class="color-fg-muted f3-mktg text-normal mb-1">
+Sociology
+      </p>
+      <h1  class="h3-mktg color-fg-default mb-3 mb-md-6">
+Mainstream media and political polarisation:<br>A Review of the Literature
+      </h1>
+    </div>
+
+  </div>
+</div></div>
+
+<div class="px-3 pb-8 pt-5">
+  <div class="container-xl">
+    
+    <div class="p-responsive">
+
+      <div class="my-4 my-lg-6">
+
+
+        
+
+
+<!-- SUMMARY -->
+        <p>
+A brief literature review on the relationship between echo chambers and political polarisation, focusing on the role of social media and the internet in shaping political opinions.</p>
+        </div>
+
+
+<!-- IMAGE -->
+<div style="margin-bottom: 30px;">
+  <img src="echo_assets/cover.jpg" style="width: 100%; height: 700px; object-fit: cover; object-position: 0 60%; border-radius: 8px;">       
+</div>
+
+
+
+
+<!-- body text -->
+<h1 style="margin:40px 0px 20px 0px; line-height: 1.1;">
+  Introduction
+</h1>
+
+
+<p>
+Paralleling the ubiquity of mainstream media is their profound effects on the current political terrain. Surveys have found that social media is now among the most common pathways where young people get their political and election news <span style="color: #888;">(Mitchell et al., 2020)</span>. This shift towards online news platforms provides those previously excluded from the political discourse in authoritarian regimes an opportunity to voice their opinions through the democratisation of access to information <span style="color: #888;">(Tucker et al., 2017)</span>, as well as changes society’s narratives about a future with more egalitarian ways of meeting and discussing due to disintermediation <span style="color: #888;">(Törnberg, 2018)</span>.
+</p>  <p>
+However, an increasing number of studies have found adverse effects of extensive social media usage on political attitudes and polarisation <span style="color: #888;">(Kubin & von Sikorski, 2021; Beaufort, 2018; Yarchi et al., 2020)</span>, which reignites the debate on the impact of selective exposure on one’s political viewpoint and the subsequent polarisation of those involved in politics on a wide scale <span style="color: #888;">(Iyengar et al., 2019)</span>. The primary purpose of this review is to examine the scholarly literature on the relationship between media consumption and political polarisation. It will first lay out the examination of evidence concerning the existence or lack thereof of polarisation directly caused by increased media usage for political research. Accompanying this discussion are brief implications for policy makers, educators, and media consumers on how to respond to the growth in polarisation across the political landscape.
+</p>
+
+<hr style="margin: 50px 0;">
+
+
+<!-- header -->
+<h1 style="margin:40px 0px 20px 0px; line-height: 1.1;">
+  Echo chambers and the spread of misinformation: Drivers of political polarisation 
+</h1>
+
+<p>
+Due to the increasing availability of niche and opinionated news programmes such as the Internet 
+and ideological cable developing more entrenched political positions, great fear has been sparked with 
+regards to segregation by interest exacerbating the gap between those who are politically informed and 
+those who are not. Subsequently, this widening gap is found to increase political polarisation which 
+leads to the reinforcement of political divides and threatens democracies by limiting political discussions 
+<span style="color: #888;">(Boomgaarden & Prior, 2007; Sunstein & Vermeule, 2009; Ksiazek et al., 2010)</span>.  
+</p>
+<p>
+Studies conducted in the US have found that Americans are deeply divided on controversial issues 
+such as immigration, gun control and racial inequality. And of greater prominence in the scope of this 
+paper is the fact that in recent years, the divisions regarding such issues are observed to have become 
+increasingly aligned with partisan identities <span style="color: #888;">(Levendusky, 2009; Mason, 2018)</span>. Researchers often 
+attribute America’s extensive partisan divides to a concept termed ‘echo chambers’ <span style="color: #888;">(Sunstein, 2001; 
+Berry & Sobieraj, 2013; Prior, 2013; Bakshy et al., 2015; King et al., 2017)</span>.   
+</p>
+
+<p>
+In the context of politics and news media, Jamieson & Capella (2010) defines the problematised phenomenon of an ‘echo chamber’ as “a bounded, enclosed media space that has the potential to both magnify the messages delivered within it and insulate them from rebuttal” <span style="color: #888;">(Jamieson & Capella, 2010)</span>. The magnification of hyper-partisan news is typically considered to be a preponderance of “attitude consistent information” (e.g., left-wing media consumers constantly seeking out information that supports their viewpoint) whereas the insulation against rebuttal is due to the “absence of cross-cutting exposure” (e.g., people on the right refusing to be exposed to centrist or left-wing perspectives that contradicts their pre-existing assumptions and beliefs) <span style="color: #888;">(Jamieson & Capella, 2010)</span>.
+</p>
+  
+<div style="margin: 30px 0;">
+  <img src="echo_assets/1.jpg" style="width: 100%; height: 400px; object-fit: cover; object-position: 0 10%; border-radius: 8px;">       
+</div>
+
+
+
+<p></p>
+In other words, the extent to which the rise of social media as a dominant force in news distribution has led to the incurrence of greater isolation from diverse perspectives as users’ political outlook is isolated in echo chambers - information environments dominated by like-minded people. The proliferation of mainstream media platforms in recent decades, such as the spark in popularity of social media and the emergence of online news outlets as the main source of political information have undoubtedly caused a significant expansion of selective exposure to biased content <span style="color: #888;">(Garrett et al., 2014)</span>. Recently researchers have examined the parallels between polarisation and consumed news content, in which increasingly personalised and fragmented news, characterised by “the proliferation of more partisan-oriented media and by a more prominent tendency towards selective news exposure on the side of the audience” has been reported <span style="color: #888;">(Bennett & Iyengar 2008; Stroud 2010)</span>. 
+</p>
+<p>
+Dubois & Blank <span style="color: #888;">(2018)</span> suggest that this significant change in the dynamic interplay between news media environments and politics can lead to segregation based on interest, potentially resulting in an unintended exercise of confirmation bias <span style="color: #888;">(Dubois & Blank, 2018)</span>. As echo chambers “limit exposure to diverse perspectives” and “favour and reinforce presupposed narratives and ideologies” <span style="color: #888;">(Cinelli et al., 2021)</span>, research has shown that echo chambers have the potential to become a serious threat to democracy by increasing extremism, social and political polarisation <span style="color: #888;">(Barberá et al., 2015; Mickey et al., 2017; Arbatli and Rosenberg, 2021)</span>. 
+</p>
+<p>
+Facilitating the negative influence of echo chambers on the changing conceptions of democracy and media usage behaviour is the viral spread of digital misinformation. Even though propaganda has always been deeply entrenched in the political discourse, the deep and wide-ranging repercussions of these false campaigns have provoked critical public interest concerns in recent decades <span style="color: #888;">(Bradshaw & Howard, 2019)</span>. As those participating in echo chambers continually form groups and resist information that does not conform to their beliefs, they create a favourable condition for the growth of misinformation on the Internet <span style="color: #888;">(Quattrociocchi et al., 2016)</span>. 
+</p>
+<p>
+Researchers at the University of Oxford have found that the number of countries using social media as a platform for their political disinformation campaigns has doubled in the past two years, with evidence of at least “one political party or government entity in each of those countries engaging in social media manipulation” <span style="color: #888;">(Bradshaw & Howard, 2019)</span>. A number of studies have demonstrated that the partisan divisions emerging from the amplification of misinformation not only impede compromise in the design and implementation of social policies but also have far-reaching and undermining consequences for the effective function of democracy on a broader scale <span style="color: #888;">(Erikson et al., 1993; Bennett & Iyengar, 2008; Fishkin, 2009; Achen et al., 2017; Sunstein, 2018)</span>. 
+</p>
+
+
+<hr style="margin: 50px 0;">
+
+<!-- header -->
+<h1 style="margin:40px 0px 20px 0px; line-height: 1.1;">
+Conflicting results in research on political polarisation </h1>
+
+
+<p></p>
+Despite the fact that there has been a significant number of studies reporting an increasing trend 
+of political polarisation in digitally mediated environments <span style="color: #888;">(e.g. Arbatli & Rosenberg, 2020; McCoy et 
+al., 2018; Grumbach, 2018; Layman et al., 2006; Hare & Poole, 2014)</span>, research into partisanship and 
+political polarisation has surfaced conflicting results. This can be partly due to the multifaceted, complex 
+and interconnected nature of social media, characterised by “complexity, non-linearity and emergence” - elements that reaffirm the difficulties involved in the disentanglement of the relationship between 
+media and politics <span style="color: #888;">(Törnberg, 2018)</span>. </p>
+<p>
+According to research conducted by Tóth et al. <span style="color: #888;">(2022)</span>, while there is correlation between one’s 
+news consumption and their electoral preferences, the evidence shows that this does not necessarily 
+equate to the conclusion that people are insulating themselves from news outlets with opposing 
+viewpoints. The data collected indicates that electoral preferences are in some cases correlated with 
+more diverse media repertoires – i.e., individuals that identify as leaning towards one ideological end of 
+the political spectrum also include counter-attitudinal sources in their news consumption ritual. <span style="color: #888;">(Tóth 
+et al., 2022)</span>. Previous studies <span style="color: #888;">(e.g., Flaxman et al. 2016)</span> showed alignment with this finding which 
+expressed a link between increased exposure to ideologically diverse views and greater ideological 
+distance. </p>
+<p>
+Dubois & Blank <span style="color: #888;">(2018)</span> challenge the impact of echo chambers and temper fears of partisan 
+segregation by putting forth an argument that there are limitations in “single media studies and studies 
+which use narrow definitions and measurements of being in an echo chamber” because they fail to take 
+into account the realistic context of multimedia environments <span style="color: #888;">(Dubois & Blank, 2018)</span>.  </p>
+<p>
+Other studies suggest that the evidence for selective exposure in traditional theories being the 
+direct cause of political polarisation lacks conclusivity and consistency, especially given the high-choice 
+information environment in the contemporary world. A number of studies examining patterns of 
+selective exposure in an online environment found no link between exposure to partisan news and the 
+polarisation among voters <span style="color: #888;">(e.g., Wojcieszak et al. 2021)</span>. Tóth et al. <span style="color: #888;">(2022)</span> also puts forth the notion that 
+the extent of selective exposure in previous work on polarisation <span style="color: #888;">(cf Garrett 2013)</span> lacks certainty and is 
+often exaggerated rather than investigated empirically <span style="color: #888;">(Tóth et al. 2022)</span>. </p>
+
+
+
+<hr style="margin: 50px 0;">
+
+<!-- header -->
+<h1 style="margin:40px 0px 20px 0px; line-height: 1.1;">
+Conclusion: The ways forward in a polarised world</h1>
+
+
+
+<p>
+The transition into a more digitised world of communication has posed significant challenges, 
+specifically the exacerbation of political polarisation due to echo chambers and the spread of 
+misinformation. However, due to the complexities arising from the 21st century multimedia 
+environments, clarifying the causal relationship between increasing media usage for political research 
+and aggravated ideological isolation has proven to be a challenging task as evidenced in the multitude 
+of conflicting scientific results.   </p> 
+ <p>
+Political polarisation is a challenge likely to continue affecting society for the foreseeable future. 
+However, studies have shown these challenges can be mediated through the collaboration and actions 
+undertaken by those involved in the online political discourse, including online news consumers, policy 
+makers and educators.   </p> 
+  
+<div style="margin: 30px 0;">
+  <img src="echo_assets/2.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: 0 20%; border-radius: 8px;">       
+</div>
+
+ <p>
+Firstly, an improved understanding of the sources of polarisation and the mechanisms that 
+exacerbate it is indispensable to the process of healing deep political divisions. Rigorous academic 
+research into the ways media can aggravate or hinder political polarisation needs to be continued and 
+ensured to consider the changing dynamics of the 21st century. </p> 
+ <p>
+Secondly, from a media consumer's standpoint, having a diverse media diet is a pivotal step 
+towards addressing partisan bias. As suggested in research by Dubois & Blank (2018), the higher the 
+number of media types chosen by an individual to be incorporated into their habits, the lower their 
+likelihood of getting caught in an echo chamber. Therefore, individuals are strongly encouraged to 
+approach political news from diverse perspectives, with practical steps including transitioning from 
+passively encountering information with opposing viewpoints, to actively reading multiple sources or 
+using other types of media for information verification (Dubois & Blank, 2018).  </p> 
+ <p>
+Thirdly, future attempts to reduce political polarisation on social media will most likely require 
+policy makers and educators to actively and effectively foster media literacy. As aforementioned, 
+scientific research indicates that individuals with greater media diversity are better at avoiding echo 
+chambers (Dubois & Blank, 2018). Therefore, by suggesting that media users should not rely on social 
+media as the sole source of political news, these media literacy campaigns can help people learn to avoid 
+echo chambers. Higher media literacy would serve efforts in shedding light on ways in which society 
+might combat echo chambers that exist for the relatively small proportion of individuals who neither 
+engage in a variety of news sources nor are interested in politics.  </p> 
+ <p>
+It is an indisputable truth that mainstream media is not going anywhere and, at least for the near 
+future, neither is polarisation. Understanding this politically consequential course of development is 
+proven to be an indispensable part of addressing the global political divide.   </p> 
+
+
+
+
+<hr style="margin: 50px 0;">
+
+ 
+
+<!-- header -->
+<h1 style="margin:40px 0px 20px 0px; line-height: 1.1;">
+References</h1>
+<p>Achen, C., Bartels, L., Achen, C. H., & Bartels, L. M. (2017). <i>Democracy for realists</i>. In <i>Democracy for Realists</i>. Princeton University Press.</p>
+<p>Arbatli, E., & Rosenberg, D. (2020). United we stand, divided we rule: How political polarization erodes democracy. <i>Democratization</i>, <i>28</i>(2), 285-307. https://doi.org/10.1080/13510347.2020.1818068</p>
+<p>Arbatli, E., & Rosenberg, D. (2020). United we stand, divided we rule: How political polarization erodes democracy. <i>Democratization</i>, <i>28</i>(2), 285-307. https://doi.org/10.1080/13510347.2020.1818068</p>
+<p>Arguedas, A., Robertson, C., Fletcher, R., & Nielsen, R. (2022). Echo chambers, filter bubbles, and polarisation: A literature review. Retrieved 10 April 2022, from https://reutersinstitute.politics.ox.ac.uk/echo-chambers-filter-bubbles-and-polarisation-literature-review</p>
+<p>Bakshy, E., Messing, S., & Adamic, L. A. (2015). Exposure to ideologically diverse news and opinion on Facebook. <i>Science</i>, <i>348</i>(6239), 1130-1132.</p>
+<p>Barberá, P., Jost, J. T., Nagler, J., Tucker, J. A., & Bonneau, R. (2015). Tweeting from left to right: Is online political communication more than an echo chamber? <i>Psychological Science</i>, <i>26</i>(10), 1531–1542. https://doi.org/10.1177/0956797615594620</p>
+<p>Beaufort, M. (2018). Digital media, political polarization and challenges to democracy. <i>Information, Communication & Society</i>, <i>21</i>(7), 915-920. https://doi.org/10.1080/1369118x.2018.1451909</p>
+<p>Bennett, W. L., & Iyengar, S. (2008). A new era of minimal effects? The changing foundations of political communication. <i>Journal of Communication</i>, <i>58</i>(4), 707-731.</p>
+<p>Berry, J. M., & Sobieraj, S. (2013). <i>The outrage industry: Political opinion media and the new incivility</i>. Oxford University Press.</p>
+<p>Bieber, F. (2003). The Serbian opposition and civil society: Roots of the delayed transition in Serbia. <i>International Journal of Politics, Culture, and Society</i>, <i>17</i>(1), 73–90. http://www.jstor.org/stable/20020198</p>
+<p>Boomgaarden, H. G., & Prior, M. (2007). Post-broadcast democracy: How media choice increases inequality in political involvement and polarizes elections. <i>International Journal of Public Opinion Research</i>, <i>20</i>(3), 398–400. https://doi.org/10.1093/ijpor/edn036</p>
+<p>Bradshaw, S., & Howard, P. N. (2019). <i>The global disinformation disorder: 2019 global inventory of organised social media manipulation</i>. Working Paper 2019.2. Oxford, UK: Project on Computational Propaganda.</p>
+<p>Cinelli, M., De Francisci Morales, G., Galeazzi, A., Quattrociocchi, W., & Starnini, M. (2021). The echo chamber effect on social media. <i>Proceedings of the National Academy of Sciences</i>, <i>118</i>(9). https://doi.org/10.1073/pnas.2023301118</p>
+<p>Dubois, E., & Blank, G. (2018). The echo chamber is overstated: The moderating effect of political interest and diverse media. <i>Information, Communication & Society</i>, <i>21</i>(5), 729-745. https://doi.org/10.1080/1369118x.2018.1428656</p>
+<p>Erikson, R. S., Wright, G. C., & McIver, J. P. (1993). <i>Statehouse democracy: Public opinion and policy in the American states</i>. Cambridge University Press.</p>
+<p>Fishkin, J. (2009). <i>When the people speak: Deliberative democracy and public consultation</i>. OUP Oxford.</p>
+<p>Garrett, R., Gvirsman, S., Johnson, B., Tsfati, Y., Neo, R., & Dal, A. (2014). Implications of pro- and counterattitudinal information exposure for affective polarization. <i>Human Communication Research</i>, <i>40</i>(3), 309-332. https://doi.org/10.1111/hcre.12028</p>
+<p>Grumbach, J. (2018). From backwaters to major policymakers: Policy polarization in the states, 1970–2014. <i>Perspectives on Politics</i>, <i>16</i>(2), 416-435. https://doi.org/10.1017/S153759271700425X</p>
+<p>Hare, C., & Poole, K. T. (2014). The polarization of contemporary American politics. <i>Polity</i>, <i>46</i>(3), 411–429. http://www.jstor.org/stable/24540219</p>
+<p>Iyengar, S., Lelkes, Y., Levendusky, M., Malhotra, N., & Westwood, S. (2019). The origins and consequences of affective polarization in the United States. <i>Annual Review of Political Science</i>, <i>22</i>(1), 129-146. https://doi.org/10.1146/annurev-polisci-051117-073034</p>
+<p>Jamieson, K. H., & Cappella, J. (2010). In <i>Echo chamber: Rush Limbaugh and the Conservative Media Establishment</i> (p. 76). Oxford University Press Inc.</p>
+<p>King, G., Schneer, B., & White, A. (2017). How the news media activate public expression and influence national agendas. <i>Science</i>, <i>358</i>(6364), 776-780.</p>
+<p>Ksiazek, T. B., Malthouse, E. C., & Webster, J. G. (2010). News-seekers and avoiders: Exploring patterns of total news consumption across media and the relationship to civic participation. <i>Journal of Broadcasting & Electronic Media</i>, <i>54</i>(4), 551-568.</p>
+<p>Kubin, E., & von Sikorski, C. (2021). The role of (social) media in political polarization: A systematic review. <i>Annals of the International Communication Association</i>, <i>45</i>(3), 188-206. https://doi.org/10.1080/23808985.2021.1976070</p>
+<p>Layman, G., Carsey, T., & Horowitz, J. (2006). Party polarization in American politics: Characteristics, causes, and consequences. <i>Annual Review of Political Science</i>, <i>9</i>(1), 83-110. https://doi.org/10.1146/annurev.polisci.9.070204.105138</p>
+<p>Levendusky, M. (2009). <i>The partisan sort</i>. In <i>The Partisan Sort</i>. University of Chicago Press.</p>
+<p>Mason, L. (2018). <i>Uncivil agreement: How politics became our identity</i>. University of Chicago Press.</p>
+<p>McCoy, J., Rahman, T., & Somer, M. (2018). Polarization and the global crisis of democracy: Common patterns, dynamics, and pernicious consequences for democratic polities. <i>American Behavioral Scientist</i>, <i>62</i>(1), 16-42. https://doi.org/10.1177/0002764218759576</p>
+<p>Mickey, R., Levitsky, S., & Way, L. (2022). Is America still safe for democracy? Retrieved 9 April 2022, from https://www.foreignaffairs.com/articles/united-states/2017-04-17/america-still-safe-democracy</p>
+<p>Mitchell, A., Jurkowitz, M., Oliphant, J., & Shearer, E. (2020). Americans who mainly get their news on social media are less engaged, less knowledgeable. <i>Pew Research Center</i>. Retrieved from http://www.pewresearch.org/journalism/2020/07/30/americans-who-mainly-get-their-news-on-social-media-are-less-engaged-less-knowledgeable/</p>
+<p>Prior, M. (2013). Media and political polarization. <i>Annual Review of Political Science</i>, <i>16</i>, 101-127.</p>
+<p>Quattrociocchi, W., Scala, A., & Sunstein, C. (2016). Echo chambers on Facebook. <i>SSRN Electronic Journal</i>. https://doi.org/10.2139/ssrn.2795110</p>
+<p>Stroud, N. J. (2010). Polarization and partisan selective exposure. <i>Journal of Communication</i>, <i>60</i>(3), 556–576. https://doi.org/10.1111/j.1460-2466.2010.01497.x</p>
+<p>Sunstein, C. R. (2001). <i>Echo chambers: Bush v. Gore, impeachment, and beyond</i>. Princeton, NJ: Princeton University Press.</p>
+<p>Sunstein, C. R. (2018). <i># Republic</i>. In <i># Republic</i>. Princeton University Press.</p>
+<p>Sunstein, C., & Vermeule, A. (2009). Conspiracy theories: Causes and cures. <i>Journal of Political Philosophy</i>, <i>17</i>(2), 202-227. https://doi.org/10.1111/j.1467-9760.2008.00325.x</p>
+<p>Törnberg, P. (2018). Echo chambers and viral misinformation: Modeling fake news as complex contagion. <i>PLOS One</i>, <i>13</i>(9), e0203958. https://doi.org/10.1371/journal.pone.0203958</p>
+<p>Tóth, F., Mihelj, S., Štětka, V., & Kondor, K. (2022). A media repertoires approach to selective exposure: News consumption and political polarization in Eastern Europe. <i>The International Journal of Press/Politics</i>, <i>27</i>(2), 194016122110725. https://doi.org/10.1177/19401612211072552</p>
+<p>Tucker, J., Theocharis, Y., Roberts, M., & Barberá, P. (2017). From liberation to turmoil: Social media and democracy. <i>Journal of Democracy</i>, <i>28</i>(4), 46-59. https://doi.org/10.1353/jod.2017.0064</p>
+<p>Yarchi, M., Baden, C., & Kligler-Vilenchik, N. (2020). Political polarization on the digital sphere: A cross-platform, over-time analysis of interactional, positional, and affective polarization on social media. <i>Political Communication</i>, <i>38</i>(1-2), 98-139. https://doi.org/10.1080/10584609.2020.1785067</p>
+
+
+
+
+ 
+
+  
+  
+
+  
+ </main>
+
+<!-- FOOTER -->
+<footer id="footer" role="contentinfo" class="footer pt-6 position-relative color-bg-subtle "><h2 class="sr-only">Site-wide Links</h2>
+  <div class="container-xl p-responsive"><div class="d-flex flex-wrap py-5 mb-5"><section class="col-12 col-lg-4 mb-5"><img src="https://hngocle404.github.io/portfolio/assets/namelogo.png" width="60" height="60">
+    <h3 class="h5 mt-4 mb-0">What's green, has 4 legs. and could <br>kill you if it fell out of a tree?</h3>
+    <p class="f5 color-fg-muted mb-3">A pool table.</p><a class="btn-mktg mb-4 btn-muted-mktg" href="#" style="scroll-behavior: smooth;">Back to top</a></section>
+
+    <nav class="col-14 col-sm-8 col-lg-4 mb-6 mb-md-2 pr-3 pr-lg-0 pl-lg-4" aria-labelledby="footer-title-product">
+      <h3 class="h5 mb-3 text-mono color-fg-muted text-normal" id="footer-title-product">
+        Contact
+      </h3>
+      <ul class="list-style-none color-fg-muted f5">
+        <li class="lh-condensed mb-3">
+          <a class="Link--secondary" href="https://zalo.me/0778882602">
+          Zalo: (+84) 77 888 2602
+        </a></li>
+        
+        <li class="lh-condensed mb-3">
+          <a class="Link--secondary" href="mailto:hngoc.le.404@gmail.com">
+            Email: hngoc.le.404@gmail.com
+          </a></li>
+
+          <li class="lh-condensed mb-3">
+            <a class="Link--secondary" href="https://www.linkedin.com/in/hnl404/">
+              Linkedin: HN Le
+            </a></li>
+          
+        <li class="lh-condensed mb-3">
+          <a class="Link--secondary" href="https://discord.com/users/1190260937719033916">
+            Discord: kalulu404
+          </a></li>
+                    
+          </ul></nav>
+            <nav class="col-14 col-sm-10 col-lg-4 mb-6 mb-md-2 pr-5 pr-md-0 pl-md-4" aria-labelledby="footer-title-platform">
+              <h3 class="h5 mb-3 text-mono color-fg-muted text-normal" id="footer-title-platform">
+                Resources
+              </h3>
+              <ul class="list-style-none f5"><li class="lh-condensed mb-3">
+                <a class="Link--secondary" href="https://www.myequals.net/r/sharelink/550d70d0-6ddc-4eba-8afc-618cabcd697d/ba1fa78f-59b1-4322-8156-6804761b4621">
+                  Testamur
+                </a></li>
+                <li class="lh-condensed mb-3"><a class="Link--secondary" href="https://hngocle404.github.io/portfolio/assets/resume.pdf">Resume</a></li></ul></nav></div></div>
+              </footer></div><div id="js-global-screen-reader-notice" class="sr-only mt-n1" aria-live="polite" aria-atomic="true" ></div>
+              <div id="js-global-screen-reader-notice-assertive" class="sr-only mt-n1" aria-live="assertive" aria-atomic="true"></div></body></html>
+<!DOCTYPE html>
+<!--
+
+  .---.    .-./`)  ________     .-''-.          .-./`)    .-'''-.            .-'''-. .---.  .---.     ,-----.    .-------. ,---------.  
+  | ,_|    \ .-.')|        |  .'_ _   \         \ .-.')  / _     \          / _     \|   |  |_ _|   .'  .-,  '.  |  _ _   \\          \ 
+,-./  )    / `-' \|   .----' / ( ` )   '        / `-' \ (`' )/`--'         (`' )/`--'|   |  ( ' )  / ,-.|  \ _ \ | ( ' )  | `--.  ,---' 
+\  '_ '`)   `-'`"`|  _|____ . (_ o _)  |         `-'`"`(_ o _).           (_ o _).   |   '-(_{;}_);  \  '_ /  | :|(_ o _) /    |   \    
+ > (_)  )   .---. |_( )_   ||  (_,_)___|         .---.  (_,_). '.          (_,_). '. |      (_,_) |  _`,/ \ _/  || (_,_).' __  :_ _:    
+(  .  .-'   |   | (_ o._)__|'  \   .---.         |   | .---.  \  :        .---.  \  :| _ _--.   | : (  '\_/ \   ;|  |\ \  |  | (_I_)    
+ `-'`-'|___ |   | |(_,_)     \  `-'    /         |   | \    `-'  |        \    `-'  ||( ' ) |   |  \ `"/  \  ) / |  | \ `'   /(_(=)_)   
+  |        \|   | |   |       \       /          |   |  \       /          \       / (_{;}_)|   |   '. \_/``".'  |  |  \    /  (_I_)    
+  `--------`'---' '---'        `'-..-'           '---'   `-...-'            `-...-'  '(_,_) '---'     '-----'    ''-'   `'-'   '---'    
+                                                                                                                                        
+
+
+
+    .-''-.   ,---.   .--.      .-./`)       ,-----.        ____     __          .-./`)  ,---------.  
+  .'_ _   \  |    \  |  |      \ '_ .')   .'  .-,  '.      \   \   /  /         \ .-.') \          \ 
+ / ( ` )   ' |  ,  \ |  |     (_ (_) _)  / ,-.|  \ _ \      \  _. /  '          / `-' \  `--.  ,---' 
+. (_ o _)  | |  |\_ \|  |       / .  \  ;  \  '_ /  | :      _( )_ .'            `-'`"`     |   \    
+|  (_,_)___| |  _( )_\  |  ___  |-'`|   |  _`,/ \ _/  |  ___(_ o _)'             .---.      :_ _:    
+'  \   .---. | (_ o _)  | |   | |   '   : (  '\_/ \   ; |   |(_,_)'              |   |      (_I_)    
+ \  `-'    / |  (_,_)\  | |   `-'  /     \ `"/  \  ) /  |   `-'  /               |   |     (_(=)_)   
+  \       /  |  |    |  |  \      /       '. \_/``".'    \      /                |   |      (_I_)    
+   `'-..-'   '--'    '--'   `-..-'          '-----'       `-..-'                 '---'      '---' 
+                                                                                                   
+-->
+<style>
+:root {
+  --gradient-start: #b43072;
+  --gradient-end: #ee5c39;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-monospace: 'JetBrains Mono', monospace;
+  --font-size-monospace: 14px;
+}
+.monospace {
+  font-family: var(--font-monospace);
+  font-size: var(--font-size-monospace);
+}
+</style>
+<html lang="en" data-color-mode="light" data-light-theme="light" data-dark-theme="dark_tritanopia" data-a11y-animated-images="system" data-a11y-link-underlines="true">
+<head>
+<meta charset="utf-8">
+<link rel="dns-prefetch" href="https://github.githubassets.com">
+<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
+<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
+<link rel="preconnect" href="https://avatars.githubusercontent.com">
+<link rel="preload" href="https://github.githubassets.com/assets/mona-sans-d1bf285e9b9b.woff2" as="font" type="font/woff2" crossorigin>
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/light-3e154969b9f9.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark-9c5b7a476542.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-primitives-4cf0d59ab51a.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-0a1f715ee9fb.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/global-e41ff91f8baa.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/github-d3b66f11d613.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/site-ae5a61253375.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/customer-stories-09cf584c51b5.css">
+<title>GitHub Team</title>
+<meta name="route-pattern" content="/customer-stories/:category(.:format)" data-turbo-transient>
+<meta name="route-controller" content="site_customer_stories_categories" data-turbo-transient>
+<meta name="route-action" content="show" data-turbo-transient>
+<meta name="current-catalog-service-hash" content="3b3a86e94adb1936974b9e80c6c5c959f35b1d5f75b93677737ffa36daf92bbd">
+<meta name="request-id" content="FBBE:375F07:29FA1C7:2D8E300:6738E40A" data-turbo-transient="true">
+<meta name="html-safe-nonce" content="7718a22384d9155d0b0d663cd6c3811f07bd74e9f25385c6a5835a9ce8cde730" data-turbo-transient="true">
+<meta name="visitor-payload" content="eyJyZWZlcnJlciI6bnVsbCwicmVxdWVzdF9pZCI6IkZCQkU6Mzc1RjA3OjI5RkExQzc6MkQ4RTMwMDo2NzM4RTQwQSIsInZpc2l0b3JfaWQiOiI2OTc5NjQwMjQzNjUxODg2Njc4IiwicmVnaW9uX2VkZ2UiOiJzb3V0aGVhc3Rhc2lhIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-turbo-transient="true">
+<meta name="visitor-hmac" content="f412d9b159278e6ef9cfa2d1d685c6a5481a2e4087cff04b412eee070844a57c" data-turbo-transient="true">
+<meta name="github-keyboard-shortcuts" content="copilot" data-turbo-transient="true">
+<meta name="selected-link" value="/customer-stories" data-turbo-transient>
+<link rel="assets" href="https://github.githubassets.com/">
+<meta name="google-site-verification" content="Apib7-x98H0j5cPqHWwSMm6dNU4GmODRoqxLiDzdx9I">
+<meta name="octolytics-url" content="https://collector.github.com/github/collect">
+<meta name="octolytics-actor-id" content="143296151">
+<meta name="octolytics-actor-login" content="kellyle404">
+<meta name="octolytics-actor-hash" content="8e55b6cadf3719984c3f5da8f3f206f6c4f3184a8db4d267ca160337ba6e4546">
+<meta name="user-login" content="kellyle404">
+<link rel="sudo-modal" href="/sessions/sudo_modal">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Everything teams need to build software faster.">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+<meta property="fb:app_id" content="1401488693436528">
+<meta name="apple-itunes-app" content="app-id=1477376905, app-argument=https://github.com/customer-stories/team">
+<meta name="twitter:image" content="https://github.githubassets.com/assets/github-for-teams-534e938e1667.png">
+<meta name="twitter:site" content="@github">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GitHub Team">
+<meta name="twitter:description" content="Everything teams need to build software faster.">
+<meta property="og:image" content="https://github.githubassets.com/assets/github-for-teams-534e938e1667.png">
+<meta property="og:image:alt" content="Everything teams need to build software faster.">
+<meta property="og:site_name" content="GitHub">
+<meta property="og:type" content="object">
+<meta property="og:title" content="GitHub Team">
+<meta property="og:url" content="https://github.com/customer-stories/team">
+<meta property="og:description" content="Everything teams need to build software faster.">
+<link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/143296151/ws?session=eyJ2IjoiVjMiLCJ1IjoxNDMyOTYxNTEsInMiOjE0ODc1ODg3OTYsImMiOjM5NjQ5NTQwMTMsInQiOjE3MzE3ODE2NjN9--1bb3aba94a6876034dd0639aafce3bc1669f2a67a1322692ef89a94ac4c16b08" data-refresh-url="/_alive" data-session-id="b1e621398e60518a75991092f671ad66d4e3c2a69e831a8d6ae9ac5a9e929f96">
+<link rel="shared-web-socket-src" href="/assets-cdn/worker/socket-worker-1a9b1a7a6108.js">
+<meta name="hostname" content="github.com">
+<meta name="keyboard-shortcuts-preference" content="all">
+<meta name="hovercards-preference" content="true">
+<meta name="announcement-preference-hovercard" content="true">
+<meta name="expected-hostname" content="github.com">
+<meta http-equiv="x-pjax-version" content="b14f9bed8bcb58999c61db9db89f39608e04f94ca60f6a04ced4459797b62a3c" data-turbo-track="reload">
+<meta http-equiv="x-pjax-csp-version" content="e65f73639260fc681a0bf8f4760ae205c6b58843ca829716610ed381b5b6a6f2" data-turbo-track="reload">
+<meta http-equiv="x-pjax-css-version" content="8398350d1d0ef6e93d9da6426e7284d6ab45465c7d6d88b7a103ba8107e702f6" data-turbo-track="reload">
+<meta http-equiv="x-pjax-js-version" content="d42f4c5fac065532596b04948000db3da631ef1d9ea3eae5a4acc73ccd77724d" data-turbo-track="reload">
+<meta name="turbo-cache-control" content="no-preview" data-turbo-transient="">
+<meta name="is_logged_out_page" content="true">
+<meta name="octolytics-page-type" content="marketing">
+<link rel="canonical" href="https://github.com/customer-stories/team" data-turbo-transient>
+<meta name="turbo-body-classes" content="logged-in env-production page-responsive f4">
+<meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+<meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+<link rel="mask-icon" href="https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg" color="#000000">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+<meta name="theme-color" content="#1e2327">
+<meta name="color-scheme" content="light dark" />
+<meta name="msapplication-TileImage" content="/windows-tile.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+</head>
+<body class="logged-in env-production page-responsive f4" style="word-wrap: break-word;">
+<div data-turbo-body class="logged-in env-production page-responsive f4" style="word-wrap: break-word;">
+<div class="position-relative header-wrapper js-header-wrapper ">
+<a href="#start-of-content" data-skip-target-assigned="false" class="p-3 color-bg-accent-emphasis color-fg-on-emphasis show-on-focus js-skip-to-content">Skip to content</a>
+
+<span data-view-component="true" class="progress-pjax-loader Progress position-fixed width-full">
+<span style="width: 0%;" data-view-component="true" class="Progress-item progress-pjax-loader-bar left-0 top-0 color-bg-accent-emphasis"></span>
+</span>      
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/primer-react-765944243383.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-core-705befca9f47.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-lib-7b7b5264f6c1.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/octicons-react-45c3a19dd792.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-0e630d-04276437489b.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js-4896ddd4b7bb.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_catalyst_lib_index_js-node_modules_github_hotkey_dist_index_js-no-d67c7f-bd7d077cdcb1.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_ui-commands_ui-commands_ts-d25fac54a6bc.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-cb3d4f30c9ed.js"></script>
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-react.9fa170e9435ed4b922b9.module.css" />
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HEADER BAR           -->
+  <div
+    class="application-main "
+    data-commit-hovercards-enabled
+    data-discussion-hovercards-enabled
+    data-issue-and-pr-hovercards-enabled
+  >
+        <main class="font-mktg" >
+
+  <div class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-state position-sticky width-full sub-nav-mktg-shadow ctas-always-visible">
+    <div class="sub-nav-mktg-wrapper d-flex flex-items-center py-3 px-3 px-md-4 px-lg-5">
+      <a class="sub-nav-title-link Link--primary no-underline f3-mktg d-inline-block text-bold mr-4" 
+        href="https://hngocle404.github.io/portfolio/about.html">
+        Kelly Le</a>
+      <style>
+        .sub-nav-title-link:hover {
+          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      </style>
+      <button
+        type="button"
+        class="btn-octicon sub-nav-mktg-toggle d-lg-none p-1 flex-order-1 float-right js-toggler-target mr-n1"
+        aria-controls="sub-nav-dropdown"
+        aria-label="Page navigation"
+        aria-expanded="false"
+      >
+        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-chevron-down on-hidden">
+    <path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path>
+</svg>
+        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-chevron-up on-visible">
+    <path d="M18.78 15.78a.749.749 0 0 1-1.06 0L12 10.061 6.28 15.78a.749.749 0 1 1-1.06-1.06l6.25-6.25a.749.749 0 0 1 1.06 0l6.25 6.25a.749.749 0 0 1 0 1.06Z"></path>
+</svg>
+      </button>
+      <div class="sub-nav-mktg-links flex-auto f4-mktg d-flex flex-column flex-lg-row with-title gap-4" id="sub-nav-dropdown">
+        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="about.html">About</a>
+        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2 active" href="https://hngocle404.github.io/portfolio/assets/resume.pdf">Resume</a>
+        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/index.html">Projects</a>
+      </div>
+      <style>
+        .sub-nav-mktg-link {
+          color: var(--gradient-start);
+          position: relative;
+        }
+        .sub-nav-mktg-link::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: all 0.3s ease-in-out;
+        }
+        .sub-nav-mktg-link:hover::after {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+        .sub-nav-mktg-link:hover {
+          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      </style>
+        <a href="#footer" class="btn-mktg ml-lg-2 mt-2 mt-lg-0 d-block d-lg-inline-block btn-muted-mktg">
+          Contact
+        </a>
+    </div>
+</div>
+<!-- ==================================================================================== -->
+
