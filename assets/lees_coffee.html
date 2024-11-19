@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<!--
+
+  .---.    .-./`)  ________     .-''-.          .-./`)    .-'''-.            .-'''-. .---.  .---.     ,-----.    .-------. ,---------.  
+  | ,_|    \ .-.')|        |  .'_ _   \         \ .-.')  / _     \          / _     \|   |  |_ _|   .'  .-,  '.  |  _ _   \\          \ 
+,-./  )    / `-' \|   .----' / ( ` )   '        / `-' \ (`' )/`--'         (`' )/`--'|   |  ( ' )  / ,-.|  \ _ \ | ( ' )  | `--.  ,---' 
+\  '_ '`)   `-'`"`|  _|____ . (_ o _)  |         `-'`"`(_ o _).           (_ o _).   |   '-(_{;}_);  \  '_ /  | :|(_ o _) /    |   \    
+ > (_)  )   .---. |_( )_   ||  (_,_)___|         .---.  (_,_). '.          (_,_). '. |      (_,_) |  _`,/ \ _/  || (_,_).' __  :_ _:    
+(  .  .-'   |   | (_ o._)__|'  \   .---.         |   | .---.  \  :        .---.  \  :| _ _--.   | : (  '\_/ \   ;|  |\ \  |  | (_I_)    
+ `-'`-'|___ |   | |(_,_)     \  `-'    /         |   | \    `-'  |        \    `-'  ||( ' ) |   |  \ `"/  \  ) / |  | \ `'   /(_(=)_)   
+  |        \|   | |   |       \       /          |   |  \       /          \       / (_{;}_)|   |   '. \_/``".'  |  |  \    /  (_I_)    
+  `--------`'---' '---'        `'-..-'           '---'   `-...-'            `-...-'  '(_,_) '---'     '-----'    ''-'   `'-'   '---'    
+                                                                                                                                        
+
+
+
+    .-''-.   ,---.   .--.      .-./`)       ,-----.        ____     __          .-./`)  ,---------.  
+  .'_ _   \  |    \  |  |      \ '_ .')   .'  .-,  '.      \   \   /  /         \ .-.') \          \ 
+ / ( ` )   ' |  ,  \ |  |     (_ (_) _)  / ,-.|  \ _ \      \  _. /  '          / `-' \  `--.  ,---' 
+. (_ o _)  | |  |\_ \|  |       / .  \  ;  \  '_ /  | :      _( )_ .'            `-'`"`     |   \    
+|  (_,_)___| |  _( )_\  |  ___  |-'`|   |  _`,/ \ _/  |  ___(_ o _)'             .---.      :_ _:    
+'  \   .---. | (_ o _)  | |   | |   '   : (  '\_/ \   ; |   |(_,_)'              |   |      (_I_)    
+ \  `-'    / |  (_,_)\  | |   `-'  /     \ `"/  \  ) /  |   `-'  /               |   |     (_(=)_)   
+  \       /  |  |    |  |  \      /       '. \_/``".'    \      /                |   |      (_I_)    
+   `'-..-'   '--'    '--'   `-..-'          '-----'       `-..-'                 '---'      '---' 
+                                                                                                   
+-->
+<style>
+:root {
+  --gradient-start: #b43072;
+  --gradient-end: #ee5c39;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-monospace: 'JetBrains Mono', monospace;
+  --font-size-monospace: 14px;
+}
+.monospace {
+  font-family: var(--font-monospace);
+  font-size: var(--font-size-monospace);
+}
+</style>
+<html lang="en" data-color-mode="light" data-light-theme="light" data-dark-theme="dark_tritanopia" data-a11y-animated-images="system" data-a11y-link-underlines="true">
+<head>
+<meta charset="utf-8">
+<link rel="dns-prefetch" href="https://github.githubassets.com">
+<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
+<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
+<link rel="preconnect" href="https://avatars.githubusercontent.com">
+<link rel="preload" href="https://github.githubassets.com/assets/mona-sans-d1bf285e9b9b.woff2" as="font" type="font/woff2" crossorigin>
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/light-3e154969b9f9.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark-9c5b7a476542.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-primitives-4cf0d59ab51a.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-0a1f715ee9fb.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/global-e41ff91f8baa.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/github-d3b66f11d613.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/site-ae5a61253375.css">
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/customer-stories-09cf584c51b5.css">
+<title>Kelly's project</title>
+<meta name="route-pattern" content="/customer-stories/:category(.:format)" data-turbo-transient>
+<meta name="route-controller" content="site_customer_stories_categories" data-turbo-transient>
+<meta name="route-action" content="show" data-turbo-transient>
+<meta name="current-catalog-service-hash" content="3b3a86e94adb1936974b9e80c6c5c959f35b1d5f75b93677737ffa36daf92bbd">
+<meta name="request-id" content="FBBE:375F07:29FA1C7:2D8E300:6738E40A" data-turbo-transient="true">
+<meta name="html-safe-nonce" content="7718a22384d9155d0b0d663cd6c3811f07bd74e9f25385c6a5835a9ce8cde730" data-turbo-transient="true">
+<meta name="visitor-payload" content="eyJyZWZlcnJlciI6bnVsbCwicmVxdWVzdF9pZCI6IkZCQkU6Mzc1RjA3OjI5RkExQzc6MkQ4RTMwMDo2NzM4RTQwQSIsInZpc2l0b3JfaWQiOiI2OTc5NjQwMjQzNjUxODg2Njc4IiwicmVnaW9uX2VkZ2UiOiJzb3V0aGVhc3Rhc2lhIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-turbo-transient="true">
+<meta name="visitor-hmac" content="f412d9b159278e6ef9cfa2d1d685c6a5481a2e4087cff04b412eee070844a57c" data-turbo-transient="true">
+<meta name="github-keyboard-shortcuts" content="copilot" data-turbo-transient="true">
+<meta name="selected-link" value="/customer-stories" data-turbo-transient>
+<link rel="assets" href="https://github.githubassets.com/">
+<meta name="google-site-verification" content="Apib7-x98H0j5cPqHWwSMm6dNU4GmODRoqxLiDzdx9I">
+<meta name="octolytics-url" content="https://collector.github.com/github/collect">
+<meta name="octolytics-actor-id" content="143296151">
+<meta name="octolytics-actor-login" content="kellyle404">
+<meta name="octolytics-actor-hash" content="8e55b6cadf3719984c3f5da8f3f206f6c4f3184a8db4d267ca160337ba6e4546">
+<meta name="user-login" content="kellyle404">
+<link rel="sudo-modal" href="/sessions/sudo_modal">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Everything teams need to build software faster.">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+<meta property="fb:app_id" content="1401488693436528">
+<meta name="apple-itunes-app" content="app-id=1477376905, app-argument=https://github.com/customer-stories/team">
+<meta name="twitter:image" content="https://github.githubassets.com/assets/github-for-teams-534e938e1667.png">
+<meta name="twitter:site" content="@github">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GitHub Team">
+<meta name="twitter:description" content="Everything teams need to build software faster.">
+<meta property="og:image" content="https://github.githubassets.com/assets/github-for-teams-534e938e1667.png">
+<meta property="og:image:alt" content="Everything teams need to build software faster.">
+<meta property="og:site_name" content="GitHub">
+<meta property="og:type" content="object">
+<meta property="og:title" content="GitHub Team">
+<meta property="og:url" content="https://github.com/customer-stories/team">
+<meta property="og:description" content="Everything teams need to build software faster.">
+<link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/143296151/ws?session=eyJ2IjoiVjMiLCJ1IjoxNDMyOTYxNTEsInMiOjE0ODc1ODg3OTYsImMiOjM5NjQ5NTQwMTMsInQiOjE3MzE3ODE2NjN9--1bb3aba94a6876034dd0639aafce3bc1669f2a67a1322692ef89a94ac4c16b08" data-refresh-url="/_alive" data-session-id="b1e621398e60518a75991092f671ad66d4e3c2a69e831a8d6ae9ac5a9e929f96">
+<link rel="shared-web-socket-src" href="/assets-cdn/worker/socket-worker-1a9b1a7a6108.js">
+<meta name="hostname" content="github.com">
+<meta name="keyboard-shortcuts-preference" content="all">
+<meta name="hovercards-preference" content="true">
+<meta name="announcement-preference-hovercard" content="true">
+<meta name="expected-hostname" content="github.com">
+<meta http-equiv="x-pjax-version" content="b14f9bed8bcb58999c61db9db89f39608e04f94ca60f6a04ced4459797b62a3c" data-turbo-track="reload">
+<meta http-equiv="x-pjax-csp-version" content="e65f73639260fc681a0bf8f4760ae205c6b58843ca829716610ed381b5b6a6f2" data-turbo-track="reload">
+<meta http-equiv="x-pjax-css-version" content="8398350d1d0ef6e93d9da6426e7284d6ab45465c7d6d88b7a103ba8107e702f6" data-turbo-track="reload">
+<meta http-equiv="x-pjax-js-version" content="d42f4c5fac065532596b04948000db3da631ef1d9ea3eae5a4acc73ccd77724d" data-turbo-track="reload">
+<meta name="turbo-cache-control" content="no-preview" data-turbo-transient="">
+<meta name="is_logged_out_page" content="true">
+<meta name="octolytics-page-type" content="marketing">
+<link rel="canonical" href="https://github.com/customer-stories/team" data-turbo-transient>
+<meta name="turbo-body-classes" content="logged-in env-production page-responsive f4">
+<meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+<meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+<link rel="mask-icon" href="https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg" color="#000000">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+<meta name="theme-color" content="#1e2327">
+<meta name="color-scheme" content="light dark" />
+<meta name="msapplication-TileImage" content="/windows-tile.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+</head>
+<body class="logged-in env-production page-responsive f4" style="word-wrap: break-word;">
+<div data-turbo-body class="logged-in env-production page-responsive f4" style="word-wrap: break-word;">
+<div class="position-relative header-wrapper js-header-wrapper ">
+<a href="#start-of-content" data-skip-target-assigned="false" class="p-3 color-bg-accent-emphasis color-fg-on-emphasis show-on-focus js-skip-to-content">Skip to content</a>
+
+<span data-view-component="true" class="progress-pjax-loader Progress position-fixed width-full">
+<span style="width: 0%;" data-view-component="true" class="Progress-item progress-pjax-loader-bar left-0 top-0 color-bg-accent-emphasis"></span>
+</span>      
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/primer-react-765944243383.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-core-705befca9f47.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-lib-7b7b5264f6c1.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/octicons-react-45c3a19dd792.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-0e630d-04276437489b.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js-4896ddd4b7bb.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_catalyst_lib_index_js-node_modules_github_hotkey_dist_index_js-no-d67c7f-bd7d077cdcb1.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_ui-commands_ui-commands_ts-d25fac54a6bc.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-cb3d4f30c9ed.js"></script>
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-react.9fa170e9435ed4b922b9.module.css" />
+
+
+<!-- HEADER BAR -->
+  <div
+    class="application-main "
+    data-commit-hovercards-enabled
+    data-discussion-hovercards-enabled
+    data-issue-and-pr-hovercards-enabled
+  >
+        <main class="font-mktg" >
+
+  <div class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-state position-sticky width-full sub-nav-mktg-shadow ctas-always-visible">
+    <div class="sub-nav-mktg-wrapper d-flex flex-items-center py-3 px-3 px-md-4 px-lg-5">
+      <a class="sub-nav-title-link Link--primary no-underline f3-mktg d-inline-block text-bold mr-4" 
+        href="https://hngocle404.github.io/portfolio/about.html">
+        Kelly Le</a>
+      <style>
+        .sub-nav-title-link:hover {
+          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      </style>
+      <button
+        type="button"
+        class="btn-octicon sub-nav-mktg-toggle d-lg-none p-1 flex-order-1 float-right js-toggler-target mr-n1"
+        aria-controls="sub-nav-dropdown"
+        aria-label="Page navigation"
+        aria-expanded="false"
+      >
+        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-chevron-down on-hidden">
+    <path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path>
+</svg>
+        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-chevron-up on-visible">
+    <path d="M18.78 15.78a.749.749 0 0 1-1.06 0L12 10.061 6.28 15.78a.749.749 0 1 1-1.06-1.06l6.25-6.25a.749.749 0 0 1 1.06 0l6.25 6.25a.749.749 0 0 1 0 1.06Z"></path>
+</svg>
+      </button>
+      <div class="sub-nav-mktg-links flex-auto f4-mktg d-flex flex-column flex-lg-row with-title gap-4" id="sub-nav-dropdown">
+        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/about.html">About</a>
+        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2 active" href="https://hngocle404.github.io/portfolio/assets/NGOCLE_resume.pdf">Resume</a>
+        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/index.html">Projects</a>
+      </div>
+      <style>
+        .sub-nav-mktg-link {
+          color: var(--gradient-start);
+          position: relative;
+        }
+        .sub-nav-mktg-link::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: all 0.3s ease-in-out;
+        }
+        .sub-nav-mktg-link:hover::after {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+        .sub-nav-mktg-link:hover {
+          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      </style>
+        <a href="#footer" class="btn-mktg ml-lg-2 mt-2 mt-lg-0 d-block d-lg-inline-block btn-muted-mktg">
+          Contact
+        </a>
+    </div>
+</div>
+<!-- ==================================================================================== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="border-bottom">
+  <div class="pt-9 pb-4 overflow-hidden px-3">
+  <div class="container-xl">
+    
+    <div class="p-responsive">
+      
+      <p  class="color-fg-muted f3-mktg text-normal mb-1">
+FMCG market research
+      </p>
+      <h1  class="h3-mktg color-fg-default mb-3 mb-md-6">
+Implications & opportunities for the consumer sector - Vietnam's 2024 outlook
+      </h1>
+    </div>
+
+  </div>
+</div></div>
+
+<div class="px-3 pb-8 pt-5">
+  <div class="container-xl">
+    
+    <div class="p-responsive">
+
+      <div class="my-4 my-lg-6">
+
+
+        
+
+
+<!-- SUMMARY -->
+This is a coffee can design I did for <strong>Lee's Bros</strong> - a California-based food service company that recently 
+entered the Vietnamese market in 2024:
+
+<p>https://leescoffee.com.vn/</p>
+
+You could come and check out the store here: <br>84 Nguyễn Huệ, phường Bến Nghé, quận 1, Thành phố Hồ Chí Minh, Việt Nam.
+
+</div>
+
+
+<img src="music_and_design/leescoffee_all5.png" style="border-radius: 8px; width: 100%; height: auto;">
+ <img src="
+ music_and_design/leescoffee_mockup.png
+ "
+ style="border-radius: 8px; width: 50%; height: auto;">
+
+  <img src="
+ music_and_design/leescoffee_black.png
+ "
+ style="border-radius: 8px; width: 60%; height: auto;">
+
+  <img src="
+ music_and_design/leescoffee_pink.png
+ "
+ style="border-radius: 8px; width: 60%; height: auto;">
+
+ 
+
+
+
+
+ 
+
+  
+  
+
+  
+ </main>
+<!-- FOOTER -->
+<footer id="footer" role="contentinfo" class="footer pt-6 position-relative color-bg-subtle "><h2 class="sr-only">Site-wide Links</h2>
+  <div class="container-xl p-responsive"><div class="d-flex flex-wrap py-5 mb-5"><section class="col-12 col-lg-4 mb-5"><a href="/" 
+    class="color-fg-default d-inline-block" aria-label="Go to GitHub homepage"><svg height="30" aria-hidden="true" viewBox="0 0 68 24" version="1.1" width="85" 
+    data-view-component="true" class="octicon octicon-logo-github footer-logo-mktg width-auto d-block">
+    <path d="M27.8 17.908h-.03c.013 0 .022.014.035.017l.01-.002-.016-.015Zm.005.017c-.14.001-.49.073-.861.073-1.17 0-1.575-.536-1.575-1.234v-4.652h2.385c.135 0 .24-.12.24-.283V9.302c0-.133-.12-.252-.24-.252H25.37V5.913c0-.119-.075-.193-.21-.193h-3.24c-.136 0-.21.074-.21.193V9.14s-1.636.401-1.741.416a.255.255 0 0 0-.195.253v2.021c0 .164.12.282.255.282h1.665v4.876c0 3.627 2.55 3.998 4.29 3.998.796 0 1.756-.252 1.906-.327.09-.03.135-.134.135-.238v-2.23a.264.264 0 0 0-.219-.265Zm35.549-3.272c0-2.69-1.095-3.047-2.25-2.928-.9.06-1.62.505-1.62.505v5.232s.735.506 1.83.536c1.545.044 2.04-.506 2.04-3.345ZM67 14.415c0 5.099-1.665 6.555-4.576 6.555-2.46 0-3.78-1.233-3.78-1.233s-.06.683-.135.773c-.045.089-.12.118-.21.118h-2.22c-.15 0-.286-.119-.286-.252l.03-16.514a.26.26 0 0 1 .255-.252h3.196a.26.26 0 0 1 .255.252v5.604s1.23-.788 3.03-.788l-.015-.03c1.8 0 4.456.67 4.456 5.767ZM53.918 9.05h-3.15c-.165 0-.255.119-.255.282v8.086s-.826.58-1.95.58c-1.126 0-1.456-.506-1.456-1.62v-7.06a.262.262 0 0 0-.255-.254h-3.21a.262.262 0 0 0-.256.253v7.596c0 3.27 1.846 4.087 4.381 4.087 2.085 0 3.78-1.145 3.78-1.145s.076.58.12.67c.03.074.136.133.24.133h2.011a.243.243 0 0 0 .255-.253l.03-11.103c0-.133-.12-.252-.285-.252Zm-35.556-.015h-3.195c-.135 0-.255.134-.255.297v10.91c0 .297.195.401.45.401h2.88c.3 0 .375-.134.375-.401V9.287a.262.262 0 0 0-.255-.252ZM16.787 4.01c-1.155 0-2.07.907-2.07 2.051 0 1.145.915 2.051 2.07 2.051a2.04 2.04 0 0 0 2.04-2.05 2.04 2.04 0 0 0-2.04-2.052Zm24.74-.372H38.36a.262.262 0 0 0-.255.253v6.08H33.14v-6.08a.262.262 0 0 0-.255-.253h-3.196a.262.262 0 0 0-.255.253v16.514c0 .133.135.252.255.252h3.196a.262.262 0 0 0 .255-.253v-7.06h4.966l-.03 7.06c0 .134.12.253.255.253h3.195a.262.262 0 0 0 .255-.253V3.892a.262.262 0 0 0-.255-.253Zm-28.31 7.313v8.532c0 .06-.015.163-.09.193 0 0-1.875 1.323-4.966 1.323C4.426 21 0 19.84 0 12.2S3.87 2.986 7.651 3c3.27 0 4.59.728 4.8.862.06.075.09.134.09.208l-.63 2.646c0 .134-.134.297-.3.253-.54-.164-1.35-.49-3.255-.49-2.205 0-4.575.623-4.575 5.543s2.25 5.5 3.87 5.5c1.38 0 1.875-.164 1.875-.164V13.94H7.321c-.165 0-.285-.12-.285-.253v-2.735c0-.134.12-.252.285-.252h5.61c.166 0 .286.118.286.252Z"></path></svg></a>
+    <h3 class="h5 mt-4 mb-0" id="subscribe-to-newsletter">What's green, has 4 legs. and could <br>kill you if it fell out of a tree?</h3>
+    <p class="f5 color-fg-muted mb-3">A pool table.</p><a class="btn-mktg mb-4 btn-muted-mktg" href="#" style="scroll-behavior: smooth;">Back to top</a></section>
+
+    <nav class="col-14 col-sm-8 col-lg-4 mb-6 mb-md-2 pr-3 pr-lg-0 pl-lg-4" aria-labelledby="footer-title-product">
+      <h3 class="h5 mb-3 text-mono color-fg-muted text-normal" id="footer-title-product">
+        Contact
+      </h3>
+      <ul class="list-style-none color-fg-muted f5">
+        <li class="lh-condensed mb-3">
+          <a class="Link--secondary" href="https://zalo.me/0778882602">
+          Zalo: (+84) 77 888 2602
+        </a></li>
+        
+        <li class="lh-condensed mb-3">
+          <a class="Link--secondary" href="mailto:hngoc.le.404@gmail.com">
+            Email: hngoc.le.404@gmail.com
+          </a></li>
+
+          <li class="lh-condensed mb-3">
+            <a class="Link--secondary" href="https://www.linkedin.com/in/hnl404/">
+              Linkedin: HN Le
+            </a></li>
+          
+        <li class="lh-condensed mb-3">
+          <a class="Link--secondary" href="https://discord.com/users/1190260937719033916">
+            Discord: kalulu404
+          </a></li>
+                    
+          </ul></nav>
+            <nav class="col-14 col-sm-10 col-lg-4 mb-6 mb-md-2 pr-5 pr-md-0 pl-md-4" aria-labelledby="footer-title-platform">
+              <h3 class="h5 mb-3 text-mono color-fg-muted text-normal" id="footer-title-platform">
+                Resources
+              </h3>
+              <ul class="list-style-none f5"><li class="lh-condensed mb-3">
+                <a class="Link--secondary" href="https://www.myequals.net/r/sharelink/550d70d0-6ddc-4eba-8afc-618cabcd697d/ba1fa78f-59b1-4322-8156-6804761b4621">
+                  Testamur
+                </a></li>
+                <li class="lh-condensed mb-3"><a class="Link--secondary" href="https://hngocle404.github.io/portfolio/assets/NGOCLE_resume.pdf">Resume</a></li></ul></nav></div></div>
+              </footer></div><div id="js-global-screen-reader-notice" class="sr-only mt-n1" aria-live="polite" aria-atomic="true" ></div>
+              <div id="js-global-screen-reader-notice-assertive" class="sr-only mt-n1" aria-live="assertive" aria-atomic="true"></div></body></html>
