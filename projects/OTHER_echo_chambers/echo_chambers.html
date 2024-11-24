@@ -451,57 +451,28 @@ References</h1>
 <p>Tucker, J., Theocharis, Y., Roberts, M., & Barberá, P. (2017). From liberation to turmoil: Social media and democracy. <i>Journal of Democracy</i>, <i>28</i>(4), 46-59. https://doi.org/10.1353/jod.2017.0064</p>
 <p>Yarchi, M., Baden, C., & Kligler-Vilenchik, N. (2020). Political polarization on the digital sphere: A cross-platform, over-time analysis of interactional, positional, and affective polarization on social media. <i>Political Communication</i>, <i>38</i>(1-2), 98-139. https://doi.org/10.1080/10584609.2020.1785067</p>
 
+  
+ </main>
+
+
+
+
+
+
+
+
+
 
 
 
  
 
-  
-  
-
-  
- </main>
-
-<!-- FOOTER -->
-<footer id="footer" role="contentinfo" class="footer pt-6 position-relative color-bg-subtle "><h2 class="sr-only">Site-wide Links</h2>
-  <div class="container-xl p-responsive"><div class="d-flex flex-wrap py-5 mb-5"><section class="col-12 col-lg-4 mb-5"><img src="https://hngocle404.github.io/portfolio/assets/namelogo.png" width="60" height="60">
-    <h3 class="h5 mt-4 mb-0">What's green, has 4 legs. and could <br>kill you if it fell out of a tree?</h3>
-    <p class="f5 color-fg-muted mb-3">A pool table.</p><a class="btn-mktg mb-4 btn-muted-mktg" href="#" style="scroll-behavior: smooth;">Back to top</a></section>
-
-    <nav class="col-14 col-sm-8 col-lg-4 mb-6 mb-md-2 pr-3 pr-lg-0 pl-lg-4" aria-labelledby="footer-title-product">
-      <h3 class="h5 mb-3 text-mono color-fg-muted text-normal" id="footer-title-product">
-        Contact
-      </h3>
-      <ul class="list-style-none color-fg-muted f5">
-        <li class="lh-condensed mb-3">
-          <a class="Link--secondary" href="https://zalo.me/0778882602">
-          Zalo: (+84) 77 888 2602
-        </a></li>
-        
-        <li class="lh-condensed mb-3">
-          <a class="Link--secondary" href="mailto:hngoc.le.404@gmail.com">
-            Email: hngoc.le.404@gmail.com
-          </a></li>
-
-          <li class="lh-condensed mb-3">
-            <a class="Link--secondary" href="https://www.linkedin.com/in/hnl404/">
-              Linkedin: HN Le
-            </a></li>
-          
-        <li class="lh-condensed mb-3">
-          <a class="Link--secondary" href="https://discord.com/users/1190260937719033916">
-            Discord: kalulu404
-          </a></li>
-                    
-          </ul></nav>
-            <nav class="col-14 col-sm-10 col-lg-4 mb-6 mb-md-2 pr-5 pr-md-0 pl-md-4" aria-labelledby="footer-title-platform">
-              <h3 class="h5 mb-3 text-mono color-fg-muted text-normal" id="footer-title-platform">
-                Resources
-              </h3>
-              <ul class="list-style-none f5"><li class="lh-condensed mb-3">
-                <a class="Link--secondary" href="https://www.myequals.net/r/sharelink/550d70d0-6ddc-4eba-8afc-618cabcd697d/ba1fa78f-59b1-4322-8156-6804761b4621">
-                  Testamur
-                </a></li>
-                <li class="lh-condensed mb-3"><a class="Link--secondary" href="https://hngocle404.github.io/portfolio/assets/NGOCLE_resume.pdf">Resume</a></li></ul></nav></div></div>
-              </footer></div><div id="js-global-screen-reader-notice" class="sr-only mt-n1" aria-live="polite" aria-atomic="true" ></div>
-              <div id="js-global-screen-reader-notice-assertive" class="sr-only mt-n1" aria-live="assertive" aria-atomic="true"></div></body></html>
+<!-- ======================================================================================== -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch('https://hngocle404.github.io/portfolio/partials/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>

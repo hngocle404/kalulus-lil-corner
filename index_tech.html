@@ -1,30 +1,6 @@
 <!DOCTYPE html>
-<!--
-
-  .---.    .-./`)  ________     .-''-.          .-./`)    .-'''-.            .-'''-. .---.  .---.     ,-----.    .-------. ,---------.  
-  | ,_|    \ .-.')|        |  .'_ _   \         \ .-.')  / _     \          / _     \|   |  |_ _|   .'  .-,  '.  |  _ _   \\          \ 
-,-./  )    / `-' \|   .----' / ( ` )   '        / `-' \ (`' )/`--'         (`' )/`--'|   |  ( ' )  / ,-.|  \ _ \ | ( ' )  | `--.  ,---' 
-\  '_ '`)   `-'`"`|  _|____ . (_ o _)  |         `-'`"`(_ o _).           (_ o _).   |   '-(_{;}_);  \  '_ /  | :|(_ o _) /    |   \    
- > (_)  )   .---. |_( )_   ||  (_,_)___|         .---.  (_,_). '.          (_,_). '. |      (_,_) |  _`,/ \ _/  || (_,_).' __  :_ _:    
-(  .  .-'   |   | (_ o._)__|'  \   .---.         |   | .---.  \  :        .---.  \  :| _ _--.   | : (  '\_/ \   ;|  |\ \  |  | (_I_)    
- `-'`-'|___ |   | |(_,_)     \  `-'    /         |   | \    `-'  |        \    `-'  ||( ' ) |   |  \ `"/  \  ) / |  | \ `'   /(_(=)_)   
-  |        \|   | |   |       \       /          |   |  \       /          \       / (_{;}_)|   |   '. \_/``".'  |  |  \    /  (_I_)    
-  `--------`'---' '---'        `'-..-'           '---'   `-...-'            `-...-'  '(_,_) '---'     '-----'    ''-'   `'-'   '---'    
-                                                                                                                                        
 
 
-
-    .-''-.   ,---.   .--.      .-./`)       ,-----.        ____     __          .-./`)  ,---------.  
-  .'_ _   \  |    \  |  |      \ '_ .')   .'  .-,  '.      \   \   /  /         \ .-.') \          \ 
- / ( ` )   ' |  ,  \ |  |     (_ (_) _)  / ,-.|  \ _ \      \  _. /  '          / `-' \  `--.  ,---' 
-. (_ o _)  | |  |\_ \|  |       / .  \  ;  \  '_ /  | :      _( )_ .'            `-'`"`     |   \    
-|  (_,_)___| |  _( )_\  |  ___  |-'`|   |  _`,/ \ _/  |  ___(_ o _)'             .---.      :_ _:    
-'  \   .---. | (_ o _)  | |   | |   '   : (  '\_/ \   ; |   |(_,_)'              |   |      (_I_)    
- \  `-'    / |  (_,_)\  | |   `-'  /     \ `"/  \  ) /  |   `-'  /               |   |     (_(=)_)   
-  \       /  |  |    |  |  \      /       '. \_/``".'    \      /                |   |      (_I_)    
-   `'-..-'   '--'    '--'   `-..-'          '-----'       `-..-'                 '---'      '---' 
-                                                                                                   
--->
 <style>
 :root {
   --gradient-start: #b43072;
@@ -91,80 +67,31 @@
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-cb3d4f30c9ed.js"></script>
 <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-react.9fa170e9435ed4b922b9.module.css" />
 
+<div id="header-placeholder"></div>
+<script>
+  fetch('https://hngocle404.github.io/portfolio/partials/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    });
+</script>
 
-<!-- HEADER BAR -->
-  <div
-    class="application-main "
-    data-commit-hovercards-enabled
-    data-discussion-hovercards-enabled
-    data-issue-and-pr-hovercards-enabled
-  >
-        <main class="font-mktg" >
 
-  <div class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-state position-sticky width-full sub-nav-mktg-shadow ctas-always-visible">
-    <div class="sub-nav-mktg-wrapper d-flex flex-items-center py-3 px-3 px-md-4 px-lg-5">
-      <a class="sub-nav-title-link Link--primary no-underline f3-mktg d-inline-block text-bold mr-4" 
-        href="https://hngocle404.github.io/portfolio/about.html">
-        Kelly Le</a>
-      <style>
-        .sub-nav-title-link:hover {
-          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      </style>
-      <button
-        type="button"
-        class="btn-octicon sub-nav-mktg-toggle d-lg-none p-1 flex-order-1 float-right js-toggler-target mr-n1"
-        aria-controls="sub-nav-dropdown"
-        aria-label="Page navigation"
-        aria-expanded="false"
-      >
-        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-chevron-down on-hidden">
-    <path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path>
-</svg>
-        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-chevron-up on-visible">
-    <path d="M18.78 15.78a.749.749 0 0 1-1.06 0L12 10.061 6.28 15.78a.749.749 0 1 1-1.06-1.06l6.25-6.25a.749.749 0 0 1 1.06 0l6.25 6.25a.749.749 0 0 1 0 1.06Z"></path>
-</svg>
-      </button>
-      <div class="sub-nav-mktg-links flex-auto f4-mktg d-flex flex-column flex-lg-row with-title gap-4" id="sub-nav-dropdown">
-        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/about.html">About</a>
-        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2 active" href="https://hngocle404.github.io/portfolio/assets/NGOCLE_resume.pdf">Resume</a>
-        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/index.html">Projects</a>
-      </div>
-      <style>
-        .sub-nav-mktg-link {
-          color: var(--gradient-start);
-          position: relative;
-        }
-        .sub-nav-mktg-link::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-          visibility: hidden;
-          transform: scaleX(0);
-          transition: all 0.3s ease-in-out;
-        }
-        .sub-nav-mktg-link:hover::after {
-          visibility: visible;
-          transform: scaleX(1);
-        }
-        .sub-nav-mktg-link:hover {
-          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      </style>
-        <a href="#footer" class="btn-mktg ml-lg-2 mt-2 mt-lg-0 d-block d-lg-inline-block btn-muted-mktg">
-          Contact
-        </a>
-    </div>
+  
+<main class="font-mktg">
+<div class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-state position-sticky width-full sub-nav-mktg-shadow ctas-always-visible">
 </div>
 <!-- ==================================================================================== -->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -186,7 +113,8 @@
     
     <div class="p-responsive">
       <p  class="color-fg-muted f3-mktg text-normal mb-1">Kelly Le's</p>
-      <h1  class="h3-mktg color-fg-default mb-3 mb-md-6">Projects (building in progress)</h1>
+      <h1  class="h3-mktg color-fg-default mb-3 mb-md-6">Projects (under construction as of Nov 2024)
+</h1>
     </div>
 
   </div>
@@ -369,43 +297,13 @@ Read here
 
 
 
-<!-- FOOTER -->
-<footer id="footer" role="contentinfo" class="footer pt-6 position-relative color-bg-subtle "><h2 class="sr-only">Site-wide Links</h2>
-  <div class="container-xl p-responsive"><div class="d-flex flex-wrap py-5 mb-5"><section class="col-12 col-lg-4 mb-5"><img src="https://hngocle404.github.io/portfolio/assets/namelogo.png" width="140" height="140">
-    <h3 class="h5 mt-2 mb-0">What's green, has 4 legs. and could <br>kill you if it fell out of a tree?</h3>
-    <p class="f5 color-fg-muted mb-3">A pool table.</p><a class="btn-mktg mb-4 btn-muted-mktg" href="#" style="scroll-behavior: smooth;">Back to top</a></section>
 
-    <nav class="col-14 col-sm-8 col-lg-4 mb-6 mb-md-2 pr-3 pr-lg-0 pl-lg-4" aria-labelledby="footer-title-product">
-      <h3 class="h5 mb-3 text-mono color-fg-muted text-normal" id="footer-title-product">
-        Contact
-      </h3>
-      <ul class="list-style-none color-fg-muted f5">
-        <li class="lh-condensed mb-3">
-          <a class="Link--secondary" href="https://zalo.me/0778882602">
-          Zalo: (+84) 77 888 2602
-        </a></li>
-        
-        <li class="lh-condensed mb-3">
-          <a class="Link--secondary" href="mailto:hngoc.le.404@gmail.com">
-            Email: hngoc.le.404@gmail.com
-          </a></li>
-
-       
-          
-        <li class="lh-condensed mb-3">
-          <a class="Link--secondary" href="https://discord.com/users/1190260937719033916">
-            Discord: kalulu404
-          </a></li>
-                    
-          </ul></nav>
-            <nav class="col-14 col-sm-10 col-lg-4 mb-6 mb-md-2 pr-5 pr-md-0 pl-md-4" aria-labelledby="footer-title-platform">
-              <h3 class="h5 mb-3 text-mono color-fg-muted text-normal" id="footer-title-platform">
-                Resources
-              </h3>
-              <ul class="list-style-none f5"><li class="lh-condensed mb-3">
-                <a class="Link--secondary" href="https://www.myequals.net/r/sharelink/550d70d0-6ddc-4eba-8afc-618cabcd697d/ba1fa78f-59b1-4322-8156-6804761b4621">
-                  Testamur
-                </a></li>
-                <li class="lh-condensed mb-3"><a class="Link--secondary" href="https://hngocle404.github.io/portfolio/assets/NGOCLE_resume.pdf">Resume</a></li></ul></nav></div></div>
-              </footer></div><div id="js-global-screen-reader-notice" class="sr-only mt-n1" aria-live="polite" aria-atomic="true" ></div>
-              <div id="js-global-screen-reader-notice-assertive" class="sr-only mt-n1" aria-live="assertive" aria-atomic="true"></div></body></html>
+<!-- ======================================================================================== -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch('https://hngocle404.github.io/portfolio/partials/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
