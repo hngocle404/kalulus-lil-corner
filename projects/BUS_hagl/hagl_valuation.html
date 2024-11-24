@@ -22,9 +22,6 @@
 <head>
 <meta charset="utf-8">
 <link rel="dns-prefetch" href="https://github.githubassets.com">
-<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
-<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
-<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
 <link rel="preconnect" href="https://github.githubassets.com" crossorigin>
 <link rel="preconnect" href="https://avatars.githubusercontent.com">
 <link rel="preload" href="https://github.githubassets.com/assets/mona-sans-d1bf285e9b9b.woff2" as="font" type="font/woff2" crossorigin>
@@ -56,89 +53,20 @@
 <span data-view-component="true" class="progress-pjax-loader Progress position-fixed width-full">
 <span style="width: 0%;" data-view-component="true" class="Progress-item progress-pjax-loader-bar left-0 top-0 color-bg-accent-emphasis"></span>
 </span>      
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/primer-react-765944243383.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-core-705befca9f47.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-lib-7b7b5264f6c1.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/octicons-react-45c3a19dd792.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-0e630d-04276437489b.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js-4896ddd4b7bb.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_catalyst_lib_index_js-node_modules_github_hotkey_dist_index_js-no-d67c7f-bd7d077cdcb1.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_ui-commands_ui-commands_ts-d25fac54a6bc.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-cb3d4f30c9ed.js"></script>
 <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-react.9fa170e9435ed4b922b9.module.css" />
 
+<div id="header-placeholder"></div>
+<script>
+  fetch('https://hngocle404.github.io/portfolio/partials/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    });
+</script>
 
-<!-- HEADER BAR -->
-  <div
-    class="application-main "
-    data-commit-hovercards-enabled
-    data-discussion-hovercards-enabled
-    data-issue-and-pr-hovercards-enabled
-  >
-        <main class="font-mktg" >
-
-  <div class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-state position-sticky width-full sub-nav-mktg-shadow ctas-always-visible">
-    <div class="sub-nav-mktg-wrapper d-flex flex-items-center py-3 px-3 px-md-4 px-lg-5">
-      <a class="sub-nav-title-link Link--primary no-underline f3-mktg d-inline-block text-bold mr-4" 
-        href="https://hngocle404.github.io/portfolio/about.html">
-        Kelly Le</a>
-      <style>
-        .sub-nav-title-link:hover {
-          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      </style>
-      <button
-        type="button"
-        class="btn-octicon sub-nav-mktg-toggle d-lg-none p-1 flex-order-1 float-right js-toggler-target mr-n1"
-        aria-controls="sub-nav-dropdown"
-        aria-label="Page navigation"
-        aria-expanded="false"
-      >
-        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-chevron-down on-hidden">
-    <path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path>
-</svg>
-        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-chevron-up on-visible">
-    <path d="M18.78 15.78a.749.749 0 0 1-1.06 0L12 10.061 6.28 15.78a.749.749 0 1 1-1.06-1.06l6.25-6.25a.749.749 0 0 1 1.06 0l6.25 6.25a.749.749 0 0 1 0 1.06Z"></path>
-</svg>
-      </button>
-      <div class="sub-nav-mktg-links flex-auto f4-mktg d-flex flex-column flex-lg-row with-title gap-4" id="sub-nav-dropdown">
-        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/about.html">About</a>
-        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2 active" href="https://hngocle404.github.io/portfolio/assets/NGOCLE_resume.pdf">Resume</a>
-        <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/index.html">Projects</a>
-      </div>
-      <style>
-        .sub-nav-mktg-link {
-          color: var(--gradient-start);
-          position: relative;
-        }
-        .sub-nav-mktg-link::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-          visibility: hidden;
-          transform: scaleX(0);
-          transition: all 0.3s ease-in-out;
-        }
-        .sub-nav-mktg-link:hover::after {
-          visibility: visible;
-          transform: scaleX(1);
-        }
-        .sub-nav-mktg-link:hover {
-          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      </style>
-        <a href="#footer" class="btn-mktg ml-lg-2 mt-2 mt-lg-0 d-block d-lg-inline-block btn-muted-mktg">
-          Contact
-        </a>
-    </div>
+  
+<main class="font-mktg">
+<div class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-state position-sticky width-full sub-nav-mktg-shadow ctas-always-visible">
 </div>
 <!-- ==================================================================================== -->
 
@@ -197,7 +125,7 @@ This paper attempts to analyze Hoang Anh Gia Lai (HAG) business operations, fina
 
 <!-- IMAGE -->
 <div style="margin-bottom: 30px;">
-  <img src="hagl_assets/banner.png" style="width: 100%; height: 300px; object-fit: cover; object-position: 0 80%; border-radius: 8px;">       
+  <img src="banner.png" style="width: 100%; height: 300px; object-fit: cover; object-position: 0 80%; border-radius: 8px;">       
 </div>
 
 
@@ -224,7 +152,7 @@ This paper attempts to analyze Hoang Anh Gia Lai (HAG) business operations, fina
  97.22%, and the remaining 2.78% are foreign shareholders (Figure 1).
  </p>
 <div style="text-align: center; margin: 2%;">
-  <img src="hagl_assets/1.PNG" style="width: 60%;">       
+  <img src="1.PNG" style="width: 60%;">       
 </div>
 
 <p>
@@ -271,7 +199,7 @@ pore, and Europe, such as Global GAP standards or equivalent. According to the 2
  pig population to be around 23 million, significantly lower than the GSO’s reported data.
  </p>
 <div style="text-align: center; margin: 2%;">
-  <img src="hagl_assets/2.PNG" style="width: 60%;">       
+  <img src="2.PNG" style="width: 60%;">       
 </div>
 
 <p>
@@ -303,7 +231,7 @@ Diversification in the agricultural and livestock sectors, along with its proact
 </h2>
 
  <div style="margin-bottom: 30px; margin-top: 30px; text-align: center;">
-  <img src="hagl_assets/agenda.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="agenda.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -385,7 +313,7 @@ out this project is the official website of HAG, accessible via https://www.hag.
 </h2>
 
 <div style="margin-bottom: 20px; text-align: center;">
-  <img src="hagl_assets/overview.PNG" style="width: 60%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="overview.PNG" style="width: 60%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -792,13 +720,13 @@ can be computed for a given confidence level (Cheung & Powell, 2012). Despite it
  at approximately 600,000 pigs per year, all designated for domestic consumption.</p>
 
  <div style="margin-bottom: 30px; margin-top: 30px; text-align: center;">
-  <img src="hagl_assets/fruitoverview.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="fruitoverview.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
 
 <div style="margin-bottom: 30px; margin-top: 30px; text-align: center;">
-  <img src="hagl_assets/pigoverview.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="pigoverview.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -813,7 +741,7 @@ can be computed for a given confidence level (Cheung & Powell, 2012). Despite it
 
   
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/3f.PNG" style="width: 90%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="3f.PNG" style="width: 90%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -856,7 +784,7 @@ can be computed for a given confidence level (Cheung & Powell, 2012). Despite it
 
  
 <div style="margin-bottom: 30px; margin-top: 30px; text-align: center;">
-  <img src="hagl_assets/swot.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="swot.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -1056,7 +984,7 @@ T5: Volatile food and product feed prices
  due to consistent demand for essential goods, but pricing limitations on non-branded products. 
  
  <div style="margin-bottom: 30px; margin-top: 30px; text-align: center;">
-  <img src="hagl_assets/brands.PNG" style="width: 50%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="brands.PNG" style="width: 50%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -1068,7 +996,7 @@ T5: Volatile food and product feed prices
 </p>
 
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/porter.PNG" style="width: 60%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="porter.PNG" style="width: 60%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -1104,7 +1032,7 @@ T5: Volatile food and product feed prices
  improvements despite fluctuations in the first half of the examined period.
 </p>
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/profit.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="profit.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 <h2 style="margin: 15px 0px 15px 0px; color: transparent; background: linear-gradient(
   to right, #d16200, #ffb412); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 100% 100%; background-clip: text;">
@@ -1118,7 +1046,7 @@ T5: Volatile food and product feed prices
  progressively enhancing cash-generating and liquidity capabilities.
 </p>
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/liquidity.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="liquidity.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -1140,7 +1068,7 @@ Additionally, despite the stable debt-to-equity ratios, the debt statistics high
 </p>
 
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/debt.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="debt.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 <h2 style="margin: 15px 0px 15px 0px; color: transparent; background: linear-gradient(
@@ -1196,7 +1124,7 @@ Additionally, despite the stable debt-to-equity ratios, the debt statistics high
 </h2>
 
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/dcf.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="dcf.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 <p>
@@ -1212,7 +1140,7 @@ For the WACC, we calculated the cost of equity to be 9.80% using the CAPM method
 5.2. Adjusted present value (APV)
 </h2>
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/apv.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="apv.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 <h2 style="margin: 15px 0px 15px 0px; color: transparent; background: linear-gradient(
@@ -1222,7 +1150,7 @@ For the WACC, we calculated the cost of equity to be 9.80% using the CAPM method
 </h2>
 
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/cca.PNG" style="width: 50%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="cca.PNG" style="width: 50%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 <p>
@@ -1231,7 +1159,7 @@ The implied stock price from the EV/EBITDA method is range from 6,789 VND to 21.
 </p>
 
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/football.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="football.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -1243,7 +1171,7 @@ The implied stock price from the EV/EBITDA method is range from 6,789 VND to 21.
 </h2>
 
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/all3.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="all3.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -1294,7 +1222,7 @@ The WACC and TGR are sensitised as key drivers of our DCF sensitivity
 
 
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/sensititvity.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="sensititvity.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -1316,7 +1244,7 @@ Our analytical approach involves assessing three distinct scenarios based on our
 
 
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/scenario.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="scenario.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -1339,7 +1267,7 @@ Corporate failure risk
 </p>
 
 <div style="margin-bottom: 30px; text-align: center;">
-  <img src="hagl_assets/altman.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="altman.PNG" style="width: 70%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
     <h3 style="margin:5px 0px;">
@@ -1374,7 +1302,7 @@ Similarly, the Parametric VaR, with a value of-411.819 VND, employs statistical
 
 
 <div style="margin-bottom: 30px; margin-top: 30px; text-align: center;">
-  <img src="hagl_assets/var.PNG" style="width: 80%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="var.PNG" style="width: 80%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -1420,7 +1348,7 @@ cating a failure to reject the null hypothesis, the p-value at the 99% confidenc
 
 
 <div style="margin-bottom: 30px; margin-top: 30px; text-align: center;">
-  <img src="hagl_assets/risk1.PNG" style="width: 60%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="risk1.PNG" style="width: 60%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
 
@@ -1528,7 +1456,7 @@ The fact that agricultural land areas are often small and unevenly
 
 
 <div style="margin-bottom: 30px; margin-top: 30px; text-align: center;">
-  <img src="hagl_assets/risk2.PNG" style="width: 60%; height: auto; object-fit: cover; border-radius: 8px;">       
+  <img src="risk2.PNG" style="width: 60%; height: auto; object-fit: cover; border-radius: 8px;">       
 </div>
 
   
@@ -1638,7 +1566,7 @@ const collapsibles = document.querySelectorAll('.collapsible');
 
 
 
- 
+
   
  
 
