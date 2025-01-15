@@ -161,7 +161,27 @@
 
 
 
-<div class="d-flex flex-wrap gutter-md-spacious" id="story-cards-grid">
+
+
+    
+
+<button id="show-all" class="rounded-pill Button--secondary Button--medium Button color-bg-subtle color-border-subtle box-shadow-none" onclick="toggleTab('all')">
+    <span class="Button-content">
+        <span class="Button-label">All</span>
+    </span>
+</button>
+
+<button id="show-tech" class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" onclick="toggleTab('tech')">
+    <span class="Button-content">
+        <span class="Button-label">Tech / Data</span>
+    </span>
+</button>
+
+<button id="show-finance" class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" onclick="toggleTab('finance')">
+    <span class="Button-content">
+        <span class="Button-label">Finance / Business</span>
+    </span>
+</button>
 
 
 <!-- ================================================== -->
@@ -172,11 +192,14 @@
 
 
 
+<div class="d-flex flex-wrap gutter-md-spacious" id="story-cards-grid">
+
+
 
 
 <!-- TECH - VALUE AT RISK US STOCK  -->
 
-          <div  class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+          <div id="finance" class="py-2 py-sm-4 mb-4 col-md-4"><a href="
 projects\TECH_var_us_stocks\risk_us_stocks.html
           " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\TECH_var_us_stocks\risk_us_stocks.html
@@ -202,7 +225,7 @@ Read here
 
 <!-- TECH - LOAN KNN -->
 
-          <div  class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+          <div id="tech" class="py-2 py-sm-4 mb-4 col-md-4"><a href="
 projects\TECH_loan_knn\loan.html
           " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\TECH_loan_knn\loan.html
@@ -220,6 +243,70 @@ projects\TECH_loan_knn\loan.html
             " class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
 Read here
             <svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
+
+
+
+
+
+
+
+
+<script>
+function toggleTab(tabId) {
+    // Hide all content sections
+    const allSections = document.querySelectorAll('.content-section');
+    allSections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // Show the relevant section based on the tabId ('tech', 'finance', or 'all')
+    if (tabId === 'all') {
+        const allCards = document.querySelectorAll('.d-flex .col-md-4');
+        allCards.forEach(card => {
+            card.style.display = 'block'; // Show all cards
+        });
+    } else {
+        const selectedCards = document.querySelectorAll(`#${tabId} .col-md-4`);
+        selectedCards.forEach(card => {
+            card.style.display = 'block'; // Show only selected category cards
+        });
+    }
+}
+
+// Optionally, display the "All" section by default on page load
+document.addEventListener('DOMContentLoaded', () => {
+    toggleTab('all'); // Default visible section (can be changed to tech or finance)
+});
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
