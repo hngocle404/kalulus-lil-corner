@@ -7,7 +7,17 @@ body {
   height: 100vh; 
 }
 
+:root {
+  --gradient-start: #b43072;
+  --gradient-end: #ee5c39;
+  --font-monospace: 'JetBrains Mono', monospace;
+  --font-size-monospace: 14px;
+}
 
+.monospace {
+  font-family: var(--font-monospace);
+  font-size: var(--font-size-monospace);
+    } 
 
 :root {
   --h00-size-mobile:2.5rem;
