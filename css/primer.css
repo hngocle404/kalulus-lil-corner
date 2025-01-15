@@ -9,7 +9,7 @@ body {
   transform-origin: top left;
   width: 133.33%;
   height: 100%;
-  overflow: visible;
+  overflow: scroll;
 }
 
 
