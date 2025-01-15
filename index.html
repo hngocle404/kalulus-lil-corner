@@ -2,12 +2,13 @@
 <html lang="en" data-color-mode="light" data-light-theme="light" data-a11y-animated-images="system" data-a11y-link-underlines="true">
 
 <head>
+  
   <meta charset="utf-8">
   <title>Kelly's portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <meta name="description" content="Hi there kind stranger!">
   <meta property="og:title" content="Welcome to Kelly's website!">
-  <meta property="og:description" content="Explore Kelly's projects, stories, and more.">
+  <meta property="og:description" content="Good morning, good evening, and good night!">
   <meta property="og:image" content="assets/linkphoto.png">
   <meta property="og:url" content="https://hngocle404.github.io/portfolio/">
   <meta property="og:type" content="website">
@@ -19,7 +20,7 @@
   <link rel="stylesheet" href="css/primer.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/stories.css">
-  <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-react.9fa170e9435ed4b922b9.module.css" />
+  <!-- <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-react.9fa170e9435ed4b922b9.module.css" /> -->
   <style>
     :root {
       --gradient-start: #b43072;
@@ -31,8 +32,17 @@
     .monospace {
       font-family: var(--font-monospace);
       font-size: var(--font-size-monospace);
+    } 
+    #footer-placeholder {
+        margin: 0px !important;
+        width: 100%;
+        bottom: 0;
     }
+
+
+    
   </style>
+
 </head>
 
 <body class="page-responsive f4" style="word-wrap: break-word;">
@@ -113,80 +123,86 @@
     </style>
 
     
-
-
- <button id="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-button" popovertarget="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-overlay" 
-  aria-haspopup="true"  aria-controls="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-list" 
-  type="button" data-view-component="true" 
-  class="rounded-pill Button--secondary Button--medium Button color-bg-subtle color-border-subtle box-shadow-none" 
-  onclick="window.location.href='index.html'">  
-  <span class="Button-content">
-    <span class="Button-label">All</span>
-  </span>
-    </button>
-
-
-    
- <button id="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-button" popovertarget="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-overlay" 
-      aria-haspopup="true"  aria-controls="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-list" 
-      type="button" data-view-component="true" 
-      class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" 
-      onclick="window.location.href='index_tech.html'">  
-      <span class="Button-content">
-        <span class="Button-label">Tech / Data</span>
-      </span>
-    </button>
-
-
-    <button id="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-button" popovertarget="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-overlay" 
-      aria-haspopup="true"  aria-controls="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-list" 
-      type="button" data-view-component="true" 
-      class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" 
-      onclick="window.location.href='index_business.html'" style="background-color: #e6e6e6;">  
-      <span class="Button-content">
-        <span class="Button-label">Finance / Business</span>
-      </span>
-    </button>
-   
-   
-   <button id="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-button" popovertarget="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-overlay" 
-      aria-haspopup="true"  aria-controls="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-list" 
-      type="button" data-view-component="true" 
-      class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" 
-      onclick="window.location.href='index_other.html'">  
-      <span class="Button-content">
-        <span class="Button-label">Other</span>
-      </span>
-    </button>
-
-
-
-
-
-    
-
-<button id="show-all" class="rounded-pill Button--secondary Button--medium Button color-bg-subtle color-border-subtle box-shadow-none" onclick="toggleTab('all')">
+<!-- Filter Buttons -->
+<button id="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-button" 
+    popovertarget="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-overlay" 
+    aria-haspopup="true" 
+    aria-controls="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-list" 
+    type="button" 
+    data-view-component="true" 
+    class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" 
+    onclick="toggleTab('all')"
+    style="background-color: #e6e6e6;">
     <span class="Button-content">
         <span class="Button-label">All</span>
     </span>
 </button>
 
-<button id="show-tech" class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" onclick="toggleTab('tech')">
+<button id="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-button" 
+    popovertarget="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-overlay" 
+    aria-haspopup="true" 
+    aria-controls="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-list" 
+    type="button" 
+    data-view-component="true" 
+    class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" 
+    onclick="toggleTab('tech')">
     <span class="Button-content">
-        <span class="Button-label">Tech / Data</span>
+        <span class="Button-label">Tech</span>
     </span>
 </button>
 
-<button id="show-finance" class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" onclick="toggleTab('finance')">
+<button id="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-button" 
+    popovertarget="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-overlay" 
+    aria-haspopup="true" 
+    aria-controls="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-list" 
+    type="button" 
+    data-view-component="true" 
+    class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" 
+    onclick="toggleTab('finance')">
     <span class="Button-content">
-        <span class="Button-label">Finance / Business</span>
+        <span class="Button-label">Finance</span>
+    </span>
+</button>
+
+<button id="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-button" 
+    popovertarget="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-overlay" 
+    aria-haspopup="true" 
+    aria-controls="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-list" 
+    type="button" 
+    data-view-component="true" 
+    class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" 
+    onclick="toggleTab('business')">
+    <span class="Button-content">
+        <span class="Button-label">Business</span>
     </span>
 </button>
 
 
-<!-- ================================================== -->
+<button id="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-button" 
+    popovertarget="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-overlay" 
+    aria-haspopup="true" 
+    aria-controls="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-list" 
+    type="button" 
+    data-view-component="true" 
+    class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" 
+    onclick="toggleTab('humanities')">
+    <span class="Button-content">
+        <span class="Button-label">Humanities</span>
+    </span>
+</button>
 
-
+<button id="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-button" 
+    popovertarget="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-overlay" 
+    aria-haspopup="true" 
+    aria-controls="action-menu-d1bae7b4-be74-400f-bf3c-3160e77948f1-list" 
+    type="button" 
+    data-view-component="true" 
+    class="rounded-pill Button--secondary Button--medium Button color-bg-default color-border-subtle box-shadow-none" 
+    onclick="toggleTab('other')">
+    <span class="Button-content">
+        <span class="Button-label">Other</span>
+    </span>
+</button>
 
 
 
@@ -197,113 +213,58 @@
 
 
 
+
 <!-- TECH - VALUE AT RISK US STOCK  -->
 
-          <div id="finance" class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+<div class="card-item tech finance 
+py-2 py-sm-4 mb-4 col-md-4">
+<a href="
 projects\TECH_var_us_stocks\risk_us_stocks.html
-          " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
+" class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\TECH_var_us_stocks\risk_us_stocks.html
-          " class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
+" class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
 projects\TECH_var_us_stocks\cover.jpg
-          " /></picture></div></div><h3  href="
+" /></picture></div></div><h3  href="
 projects\TECH_var_us_stocks\risk_us_stocks.html
-          " class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
+" class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
 Python for Finance
-            </h3><p  href="
+</h3><p  href="
 projects\TECH_var_us_stocks\risk_us_stocks.html
-            " class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
+" class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
 Stock analysis and Value-at-Risk estimation for major US tech companies
-            </p><p href="
+</p><p href="
 projects\TECH_var_us_stocks\risk_us_stocks.html
-            " class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
+" class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
 Read here
-            <svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
+<svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
 
 
           
             
 
+
 <!-- TECH - LOAN KNN -->
 
-          <div id="tech" class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+<div class="card-item tech finance 
+py-2 py-sm-4 mb-4 col-md-4">
+<a href="
 projects\TECH_loan_knn\loan.html
-          " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
+" class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\TECH_loan_knn\loan.html
-          " class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
+" class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
 projects\TECH_loan_knn\cover.jpg
-          " /></picture></div></div><h3  href="
+" /></picture></div></div><h3  href="
 projects\TECH_loan_knn\loan.html
-          " class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
+" class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
 Machine learning            </h3><p  href="
 projects\TECH_loan_knn\loan.html
-            " class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
+" class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
 Loan approval prediction using k-Nearest-Neighbour model built from scratch
-            </p><p href="
+</p><p href="
 projects\TECH_loan_knn\loan.html
-            " class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
+" class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
 Read here
-            <svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
-
-
-
-
-
-
-
-
-<script>
-function toggleTab(tabId) {
-    // Hide all content sections
-    const allSections = document.querySelectorAll('.content-section');
-    allSections.forEach(section => {
-        section.style.display = 'none';
-    });
-
-    // Show the relevant section based on the tabId ('tech', 'finance', or 'all')
-    if (tabId === 'all') {
-        const allCards = document.querySelectorAll('.d-flex .col-md-4');
-        allCards.forEach(card => {
-            card.style.display = 'block'; // Show all cards
-        });
-    } else {
-        const selectedCards = document.querySelectorAll(`#${tabId} .col-md-4`);
-        selectedCards.forEach(card => {
-            card.style.display = 'block'; // Show only selected category cards
-        });
-    }
-}
-
-// Optionally, display the "All" section by default on page load
-document.addEventListener('DOMContentLoaded', () => {
-    toggleTab('all'); // Default visible section (can be changed to tech or finance)
-});
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
 
 
 
@@ -312,46 +273,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- BUSINESS - HAGL STOCK VALUATION  -->
 
-          <div  class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+<div class="card-item finance
+py-2 py-sm-4 mb-4 col-md-4"><a href="
 projects\BUS_hagl\hagl_valuation.html
-          " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
+" class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\BUS_hagl\hagl_valuation.html
-          " class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
+" class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
 projects\BUS_hagl\cover.jpg
-          " /></picture></div></div><h3  href="
+" /></picture></div></div><h3  href="
 projects\BUS_hagl\hagl_valuation.html
-          " class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
+" class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
 Stock valuation            </h3><p  href="
 projects\BUS_hagl\hagl_valuation.html
-            " class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
+" class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
 Business model analysis and valuation of publicly traded stock: Hoang Anh Gia Lai
-            </p><p href="
+</p><p href="
 projects\BUS_hagl\hagl_valuation.html
-            " class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
+" class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
 Read here
-            <svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
+<svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
 
 
 
 
 <!-- BUSINESS - KEGMIL PROPOSAL  -->
-          <div  class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+<div class="card-item business 
+py-2 py-sm-4 mb-4 col-md-4"><a href="
 projects\BUS_kegmil\kegmil.html
-          " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
+" class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\BUS_kegmil\kegmil.html
-          " class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
+" class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
 projects\BUS_kegmil\cover.jpg
-          " /></picture></div></div><h3  href="
+" /></picture></div></div><h3  href="
 projects\BUS_kegmil\kegmil.html
-          " class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
+" class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
 Product owner            </h3><p  href="
 projects\BUS_kegmil\kegmil.html
-            " class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
+" class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
 Proposal for enhancing user engagement for event-registration app            </p><p href="
 projects\BUS_kegmil\kegmil.html
-            " class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
+" class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
 Read here
-            <svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
+<svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
 
 
 
@@ -359,88 +322,84 @@ Read here
             
 <!-- BUSINESS - BCG MARKET RESEARCH   -->
 
-          <div  class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+<div class="card-item business py-2 py-sm-4 mb-4 col-md-4"><a href="
 projects\BUS_bcg_cta\bcg_cta.html
-          " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
+" class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\BUS_bcg_cta\bcg_cta.html
-          " class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
+" class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
 projects\BUS_bcg_cta\cover.jpg
-          " /></picture></div></div><h3  href="
+" /></picture></div></div><h3  href="
 projects\BUS_bcg_cta\bcg_cta.html
-          " class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
+" class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
 BCG case interview
-            </h3><p  href="
+</h3><p  href="
 projects\BUS_bcg_cta\bcg_cta.html
-            " class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
+" class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
 Vietnam’s economic outlook for 2024 and opportunities for the consumer sector presentation
-            </p><p href="
+</p><p href="
 projects\BUS_bcg_cta\bcg_cta.html
-            " class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
+" class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
 Read here
-            <svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
+<svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
 
 
-
-
-
-
-
-            
 
 
 
 <!-- BUSINESS - YOLA MARKET RESEARCH -->
 
- <div  class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+<div class="card-item business py-2 py-sm-4 mb-4 col-md-4"><a href="
 projects\BUS_yola\yola.html
-          " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
+" class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\BUS_yola\yola.html
-          " class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
+" class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
 projects\BUS_yola\cover.jpg
 
 " /></picture></div></div><h3  href="
 projects\BUS_yola\yola.html
-          " class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
+" class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
 Market research
-            </h3><p  href="
+</h3><p  href="
 projects\BUS_yola\yola.html
-            " class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
+" class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
 YOLA English competitor analysis report            </p><p href="
 projects\BUS_yola\yola.html
-            " class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
+" class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
 Read here
-            <svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
+<svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
 
 
 
-            
+
 
 <!-- SOCIOLOGY - ECHO CHAMBERS -->
-          <div  class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+<div class="card-item humanities 
+py-2 py-sm-4 mb-4 col-md-4"><a href="
 projects\OTHER_echo_chambers\echo_chambers.html
-          " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
+" class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\OTHER_echo_chambers\echo_chambers.html
-          " class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
+" class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
 projects\OTHER_echo_chambers\cover.jpg
-          " /></picture></div></div><h3  href="
+" /></picture></div></div><h3  href="
 projects\OTHER_echo_chambers\echo_chambers.html
-          " class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
+" class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
 Sociology
-            </h3><p  href="
+</h3><p  href="
 projects\OTHER_echo_chambers\echo_chambers.html
-            " class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
+" class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
 Echo chambers and political polarisation - a brief literature review
-            </p><p href="
+</p><p href="
 projects\OTHER_echo_chambers\echo_chambers.html
-            " class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
+" class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
 Read here
-            <svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
+<svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
 
-            
+
+
 
 <!-- DESIGN - LEE'S COFFEE -->
-
-          <div  class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+ <div class="card-item other 
+py-2 py-sm-4 mb-4 col-md-4"><a href="
 projects\MUSIC_AND_DESIGN\coffee.html
           " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\MUSIC_AND_DESIGN\coffee.html
@@ -462,59 +421,52 @@ Read here
 
 
 
-
-
 <!-- DESIGN - ROLL N ROLL -->
-          <div  class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+  <div class="card-item other 
+py-2 py-sm-4 mb-4 col-md-4"><a href="
 projects\MUSIC_AND_DESIGN\rnr.html
-          " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
+" class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\MUSIC_AND_DESIGN\rnr.html
-          " class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
+" class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
 projects\MUSIC_AND_DESIGN\cover_rnr.jpg
 
 " /></picture></div></div><h3  href="
 projects\MUSIC_AND_DESIGN\rnr.html
-          " class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
+" class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
 Design
-            </h3><p  href="
+</h3><p  href="
 projects\MUSIC_AND_DESIGN\rnr.html
-            " class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
+" class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
 Snack pouch design for LND Foods (HCMC, VN)            </p><p href="
 projects\MUSIC_AND_DESIGN\rnr.html
-            " class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
+" class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
 Read here
-            <svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
+<svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
 
 
 
 
-
-
-
-
-
-            
 
 <!-- MULTIMEDIA - JE TE LAISSERAI DES MOTS -->
-
-          <div  class="py-2 py-sm-4 mb-4 col-md-4"><a href="
+<div class="card-item other 
+py-2 py-sm-4 mb-4 col-md-4"><a href="
 projects\MUSIC_AND_DESIGN\piano_je_te.html
-          " class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
+" class="no-underline d-block rounded-1 Link--outlineOffset"><div class="mb-4 position-relative"><div style="height: 268px"><picture><img href="
 projects\MUSIC_AND_DESIGN\piano_je_te.html
-          " class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
+" class="d-block width-full height-full object-fit-cover rounded-2" width="1200" height="1400" loading="lazy" decoding="async" alt="" src="
 projects\MUSIC_AND_DESIGN\cover_jete.jpg
-          " /></picture></div></div><h3  href="
+" /></picture></div></div><h3  href="
 projects\MUSIC_AND_DESIGN\piano_je_te.html
-          " class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
+" class="f4-mktg color-fg-muted pb-2" aria-hidden="true">
 Music
-            </h3><p  href="
+</h3><p  href="
 projects\MUSIC_AND_DESIGN\piano_je_te.html
-            " class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
+" class="h6-mktg color-fg-default py-1 pb-sm-2 text-semibold" aria-hidden="true">
 Je te laisserai des mots - piano cover            </p><p href="
 projects\MUSIC_AND_DESIGN\piano_je_te.html
-            " class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
+" class="f4 d-block d-sm-inline no-underline text-semibold arrow-target-mktg color-fg-accent" aria-hidden="true">
 Read here
-            <svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
+<svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg octicon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></p></a></div>
 
 
 
@@ -527,24 +479,63 @@ Read here
 
 
 
-
-  </div>
-
-  </div>
-</div>
 </div>
 
-  </main>
+</div>
+</div>
+</div>
+
+</main>
 
 
 
-
-
-
-
+ 
 
 
 <!-- ======================================================================================== -->
+
+<script>
+function toggleTab(tabId) {
+    const allItems = document.querySelectorAll('.card-item');
+    
+    allItems.forEach(item => {
+        item.style.display = 'none';
+    });
+    
+    if (tabId === 'all') {
+        allItems.forEach(item => {
+            item.style.display = 'block';
+        });
+    } else {
+        const selectedItems = document.querySelectorAll(`.${tabId}`);
+        selectedItems.forEach(item => {
+            item.style.display = 'block';
+        });
+    }
+    const allButtons = document.querySelectorAll('[data-view-component="true"]');
+    allButtons.forEach(button => {
+        button.classList.remove('color-bg-subtle');
+        button.classList.add('color-bg-default');
+        button.style.backgroundColor = '';
+    });
+    const activeButton = document.querySelector(`[onclick="toggleTab('${tabId}')"]`);
+    if (activeButton) {
+        activeButton.classList.remove('color-bg-default');
+        activeButton.classList.add('color-bg-subtle');
+        activeButton.style.backgroundColor = '#e6e6e6';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    toggleTab('all');
+});
+</script>
+
+
+<!-- ======================================================================================== -->
+
+
+
 <div id="footer-placeholder"></div>
 <script>
   fetch('https://hngocle404.github.io/portfolio/partials/footer.html')
@@ -553,3 +544,7 @@ Read here
       document.getElementById('footer-placeholder').innerHTML = data;
     });
 </script>
+
+
+</body>
+</html>
