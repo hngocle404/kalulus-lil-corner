@@ -1,4 +1,5 @@
-/* CSS Layer definitions */
+/* <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-primitives-4cf0d59ab51a.css"> */
+
 @layer primer-css-base, primer-react, recipes;
 
 :root {
