@@ -1,16 +1,12 @@
 /* <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-0a1f715ee9fb.css"> */
-/* body {
+body {
   transform: scale(0.75);
   transform-origin: top left;
-  width: 133.33%;  } */
-
-body {
-  transform: scale(0.8);
-  transform-origin: top left;
   width: 133.33%;
-  height: 100%;
-  overflow: scroll;
+  margin: 0;
+  height: 100vh; 
 }
+
 
 
 :root {
