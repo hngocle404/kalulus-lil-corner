@@ -614,3 +614,10 @@ table {
   border-radius: 3px !important;
   padding: 0px 4px 2.5px 4px !important;  
 }
+
+.markdown-body pre span.highlight,
+.markdown-body code span.highlight {
+  background-color: inherit !important;
+  border-radius: inherit !important;
+  padding: inherit !important;
+}
