@@ -1,52 +1,77 @@
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
 const app = express();
-const port = 4040;
+const port = 3000;
 
-app.use(express.static(path.join(__dirname))); // Serve static files
+const portfolioDir = path.join(__dirname, 'portfolio');
 
-// Endpoint to get contents of markdown files
-app.get('/api/contents', (req, res) => {
-    const notesPath = path.join(__dirname, 'notes');
-    const contents = getFilesInDirectory(notesPath);
-    res.json(contents);
+// Serve everything in the 'portfolio' folder
+app.use(express.static(portfolioDir));
+
+// Serve the notes.html file when accessing the root URL
+app.get('/', (req, res) => {
+    res.sendFile(path.join(portfolioDir, 'index.html'));
 });
 
-// Function to get all markdown files in the directory
-function getFilesInDirectory(dirPath) {
-    const files = fs.readdirSync(dirPath);
-    const fileList = [];
+// Endpoint to get the TOC for the 'public' folder
+app.get('/toc', (req, res) => {
+    const publicDir = path.join(portfolioDir, 'public');
+    const toc = getTOC(publicDir);
+    res.json(toc);
+});
 
-    files.forEach(file => {
-        const fullPath = path.join(dirPath, file);
+
+function getTOC(dir) {
+    let toc = [];
+
+    const items = fs.readdirSync(dir);
+
+    items.forEach(item => {
+        const fullPath = path.join(dir, item);
         const stats = fs.statSync(fullPath);
 
         if (stats.isDirectory()) {
-            const subFiles = getFilesInDirectory(fullPath);
-            subFiles.forEach(subFile => {
-                fileList.push({
-                    name: subFile.name,
-                    path: path.join(file, subFile.name)
-                });
+            let folder = {
+                name: item,
+                files: [],
+                subfolders: []
+            };
+
+            // Get markdown files directly in this folder
+            const files = fs.readdirSync(fullPath);
+            files.forEach(file => {
+                const filePath = path.join(fullPath, file);
+                if (fs.statSync(filePath).isFile() && file.endsWith('.md')) {
+                    folder.files.push(file);
+                }
             });
-        } else if (stats.isFile() && file.endsWith('.md')) {
-            fileList.push({
-                name: file,
-                path: path.relative(dirPath, fullPath)
+
+            // Don't allow nesting beyond the first level (limit to subfolders)
+            const subItems = fs.readdirSync(fullPath);
+            subItems.forEach(subItem => {
+                const subFullPath = path.join(fullPath, subItem);
+                if (fs.statSync(subFullPath).isDirectory()) {
+                    // Do not recursively add subfolders beyond the first level
+                    folder.subfolders.push({
+                        name: subItem,
+                        files: [],
+                        subfolders: [] // No further nesting allowed
+                    });
+                }
             });
+
+            toc.push(folder); // Add the folder to TOC
+        } else if (item.endsWith('.md')) {
+            toc.push({ name: item }); // Add standalone markdown files
         }
     });
 
-    return fileList;
+    return toc;
 }
 
-// Serve the index.html file
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
 
-// Start the server
+
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
