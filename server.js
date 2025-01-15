@@ -4,7 +4,7 @@ const fs = require('fs');
 const app = express();
 const port = 3000;
 
-const portfolioDir = path.join(__dirname, 'portfolio');
+const portfolioDir = path.join(__dirname);
 
 // Serve everything in the 'portfolio' folder
 app.use(express.static(portfolioDir));

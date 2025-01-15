@@ -20,9 +20,25 @@
   <link rel="stylesheet" href="css/primer.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/stories.css">
+  <link rel="stylesheet" href="css/markdown.css">
+    <link rel="stylesheet" href="D:\github\portfolio\css\markdown.css">
+
+ 
+
   <!-- <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-react.9fa170e9435ed4b922b9.module.css" /> -->
 
+
+
 </head>
+
+
+
+
+
+
+
+
+
 
 <body class="page-responsive f4" style="word-wrap: break-word;">
   <div data-turbo-body class="page-responsive f4" style="word-wrap: break-word;">
@@ -54,7 +70,6 @@
       </div>
       <!-- ==================================================================================== -->
 
- 
 
 
 
@@ -293,7 +308,7 @@
 
 
 
- 
+
 
 
 
@@ -306,20 +321,14 @@
   </main> 
 
 
-
-<!-- ======================================================================================== -->
-
-
-
-<div id="footer-placeholder"></div>
-<script>
-  fetch('https://hngocle404.github.io/portfolio/partials/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-</script>
-
-
+  <!-- Footer Placeholder Script -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('https://hngocle404.github.io/portfolio/partials/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
