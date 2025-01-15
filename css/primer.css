@@ -5,11 +5,11 @@
   width: 133.33%;  } */
 
 body {
-  transform: scale(0.75);
+  transform: scale(0.8);
   transform-origin: top left;
   width: 133.33%;
   height: 100%;
-  /* overflow: hidden; */
+  overflow: visible;
 }
 
 
