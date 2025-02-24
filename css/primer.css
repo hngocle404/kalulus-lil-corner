@@ -1,11 +1,12 @@
 /* <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-0a1f715ee9fb.css"> */
 body {
-  transform: scale(0.75);
+  transform: scale(0.80);  /* Change scale factor */
   transform-origin: top left;
-  width: 133.33%;
+  width: calc(100% / 0.80);  /* Automatically adjust width */
+  height: calc(100vh / 0.80);  /* Adjust height if needed */
   margin: 0;
-  height: 100vh; 
 }
+
 
 :root {
   --gradient-start: #b43072;

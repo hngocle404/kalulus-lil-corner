@@ -1,16 +1,9 @@
 /* <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/site-ae5a61253375.css">  */
 
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Inter+Tight:wght@200;400;600;700;800;900&family=Inclusive+Sans:wght@200;400;600;700;800;900&family=Roboto:wght@200;400;600;700;800;900&display=swap');
-
-
-@font-face {
-  font-family: 'Inter';
-  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;800;900&display=swap') format('woff2');
-  font-display: swap;
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
 }
-
-
 
 
 [data-color-mode=light][data-light-theme*=dark],[data-color-mode=dark][data-dark-theme*=dark] {
