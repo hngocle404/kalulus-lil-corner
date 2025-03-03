@@ -1,0 +1,3208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="stylesheet" href="../../css/primer.css"> <!-- ZOOOOOOOOOOOOOM -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
+  <meta charset="utf-8">
+  <title>SQL project</title>
+  <style>
+    html {
+      line-height: 1.2;
+      font-family: Inter, sans-serif;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+
+    @media (max-width: 800px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+
+
+
+      h1 {
+        margin-top: 30px;
+        font-size: 40px !important;
+        line-height: 44px !important;
+        font-weight: 800 !important;
+      }
+    }
+
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+
+      p,
+      h2,
+      h3 {
+        orphans: 3;
+        widows: 3;
+      }
+
+      h2 {
+        color: #750000 !important;
+      }
+
+      h2,
+      h3,
+      h4 {
+        page-break-after: avoid;
+      }
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a,
+    a:visited {
+      color: #1a1a1a;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.4em;
+    }
+
+    h5,
+    h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+
+    h6 {
+      font-weight: normal;
+    }
+
+    ol,
+    ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+
+    li>ol,
+    li>ul {
+      margin-top: 0;
+    }
+
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+
+    #TOC li {
+      list-style: none;
+    }
+
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+
+    #TOC>ul {
+      padding-left: 0;
+    }
+
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+
+
+
+
+
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      /* Enable horizontal scrolling for the whole table */
+      margin-bottom: 1em;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+      border: 1px solid #d3d3d3;
+      border-radius: 5px;
+      table-layout: auto;
+      padding: 3px;
+      /* Changed back to auto layout */
+    }
+
+    th,
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+      white-space: nowrap;
+      /* Keep this to prevent text wrapping */
+      overflow: visible;
+      /* Allow content to be visible outside cell boundaries */
+    }
+
+    /* For responsive tables on small screens */
+    @media screen and (max-width: 600px) {
+      .table-container {
+        max-width: 100%;
+      }
+    }
+
+    /* Code Blocks */
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+
+    pre code {
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+      overflow: visible;
+      display: block;
+    }
+
+    /* Inline code */
+    code {
+      background: #f4f4f4;
+      border-radius: 3px;
+      white-space: nowrap;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 1px 3px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    div.columns {
+      display: flex;
+      gap: min(4vw, 1.5em);
+    }
+
+    div.column {
+      flex: auto;
+      overflow-x: auto;
+    }
+
+    div.hanging-indent {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    ul.task-list {
+      list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+
+    pre>code.sourceCode {
+      white-space: pre;
+      position: relative;
+    }
+
+    pre>code.sourceCode>span {
+      display: inline-block;
+      line-height: 1.25;
+    }
+
+    pre>code.sourceCode>span:empty {
+      height: 1.2em;
+    }
+
+    .sourceCode {
+      overflow: visible;
+    }
+
+    code.sourceCode>span {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    div.sourceCode {
+      margin: 1em 0;
+    }
+
+    pre.sourceCode {
+      margin: 0;
+    }
+
+    @media screen {
+      div.sourceCode {
+        overflow: auto;
+      }
+    }
+
+    @media print {
+      pre>code.sourceCode {
+        white-space: pre-wrap;
+      }
+
+      pre>code.sourceCode>span {
+        text-indent: -5em;
+        padding-left: 5em;
+      }
+    }
+
+    pre.numberSource code {
+      counter-reset: source-line 0;
+    }
+
+    pre.numberSource code>span {
+      position: relative;
+      left: -4em;
+      counter-increment: source-line;
+    }
+
+    pre.numberSource code>span>a:first-child::before {
+      content: counter(source-line);
+      position: relative;
+      left: -1em;
+      text-align: right;
+      vertical-align: baseline;
+      border: none;
+      display: inline-block;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 0 4px;
+      width: 4em;
+      color: #aaaaaa;
+    }
+
+    pre.numberSource {
+      margin-left: 3em;
+      border-left: 1px solid #aaaaaa;
+      padding-left: 4px;
+    }
+
+    div.sourceCode {}
+
+    @media screen {
+      pre>code.sourceCode>span>a:first-child::before {
+        text-decoration: underline;
+      }
+    }
+
+    code span.al {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    /* Alert */
+    code span.an {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Annotation */
+    code span.at {
+      color: #7d9029;
+    }
+
+    /* Attribute */
+    code span.bn {
+      color: #40a070;
+    }
+
+    /* BaseN */
+    code span.bu {
+      color: #008000;
+    }
+
+    /* BuiltIn */
+    code span.cf {
+      color: #007020;
+      font-weight: bold;
+    }
+
+    /* ControlFlow */
+    code span.ch {
+      color: #4070a0;
+    }
+
+    /* Char */
+    code span.cn {
+      color: #880000;
+    }
+
+    /* Constant */
+    code span.co {
+      color: #60a0b0;
+      font-style: italic;
+    }
+
+    /* Comment */
+    code span.cv {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* CommentVar */
+    code span.do {
+      color: #ba2121;
+      font-style: italic;
+    }
+
+    /* Documentation */
+    code span.dt {
+      color: #902000;
+    }
+
+    /* DataType */
+    code span.dv {
+      color: #40a070;
+    }
+
+    /* DecVal */
+    code span.er {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    /* Error */
+    code span.ex {}
+
+    /* Extension */
+    code span.fl {
+      color: #40a070;
+    }
+
+    /* Float */
+    code span.fu {
+      color: #06287e;
+    }
+
+    /* Function */
+    code span.im {
+      color: #008000;
+      font-weight: bold;
+    }
+
+    /* Import */
+    code span.in {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Information */
+    code span.kw {
+      color: #007020;
+      font-weight: bold;
+    }
+
+    /* Keyword */
+    code span.op {
+      color: #666666;
+    }
+
+    /* Operator */
+    code span.ot {
+      color: #007020;
+    }
+
+    /* Other */
+    code span.pp {
+      color: #bc7a00;
+    }
+
+    /* Preprocessor */
+    code span.sc {
+      color: #4070a0;
+    }
+
+    /* SpecialChar */
+    code span.ss {
+      color: #bb6688;
+    }
+
+    /* SpecialString */
+    code span.st {
+      color: #4070a0;
+    }
+
+    /* String */
+    code span.va {
+      color: #19177c;
+    }
+
+    /* Variable */
+    code span.vs {
+      color: #4070a0;
+    }
+
+    /* VerbatimString */
+    code span.wa {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Warning */
+    .display.math {
+      display: block;
+      text-align: center;
+      margin: 0.5rem auto;
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <section id="project-1-sql" class="cell markdown">
+    <h1>Project 1. SQL</h1>
+    <p><a href="https://cs186.gitbook.io/project/assignments/proj1/your-tasks"
+        class="uri">https://cs186.gitbook.io/project/assignments/proj1/your-tasks</a>
+    </p>
+    <p>Date: 2 Mar 2025</p>
+  </section>
+  <div class="cell markdown">
+    <p>In this project we will be working with the commonly-used Lahman
+      baseball statistics database. The database contains pitching, hitting,
+      and fielding statistics for Major League Baseball from 1871 through
+      2019. It includes data from the two current leagues (American and
+      National), four other "major" leagues (American Association, Union
+      Association, Players League, and Federal League), and the National
+      Association of 1871-1875.</p>
+  </div>
+  <section id="0-connecting-to-postgresql-server--data-loading"
+    class="cell markdown">
+    <h2>0. Connecting to PostgreSQL server &amp; data loading</h2>
+  </section>
+  <div class="cell code" data-execution_count="117">
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sqlalchemy <span class="im">import</span> create_engine, text</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>DB_USER <span class="op">=</span> <span class="st">&quot;postgres&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>DB_PASS <span class="op">=</span> <span class="st">&quot;221216&quot;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>DB_HOST <span class="op">=</span> <span class="st">&quot;localhost&quot;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>DB_PORT <span class="op">=</span> <span class="st">&quot;5432&quot;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>DB_NAME <span class="op">=</span> <span class="st">&quot;lahman_baseball&quot;</span></span></code></pre>
+    </div>
+  </div>
+  <div class="cell code" data-execution_count="87">
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>engine <span class="op">=</span> create_engine(<span class="ss">f&quot;postgresql://</span><span class="sc">{</span>DB_USER<span class="sc">}</span><span class="ss">:</span><span class="sc">{</span>DB_PASS<span class="sc">}</span><span class="ss">@</span><span class="sc">{</span>DB_HOST<span class="sc">}</span><span class="ss">:</span><span class="sc">{</span>DB_PORT<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>DB_NAME<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>folder_path <span class="op">=</span> <span class="vs">r&quot;..\RESOURCES\Lahman_baseball_statistics_database\lahman_1871-2023_csv&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>csv_files <span class="op">=</span> [f <span class="cf">for</span> f <span class="kw">in</span> os.listdir(folder_path) <span class="cf">if</span> f.endswith(<span class="st">&quot;.csv&quot;</span>)]</span></code></pre>
+    </div>
+  </div>
+  <div class="cell code" data-execution_count="118">
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> execute(query):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.read_sql(text(query), engine)</span></code></pre>
+    </div>
+  </div>
+  <div class="cell code" data-execution_count="89">
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>existing_tables <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT table_name FROM information_schema.tables </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE table_schema = &#39;public&#39;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)[<span class="st">&quot;table_name&quot;</span>].tolist()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> csv_files:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    table_name <span class="op">=</span> <span class="bu">file</span>.replace(<span class="st">&quot;.csv&quot;</span>, <span class="st">&quot;&quot;</span>).lower()</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> table_name <span class="kw">in</span> existing_tables:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    file_path <span class="op">=</span> os.path.join(folder_path, <span class="bu">file</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        df <span class="op">=</span> pd.read_csv(file_path, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>, encoding_errors<span class="op">=</span><span class="st">&quot;ignore&quot;</span>, </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                         on_bad_lines<span class="op">=</span><span class="st">&quot;skip&quot;</span>)  </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.lower() </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Error loading </span><span class="sc">{</span><span class="bu">file</span><span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    df.to_sql(table_name, engine, if_exists<span class="op">=</span><span class="st">&quot;replace&quot;</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> table <span class="kw">in</span> csv_files:</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    table_name <span class="op">=</span> table.replace(<span class="st">&quot;.csv&quot;</span>, <span class="st">&quot;&quot;</span>).lower()</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    col_info <span class="op">=</span> execute(<span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ss">    SELECT column_name, data_type</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ss">    FROM information_schema.columns</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="ss">    WHERE table_name = &#39;</span><span class="sc">{</span>table_name<span class="sc">}</span><span class="ss">&#39;</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="ss">    &quot;&quot;&quot;</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(f&quot;Table: {table_name}&quot;)</span></span></code></pre>
+    </div>
+  </div>
+  <section id="1-data-overview" class="cell markdown">
+    <h2>1. Data overview</h2>
+  </section>
+  <div class="cell markdown">
+    <p>First we would like to have a look at all tables that we loaded onto
+      the server.</p>
+  </div>
+  <div class="cell code" data-execution_count="103">
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT table_name</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM information_schema.tables</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE table_schema=&#39;public&#39;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="st">   AND table_type=&#39;BASE TABLE&#39;;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="103">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>table_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>halloffame</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>homegames</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>managers</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>managershalf</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>parks</td>
+            </tr>
+            <tr>
+              <th>5</th>
+              <td>allstarfull</td>
+            </tr>
+            <tr>
+              <th>6</th>
+              <td>appearances</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td>awardsmanagers</td>
+            </tr>
+            <tr>
+              <th>8</th>
+              <td>awardsplayers</td>
+            </tr>
+            <tr>
+              <th>9</th>
+              <td>awardssharemanagers</td>
+            </tr>
+            <tr>
+              <th>10</th>
+              <td>awardsshareplayers</td>
+            </tr>
+            <tr>
+              <th>11</th>
+              <td>batting</td>
+            </tr>
+            <tr>
+              <th>12</th>
+              <td>battingpost</td>
+            </tr>
+            <tr>
+              <th>13</th>
+              <td>collegeplaying</td>
+            </tr>
+            <tr>
+              <th>14</th>
+              <td>fielding</td>
+            </tr>
+            <tr>
+              <th>15</th>
+              <td>fieldingof</td>
+            </tr>
+            <tr>
+              <th>16</th>
+              <td>fieldingofsplit</td>
+            </tr>
+            <tr>
+              <th>17</th>
+              <td>fieldingpost</td>
+            </tr>
+            <tr>
+              <th>18</th>
+              <td>people</td>
+            </tr>
+            <tr>
+              <th>19</th>
+              <td>pitching</td>
+            </tr>
+            <tr>
+              <th>20</th>
+              <td>pitchingpost</td>
+            </tr>
+            <tr>
+              <th>21</th>
+              <td>salaries</td>
+            </tr>
+            <tr>
+              <th>22</th>
+              <td>schools</td>
+            </tr>
+            <tr>
+              <th>23</th>
+              <td>seriespost</td>
+            </tr>
+            <tr>
+              <th>24</th>
+              <td>teams</td>
+            </tr>
+            <tr>
+              <th>25</th>
+              <td>teamsfranchises</td>
+            </tr>
+            <tr>
+              <th>26</th>
+              <td>teamshalf</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="cell markdown">
+    <p>For the purpose of this project, we are interested in the following
+      main tables:</p>
+    <ol>
+      <li>People - Player names, date of birth (DOB), and biographical
+        info</li>
+      <li>Batting - batting statistics</li>
+      <li>Pitching - pitching statistics</li>
+      <li>Fielding - fielding statistics</li>
+    </ol>
+    <p>For more detailed information, see the <a
+        href="https://www.dropbox.com/scl/fi/9i2nhlskvfkqy7mbuqem7/readme2023.txt?rlkey=odnwx7ujztm0z4ob8dmggfcr0&amp;e=2&amp;dl=0">README
+        file</a>.</p>
+    <p>Now we would like to see the columns in each of the main tables
+      mentioned above:</p>
+  </div>
+  <div class="cell code" data-execution_count="104">
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>table_name <span class="op">=</span> <span class="st">&quot;people&quot;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>people_df <span class="op">=</span> execute(<span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ss">SELECT column_name, data_type</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ss">FROM information_schema.columns</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ss">WHERE table_name = &#39;</span><span class="sc">{</span>table_name<span class="sc">}</span><span class="ss">&#39;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>people_df.T <span class="co"># transposed for the sake of space</span></span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="104">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>0</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>...</th>
+              <th>15</th>
+              <th>16</th>
+              <th>17</th>
+              <th>18</th>
+              <th>19</th>
+              <th>20</th>
+              <th>21</th>
+              <th>22</th>
+              <th>23</th>
+              <th>24</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>column_name</th>
+              <td>deathday</td>
+              <td>weight</td>
+              <td>height</td>
+              <td>birthyear</td>
+              <td>birthmonth</td>
+              <td>birthday</td>
+              <td>deathyear</td>
+              <td>deathmonth</td>
+              <td>id</td>
+              <td>namelast</td>
+              <td>...</td>
+              <td>finalgame</td>
+              <td>retroid</td>
+              <td>playerid</td>
+              <td>birthcity</td>
+              <td>birthcountry</td>
+              <td>birthstate</td>
+              <td>deathcountry</td>
+              <td>deathstate</td>
+              <td>deathcity</td>
+              <td>namefirst</td>
+            </tr>
+            <tr>
+              <th>data_type</th>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>text</td>
+              <td>...</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>2 rows × 25 columns</p>
+      </div>
+    </div>
+  </div>
+  <div class="cell code" data-execution_count="105">
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>table_name <span class="op">=</span> <span class="st">&quot;batting&quot;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>batting_df <span class="op">=</span> execute(<span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ss">SELECT column_name, data_type</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ss">FROM information_schema.columns</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ss">WHERE table_name = &#39;</span><span class="sc">{</span>table_name<span class="sc">}</span><span class="ss">&#39;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>batting_df.T</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="105">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>0</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>...</th>
+              <th>14</th>
+              <th>15</th>
+              <th>16</th>
+              <th>17</th>
+              <th>18</th>
+              <th>19</th>
+              <th>20</th>
+              <th>21</th>
+              <th>22</th>
+              <th>23</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>column_name</th>
+              <td>g_old</td>
+              <td>yearid</td>
+              <td>stint</td>
+              <td>sh</td>
+              <td>sf</td>
+              <td>gidp</td>
+              <td>g</td>
+              <td>g_batting</td>
+              <td>ab</td>
+              <td>r</td>
+              <td>...</td>
+              <td>rbi</td>
+              <td>sb</td>
+              <td>cs</td>
+              <td>bb</td>
+              <td>so</td>
+              <td>ibb</td>
+              <td>hbp</td>
+              <td>teamid</td>
+              <td>lgid</td>
+              <td>playerid</td>
+            </tr>
+            <tr>
+              <th>data_type</th>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>bigint</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>bigint</td>
+              <td>...</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>2 rows × 24 columns</p>
+      </div>
+    </div>
+  </div>
+  <div class="cell code" data-execution_count="106">
+    <div class="sourceCode" id="cb8">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>table_name <span class="op">=</span> <span class="st">&quot;pitching&quot;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>pitching_df <span class="op">=</span> execute(<span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ss">SELECT column_name, data_type</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ss">FROM information_schema.columns</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ss">WHERE table_name = &#39;</span><span class="sc">{</span>table_name<span class="sc">}</span><span class="ss">&#39;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>pitching_df.T</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="106">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>0</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>...</th>
+              <th>20</th>
+              <th>21</th>
+              <th>22</th>
+              <th>23</th>
+              <th>24</th>
+              <th>25</th>
+              <th>26</th>
+              <th>27</th>
+              <th>28</th>
+              <th>29</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>column_name</th>
+              <td>gidp</td>
+              <td>yearid</td>
+              <td>stint</td>
+              <td>r</td>
+              <td>sh</td>
+              <td>sf</td>
+              <td>w</td>
+              <td>l</td>
+              <td>g</td>
+              <td>gs</td>
+              <td>...</td>
+              <td>era</td>
+              <td>ibb</td>
+              <td>wp</td>
+              <td>hbp</td>
+              <td>bk</td>
+              <td>bfp</td>
+              <td>gf</td>
+              <td>teamid</td>
+              <td>lgid</td>
+              <td>playerid</td>
+            </tr>
+            <tr>
+              <th>data_type</th>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>bigint</td>
+              <td>bigint</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>bigint</td>
+              <td>bigint</td>
+              <td>bigint</td>
+              <td>...</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>2 rows × 30 columns</p>
+      </div>
+    </div>
+  </div>
+  <div class="cell code" data-execution_count="107">
+    <div class="sourceCode" id="cb9">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>table_name <span class="op">=</span> <span class="st">&quot;fielding&quot;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fielding_df <span class="op">=</span> execute(<span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ss">SELECT column_name, data_type</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ss">FROM information_schema.columns</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ss">WHERE table_name = &#39;</span><span class="sc">{</span>table_name<span class="sc">}</span><span class="ss">&#39;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>fielding_df.T</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="107">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>0</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>10</th>
+              <th>11</th>
+              <th>12</th>
+              <th>13</th>
+              <th>14</th>
+              <th>15</th>
+              <th>16</th>
+              <th>17</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>column_name</th>
+              <td>zr</td>
+              <td>yearid</td>
+              <td>stint</td>
+              <td>pb</td>
+              <td>wp</td>
+              <td>sb</td>
+              <td>cs</td>
+              <td>g</td>
+              <td>gs</td>
+              <td>innouts</td>
+              <td>po</td>
+              <td>a</td>
+              <td>e</td>
+              <td>dp</td>
+              <td>teamid</td>
+              <td>lgid</td>
+              <td>pos</td>
+              <td>playerid</td>
+            </tr>
+            <tr>
+              <th>data_type</th>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>bigint</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>double precision</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>bigint</td>
+              <td>double precision</td>
+              <td>bigint</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+              <td>text</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <section id="task-1-basics-exploration" class="cell markdown">
+    <h2>Task 1. Basics exploration</h2>
+    <p>Difficulty: ★☆☆☆☆</p>
+  </section>
+  <div class="cell markdown">
+    <p><strong>i. What is the highest earned run average (ERA) recorded in
+        baseball history?</strong></p>
+  </div>
+  <div class="cell markdown">
+    <p>Since there are too many tables and columns to search through
+      manually, I'll first query for the table that contains a column named
+      "era":</p>
+  </div>
+  <div class="cell code" data-execution_count="108">
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT table_name, column_name </span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM information_schema.columns </span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE LOWER(column_name) = &#39;era&#39;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="108">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>table_name</th>
+              <th>column_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>pitching</td>
+              <td>era</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>pitchingpost</td>
+              <td>era</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>teams</td>
+              <td>era</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="cell code" data-execution_count="141">
+    <div class="sourceCode" id="cb11">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>question1_1 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT MAX(era)  </span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM pitching  </span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>question1_1</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="141">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>max</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>189.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="cell markdown">
+    <p><strong>ii. In the <code>people</code> table, find the
+        <code>namefirst</code>, <code>namelast</code> and <code>birthyear</code>
+        for all players with weight greater than 300 pounds.</strong></p>
+  </div>
+  <div class="cell code" data-execution_count="142">
+    <div class="sourceCode" id="cb12">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>question1_2 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT namefirst, namelast, birthyear</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM people</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE weight &gt; 300</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>question1_2</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="142">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>namefirst</th>
+              <th>namelast</th>
+              <th>birthyear</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>Jumbo</td>
+              <td>Diaz</td>
+              <td>1984.0</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>Walter</td>
+              <td>Young</td>
+              <td>1980.0</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>John</td>
+              <td>McSherry</td>
+              <td>1944.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="cell markdown">
+    <p><strong>iii. Find the <code>namefirst</code>, <code>namelast</code>
+        and <code>birthyear</code> of all players whose <code>namefirst</code>
+        field contains a space. Order the results by <code>namefirst</code>,
+        breaking ties with <code>namelast</code> both in ascending
+        order.</strong></p>
+  </div>
+  <div class="cell code" data-execution_count="143">
+    <div class="sourceCode" id="cb13">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>question1_3 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT namefirst, namelast, birthyear</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM people</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE namefirst LIKE &#39;</span><span class="sc">% %</span><span class="st">&#39;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">  ORDER BY namefirst ASC, namelast ASC</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>question1_3</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="143">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>namefirst</th>
+              <th>namelast</th>
+              <th>birthyear</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>A. J.</td>
+              <td>Achter</td>
+              <td>1988.0</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>A. J.</td>
+              <td>Alexy</td>
+              <td>1998.0</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>A. J.</td>
+              <td>Burnett</td>
+              <td>1977.0</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>A. J.</td>
+              <td>Cole</td>
+              <td>1992.0</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>A. J.</td>
+              <td>Ellis</td>
+              <td>1981.0</td>
+            </tr>
+            <tr>
+              <th>...</th>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <th>149</th>
+              <td>Vinegar Bend</td>
+              <td>Mizell</td>
+              <td>1930.0</td>
+            </tr>
+            <tr>
+              <th>150</th>
+              <td>Wild Bill</td>
+              <td>Luhrsen</td>
+              <td>1884.0</td>
+            </tr>
+            <tr>
+              <th>151</th>
+              <td>Wild Bill</td>
+              <td>Widner</td>
+              <td>1867.0</td>
+            </tr>
+            <tr>
+              <th>152</th>
+              <td>Wily Mo</td>
+              <td>Pena</td>
+              <td>1982.0</td>
+            </tr>
+            <tr>
+              <th>153</th>
+              <td>Z. H.</td>
+              <td>Taylor</td>
+              <td>1850.0</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>154 rows × 3 columns</p>
+      </div>
+    </div>
+  </div>
+  <div class="cell markdown">
+    <p><strong>iv. Following the results of part iii, now only include
+        groups with an average height &gt; 70. Again order the results by
+        birthyear in ascending order.</strong></p>
+  </div>
+  <div class="cell code" data-execution_count="144">
+    <div class="sourceCode" id="cb14">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>question1_4 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT birthyear, AVG(height)</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM people</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="st"> GROUP BY birthyear</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="st">HAVING AVG(height) &gt; 70</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="st"> ORDER BY birthyear;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>question1_4</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="144">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>birthyear</th>
+              <th>avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>1839.0</td>
+              <td>72.000000</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>1868.0</td>
+              <td>70.114286</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>1871.0</td>
+              <td>70.245283</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>1872.0</td>
+              <td>70.152542</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>1873.0</td>
+              <td>70.246914</td>
+            </tr>
+            <tr>
+              <th>...</th>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <th>129</th>
+              <td>1999.0</td>
+              <td>73.567308</td>
+            </tr>
+            <tr>
+              <th>130</th>
+              <td>2000.0</td>
+              <td>72.765957</td>
+            </tr>
+            <tr>
+              <th>131</th>
+              <td>2001.0</td>
+              <td>72.541667</td>
+            </tr>
+            <tr>
+              <th>132</th>
+              <td>2002.0</td>
+              <td>73.888889</td>
+            </tr>
+            <tr>
+              <th>133</th>
+              <td>2003.0</td>
+              <td>74.000000</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>134 rows × 2 columns</p>
+      </div>
+    </div>
+  </div>
+  <section id="task-2-hall-of-fame-schools" class="cell markdown">
+    <h2>Task 2. Hall of Fame schools</h2>
+    <p>Difficulty: ★★☆☆☆</p>
+  </section>
+  <div class="cell markdown">
+    <p><strong>i. Find the <code>namefirst</code>, <code>namelast</code>,
+        <code>playerid</code> and <code>yearid</code> of all people who were
+        successfully inducted into the Hall of Fame in descending order of
+        <code>yearid</code>. Break ties on <code>yearid</code> by
+        <code>playerid</code> (ascending).</strong></p>
+  </div>
+  <div class="cell markdown">
+    <p>First we would like to have a look at the columns in the table
+      <code>Hall of Fame</code>:
+    </p>
+  </div>
+  <div class="cell code" data-execution_count="140">
+    <div class="sourceCode" id="cb15">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT column_name </span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM information_schema.columns </span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE table_name = &#39;halloffame&#39;</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="140">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>column_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>votes</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>yearid</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>ballots</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>needed</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>playerid</td>
+            </tr>
+            <tr>
+              <th>5</th>
+              <td>needed_note</td>
+            </tr>
+            <tr>
+              <th>6</th>
+              <td>votedby</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td>inducted</td>
+            </tr>
+            <tr>
+              <th>8</th>
+              <td>category</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="cell code" data-execution_count="163">
+    <div class="sourceCode" id="cb16">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>question2_1 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT p.namefirst, p.namelast, p.playerid, h.yearid, h.inducted</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM people p</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="st">  JOIN halloffame h ON p.playerid = h.playerid</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE h.inducted = &#39;Y&#39;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="st"> ORDER BY h.yearid DESC, p.playerid ASC</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>question2_1</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="163">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>namefirst</th>
+              <th>namelast</th>
+              <th>playerid</th>
+              <th>yearid</th>
+              <th>inducted</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>Adrian</td>
+              <td>Beltre</td>
+              <td>beltrad01</td>
+              <td>2024</td>
+              <td>Y</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>Todd</td>
+              <td>Helton</td>
+              <td>heltoto01</td>
+              <td>2024</td>
+              <td>Y</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Jim</td>
+              <td>Leyland</td>
+              <td>leylaji99</td>
+              <td>2024</td>
+              <td>Y</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Joe</td>
+              <td>Mauer</td>
+              <td>mauerjo01</td>
+              <td>2024</td>
+              <td>Y</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>Fred</td>
+              <td>McGriff</td>
+              <td>mcgrifr01</td>
+              <td>2023</td>
+              <td>Y</td>
+            </tr>
+            <tr>
+              <th>...</th>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <th>352</th>
+              <td>Ty</td>
+              <td>Cobb</td>
+              <td>cobbty01</td>
+              <td>1936</td>
+              <td>Y</td>
+            </tr>
+            <tr>
+              <th>353</th>
+              <td>Walter</td>
+              <td>Johnson</td>
+              <td>johnswa01</td>
+              <td>1936</td>
+              <td>Y</td>
+            </tr>
+            <tr>
+              <th>354</th>
+              <td>Christy</td>
+              <td>Mathewson</td>
+              <td>mathech01</td>
+              <td>1936</td>
+              <td>Y</td>
+            </tr>
+            <tr>
+              <th>355</th>
+              <td>Babe</td>
+              <td>Ruth</td>
+              <td>ruthba01</td>
+              <td>1936</td>
+              <td>Y</td>
+            </tr>
+            <tr>
+              <th>356</th>
+              <td>Honus</td>
+              <td>Wagner</td>
+              <td>wagneho01</td>
+              <td>1936</td>
+              <td>Y</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>357 rows × 5 columns</p>
+      </div>
+    </div>
+  </div>
+  <div class="cell markdown">
+    <p><strong>ii. Find the people who were successfully inducted into the
+        Hall of Fame and played in college at a school located in the state of
+        California. For each person, return their <code>namefirst</code>,
+        <code>namelast</code>, <code>playerid</code>, <code>schoolid</code>, and
+        <code>yearid</code> in descending order of <code>yearid</code>. Break
+        ties on <code>yearid</code> by <code>schoolid</code>,
+        <code>playerid</code> (ascending). For this question,
+        <code>yearid</code> refers to the year of induction into the Hall of
+        Fame.</strong></p>
+    <p>Note: a player may appear in the results multiple times (once per
+      year in a college in California).</p>
+  </div>
+  <div class="cell code" data-execution_count="160">
+    <div class="sourceCode" id="cb17">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>display(execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT column_name </span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM information_schema.columns </span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE table_name = &#39;collegeplaying&#39;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>))</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT * FROM collegeplaying </span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE schoolid LIKE &#39;</span><span class="sc">%c</span><span class="st">ali%&#39;</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code></pre>
+    </div>
+    <div class="output display_data">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>column_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>yearid</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>playerid</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>schoolid</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="output execute_result" data-execution_count="160">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>playerid</th>
+              <th>schoolid</th>
+              <th>yearid</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>albrija01</td>
+              <td>california</td>
+              <td>1941</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>albrija01</td>
+              <td>california</td>
+              <td>1942</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>albrija01</td>
+              <td>california</td>
+              <td>1943</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>bakerjo01</td>
+              <td>california</td>
+              <td>2000</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>bakerjo01</td>
+              <td>california</td>
+              <td>2001</td>
+            </tr>
+            <tr>
+              <th>...</th>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <th>166</th>
+              <td>werlebi01</td>
+              <td>california</td>
+              <td>1942</td>
+            </tr>
+            <tr>
+              <th>167</th>
+              <td>zuberjo01</td>
+              <td>california</td>
+              <td>1989</td>
+            </tr>
+            <tr>
+              <th>168</th>
+              <td>zuberjo01</td>
+              <td>california</td>
+              <td>1990</td>
+            </tr>
+            <tr>
+              <th>169</th>
+              <td>zuberjo01</td>
+              <td>california</td>
+              <td>1991</td>
+            </tr>
+            <tr>
+              <th>170</th>
+              <td>zuberjo01</td>
+              <td>california</td>
+              <td>1992</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>171 rows × 3 columns</p>
+      </div>
+    </div>
+  </div>
+  <div class="cell code" data-execution_count="167">
+    <div class="sourceCode" id="cb18">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>question2_2 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT p.namefirst, p.namelast, p.playerid, </span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="st">       h.yearid, c.schoolid</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM people p</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="st">  JOIN halloffame h ON p.playerid = h.playerid</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="st">  JOIN collegeplaying c ON p.playerid = c.playerid</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE h.inducted = &#39;Y&#39; AND</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="st">       c.schoolid = &#39;california&#39;</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="st"> ORDER BY h.yearid DESC, c.schoolid ASC, p.playerid ASC</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>question2_2</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="167">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>namefirst</th>
+              <th>namelast</th>
+              <th>playerid</th>
+              <th>yearid</th>
+              <th>schoolid</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="cell markdown">
+    <p>No player from a school in California fits the description.</p>
+  </div>
+  <div class="cell markdown">
+    <p><strong>iii. Find the <code>playerid</code>, <code>namefirst</code>,
+        <code>namelast</code> and <code>schoolid</code> of all people who were
+        successfully inducted into the Hall of Fame -- whether or not they
+        played in college. Return people in descending order of
+        <code>playerid</code>. Break ties on <code>playerid</code> by
+        <code>schoolid</code> (ascending).</strong></p>
+    <p>Note: <code>schoolid</code> should be NULL if they did not play in
+      college.</p>
+  </div>
+  <div class="cell code" data-execution_count="171">
+    <div class="sourceCode" id="cb19">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>question2_3 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT p.playerid, p.namefirst, p.namelast, c.schoolid</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM people p </span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="st">  LEFT JOIN collegeplaying c ON c.playerid = p.playerid</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="st">  JOIN halloffame h ON h.playerid = p.playerid</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE h.inducted = &#39;Y&#39;</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="st"> ORDER BY p.playerid DESC, c.schoolid ASC</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>question2_3</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="171">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>playerid</th>
+              <th>namefirst</th>
+              <th>namelast</th>
+              <th>schoolid</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>yountro01</td>
+              <td>Robin</td>
+              <td>Yount</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>youngro01</td>
+              <td>Ross</td>
+              <td>Youngs</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>youngcy01</td>
+              <td>Cy</td>
+              <td>Young</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>yawketo99</td>
+              <td>Tom</td>
+              <td>Yawkey</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>yastrca01</td>
+              <td>Carl</td>
+              <td>Yastrzemski</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <th>...</th>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <th>432</th>
+              <td>alstowa01</td>
+              <td>Walter</td>
+              <td>Alston</td>
+              <td>miamioh</td>
+            </tr>
+            <tr>
+              <th>433</th>
+              <td>alstowa01</td>
+              <td>Walter</td>
+              <td>Alston</td>
+              <td>miamioh</td>
+            </tr>
+            <tr>
+              <th>434</th>
+              <td>alomaro01</td>
+              <td>Roberto</td>
+              <td>Alomar</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <th>435</th>
+              <td>alexape01</td>
+              <td>Pete</td>
+              <td>Alexander</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <th>436</th>
+              <td>aaronha01</td>
+              <td>Hank</td>
+              <td>Aaron</td>
+              <td>None</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>437 rows × 4 columns</p>
+      </div>
+    </div>
+  </div>
+  <section id="task-3-sabermetrics" class="cell markdown">
+    <h2>Task 3. SaberMetrics</h2>
+    <p>Difficulty: ★★★★☆</p>
+  </section>
+  <div class="cell markdown">
+    <p><strong>i. Find the <code>playerid</code>, <code>namefirst</code>,
+        <code>namelast</code>, <code>yearid</code> and single-year
+        <code>slg</code> (Slugging Percentage) of the players with the 10 best
+        annual Slugging Percentage recorded over all time. A player can appear
+        multiple times in the output.</strong></p>
+    <p>For example, if Babe Ruth’s <code>slg</code> in 2000 and 2001 both
+      landed in the top 10 best annual Slugging Percentage of all time, then
+      we should include Babe Ruth twice in the output. For statistical
+      significance, only include players with more than 50 at-bats in the
+      season. Order the results by <code>slg</code> descending, and break ties
+      by <code>yearid</code>, <code>playerid</code> (ascending).</p>
+    <ul>
+      <li>Baseball note: Slugging Percentage is not provided in the database;
+        it is computed according to a simple formula you can calculate from the
+        data in the database.</li>
+      <li>SQL note: You should compute <code>slg</code> properly as a floating
+        point number---you'll need to figure out how to convince SQL to do
+        this!</li>
+      <li>Data set note: The online documentation batting mentions two columns
+        2B and 3B. On your local copy of the data set these have been renamed
+        <code>H2B</code> and <code>H3B</code> respectively (columns starting
+        with numbers are tedious to write queries on).
+      </li>
+      <li>Data set note: The column <code>H</code> of the batting table
+        represents all hits = (# singles) + (# doubles) + (# triples) + (# home
+        runs), not just (# singles) so you’ll need to account for some
+        double-counting</li>
+      <li>If a player played on multiple teams during the same season (for
+        example anderma02 in 2006) treat their time on each team separately for
+        this calculation.</li>
+    </ul>
+  </div>
+  <div class="cell markdown">
+    <p>Slugging percentage (SLG) is calculated as:</p>
+    <p><span class="math display">$$
+        SLG = \frac{(1B + 2 \times 2B + 3 \times 3B + 4 \times HR)}{AB}
+        $$</span></p>
+    <p>Where:</p>
+    <ul>
+      <li><strong>1B</strong> = Singles = <code>H - 2B - 3B - HR</code></li>
+      <li><strong>2B</strong> = Doubles (<code>2B</code>)</li>
+      <li><strong>3B</strong> = Triples (<code>3B</code>)</li>
+      <li><strong>HR</strong> = Home Runs (<code>HR</code>)</li>
+      <li><strong>AB</strong> = At Bats (<code>AB</code>)</li>
+    </ul>
+  </div>
+  <div class="cell code" data-execution_count="184">
+    <div class="sourceCode" id="cb20">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>question3_1 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT p.playerid, p.namefirst, p.namelast, b.yearid, </span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="st">       (CAST((b.h - b.&quot;2b&quot; - b.&quot;3b&quot; - b.hr + 2*b.&quot;2b&quot; </span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="st">              + 3*b.&quot;3b&quot; + 4*b.hr) AS FLOAT) </span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="st">        / NULLIF(b.ab, 0)) AS slg</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM batting b</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="st">  JOIN people p ON p.playerid = b.playerid</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE b.ab &gt; 50</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="st"> ORDER BY slg DESC, b.yearid ASC, p.playerid ASC</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="st"> LIMIT 10</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>question3_1</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="184">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>playerid</th>
+              <th>namefirst</th>
+              <th>namelast</th>
+              <th>yearid</th>
+              <th>slg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>spencsh01</td>
+              <td>Shane</td>
+              <td>Spencer</td>
+              <td>1998</td>
+              <td>0.910448</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>willite01</td>
+              <td>Ted</td>
+              <td>Williams</td>
+              <td>1953</td>
+              <td>0.901099</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>bondsba01</td>
+              <td>Barry</td>
+              <td>Bonds</td>
+              <td>2001</td>
+              <td>0.863445</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>ruthba01</td>
+              <td>Babe</td>
+              <td>Ruth</td>
+              <td>1920</td>
+              <td>0.849015</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>ruthba01</td>
+              <td>Babe</td>
+              <td>Ruth</td>
+              <td>1921</td>
+              <td>0.846296</td>
+            </tr>
+            <tr>
+              <th>5</th>
+              <td>bakerje03</td>
+              <td>Jeff</td>
+              <td>Baker</td>
+              <td>2006</td>
+              <td>0.824561</td>
+            </tr>
+            <tr>
+              <th>6</th>
+              <td>anderma02</td>
+              <td>Marlon</td>
+              <td>Anderson</td>
+              <td>2006</td>
+              <td>0.812500</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td>bondsba01</td>
+              <td>Barry</td>
+              <td>Bonds</td>
+              <td>2004</td>
+              <td>0.812332</td>
+            </tr>
+            <tr>
+              <th>8</th>
+              <td>bondsba01</td>
+              <td>Barry</td>
+              <td>Bonds</td>
+              <td>2002</td>
+              <td>0.799007</td>
+            </tr>
+            <tr>
+              <th>9</th>
+              <td>ruthba01</td>
+              <td>Babe</td>
+              <td>Ruth</td>
+              <td>1927</td>
+              <td>0.772222</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="cell markdown">
+    <p><strong>ii. Following the results from Part i, find the
+        <code>playerid</code>, <code>namefirst</code>, <code>namelast</code> and
+        <code>lslg</code> (Lifetime Slugging Percentage) for the players with
+        the top 10 Lifetime Slugging Percentage.</strong></p>
+    <p>Lifetime Slugging Percentage (LSLG) uses the same formula as Slugging
+      Percentage (SLG), but it uses the number of singles, doubles, triples,
+      home runs, and at bats each player has over their entire career, rather
+      than just over a single season.</p>
+    <ul>
+      <li>Note that the database only gives batting information broken down by
+        year; you will need to convert to total information across all time
+        (from the earliest date recorded up to the last date recorded) to
+        compute lslg. Order the results by lslg (descending) and break ties by
+        playerid (ascending)</li>
+      <li>Note: Make sure that you only include players with more than 50
+        at-bats across their lifetime.</li>
+    </ul>
+  </div>
+  <div class="cell code" data-execution_count="186">
+    <div class="sourceCode" id="cb21">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>question3_2 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT p.playerid, p.namefirst, p.namelast, </span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="st">       (CAST((SUM(b.h) - SUM(b.&quot;2b&quot;) - SUM(b.&quot;3b&quot;) - SUM(b.hr) </span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="st">              + 2*SUM(b.&quot;2b&quot;) + 3*SUM(b.&quot;3b&quot;) + 4*SUM(b.hr)) AS FLOAT) </span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="st">        / NULLIF(SUM(b.ab), 0)) AS lslg</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM batting b</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="st">  JOIN people p ON p.playerid = b.playerid</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="st"> GROUP BY p.playerid, p.namefirst, p.namelast</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="st"> HAVING SUM(b.ab) &gt; 50</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="st"> ORDER BY lslg DESC, p.playerid ASC</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="st"> LIMIT 10</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>question3_2</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="186">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>playerid</th>
+              <th>namefirst</th>
+              <th>namelast</th>
+              <th>lslg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>ruthba01</td>
+              <td>Babe</td>
+              <td>Ruth</td>
+              <td>0.689807</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>carteev01</td>
+              <td>Evan</td>
+              <td>Carter</td>
+              <td>0.645161</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>willite01</td>
+              <td>Ted</td>
+              <td>Williams</td>
+              <td>0.633792</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>gehrilo01</td>
+              <td>Lou</td>
+              <td>Gehrig</td>
+              <td>0.632421</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>foxxji01</td>
+              <td>Jimmie</td>
+              <td>Foxx</td>
+              <td>0.609294</td>
+            </tr>
+            <tr>
+              <th>5</th>
+              <td>bondsba01</td>
+              <td>Barry</td>
+              <td>Bonds</td>
+              <td>0.606885</td>
+            </tr>
+            <tr>
+              <th>6</th>
+              <td>greenha01</td>
+              <td>Hank</td>
+              <td>Greenberg</td>
+              <td>0.605045</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td>schneda03</td>
+              <td>Davis</td>
+              <td>Schneider</td>
+              <td>0.603448</td>
+            </tr>
+            <tr>
+              <th>8</th>
+              <td>bassjo01</td>
+              <td>John</td>
+              <td>Bass</td>
+              <td>0.600000</td>
+            </tr>
+            <tr>
+              <th>9</th>
+              <td>mcgwima01</td>
+              <td>Mark</td>
+              <td>McGwire</td>
+              <td>0.588169</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="cell markdown">
+    <p><strong>iii. Find the <code>namefirst</code>, <code>namelast</code>
+        and Lifetime Slugging Percentage (<code>lslg</code>) of batters whose
+        lifetime slugging percentage is higher than that of San Francisco
+        favorite Willie Mays.</strong></p>
+    <p>You may include Willie Mays' playerid in your query (mayswi01), but
+      you may not include his slugging percentage -- you should calculate that
+      as part of the query. (Test your query by replacing mayswi01 with the
+      playerid of another player -- it should work for that player as
+      well!)</p>
+    <ul>
+      <li>Note: Make sure that you still only include players with more than
+        50 at-bats across their lifetime.</li>
+    </ul>
+  </div>
+  <div class="cell markdown">
+    <p>"First we need to find Willie Mays' lstg using WITH (a common table
+      expression for creating views) then find all the other players greater
+      than the calculated lslg."</p>
+    <p>That was my initial approach until I realised that I would have to
+      type the very long formula twice, once for Mays and one for the rest of
+      the players.</p>
+    <p>Thus I decided to use 2 WITH clauses, one for the formula, then one
+      for Mays in which I used the previously defined view.</p>
+  </div>
+  <div class="cell code">
+    <div class="sourceCode" id="cb22">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>question3_3 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="st">WITH lstgs AS (</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT </span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="st">        p.playerid, p.namefirst, p.namelast,</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="st">        (CAST((SUM(b.h) - SUM(b.&quot;2b&quot;) - SUM(b.&quot;3b&quot;) - SUM(b.hr)  </span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="st">              + 2*SUM(b.&quot;2b&quot;) + 3*SUM(b.&quot;3b&quot;) + 4*SUM(b.hr)) AS FLOAT)  </span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="st">        / NULLIF(SUM(b.ab), 0)) AS lslg, </span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="st">        SUM(b.ab) AS tab</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM people p</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="st">    JOIN batting b ON b.playerid = p.playerid</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="st">    GROUP BY p.playerid, p.namefirst, p.namelast</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="st">),</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="st">willie_mays_lslg AS (</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT lslg AS mays_lslg</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM lstgs</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE playerid = &#39;mayswi01&#39;</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT l.namefirst, l.namelast, l.lslg</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM lstgs l</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="st">  JOIN willie_mays_lslg w ON l.lslg &gt; w.mays_lslg</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="st">   AND l.tab &gt; 50</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="st"> ORDER BY l.lslg DESC;</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>question3_3</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="219">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>namefirst</th>
+              <th>namelast</th>
+              <th>lslg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>Babe</td>
+              <td>Ruth</td>
+              <td>0.689807</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>Evan</td>
+              <td>Carter</td>
+              <td>0.645161</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Ted</td>
+              <td>Williams</td>
+              <td>0.633792</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Lou</td>
+              <td>Gehrig</td>
+              <td>0.632421</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>Jimmie</td>
+              <td>Foxx</td>
+              <td>0.609294</td>
+            </tr>
+            <tr>
+              <th>5</th>
+              <td>Barry</td>
+              <td>Bonds</td>
+              <td>0.606885</td>
+            </tr>
+            <tr>
+              <th>6</th>
+              <td>Hank</td>
+              <td>Greenberg</td>
+              <td>0.605045</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td>Davis</td>
+              <td>Schneider</td>
+              <td>0.603448</td>
+            </tr>
+            <tr>
+              <th>8</th>
+              <td>John</td>
+              <td>Bass</td>
+              <td>0.600000</td>
+            </tr>
+            <tr>
+              <th>9</th>
+              <td>Mark</td>
+              <td>McGwire</td>
+              <td>0.588169</td>
+            </tr>
+            <tr>
+              <th>10</th>
+              <td>Yordan</td>
+              <td>Alvarez</td>
+              <td>0.588032</td>
+            </tr>
+            <tr>
+              <th>11</th>
+              <td>Aaron</td>
+              <td>Judge</td>
+              <td>0.586356</td>
+            </tr>
+            <tr>
+              <th>12</th>
+              <td>Manny</td>
+              <td>Ramirez</td>
+              <td>0.585395</td>
+            </tr>
+            <tr>
+              <th>13</th>
+              <td>Mike</td>
+              <td>Trout</td>
+              <td>0.581636</td>
+            </tr>
+            <tr>
+              <th>14</th>
+              <td>Joe</td>
+              <td>DiMaggio</td>
+              <td>0.578801</td>
+            </tr>
+            <tr>
+              <th>15</th>
+              <td>D. T.</td>
+              <td>Cromer</td>
+              <td>0.576923</td>
+            </tr>
+            <tr>
+              <th>16</th>
+              <td>Rogers</td>
+              <td>Hornsby</td>
+              <td>0.576532</td>
+            </tr>
+            <tr>
+              <th>17</th>
+              <td>Larry</td>
+              <td>Walker</td>
+              <td>0.565224</td>
+            </tr>
+            <tr>
+              <th>18</th>
+              <td>Albert</td>
+              <td>Belle</td>
+              <td>0.563813</td>
+            </tr>
+            <tr>
+              <th>19</th>
+              <td>Sean</td>
+              <td>Bouchard</td>
+              <td>0.562500</td>
+            </tr>
+            <tr>
+              <th>20</th>
+              <td>Johnny</td>
+              <td>Mize</td>
+              <td>0.562005</td>
+            </tr>
+            <tr>
+              <th>21</th>
+              <td>Juan</td>
+              <td>Gonzalez</td>
+              <td>0.560708</td>
+            </tr>
+            <tr>
+              <th>22</th>
+              <td>Stan</td>
+              <td>Musial</td>
+              <td>0.559059</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <section id="task-4-salaries" class="cell markdown">
+    <h2>Task 4. Salaries</h2>
+    <p>Difficulty: ★★★★★</p>
+  </section>
+  <div class="cell markdown">
+    <p><strong>i. Find the <code>yearid</code>, min, max and average of all
+        player salaries for each year recorded, ordered by <code>yearid</code>
+        in ascending order.</strong></p>
+  </div>
+  <div class="cell code" data-execution_count="239">
+    <div class="sourceCode" id="cb23">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT column_name</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM information_schema.columns</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="st"> WHERE table_name = &#39;salaries&#39;</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="239">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>column_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>yearid</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>salary</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>teamid</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>lgid</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>playerid</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="cell code" data-execution_count="237">
+    <div class="sourceCode" id="cb24">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>question4_1 <span class="op">=</span> execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT yearid, MIN(salary), </span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="st">       MAX(salary), CAST(AVG(salary) AS INT)</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM salaries</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="st"> GROUP BY yearid</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="st"> ORDER BY yearid ASC</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>question4_1</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="237">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>yearid</th>
+              <th>min</th>
+              <th>max</th>
+              <th>avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>1985</td>
+              <td>60000</td>
+              <td>2130300</td>
+              <td>476299</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>1986</td>
+              <td>60000</td>
+              <td>2800000</td>
+              <td>417147</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>1987</td>
+              <td>62500</td>
+              <td>2127333</td>
+              <td>434729</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>1988</td>
+              <td>62500</td>
+              <td>2340000</td>
+              <td>453171</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>1989</td>
+              <td>62500</td>
+              <td>2766667</td>
+              <td>506323</td>
+            </tr>
+            <tr>
+              <th>5</th>
+              <td>1990</td>
+              <td>100000</td>
+              <td>3200000</td>
+              <td>511974</td>
+            </tr>
+            <tr>
+              <th>6</th>
+              <td>1991</td>
+              <td>100000</td>
+              <td>3800000</td>
+              <td>894961</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td>1992</td>
+              <td>109000</td>
+              <td>6100000</td>
+              <td>1047521</td>
+            </tr>
+            <tr>
+              <th>8</th>
+              <td>1993</td>
+              <td>0</td>
+              <td>6200000</td>
+              <td>976967</td>
+            </tr>
+            <tr>
+              <th>9</th>
+              <td>1994</td>
+              <td>50000</td>
+              <td>6300000</td>
+              <td>1049589</td>
+            </tr>
+            <tr>
+              <th>10</th>
+              <td>1995</td>
+              <td>109000</td>
+              <td>9237500</td>
+              <td>964979</td>
+            </tr>
+            <tr>
+              <th>11</th>
+              <td>1996</td>
+              <td>109000</td>
+              <td>9237500</td>
+              <td>1027909</td>
+            </tr>
+            <tr>
+              <th>12</th>
+              <td>1997</td>
+              <td>50000</td>
+              <td>10000000</td>
+              <td>1218687</td>
+            </tr>
+            <tr>
+              <th>13</th>
+              <td>1998</td>
+              <td>170000</td>
+              <td>14936667</td>
+              <td>1280845</td>
+            </tr>
+            <tr>
+              <th>14</th>
+              <td>1999</td>
+              <td>0</td>
+              <td>11949794</td>
+              <td>1485317</td>
+            </tr>
+            <tr>
+              <th>15</th>
+              <td>2000</td>
+              <td>200000</td>
+              <td>15714286</td>
+              <td>1992985</td>
+            </tr>
+            <tr>
+              <th>16</th>
+              <td>2001</td>
+              <td>200000</td>
+              <td>22000000</td>
+              <td>2279841</td>
+            </tr>
+            <tr>
+              <th>17</th>
+              <td>2002</td>
+              <td>200000</td>
+              <td>22000000</td>
+              <td>2392527</td>
+            </tr>
+            <tr>
+              <th>18</th>
+              <td>2003</td>
+              <td>165574</td>
+              <td>22000000</td>
+              <td>2573473</td>
+            </tr>
+            <tr>
+              <th>19</th>
+              <td>2004</td>
+              <td>300000</td>
+              <td>22500000</td>
+              <td>2491776</td>
+            </tr>
+            <tr>
+              <th>20</th>
+              <td>2005</td>
+              <td>300000</td>
+              <td>26000000</td>
+              <td>2633831</td>
+            </tr>
+            <tr>
+              <th>21</th>
+              <td>2006</td>
+              <td>327000</td>
+              <td>21680727</td>
+              <td>2834521</td>
+            </tr>
+            <tr>
+              <th>22</th>
+              <td>2007</td>
+              <td>380000</td>
+              <td>23428571</td>
+              <td>2941436</td>
+            </tr>
+            <tr>
+              <th>23</th>
+              <td>2008</td>
+              <td>390000</td>
+              <td>28000000</td>
+              <td>3136517</td>
+            </tr>
+            <tr>
+              <th>24</th>
+              <td>2009</td>
+              <td>400000</td>
+              <td>33000000</td>
+              <td>3277647</td>
+            </tr>
+            <tr>
+              <th>25</th>
+              <td>2010</td>
+              <td>400000</td>
+              <td>33000000</td>
+              <td>3278747</td>
+            </tr>
+            <tr>
+              <th>26</th>
+              <td>2011</td>
+              <td>414000</td>
+              <td>32000000</td>
+              <td>3318838</td>
+            </tr>
+            <tr>
+              <th>27</th>
+              <td>2012</td>
+              <td>480000</td>
+              <td>30000000</td>
+              <td>3458421</td>
+            </tr>
+            <tr>
+              <th>28</th>
+              <td>2013</td>
+              <td>480000</td>
+              <td>29000000</td>
+              <td>3723344</td>
+            </tr>
+            <tr>
+              <th>29</th>
+              <td>2014</td>
+              <td>500000</td>
+              <td>26000000</td>
+              <td>3980446</td>
+            </tr>
+            <tr>
+              <th>30</th>
+              <td>2015</td>
+              <td>507000</td>
+              <td>32571000</td>
+              <td>4301276</td>
+            </tr>
+            <tr>
+              <th>31</th>
+              <td>2016</td>
+              <td>507500</td>
+              <td>33000000</td>
+              <td>4396410</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="cell markdown">
+    <p><strong>ii. For salaries in 2016, compute a histogram. Divide the
+        salary range into 10 equal bins from min to max, with binids 0 through
+        9, and count the salaries in each bin. Return the binid, low and high
+        boundaries for each bin, as well as the number of salaries in each bin,
+        with results sorted from smallest bin to largest.</strong></p>
+    <ul>
+      <li>
+        <p>Note: binid 0 corresponds to the lowest salaries, and binid 9
+          corresponds to the highest. The ranges are left-inclusive (i.e. [low,
+          high)) -- so the high value is excluded. For example, if bin 2 has a
+          high value of 100000, salaries of 100000 belong in bin 3, and bin 3
+          should have a low value of 100000.</p>
+      </li>
+      <li>
+        <p>Note: The high value for bin 9 may be inclusive).</p>
+      </li>
+    </ul>
+  </div>
+  <div class="cell markdown">
+    <p>My approach:</p>
+    <ol>
+      <li>Find min and max value</li>
+      <li>Find bin width</li>
+      <li>Determine bin for each value</li>
+      <li>Group by binid and count</li>
+      <li>Find the max and min salary of each bin</li>
+    </ol>
+  </div>
+  <div class="cell code">
+    <div class="sourceCode" id="cb25">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>execute (<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="st">WITH info AS (</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT MIN(salary) AS min_salary, </span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="st">           MAX(salary) AS max_salary, </span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="st">           CAST(AVG(salary) AS INT) AS avg_salary,</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="st">           (MAX(salary) - MIN(salary)) / 10 AS bin_width</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM salaries</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE yearid = 2016</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="st">),</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="st">binned AS (</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT </span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="st">        LEAST(FLOOR((s.salary - i.min_salary) / i.bin_width), 9) AS binid,</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="st">        s.salary</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM salaries s</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="st">    JOIN info i ON 1=1</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE s.yearid = 2016</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="st">    b.binid, </span></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="st">    MIN(b.salary) AS low, </span></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="st">    MAX(b.salary) AS high, </span></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="st">    COUNT(*) AS salary_count</span></span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="st">FROM binned b</span></span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="st">GROUP BY b.binid  </span></span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY b.binid;</span></span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code></pre>
+    </div>
+    <div class="output execute_result" data-execution_count="282">
+      <div>
+        <style scoped>
+          .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+            vertical-align: top;
+          }
+
+          .dataframe thead th {
+            text-align: right;
+          }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>binid</th>
+              <th>low</th>
+              <th>high</th>
+              <th>salary_count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>0.0</td>
+              <td>507500</td>
+              <td>3750000</td>
+              <td>558</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>1.0</td>
+              <td>3800000</td>
+              <td>7000000</td>
+              <td>114</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>2.0</td>
+              <td>7150000</td>
+              <td>10000000</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>3.0</td>
+              <td>10400000</td>
+              <td>13500000</td>
+              <td>44</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>4.0</td>
+              <td>13666667</td>
+              <td>16329674</td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <th>5</th>
+              <td>5.0</td>
+              <td>16800000</td>
+              <td>20000000</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <th>6</th>
+              <td>6.0</td>
+              <td>20125000</td>
+              <td>23125000</td>
+              <td>21</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td>7.0</td>
+              <td>24000000</td>
+              <td>25857143</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <th>8</th>
+              <td>8.0</td>
+              <td>27328046</td>
+              <td>28000000</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <th>9</th>
+              <td>9.0</td>
+              <td>30000000</td>
+              <td>33000000</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
