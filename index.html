@@ -80,7 +80,7 @@
         src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-cb3d4f30c9ed.js"></script>
       <div id="header-placeholder"></div>
       <script>
-        fetch('./partials/header.html')
+        fetch('/partials/header.html')
           .then(response => response.text())
           .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
