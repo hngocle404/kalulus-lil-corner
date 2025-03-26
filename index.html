@@ -28,12 +28,13 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/text.css">
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/light.css">
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/primer_primitives.css">
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/primer.css">
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/global.css">
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/stories.css">
+  <link rel="stylesheet" href="/css/text.css">
+  <link rel="stylesheet" href="/css/light.css">
+  <link rel="stylesheet" href="/css/primer_primitives.css">
+  <link rel="stylesheet" href="/css/primer.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/stories.css">
+
   <!-- <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-react.9fa170e9435ed4b922b9.module.css" /> -->
 
 </head>
@@ -79,7 +80,7 @@
         src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-cb3d4f30c9ed.js"></script>
       <div id="header-placeholder"></div>
       <script>
-        fetch('/kalulus-lil-corner/partials/header.html')
+        fetch('/partials/header.html')
           .then(response => response.text())
           .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
@@ -831,7 +832,7 @@ projects\MUSIC_AND_DESIGN\piano_je_te.html
 
     <div id="footer-placeholder"></div>
     <script>
-      fetch('/kalulus-lil-corner/partials/footer.html')
+      fetch('/partials/footer.html')
         .then(response => response.text())
         .then(data => {
           document.getElementById('footer-placeholder').innerHTML = data;
