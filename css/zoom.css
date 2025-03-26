@@ -1,0 +1,7 @@
+body {
+    transform: scale(0.80);
+    transform-origin: top left;
+    width: calc(100% / 0.80);
+    height: calc(100vh / 0.80);
+    margin: 0;
+}
