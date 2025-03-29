@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Derivatives notes - My Blog</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Derivatives notes";
+        var mkdocs_page_input_path = "Financial engineering\\Derivatives notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> My Blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Financial engineering</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Derivatives%20cheatsheet/">Derivatives cheatsheet</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Derivatives%20exercises/">Derivatives exercises</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Derivatives notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-1-basics">Chapter 1. Basics</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basic-derivatives">Basic derivatives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#long-vs-short-positions">Long vs. short positions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#otc-vs-exchange-traded">OTC vs exchange traded</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#participants-in-the-markets">Participants in the markets</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-2-future-and-forward-markets">Chapter 2. Future and forward markets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#opening-closing-futures-positions">Opening &amp; closing futures positions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contract-specifications">Contract specifications</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#convergence-of-future-spot-prices-arbitrage-opportunities">Convergence of future &amp; spot prices; arbitrage opportunities</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#operation-of-margin-accounts">Operation of margin accounts</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#otc-market">OTC market</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#market-quotes">Market quotes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pricing">Pricing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#currency">Currency</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#price-limits-and-position-limits">Price limits and position limits</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delivery">Delivery</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#types-of-trader-order">Types of trader &amp; order</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#traders">Traders</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#orders">Orders</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#forwards-vs-futures">Forwards vs futures</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-5-determining-forward-and-future-prices">Chapter 5. Determining forward and future prices</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-investment-vs-consumption-assets">1. INVESTMENT vs CONSUMPTION assets</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-short-selling">2. Short selling</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-assumptions">3. Assumptions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-forward-price-valuation-investment-assets-only">4. FORWARD PRICE valuation (investment assets only)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#case-1-no-income-generating-assets">Case 1. No income generating assets</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#case-2-income-generating-assets-known-cash-income">Case 2. Income generating assets - known cash income</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#case-3-income-generating-assets-known-yield">Case 3. Income generating assets - known yield</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-forward-contracts-valuation">5. FORWARD CONTRACTS valuation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6-forwards-futures-prices">6. Forwards = futures prices ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7-stock-indices-ff-contracts">7. Stock indices: f/f contracts</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7-currencies-ff-contracts">7. Currencies: f/f contracts</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#8-commodities-ff-contracts">8. Commodities: f/f contracts</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#9-cost-of-carry">9. Cost of carry</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#10-delivery-options">10. Delivery options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#11-futures-price-expected-spot-prices">11. Futures price &amp; expected spot prices</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-9-options-markets-skipped">Chapter 9. Options markets (skipped)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basics-of-options">Basics of options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#options-exchange">Options exchange</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#participants">Participants</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-10-proporties-of-stock-options">Chapter 10. Proporties of stock options</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#determinants-of-option-value">Determinants of option value</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#stock-price">Stock price</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#time-to-expiration">Time to expiration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dividends">Dividends</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#volatility">Volatility</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#risk-free-rate">Risk free rate</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assumptions">Assumptions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#upper-and-lower-bounds-for-option-prices">Upper and lower bounds for option prices</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#upper-bound">Upper bound</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lower-bounds-non-dividend-paying">Lower bounds (non-dividend paying)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#put-call-parity">Put-call parity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#american-calls-and-puts">American calls and puts</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#put-call-parity-for-us-options-find-upper-lower-bounds">Put call parity for US options - find upper &amp; lower bounds</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#why-its-not-optimal-to-exercise-us-call-option-early">Why it's not optimal to exercise US CALL OPTION early</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#why-it-can-be-optimal-to-exercise-us-put-option-early">Why it CAN be optimal to exercise US PUT OPTION early</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#effect-of-dividends">Effect of dividends</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-11-options-trading-strategies">Chapter 11. Options trading strategies</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-12-binomial-tree-pricing">Chapter 12. Binomial tree pricing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#no-arbitrage-arguments-vs-risk-neutral-arguments">No arbitrage arguments vs risk-neutral arguments</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#no-arbitrage">No arbitrage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#risk-neutral-valuation">Risk-neutral valuation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comparison-example">Comparison - example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#two-step-binomial-trees">Two-step binomial trees</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delta">Delta</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-13-options-pricing-black-scholes-merton-model">Chapter 13. Options pricing - Black, Scholes, Merton model</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basics">Basics</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#expected-return">Expected return</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#volatility_1">Volatility</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assumptions_1">Assumptions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#trading-days-v-calendar-days">Trading days v. calendar days</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#calc-volatility-from-historical-data">Calc volatility from historical data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#blackscholesmerton-modelling">Black–Scholes–Merton modelling</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#risk-neutral-valuation-revisited">Risk-neutral valuation: revisited</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-4-interest-rates">Chapter 4. Interest rates</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#41-types-of-rates">4.1 | Types of rates</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#42-bond-pricing">4.2 | Bond pricing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#43-determining-treasury-zero-rates">4.3 | Determining Treasury zero rates</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#44-forward-rates">4.4 | Forward rates</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#45-term-structure-of-interest-rates">4.5 | Term structure of interest rates</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-3-hedging-strategies-using-futures">Chapter 3. Hedging strategies using futures</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#31-basics">3.1 | Basics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#32-basis-risk">3.2 | Basis risk</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#33-cross-hedging">3.3 | Cross hedging</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#minimum-variance-hedge-ratio">Minimum variance hedge ratio</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#34-hedging-equity-portfolio">3.4 | Hedging equity portfolio</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-7-swaps">Chapter 7. Swaps</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Full stack</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Full%20stack/Doccen%20policy%20update/">Doccen policy update</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Full%20stack/python/">python</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Maths</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Maths/DATA101%20Data%20engineering%20PostgreSQL/">DATA101 Data engineering PostgreSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Maths/Doccen%20tasks/">Doccen tasks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Maths/International%20Finance/">International Finance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Maths/Neural%20networks/">Neural networks</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">My Blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Financial engineering</li>
+      <li class="breadcrumb-item active">Derivatives notes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="derivatives-notes">Derivatives notes</h1>
+<h2 id="chapter-1-basics">Chapter 1. Basics</h2>
+<h3 id="basic-derivatives">Basic derivatives</h3>
+<blockquote>
+<p><strong>Futures and forward contracts</strong> are agreements to buy or sell an asset at a certain time in the future for a certain price.
+<strong>Futures</strong> contracts are traded on an exchange
+<strong>Forward</strong> contracts are traded in the over-the-counter market.</p>
+<p><strong>Options</strong> trade both on exchanges and in the over-the-counter market. 2 types:
+1. A <strong>call</strong> option gives the holder the right to buy an asset by a certain date for a certain price.
+2. A <strong>put</strong> option gives the holder the right to sell an asset by a certain date for a certain price.</p>
+<p>[!quote]+ Example - option price chart
+Suppose that a March call option on a stock with a strike price of $50 costs $2.50 and is held until March. Under what circumstances will the holder of the option make a gain? Under what circumstances will the option be exercised? Draw a diagram showing how the profit on a long position in the option depends on the stock price at the maturity of the option.
+* Call = ability to BUY
+* If high price, ill buy at low predet price. So spot increases (-&gt;) -&gt; boom at 50 PLUS premium -&gt; perk up profits
+* Low price -&gt; no exercise -&gt; straight line lose at x = -2.5
+![[Pasted image 20240114031854.png]]</p>
+<p>Suppose that a June put option on a stock with a strike price of $60 costs $4 and is held until June. Under what circumstances will the holder of the option make a gain? Under what circumstances will the option be exercised?
+* Put = ability to sell -&gt; good if prices go down
+* At spot = 60 (-4 premium since holder) = 56 -&gt; exercise -&gt; profits perk up
+* Spot rate higher than that (&lt;-) = profits = negative at 4, not exercised options
+* Chart for the holder:
+![[Pasted image 20240113012227.png]]
+* Chart for the seller:
+![[Pasted image 20240113012159.png]]</p>
+</blockquote>
+<h3 id="long-vs-short-positions">Long vs. short positions</h3>
+<p>A trader who enters into a <strong>long futures position</strong> is agreeing to <strong>BUY</strong> the underlying asset for a certain price at a certain time in the future.</p>
+<p>A trader who enters into a <strong>short futures position</strong> is agreeing to <strong>SELL</strong> the underlying asset for a certain price at a certain time in the future.</p>
+<h3 id="otc-vs-exchange-traded">OTC vs exchange traded</h3>
+<blockquote>
+<p>The <strong>over-the-counter</strong> market is a telephone- and computer-linked network of financial institutions, fund managers, and corporate treasurers where 2 participants can enter into any mutually acceptable contract.
+* When a market maker quotes a bid and an offer, the <strong>bid</strong> is the price at which the market maker is prepared to <strong>BUY</strong> and the <strong>offer</strong> is the price at which the market maker is prepared to <strong>SELL</strong>.</p>
+<p>An <strong>exchange-traded</strong> market is a market organized by an exchange where traders either meet physically or communicate electronically and the contracts that can be traded have been defined by the exchange.</p>
+</blockquote>
+<h3 id="participants-in-the-markets">Participants in the markets</h3>
+<p>Three main types of participants in the markets: hedgers, speculators, and arbitrageurs.</p>
+<ul>
+<li><strong>Hedging</strong> = when it has an exposure to the price of an asset and takes a position in futures or options markets to offset the exposure.</li>
+<li><strong>Speculation</strong> = the company has no exposure to offset. It is betting on the future movements in the price of the asset.</li>
+<li><strong>Arbitrage</strong> involves taking a position in two or more different markets to lock in a profit.</li>
+</ul>
+<blockquote>
+<p><strong>Hedgers</strong> are in the position of facing risk associated with the price of an asset.
+ * They use futures, forward, or option contracts to reduce or eliminate this risk.</p>
+<p><strong>Speculators</strong> wish to bet on future movements in the price of an asset.
+* Futures, forward, and option contracts can give them extra leverage; that is, the contracts can increase both the potential gains and potential losses in a speculative investment.</p>
+<p><strong>Arbitrageurs</strong> are in business to take advantage of a discrepancy between prices in two different markets.
+* If, for example, they see the futures price of an asset getting out of line with the spot price, they will take offsetting positions in the two markets to lock in a profit.</p>
+</blockquote>
+<h2 id="chapter-2-future-and-forward-markets">Chapter 2. Future and forward markets</h2>
+<h3 id="opening-closing-futures-positions">Opening &amp; closing futures positions</h3>
+<p>A very high proportion of the futures contracts that are traded <strong>do not lead to the delivery of the underlying asset</strong>.</p>
+<ul>
+<li>This is because traders <strong>usually enter into offsetting contracts to close out their positions before the delivery period is reached</strong>. However, it is the possibility of final delivery that drives the determination of the futures price.</li>
+</ul>
+<blockquote>
+<p><strong>Closing a position</strong> = enter into an OPPOSITE trade to the original one that opened the position</p>
+</blockquote>
+<h3 id="contract-specifications">Contract specifications</h3>
+<p>The most important aspects of the design of a new futures contract are</p>
+<ul>
+<li>the specification of the underlying asset</li>
+<li>the size of the contract</li>
+<li>the delivery arrangements</li>
+<li>the delivery months</li>
+</ul>
+<p>The specification of contracts is an important activity for a futures exchange. The two sides to any contract must know</p>
+<ul>
+<li>what can be delivered</li>
+<li>where delivery can take place</li>
+<li>when delivery can take place</li>
+<li>details on the trading hours</li>
+<li>how prices will be quoted</li>
+<li>maximum daily price movements</li>
+</ul>
+<p>Some contracts, such as those on stock indices, are settled in cash rather than by delivery of the underlying asset.</p>
+<p>New contracts must be approved by the Commodity Futures Trading Commission before trading starts.</p>
+<h3 id="convergence-of-future-spot-prices-arbitrage-opportunities">Convergence of future &amp; spot prices; arbitrage opportunities</h3>
+<p>As we approach the delivery period -&gt; futures price coverge to spot price. Otherwise -&gt; <strong>arbitrage opportunity</strong></p>
+<p>![[Pasted image 20240118155416.png]]</p>
+<p>==If future P &gt; spot P==</p>
+<ol>
+<li>Sell (SHORT) futures contract promising to sell the asset at HIGH</li>
+<li>Buy the asset at LOW</li>
+<li>Deliver the asset to the futures contract buyer, earning HIGH</li>
+</ol>
+<p>-&gt; Since future inflow from selling &gt; spot outflow from buying -&gt; profit
+-&gt; As traders exploit this arbitrage opportunity, the futures price
+will fall.</p>
+<p>==If future &lt; spot P==</p>
+<ol>
+<li>Buy a future promising to buy the asset at LOW</li>
+<li>Wait until delivery</li>
+<li>Buy the asset at LOW, cheaper than buying asset now at HIGH</li>
+</ol>
+<p>-&gt; Prices would consequently rise</p>
+<p>If the <strong>futures price &lt; spot price</strong> during the delivery period, there is no similar perfect arbitrage strategy.</p>
+<ul>
+<li>An arbitrageur can take a long futures position but cannot force immediate delivery of the asset. The decision on when delivery will be made is made by the party with the short position.</li>
+</ul>
+<p>Nevertheless companies interested in acquiring the asset will find it attractive to enter into a long futures contract and wait for delivery to be made.</p>
+<h3 id="operation-of-margin-accounts">Operation of margin accounts</h3>
+<p><strong>Layer 1. Client &amp; broker</strong></p>
+<blockquote>
+<p><strong>Daily settlement / marking to market</strong>
+* the broker will require the investor to deposit funds in a margin account - must be deposited at the time the contract is entered into is known as the <strong>initial margin</strong>.
+* at the end of each trading day, the margin account is adjusted to reflect the investor’s gain or loss.</p>
+<p>[!NOTE] Example: calculation
+Suppose, for example, that by the end of June 5 the futures price has dropped from $1,650 to $1,641.
+* The investor has a loss of $1,800 (= 200  $9), because the 200 ounces of December gold, which the investor contracted to buy at $1,650, can now be sold for only $1,641.
+* The balance in the margin account would therefore be reduced by $1,800 to $10,200.
+* Similarly, if the price of December gold rose to $1,659 by the end of June 5, the balance in the margin account would be increased by $1,800 to $13,800.
+* A trade is first settled at the close of the day on which it takes place. It is then settled at the close of trading on each subsequent day.</p>
+</blockquote>
+<p><strong>Layer 2. broker vs clearing house</strong>
+When there is a decrease in the futures price so that the margin account of an investor with a long position is reduced by $1,800, the investor’s broker has to pay the exchange clearing house $1,800 and this money is passed on to the broker of an investor with a short position.</p>
+<p><strong>Maintenance margin</strong>
+The investor is entitled to withdraw any balance in the margin account in excess of the initial margin. To ensure that the balance in the margin account never becomes negative, a <strong>maintenance margin</strong>, which is somewhat lower than the initial margin, is set.</p>
+<p><strong>Variation margin</strong>
+If the balance in the margin account falls &lt; the maintenance margin, the investor <strong>receives a margin call and is expected to top up the margin account to the initial margin level the next day</strong>.
+* The extra funds deposited are known as a <strong>variation margin</strong>.
+* If the investor does not provide the variation margin, the broker closes out the position. In the case considered above, <strong>closing out the position would involve neutralising the existing contract</strong> by selling 200 ounces of gold for delivery in December.</p>
+<p><strong>Extra info</strong>
+* Most brokers pay investors interest on the balance in a margin account, making the balance not represent a true cost if the interest rate is competitive.
+    * Investors can deposit securities, treasury bills (at 90% face value), or shares (at 50% market value) to satisfy initial margin requirements, with subsequent margin calls requiring cash.
+* Unlike forward contracts, futures contracts are settled daily. Daily gains or losses are added to or subtracted from the margin account balance.
+* Minimum margin levels = set by the exchange clearing house, with individual brokers having the discretion to require more margin.
+* Minimum levels depend on the variability of the underlying asset's price, and maintenance margin is typically about 75% of the initial margin.
+* Margin requirements variation: Depend on the trader's objectives, with bona fide hedgers often having lower margin requirements than speculators due to perceived lower risk of default.</p>
+<p><strong>Clearing house &amp; clearin margin</strong></p>
+<blockquote>
+<p><strong>Clearing house</strong> = intermediary in futures transactions, guaranteeing performance and having members who contribute to a default fund.
+* Brokers, if not members, must channel their business through a clearing house member.
+* Clearing house tracks daily transactions to calculate the net position of each member.
+* Brokers maintain margin with a clearing house member, who, in turn, maintains a clearing margin account with the clearing house.</p>
+<p><strong>Clearing margin account</strong>: Adjusted for gains and losses daily, with an original margin but <strong>no maintenance margin</strong>.
+* Balance must be maintained at the original margin multiplied by the number of outstanding contracts.
+* Clearing margin calculation: the exchange clearing house calculates the clearing margin based on the number of contracts outstanding, using either a <strong>gross basis</strong> (sum of long and short positions) or a <strong>net basis</strong> (offsetting long and short positions). Most exchanges currently use net margining.</p>
+</blockquote>
+<h3 id="otc-market">OTC market</h3>
+<blockquote>
+<p><strong>OTC market</strong> = where companies agree to derivatives transactions without involving an exchange.</p>
+</blockquote>
+<p><strong>Collateral</strong>
+- Credit risk is inherent in OTC derivatives, and defaults can result in losses for the party with a positive net value.
+- Collateral agreements between companies, such as A and B, are used to mitigate credit risk.
+- Collateral arrangements may be one-way or two-way, involving the posting of cash or marketable securities with daily valuation.
+- Two-way agreements may require <strong>posting variation margin</strong> based on daily changes in transaction values.</p>
+<p><strong>Clearing houses</strong>
+* Prior to the 2007 credit crisis, most OTC trades operated through bilateral agreements with collateral but had higher credit risk than exchange-traded markets.
+* Regulators, post-2007 crisis, sought to reduce systemic risk by making OTC markets more like exchange-traded markets.
+* Legislation mandates the use of <strong>central clearing parties (CCPs)</strong> for standard OTC transactions to reduce credit risk.
+* CCPs act as <strong>intermediaries</strong>, becoming the counterparty to both sides of an OTC transaction and managing credit risk through initial and daily variation margin requirements.
+    * CCPs are similar to exchange clearing houses.
+    * Once it has been agreed between two parties A and B, a standard OTC derivative transaction is presented to a CCP.
+    * Assuming the CCP accepts the transaction, it becomes the counterparty to both A and B. (This is similar to the way the clearing house for a futures exchange becomes the counterparty to the two sides of a futures trade).
+    * For example, if the transaction is a forward contract where A has agreed to buy an asset from B in one year for a certain price, the clearing house agrees to
+    1. Buy the asset from B in one year for the agreed price, and
+    2. Sell the asset to A in one year for the agreed price.</p>
+<p>=&gt; It takes on the credit risk of both A and B. It manages this risk by requiring an initial margin and a daily variation margin from each of them.</p>
+<p>A move from bilateral agreements -&gt; centralised clearing through a CCP</p>
+<p>![[Pasted image 20240120141926.png]]</p>
+<h3 id="market-quotes">Market quotes</h3>
+<p>Table 2.2. Futures Quotes for CME Group Contracts on Commodities - <strong>July 13, 2012</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Gold, 100 oz, $ per oz</strong></th>
+<th>Open</th>
+<th>High</th>
+<th>Low</th>
+<th>Prior Settlement</th>
+<th>Last Trade</th>
+<th>Change</th>
+<th>Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aug. 2012</td>
+<td>1571.2</td>
+<td>1596.5</td>
+<td>1565.6</td>
+<td>1565.3</td>
+<td>1589.7</td>
+<td>+24.4</td>
+<td>115,296</td>
+</tr>
+<tr>
+<td>Sept. 2012</td>
+<td>1570.4</td>
+<td>1597.5</td>
+<td>1567.1</td>
+<td>1566.4</td>
+<td>1590.2</td>
+<td>+23.8</td>
+<td>303</td>
+</tr>
+<tr>
+<td>Oct. 2012</td>
+<td>1574.0</td>
+<td>1598.3</td>
+<td>1570.0</td>
+<td>1567.6</td>
+<td>1593.6</td>
+<td>+26.0</td>
+<td>726</td>
+</tr>
+<tr>
+<td>Dec. 2012</td>
+<td>1576.5</td>
+<td>1601.0</td>
+<td>1570.7</td>
+<td>1570.0</td>
+<td>1596.0</td>
+<td>+26.0</td>
+<td>11,283</td>
+</tr>
+<tr>
+<td>June 2013</td>
+<td>1598.0</td>
+<td>1604.6</td>
+<td>1598.0</td>
+<td>1576.1</td>
+<td>1604.6</td>
+<td>+28.5</td>
+<td>250</td>
+</tr>
+<tr>
+<td><strong>Crude Oil, 1,000 barrels, $ per barrel</strong></td>
+<td><strong>Open</strong></td>
+<td><strong>High</strong></td>
+<td><strong>Low</strong></td>
+<td><strong>Prior Settlement</strong></td>
+<td><strong>Last Trade</strong></td>
+<td><strong>Change</strong></td>
+<td><strong>Volume</strong></td>
+</tr>
+<tr>
+<td>Aug. 2012</td>
+<td>85.86</td>
+<td>87.61</td>
+<td>85.58</td>
+<td>86.08</td>
+<td>87.28</td>
+<td>+1.20</td>
+<td>223,698</td>
+</tr>
+<tr>
+<td>Sept. 2012</td>
+<td>86.33</td>
+<td>88.00</td>
+<td>85.95</td>
+<td>86.46</td>
+<td>87.68</td>
+<td>+1.22</td>
+<td>87,931</td>
+</tr>
+<tr>
+<td>Dec. 2012</td>
+<td>87.45</td>
+<td>89.21</td>
+<td>87.39</td>
+<td>87.73</td>
+<td>88.94</td>
+<td>+1.21</td>
+<td>31,701</td>
+</tr>
+<tr>
+<td>Dec. 2013</td>
+<td>88.85</td>
+<td>90.15</td>
+<td>88.78</td>
+<td>88.92</td>
+<td>89.95</td>
+<td>+1.03</td>
+<td>11,128</td>
+</tr>
+<tr>
+<td>Dec. 2014</td>
+<td>87.20</td>
+<td>87.74</td>
+<td>87.20</td>
+<td>86.98</td>
+<td>87.74</td>
+<td>+0.76</td>
+<td>2,388</td>
+</tr>
+<tr>
+<td><strong>Corn, 5,000 bushels, cents per bushel</strong></td>
+<td><strong>Open</strong></td>
+<td><strong>High</strong></td>
+<td><strong>Low</strong></td>
+<td><strong>Prior Settlement</strong></td>
+<td><strong>Last Trade</strong></td>
+<td><strong>Change</strong></td>
+<td><strong>Volume</strong></td>
+</tr>
+<tr>
+<td>Sept. 2012</td>
+<td>730.00</td>
+<td>748.00</td>
+<td>726.50</td>
+<td>731.25</td>
+<td>742.25</td>
+<td>+11.00</td>
+<td>78,317</td>
+</tr>
+<tr>
+<td>Dec. 2012</td>
+<td>731.25</td>
+<td>749.00</td>
+<td>727.25</td>
+<td>732.25</td>
+<td>742.25</td>
+<td>+10.00</td>
+<td>179,010</td>
+</tr>
+<tr>
+<td>Mar. 2013</td>
+<td>733.00</td>
+<td>748.25</td>
+<td>729.00</td>
+<td>734.50</td>
+<td>743.50</td>
+<td>+9.00</td>
+<td>22,588</td>
+</tr>
+<tr>
+<td>May 2013</td>
+<td>731.00</td>
+<td>744.25</td>
+<td>726.75</td>
+<td>732.75</td>
+<td>739.75</td>
+<td>+7.00</td>
+<td>4,548</td>
+</tr>
+<tr>
+<td>July 2013</td>
+<td>728.00</td>
+<td>739.00</td>
+<td>721.00</td>
+<td>728.75</td>
+<td>733.50</td>
+<td>+4.75</td>
+<td>7,874</td>
+</tr>
+<tr>
+<td>Dec. 2013</td>
+<td>618.75</td>
+<td>626.50</td>
+<td>613.75</td>
+<td>618.25</td>
+<td>626.00</td>
+<td>+7.75</td>
+<td>4,260</td>
+</tr>
+<tr>
+<td><strong>Soybeans, 5,000 bushels, cents per bushel</strong></td>
+<td><strong>Open</strong></td>
+<td><strong>High</strong></td>
+<td><strong>Low</strong></td>
+<td><strong>Prior Settlement</strong></td>
+<td><strong>Last Trade</strong></td>
+<td><strong>Change</strong></td>
+<td><strong>Volume</strong></td>
+</tr>
+<tr>
+<td>Aug. 2012</td>
+<td>1572.00</td>
+<td>1600.00</td>
+<td>1571.50</td>
+<td>1572.50</td>
+<td>1596.00</td>
+<td>+23.50</td>
+<td>19,194</td>
+</tr>
+<tr>
+<td>Sept. 2012</td>
+<td>1544.50</td>
+<td>1574.00</td>
+<td>1544.50</td>
+<td>1545.50</td>
+<td>1570.00</td>
+<td>+24.50</td>
+<td>7,024</td>
+</tr>
+<tr>
+<td>Nov. 2012</td>
+<td>1528.00</td>
+<td>1561.50</td>
+<td>1526.50</td>
+<td>1529.00</td>
+<td>1552.75</td>
+<td>+23.75</td>
+<td>98,526</td>
+</tr>
+<tr>
+<td>Jan. 2013</td>
+<td>1527.75</td>
+<td>1557.25</td>
+<td>1523.75</td>
+<td>1526.00</td>
+<td>1548.00</td>
+<td>+22.00</td>
+<td>11,621</td>
+</tr>
+<tr>
+<td>Mar. 2013</td>
+<td>1486.25</td>
+<td>1508.00</td>
+<td>1482.25</td>
+<td>1481.25</td>
+<td>1500.25</td>
+<td>+19.00</td>
+<td>6,226</td>
+</tr>
+<tr>
+<td>May 2013</td>
+<td>1432.25</td>
+<td>1453.25</td>
+<td>1428.00</td>
+<td>1430.25</td>
+<td>1449.00</td>
+<td>+18.75</td>
+<td>5,234</td>
+</tr>
+<tr>
+<td><strong>Wheat, 5,000 bushels, cents per bushel</strong></td>
+<td><strong>Open</strong></td>
+<td><strong>High</strong></td>
+<td><strong>Low</strong></td>
+<td><strong>Prior Settlement</strong></td>
+<td><strong>Last Trade</strong></td>
+<td><strong>Change</strong></td>
+<td><strong>Volume</strong></td>
+</tr>
+<tr>
+<td>Sept. 2012</td>
+<td>845.75</td>
+<td>865.75</td>
+<td>842.00</td>
+<td>846.75</td>
+<td>846.25</td>
+<td>±0.50</td>
+<td>41,301</td>
+</tr>
+<tr>
+<td>Dec. 2012</td>
+<td>859.00</td>
+<td>877.75</td>
+<td>856.00</td>
+<td>859.75</td>
+<td>861.50</td>
+<td>+1.75</td>
+<td>29,450</td>
+</tr>
+<tr>
+<td>Mar. 2013</td>
+<td>868.00</td>
+<td>885.75</td>
+<td>865.00</td>
+<td>869.00</td>
+<td>870.00</td>
+<td>+2.00</td>
+<td>6,972</td>
+</tr>
+<tr>
+<td>May 2013</td>
+<td>865.00</td>
+<td>881.00</td>
+<td>863.00</td>
+<td>864.50</td>
+<td>867.00</td>
+<td>+2.50</td>
+<td>2,339</td>
+</tr>
+<tr>
+<td>July 2013</td>
+<td>824.50</td>
+<td>840.00</td>
+<td>824.25</td>
+<td>826.75</td>
+<td>832.50</td>
+<td>+5.75</td>
+<td>4,118</td>
+</tr>
+<tr>
+<td><strong>Live Cattle, 40,000 lbs, cents per lb</strong></td>
+<td><strong>Open</strong></td>
+<td><strong>High</strong></td>
+<td><strong>Low</strong></td>
+<td><strong>Prior Settlement</strong></td>
+<td><strong>Last Trade</strong></td>
+<td><strong>Change</strong></td>
+<td><strong>Volume</strong></td>
+</tr>
+<tr>
+<td>Aug. 2012</td>
+<td>116.900</td>
+<td>117.600</td>
+<td>116.300</td>
+<td>117.025</td>
+<td>117.225</td>
+<td>+0.200</td>
+<td>23,117</td>
+</tr>
+<tr>
+<td>Oct. 2012</td>
+<td>121.450</td>
+<td>121.650</td>
+<td>120.525</td>
+<td>121.650</td>
+<td>121.600</td>
+<td>±0.050</td>
+<td>18,427</td>
+</tr>
+<tr>
+<td>Dec. 2012</td>
+<td>124.900</td>
+<td>125.000</td>
+<td>124.050</td>
+<td>124.975</td>
+<td>124.950</td>
+<td>±0.025</td>
+<td>6,561</td>
+</tr>
+<tr>
+<td>Feb. 2013</td>
+<td>128.500</td>
+<td>128.500</td>
+<td>127.525</td>
+<td>128.550</td>
+<td>128.500</td>
+<td>±0.050</td>
+<td>2,450</td>
+</tr>
+<tr>
+<td>Apr. 2013</td>
+<td>131.225</td>
+<td>131.400</td>
+<td>130.300</td>
+<td>131.375</td>
+<td>131.250</td>
+<td>±0.125</td>
+<td>1,615</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Prices</strong>
+- Prices are presented as the opening, highest, and lowest prices for the day
+* The opening price is representative of the prices at which contracts were trading immediately after the start of trading on July 13, 2012.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Gold, 100 oz, $ per oz</strong></th>
+<th>Open</th>
+<th>High</th>
+<th>Low</th>
+<th>Prior Settlement</th>
+<th>Last Trade</th>
+<th>Change</th>
+<th>Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aug. 2012</td>
+<td><strong>1571.2</strong></td>
+<td><strong>1596.5</strong></td>
+<td><strong>1565.6</strong></td>
+<td>1565.3</td>
+<td>1589.7</td>
+<td>+24.4</td>
+<td>115,296</td>
+</tr>
+<tr>
+<td>Sept. 2012</td>
+<td>1570.4</td>
+<td>1597.5</td>
+<td>1567.1</td>
+<td>1566.4</td>
+<td>1590.2</td>
+<td>+23.8</td>
+<td>303</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>For the August 2012 gold contract, the <strong>opening price</strong> on July 13, 2012 was $1,571.2 per ounce.</li>
+<li>The <strong>highest price</strong> during the day was $1,596.5 per ounce and</li>
+<li>The <strong>lowest price</strong> during the day was $1,565.6 per ounce.</li>
+</ul>
+<p><strong>Settlement prices</strong></p>
+<blockquote>
+<p><strong>settlement price</strong> is the price used for calculating daily gains and losses and margin requirements.
+= the price at which the contract traded immediately before the end of a day’s trading session
+= aka close</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>Gold, 100 oz, $ per oz</strong></th>
+<th>Open</th>
+<th>High</th>
+<th>Low</th>
+<th>Prior Settlement</th>
+<th>Last Trade</th>
+<th>Change</th>
+<th>Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aug. 2012</td>
+<td>1571.2</td>
+<td>1596.5</td>
+<td>1565.6</td>
+<td><strong>1565.3</strong></td>
+<td><strong>1589.7</strong></td>
+<td><strong>+24.4</strong></td>
+<td><strong>115,296</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>$1,565.3 = settlement price the previous day (i.e., July 12, 2012).</li>
+<li>1,589.7 = most recent trading price (closing today)</li>
+<li>+24.4 = price change from the previous day’s settlement price.</li>
+</ul>
+<blockquote>
+<p>[!NOTE] Calculating the amount gained
+For a trader with a long position, the positive price change of 1565.3 -&gt; 1589.7 = 24.4 is a <strong>gain</strong> (bc buy -&gt; price increases -&gt; profit cos bought at cheaper price).
+Times 100 oz cos that was the price per oz -&gt; earn 2440 today</p>
+<p>Similarly, the margin account of a trader with a short (sell) position would lose this amount 2,440 on July 13.</p>
+</blockquote>
+<p><strong>Trading volume and open interest</strong></p>
+<blockquote>
+<p><strong>Open interest</strong> = total number of outstanding contracts (long = short positions)
+<strong>Trading volume</strong> = number of contracts traded in a day
+- If there is a large amount of trading by day traders (i.e., traders who enter into a position and close it out on the same day) the volume of trading in a day can be greater than either the beginning-of-day or end-of-day open interest.</p>
+</blockquote>
+<p>Usually 1 party opens, 1 party closes at the same time -&gt; open interest remains at 0. But if both the long and short parties are closing out existing positions -&gt; <strong>the resultant change in the open interest is -1</strong></p>
+<p><strong>Patterns of futures</strong></p>
+<blockquote>
+<p><strong>Normal market</strong> = futures prices tend to increase as the maturity of the contracts extends into the future.
+* This means that contracts with later expiration dates have higher prices compared to those with earlier expiration dates.
+* For example, if you observe a series of futures prices for different months, and as you move from near-term to far-term contracts, the prices generally go up, it indicates a normal market.
+- Gold and live cattle futures prices follow an <strong>increasing function of maturity</strong>, known as a <strong>normal market</strong>; as you move from August 2012 to June 2013 in the contracts, the prices generally increase.</p>
+<p><strong>Inverted market</strong> = Futures prices tend to decrease as the maturity of the contracts extends into the future.
+* This means that contracts with later expiration dates have lower prices compared to those with earlier expiration dates.
+* For example, if you observe a series of futures prices for different months, and as you move from near-term to far-term contracts, the prices generally go down, it indicates an inverted market.
+- Soybean futures prices exhibit a decreasing function of maturity, termed an <strong>inverted market</strong>.</p>
+</blockquote>
+<p>Some commodities, like crude oil, corn, and wheat, may show mixed patterns, combining elements of both normal and inverted markets on a specific date (e.g., July 13, 2012).</p>
+<h3 id="pricing">Pricing</h3>
+<h4 id="currency">Currency</h4>
+<p>In futures markets prices are quoted as the <strong>number of U.S. dollars per unit of foreign currency</strong> for the</p>
+<ul>
+<li>British pound</li>
+<li>euro</li>
+<li>Australian dollar</li>
+<li>New Zealand dollar</li>
+</ul>
+<p>For other major currencies, spot and forward rates are quoted as the <strong>number of units of foreign currency per U.S. dollar</strong>.</p>
+<h4 id="price-limits-and-position-limits">Price limits and position limits</h4>
+<blockquote>
+<p><strong>Limit down</strong> = in a day the price moves down from the last day's close by an amonut = daily price limit
+<strong>Limit up</strong> = move up by the limit
+Usually ceases trading</p>
+</blockquote>
+<p>Goal of daily price limits: prevent too much volatility due to speculative excesses</p>
+<blockquote>
+<p><strong>Position limit</strong> = max # of contracts a speculator may hold -&gt; prevent speculators from exercising undue influence</p>
+</blockquote>
+<h3 id="delivery">Delivery</h3>
+<ul>
+<li>Most futures contracts don't result in the physical delivery of the underlying asset; they are typically closed out early.</li>
+<li><strong>The potential for delivery, however, DOES influences futures prices</strong>.</li>
+</ul>
+<blockquote>
+<p><strong>Delivery period:</strong> = Defined by the exchange and varies across contracts.
+- Investor A, holding the short position, decides when to deliver.
+- Investor A's broker issues a notice of intention to deliver to the exchange clearing house, specifying the number of contracts, delivery location, and grade (for commodities).</p>
+</blockquote>
+<p><strong>Selection of delivery party</strong>
+- The exchange selects a long position holder to accept delivery.
+- Not necessarily the original counterparty (e.g. investor B); positions may have been closed out through multiple trades.
+- The notice is usually passed to the party with the <strong>oldest outstanding long position</strong>.</p>
+<p><strong>Delivery process:</strong>
+- For commodities, taking delivery often involves accepting a warehouse receipt and immediate payment.
+- Costs associated with livestock care in livestock futures.
+- Financial futures are usually settled by wire transfer.
+- Price paid is typically the most recent settlement price, adjusted for grade and location if specified by the exchange.
+- The entire delivery process takes around two to three days.</p>
+<p><strong>Critical Days:</strong>
+- First Notice Day: The first day for submitting a notice of intention to make delivery.
+- Last Notice Day: The last day for submitting such a notice.
+- Last Trading Day: Usually a few days before the last notice day.
+- Investors with long positions aim to close out contracts before the first notice day to avoid the risk of delivery.</p>
+<p><strong>Cash Settlement:</strong>
+- Some financial futures, like stock index futures, are settled in cash due to the impracticality of delivering the underlying asset (e.g., a portfolio of 500 stocks for S&amp;P 500 futures).
+- All outstanding contracts are closed on a predetermined day.
+- Final settlement price is set equal to the spot price of the underlying asset at the open or close of trading on that day.</p>
+<h3 id="types-of-trader-order">Types of trader &amp; order</h3>
+<h4 id="traders">Traders</h4>
+<blockquote>
+<p><strong>Commission merchant</strong> = trades on behalf of a client &amp; charges a commission vs.
+<strong>Local</strong> trades on their own behalf</p>
+</blockquote>
+<p>Inidividual traders:</p>
+<ul>
+<li>hedgers</li>
+<li>speculators<ul>
+<li><strong>scalpers</strong> - very short terms, e.g. a few minutes</li>
+<li><strong>day traders</strong> - less than 1 trading day</li>
+<li><strong>position traders</strong> - longer</li>
+</ul>
+</li>
+<li>arbitrageurs</li>
+</ul>
+<h4 id="orders">Orders</h4>
+<blockquote>
+<p><strong>Market order</strong> = carry out trade immediately at best price available</p>
+<p><strong>Limit order</strong> = specifies a specific price -&gt; only execute at this or higher (if selling) or lower (if buying) to prevent loss/maximise profit</p>
+<p><strong>Stop order</strong> = <strong>stop-loss order</strong> = slightly less favourable than market conditions - once limit is reached -&gt; market order straight away
+e.g. market is currently 35, stop order at 30 -&gt; once it decreases if it hits 30 sell straight away
+goal: close out a position if unfavourable price movements take place -&gt; limit the possible amount of loss</p>
+<p><strong>Stop-limit order</strong> = order becomes a limit order as soon as a bid/offer is made at a price =/&lt; favourable than stop price</p>
+<p>[!quote] Example: stop-limit order
+* market is currently 25
+* stop-order to buy = stop of 40, limit at 41
+* the moment theres a bid/offer at 40 -&gt; limit order (buy immediately as long as it's not above 41)</p>
+<p>[!quote] Example: a stop-limit order to sell at 20.30 with a limit of 20.10:
+= as soon as there is a bid at 20.30 the contract should be sold providing this can be done at 20.10 or a higher price.</p>
+<p>A <strong>market-if-touched order</strong> is executed at the best available price after a trade occurs at a specified price or at a price more favorable than the specified price.
+* In effect, an MIT becomes a market order once the specified price has been hit.
+* An MIT is also known as a <strong>board order</strong>.</p>
+</blockquote>
+<p>==Comparing market if touched and stop order==</p>
+<p>Consider an investor who has a long position in a futures contract and is issuing instructions that would lead to closing out the contract.</p>
+<ul>
+<li>A stop order is designed to place a limit on the loss that can occur in the event of unfavorable price movements.</li>
+<li>By contrast, a market-if-touched order is designed to ensure that profits are taken if sufficiently favorable price movements occur.</li>
+</ul>
+<p>==Examples==</p>
+<p><strong>Stop order to sell at $2</strong> = used by investors - order to sell at the best available price once a price of $2 or less is reached -&gt; used to limit losses/protect gains from an existing long position</p>
+<ul>
+<li>if the market price falls to $2 or below, a market order to sell will be triggered</li>
+</ul>
+<p><strong>Limit order to sell at $2</strong> = order to sell at a price of $2 or more -&gt; used to instruct a broker that a short position should be taken, providing it can be done at a price more favorable than $2
+* you are instructing your broker to sell your asset at a price of $2 or more, but not at a lower price
+* used by traders who want to ensure that they only sell at a certain price or better</p>
+<h3 id="forwards-vs-futures">Forwards vs futures</h3>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>forward</th>
+<th>futures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>private arrangement</td>
+<td>private</td>
+<td>traded on exchanges</td>
+</tr>
+<tr>
+<td>standardisation</td>
+<td>not standardised</td>
+<td>standardised</td>
+</tr>
+<tr>
+<td>specified delivery date</td>
+<td>usually one specified date</td>
+<td>range of delivery dates</td>
+</tr>
+<tr>
+<td>settlement</td>
+<td>at the end of the contract</td>
+<td>settled daily</td>
+</tr>
+<tr>
+<td>delivery or final cash settlement</td>
+<td>usually takes place</td>
+<td>usually closed out prior to maturity</td>
+</tr>
+<tr>
+<td>credit risk</td>
+<td>some credit risk</td>
+<td>virtually no credit risk</td>
+</tr>
+<tr>
+<td>price quotes</td>
+<td>same as spot:<br>- same as future for big currencies: AUD, NZ, euro, pound = <strong>x US / FOR</strong> <br>- other currencies: <strong>x FOR / US</strong></td>
+<td>number of U.S. dollars per unit of the foreign (<strong>x US / FOR</strong>)</td>
+</tr>
+</tbody>
+</table>
+<p>==Example==</p>
+<p>Investor A takes a long/buy position in a 90-day forward contract on £1 million.</p>
+<ul>
+<li>The forward price is 1.6000 dollars per pound.</li>
+</ul>
+<p>Investor B takes a long position in 90-day futures contracts on £1 million.</p>
+<ul>
+<li>The futures price is also 1.6000 dollars per pound.</li>
+</ul>
+<p>At the end of the 90 days, the exchange rate proves to be 1.7000. The result of this is that investors A and B each make a total gain equal to (1.7 - 1.6)*1,000,000 = 100,000</p>
+<ul>
+<li>Investor A’s gain is made entirely on the 90th day.</li>
+<li>Investor B’s gain is realised day by day over the 90-day period. On some days investor B may realize a loss, whereas on other days he or she will realise a gain.</li>
+</ul>
+<blockquote>
+<p>[!NOTE] <strong>FORWARDS = 1 LUMP SUM, FUTURES = MARKED TO MARKET DAILY</strong></p>
+</blockquote>
+<h2 id="chapter-5-determining-forward-and-future-prices">Chapter 5. Determining forward and future prices</h2>
+<h3 id="1-investment-vs-consumption-assets">1. INVESTMENT vs CONSUMPTION assets</h3>
+<blockquote>
+<p><strong>Investment assets</strong> = held for investment by a significant number of investors
+<strong>Consumption assets</strong> = held primarily for consumption and not usually for investment purposes</p>
+</blockquote>
+<p><strong>We CAN use arbitrage arguments to determine the forward and futures prices of an INVESTMENT asset from its spot price and other observable market variables. We CANNOT do this for CONSUMPTION assets.</strong></p>
+<h3 id="2-short-selling">2. Short selling</h3>
+<blockquote>
+<p><strong>Shorting</strong> is the act of selling an asset that the investor does not currently own.
+Aka. Selling borrowed assets with the hope of <strong>profitting from a decline in their price</strong>.
+1. The investor instructs a broker to short a specific quantity of shares, for instance, 500 shares of company X.
+2. The broker <strong>borrows the specified shares from an owner and sells them in the market</strong>. This action is executed in the same manner as a regular market sale.
+3. At a later stage, the investor <strong>closes the short position</strong> by buying back the same quantity of shares in the market. These purchased shares replace the borrowed ones, thus closing the short position.</p>
+</blockquote>
+<p>The investor profits if the stock price declines and incurs a loss if it rises.</p>
+<ul>
+<li>If the broker has to return the borrowed shares and none are available, the investor must close the position, even if they aren't ready to do so.</li>
+</ul>
+<p>Lending fees may also be charged for shorting.</p>
+<ul>
+<li>An investor with a short position is obligated to pay the broker any income, such as dividends or interest, that would typically be received on the shorted securities.</li>
+</ul>
+<blockquote>
+<p>[!warning] Net gain from shorting
+* investor shorts 500 shares in April at $120 per share
+* closes the position in July at $100 per share
+* Net gain =
+  * 500*120 = 60000 inflow in April - CF from selling
+  * 500 inflow in May - dividends
+  * 500*100 = 50000 outflow in July - CF from buying the shares back</p>
+</blockquote>
+<p>An investor is required to maintain a <strong>margin account</strong> with the broker</p>
+<ul>
+<li>This account, consisting of cash or marketable securities, serves as a guarantee that the investor won't abandon the short position if the share price increases.</li>
+<li>An <strong>initial margin</strong> is necessary, and additional margin may be required in the event of adverse price movements.</li>
+<li>The margin account, which <strong>earns interest</strong>, should NOT represent a cost to the investor, as it can be covered by the proceeds of the asset sale.</li>
+</ul>
+<h3 id="3-assumptions">3. Assumptions</h3>
+<ol>
+<li><strong>No Transactions Costs:</strong> Market participants are assumed to face no transactions costs when engaging in trades. This simplifies our analysis and allows us to focus on the core principles of forward and futures contracts.</li>
+<li><strong>Uniform Tax Rate:</strong> Participants are subject to the same tax rate on all net trading profits. This assumption streamlines our considerations, assuming a consistent tax environment across market participants.</li>
+<li><strong>Equal Borrowing and Lending Rates:</strong> Participants can borrow and lend money at the same risk-free rate of interest. This simplifying assumption ensures a level playing field for market participants in terms of financing their trading activities.</li>
+<li><strong>Arbitrage Opportunities:</strong> Participants actively take advantage of arbitrage opportunities as they arise in the market. This assumption reflects the proactive nature of key market participants, particularly large derivatives dealers, in exploiting profitable discrepancies.</li>
+</ol>
+<p><strong>Notation</strong>
+- <strong>T:</strong> Time until delivery date in a forward or futures contract, measured in years.
+- <strong>S0:</strong> Current price of the asset underlying the forward or futures contract.
+- <strong>F0:</strong> Current forward or futures price.
+- <strong>r:</strong> Zero-coupon risk-free rate of interest per annum, expressed with continuous compounding, applicable to an investment maturing at the delivery date (T years in the future).
+    * the rate at which money is borrowed or lent with certainty of repayment, excluding credit risk.
+    * Traditionally, financial institutions have used LIBOR as a proxy for the risk-free rate. However, events during the credit crisis starting in 2007 prompted a search for alternative indicators.</p>
+<h3 id="4-forward-price-valuation-investment-assets-only">4. FORWARD PRICE valuation (investment assets only)</h3>
+<h4 id="case-1-no-income-generating-assets">Case 1. No income generating assets</h4>
+<p>Given: <strong>forward contract on INVESTMENT ASSET</strong></p>
+<ul>
+<li>price = P0</li>
+<li>no income</li>
+<li>time to contract delivery = T</li>
+<li>risk free rate = r</li>
+<li>forward price = F0</li>
+</ul>
+<blockquote>
+<p>[!warning] Forward and spot price formula - NO INCOME
+<strong>F = S . e^(rT)</strong>
+Forward price = Spot price . e^(risk free rate . time to delivery of f/f contract)
+All units = in year</p>
+</blockquote>
+<p>==Example== spot price = 40, rfr = 5%</p>
+<p><strong>If F &gt; Se(rt) -&gt; arbitrageurs can buy the asset and short forward contracts</strong></p>
+<ul>
+<li>TIME 0: arbitrageur borrows $40 at 5% interest -&gt; buy 1 share -&gt; shorts/sells a forward contract to sell that 1 share in 3 months</li>
+<li>TIME M: upon contract maturity -&gt; arb delivers the share -&gt; receives $43 -&gt; use 40.5 to repay loan</li>
+<li>=&gt; PROFIT = 2.5 (in 43 out 40.5)</li>
+</ul>
+<p><strong>If F &lt; Se(rt) -&gt; arbitrageurs can short the asset and enter into long forward contracts</strong>
+* TIME 0: abg shorts/sells 1 share -&gt; gain proceed -&gt; invest this proceed at 5% for 3 months -&gt; takes a long position / buy a 3 month forward contract
+* TIME M: the proceed invested grows to 40.5 in 3 months -&gt; contract matures, abg pays 39 for the share -&gt; close position
+* =&gt; PROFIT = 1.5 (in 40.5 out 39)</p>
+<p>![[Pasted image 20240125010759.png]]</p>
+<p>Under what circumstances do arbitrage opportunities such as those in Table 5.2 not exist?</p>
+<ul>
+<li>The first arbitrage works when the forward price is greater than $40.50</li>
+<li>The second arbitrage works when the forward price is less than $40.50</li>
+<li>=&gt; We deduce that, <strong>for there to be no arbitrage, the forward price must be exactly $40.50</strong></li>
+</ul>
+<p>The thing is, given the info in the example, F = 40 . e^(0.05 . 0.25) = 40.50</p>
+<blockquote>
+<p>[!quote] 4-month forward contract to buy a zero-coupon bond that will mature 1 year from today. (This means that the bond will have 8 months to go when the forward contract matures!); current price = $930; 4-month risk-free rate of interest (continuously compounded) is 6% PA.
+Forward price = 930 . e^(6% . 4/12) = 948.79</p>
+</blockquote>
+<p>Even if short sales are not universally possible for all investment assets, it doesn't impede the derivation of equation F = S...</p>
+<ul>
+<li>The ability to short the asset is not essential</li>
+<li>What matters is the presence of a significant number of investors holding the asset purely for investment.</li>
+<li>If the forward price is too low, they will find it attractive to sell the asset and take a long position/buy in a forward contract</li>
+<li>The adjustment of forward prices ensures the absence of arbitrage opportunities.</li>
+</ul>
+<h4 id="case-2-income-generating-assets-known-cash-income">Case 2. Income generating assets - known cash income</h4>
+<blockquote>
+<p>[!warning] Forward and spot price formula - KNOWN INTEREST INCOME PAYMENTS
+<strong>F = (S - I) . e^(rT)</strong>
+Forward price = (Spot price - PV of income) . e^(risk free rate . time to delivery of f/f contract)
+All units = in year</p>
+</blockquote>
+<ul>
+<li>spot price current = 900</li>
+<li>9 month maturity</li>
+<li>expected coupon payment of 40 after 4 months</li>
+<li>contnsly compounded rfr of 3% for 4 months, 4% for 9 months pa</li>
+</ul>
+<p><strong>If F &gt; (S - I) . e^(rT) -&gt; arbitrageurs can buy the asset and short forward contracts</strong>
+- Action now:
+    - Borrow $900 from 2 sources: $39.60 for 4 months and $860.40 for 9 months
+    - Buy 1 unit of the asset and enter into a forward contract to sell it in 9 months for $910
+- Action in 4 months:
+    - Receive $40 of income on the asset
+    - Use $40 to repay the first loan with interest
+- Action in 9 months:
+    - Sell the asset for $910
+    - Use $886.60 to repay the second loan with interest
+    - Close the short position
+- <strong>Profit:</strong> $23.40</p>
+<p><strong>If F &lt; (S - I) . e^(rT) -&gt; arbitrageurs can short the asset and enter into long forward contracts</strong>
+- Action now:
+    - Short 1 unit of the asset to realize $900
+    - Invest $39.60 for 4 months and invest $860.40 for 9 months
+    - Enter into a forward contract to buy the asset in 9 months for $870
+- Action in 4 months:
+    - Receive $40 from the 4-month investment
+    - Pay income of $40 on the asset
+- Action in 9 months:
+    - Receive $886.60 from the 9-month investment
+    - Buy the asset for $870
+    - Close the short position
+- <strong>Profit:</strong> $16.60</p>
+<blockquote>
+<p>[!quote] Forward price = [ 900 - 40.e^(-3% . 4/12) ] . e^(4% . 9/12) = 948.79</p>
+</blockquote>
+<p>![[Pasted image 20240125012726.png]]</p>
+<ul>
+<li>If the forward price is greater than $886.60, the arbitrageur can execute the first strategy (buying the bond, shorting a forward contract) and make a profit.</li>
+<li>If the forward price is less than $886.60, the arbitrageur can execute the second strategy (shorting the bond, entering into a long forward contract) and make a profit.
+=&gt; If there are no arbitrage opportunities, both strategies should not result in a profit. Therefore, the forward price must be precisely $886.60 to eliminate any possibility of arbitrage profits, ensuring equilibrium in the market.</li>
+</ul>
+<blockquote>
+<p>[!quote] Consider a 10-month forward contract on a $50 stock; assume a continuously compounded 8% risk-free interest rate for all maturities, and anticipate $0.75 dividends per share at three, six, and nine months. Find F.
+PV of income/dividend = I = $0.75 . e^(-8% . 3/12)  +  $0.75 . e^(-8% . 6/12)  +  $0.75 . e^(-8% . 9/12) = 2.162
+Forward price = (50 - 2.162) . e^(8% . 10/12) = 51.14
+=&gt; If the forward price were less than this, an arbitrageur would short the stock spot and buy forward contracts.
+=&gt; If the forward price were greater than this, an arbitrageur would short forward contracts and buy the stock in the spot market.</p>
+</blockquote>
+<h4 id="case-3-income-generating-assets-known-yield">Case 3. Income generating assets - known yield</h4>
+<blockquote>
+<p><strong>Known dividends yield</strong> = dividends per year as a percentage of the stock price at the time when dividends are paid are known</p>
+</blockquote>
+<p>We now consider the situation where the asset underlying a forward contract provides a <strong>known yield</strong> rather than a known cash income. This means that the <strong>income is known when expressed as a percent of the asset’s price at the time the income is paid</strong>.</p>
+<blockquote>
+<p>[!warning] Forward and spot price formula - KNOWN YIELD
+<strong>F = S . e^[(r-q)T]</strong>
+Forward price = Spot price     .      e^[(rfr - avg yield pa) . time to delivery of f/f contract]
+All units = in year</p>
+<p>[!quote] S = 25, r = 10%, T = 6 months, yield = 4% pa <strong>WITH SEMIANNUAL COMPOUNDING</strong>
+- Calculate the yield, q = 0.0396 (from 4% per annum with semiannual compounding)
+- F = 25 e^[(10% - 0.0396) . 6/12] = $25.77
+=&gt; If the forward price is less than this, arbitrageurs would short the stock spot and buy forward contracts.
+=&gt; If the forward price is greater than this, arbitrageurs would short forward contracts and buy the stock in the spot market.</p>
+<p>[!warning] Converting yield pa: semiannual/annual compounding -&gt; continuous compounding
+Let n be the frequency of compounding per year
+<strong>CONTINUOUS RATE = n . ln(1 + GIVEN RATE / n)</strong>
+Yield is 4% pa semiannual compounding
+-&gt; 0.04/2 = 0.02
+-&gt; 0.02 + 1 = 1.02
+-&gt; ln(1.02) = 0.01980
+-&gt; ln(1.02) x 2 = 0.0396 = 3.96%</p>
+</blockquote>
+<h3 id="5-forward-contracts-valuation">5. FORWARD CONTRACTS valuation</h3>
+<p>When a forward contract is initiated, its <strong>value is zero</strong>. Banks are required to value forward contracts in their trading books <strong>daily</strong>.</p>
+<blockquote>
+<p>[!warning] Value of LONG (BUY) forward contract today f
+<strong>f = (F - K) . e^(-r . T)</strong>
+* forward contract value = 0 initially
+* as time passes, both F and f change
+* K = delivery price</p>
+<p>[!warning] Value of SHORT (SELL) forward contract today f
+<strong>f = (K - F) . e^(-r . T)</strong></p>
+</blockquote>
+<p>==example==</p>
+<p>Long future contract (promise to BUY) on a 0 dividend stock.</p>
+<ul>
+<li>6 months to maturity</li>
+<li>rfr  = 10% pe, continuously compounding</li>
+<li>stock price is 25 (S0)</li>
+<li>delivery price 24 (K)</li>
+</ul>
+<p>Find value of forward contract price F</p>
+<p>= S . e^(rT) = 25 . e^(0.1 * 6/12) = 26.28</p>
+<p>Value of forward contract = f</p>
+<p>= (26.28 - 24) . e^(-0.1 * 6/12) = 2.17</p>
+<p><strong>Summary: valuation of f/f prices &amp; contracts</strong>
+![[Pasted image 20240114041907.png]]</p>
+<h3 id="6-forwards-futures-prices">6. Forwards = futures prices ?</h3>
+<ul>
+<li>In theory, when there's <strong>no uncertainty about future interest rates</strong>, the forward price for a contract with a certain delivery date = the futures price for a contract with that delivery date.</li>
+<li>However, in the real world where interest rates vary unpredictably, this theoretical equality breaks down.</li>
+</ul>
+<p><strong>Relationship btwn asset price, interest rates and contract types</strong>
+1. When the price (S) of the underlying asset is <strong>strongly positively correlated</strong> with interest rates:
+- Increase in S -&gt; immediate gain for a long futures position.
+- Positive correlation likely -&gt; simultaneous increase in interest rates.
+- The gain is invested at a higher-than-average interest rate.
+- Decrease in S -&gt; immediate loss, but the financing is at a lower-than-average interest rate.
+- Investors with long forward contracts are not affected by these interest rate movements.
+    - =&gt; Long futures contracts are slightly more attractive than similar long forward contracts.
+    - =&gt; Hence, futures prices tend to be slightly &gt; forward prices.</p>
+<ol>
+<li>When S is strongly negatively correlated with interest rates:</li>
+<li>Similar argument shows that forward prices will tend to be slightly &gt; futures prices.</li>
+</ol>
+<p>Theoretical differences between forward and futures prices for <strong>short-term contracts are generally negligible</strong>.</p>
+<ul>
+<li>Practical factors, such as taxes, transaction costs, and margin account usage, can cause variations in forward and futures prices not accounted for in theoretical models.</li>
+<li>The risk of counterparty default may be lower in futures contracts due to the involvement of exchange clearinghouses.</li>
+<li>Futures contracts may be more liquid and easier to trade than forward contracts in certain cases.</li>
+</ul>
+<p>=&gt; Despite potential differences, it is generally reasonable to assume that forward and futures prices are the same for most practical purposes.</p>
+<h3 id="7-stock-indices-ff-contracts">7. Stock indices: f/f contracts</h3>
+<p>A stock index can usually be regarded as the price of an investment asset that pays dividends. The investment asset is the portfolio of stocks underlying the index, and the dividends paid by the investment asset are the dividends that would be received by the holder of this portfolio. It is usually assumed that the dividends provide a known yield rather than a known cash income.</p>
+<p>==example==</p>
+<p>3 month (0.23), dividend yield = 0.01 pa (so q = 0.01), current value of index = 1300, r = 0.05</p>
+<p>-&gt; Future price = 1300 * e^(0.05 - 0.01) * 0.25 = 1313.07</p>
+<blockquote>
+<p><strong>Index arbitrage</strong>
+- If F &gt; Se^(r-q)T, buy spot stocks and short futures contracts.
+- If F &lt; Se^(r-q)T, short/sell spot stocks and take a long position in futures contracts.</p>
+</blockquote>
+<h3 id="7-currencies-ff-contracts">7. Currencies: f/f contracts</h3>
+<p>Property of foreign currency = holder of the currency can earn interest at rfr prevailing in the FOREIGN country -&gt; let the rfr in foreign country be rf (domestic = r)</p>
+<blockquote>
+<p>[!warning] Price of f/f contract involving foreign currencies
+<strong>F = S . e ^ (r - rf)T</strong>
+Also known as the <strong>interest rate parity relationship</strong> from International Finance</p>
+</blockquote>
+<p>Say I have 1000 units of foreign currency. I need it to domestic currency by time T. There r 2 strategies to convert that 1000 amount to my currency.</p>
+<p>![[Pasted image 20240127001443.png]]</p>
+<p><strong>Method 1 (invest 1000 foreign -&gt; sell proceed in future to gain domestic)</strong></p>
+<p>Invest in foreign currency for T years at the foreign risk-free rate (rf) -&gt; enter a forward contract to SELL the proceeds for dollars at time T -&gt; gain 1000.F.e^(rf * T)</p>
+<p><strong>Method 2 (invest 1000 foreign -&gt; sell proceed in future to gain domestic</strong>
+Exchange foreign currency for domestic in the spot market -&gt; invest the proceeds for T years at the domestic rfr (r) -&gt; gain 1000. S.e^(r * T) dollars</p>
+<p>=&gt; In the absence of arbitrage opportunities, the 2 methods should yield the exact same results</p>
+<p>![[Pasted image 20240127003145.png]]</p>
+<p><strong>Calculation</strong></p>
+<blockquote>
+<p>[!warning] Calculate forward rate given xc rate &amp; interest rates
+<strong>Forward rate = exchange rate . e ^ [(rfr local - rfr foreign)*time]</strong></p>
+<p>[!quote] Example - forward rate
+An exchange rate is 0.7000 and the six-month domestic and foreign risk-free interest rates are
+5% and 7% (both expressed with continuous compounding). What is the six-month forward rate?
+%%0.6930%%</p>
+</blockquote>
+<p>Essentially it's an investment asset with a known yield</p>
+<blockquote>
+<p>[!quote] 2 year interest rates: 5% AUS and 7% US, spot xc rate: 1 AUD = 0.62 US.
+-&gt; 2-year forward exchange rate = 0.62 . e [(0.07 - 0.05) x 2] = 0.6453</p>
+<p><strong>Scenario 1: 2 year frwrd rate = 0.63</strong> (aka 1 AUD = 0.62 instead of 0.64 US). Arbitrageur can:
+1. T0: Borrow 1000 foreign (AUD) at <strong>5% pa</strong> interest (AUS rate) for 2 years
+2. T0: Convert that borrowed AUD to US at spot xc rate = have 620 USD
+3. T0: Invest US 620 at 7% -&gt; will grow to 620 . e^(7% . 2) = 713.17 USD
+4. T0: Enter a forward contract to by 1105.17 AUD to pay back (calc in part 5 - 1105.17 AUD equals exactly 696.26 USD)
+5. T1: Now paying back the 1000 AUD borrowed: amount after interest = 1000 * e^(0.05 * 2) = 1105.17. To pay this back we'll use the amount from the f contract
+6. T1: Net gain = 713.17 USD - 696.26 USD = 16.9 USD</p>
+<p><strong>Scenario 2: 2 year frwrd rate = 0.66</strong> (aka 1 AUD = 0.66 instead of 0.64 US). Arbitrageur can:
+1. T0: Borrow 1000 US at 7% pa (USD rate) for 2 years
+2. T0: Convert to AUD using spot: 1000 / 0.62 = 1612.90 AUD
+3. T0: Invest this AUD at AUD interest rate 5% pa for 2 years. Proceed from AUD investment will = 1782.53 AUD.
+4. T0: Enter f/f contract to sell the investment proceed in AUD later for US. Know 4 sure we will receive 1782.53 * 0.66 = 1176.47 US
+6. T1: Paying back the US borrowed: 1000 US has turned into 1000 . e(0.07 * 2) = 1150.27 US. We would need USD from the forward contract entered earlier. Proceed from f contract: 1176.47
+7. Net gain: -1150.27 (debt) + 1176.47 (gain from f contract) = 26.20</p>
+</blockquote>
+<p>Both strategies above -&gt; <strong>RISKLESS PROFITS</strong></p>
+<blockquote>
+<p>[!warning] Value of investment - continuous compounding
+Future amount = Principal . e^(pa interest rate * time in years)</p>
+<p>[!warning] Estimating interest rate differentials from table
+Look at one country &amp; its 2 'Prior settlement price' at 2 different times.
+* e.g. Australia September vs December: 1.0075 -&gt; 1.0000
+* % change = 1/1.0075 = 0.744% LOWER
+=&gt; Short term futures prices are DECREASING at a rate of 0.744% / 3 months = 0.744 / 3 * 12 = 2.976% per year.
+=&gt; This is also the amount by which <strong>short term Aus interest rates &gt; short term US interest rates</strong>
+![[Pasted image 20240202003335.png]]</p>
+</blockquote>
+<p><strong>Futures quotes table</strong>
+![[Pasted image 20240127003549.png]]</p>
+<h3 id="8-commodities-ff-contracts">8. Commodities: f/f contracts</h3>
+<p>Gold owners, like central banks, charge an interest rate known as the gold lease rate when they lend out gold. Same goes for silver. So, holding onto gold and silver can actually bring in some income.</p>
+<blockquote>
+<p><strong>Income and storage costs</strong>
+- Consumption assets may lack income but have significant storage costs.
+- Storage costs = similar to negative income</p>
+<p>[!warning] Forward price of investment commodity
+Without income &amp; storage costs: <strong>F = S . e^(rT)</strong>
+With storage costs U (U = PV of all storage costs): <strong>F = (S + U) . e^(rT)</strong>
+If U = proportional to price of commodity -&gt; treated as negative yield: <strong>F = S.e^[(r+u)T]</strong>
+* u = storage cost per annum = proportion of spot price net of any yield earnt</p>
+<p>[!quote] Arbitrage opportunity
+Scenario 1: <strong>F &gt; (S + U).e^(rT)</strong>. Arbitrageur can:
+* borrow S + U at rfr -&gt; use it to buy 1 unit of commodity &amp; pay storage costs
+* short / sell a futures contract on that 1 unit of commodity
+=&gt; <strong>profit = F - (S+U).e^(rT)</strong></p>
+<p>However, as arbitrageurs do so, there will be a tendency for S0 to increase and F0 to decrease until equation above is no longer true. We conclude that equation cannot hold for any significant length of time.</p>
+<p>[!quote] Arbitrage opportunity
+Scenario 2: <strong>F &lt; (S + U).e^(rT)</strong>. Arbitrageur can:
+* sell commodity -&gt; save storage costs -&gt; invest proceeds at rfr
+* long/buy a futures contract
+=&gt; <strong>riskless profit = (S+U).e^(rT) - F</strong>
+</p>
+</blockquote>
+<p>Similarly, equation cannot hold for any significant length of time.</p>
+<p>This argument cannot be used for commodities that are not, to any significant extent, held for investment. Individuals and companies who keep such a commodity in inventory do so because of its consumption value, not because of its value as an investment. They are reluctant to sell the commodity in the spot market and buy futures or forward contracts, because futures and forward contracts cannot be used in a  manufacturing process or consumed in some other way. Thus:</p>
+<p>![[Pasted image 20240202012224.png]]</p>
+<blockquote>
+<p>[!warning] Calculating U - pv of storage costs
+U = storage costs per annum . e ^ (-rfr . T)</p>
+<p>[!quote] Gold futures price - f/f price of a commodity
+1 year futures contract, no income, coss 2$ per ounce pa to store gold, pmt made at the end of the year. Spot S = 1600, rfr r = 5% pa. Thus T = 1 (1 year)</p>
+<p><strong>1. U = pv of all storage costs</strong> = discount cost at rfr
+U = $2 . e^(-5% x 1) = 1.9
+<strong>2. Futures price - theoretical</strong>
+F = (1600 + 1.9) . e ^ (5% x 1) = 1684.03</p>
+<p>Suppose the actual gold futures price (F) differs from the theoretical one above.</p>
+<p>Scenario 1. <strong>F actual &gt; F theoretical, F = 1700</strong>. Arbitrageur can:
+* Borrow 160k at rfr of 5% to buy 100 ounces of gold
+* Short/Sell 1 gold futures contract for delivery in 1 year
+  * ensures that gold can be sold for 170k
+</p>
+<p><strong>Convenience yield</strong> = the benefits or advantages an investor receives from holding a physical asset, like a commodity or stock, rather than a futures contract. It reflects market expectations on future commodity availability.
+* is <strong>always positive or 0</strong> because it represents the <strong>non-monetary benefits</strong> of owning the physical asset, such as having access to the asset when it's needed.
+* For investment assets, convenience yield <strong>must be zero</strong> to avoid arbitrage opportunities.
+* <strong>Greater likelihood of shortages increases the convenience yield, while high inventories lead to a lower convenience yield.</strong></p>
+</blockquote>
+<h3 id="9-cost-of-carry">9. Cost of carry</h3>
+<p>The concept of <strong>cost of carry</strong> is sometimes useful.</p>
+<blockquote>
+<p><strong>Cost of carry</strong> = the storage cost of the underlying asset plus the cost of financing it minus the income received from it.</p>
+</blockquote>
+<ul>
+<li>Investment assets: the futures price is greater than the spot price by an amount reflecting the <strong>cost of carry</strong> c.</li>
+<li>![[Pasted image 20240202195730.png]]</li>
+<li>Consumption assets: the futures price is greater than the spot price by an amount reflecting the <strong>cost of carry net of the convenience yield</strong> c - y.</li>
+<li>![[Pasted image 20240202195746.png]]</li>
+</ul>
+<blockquote>
+<p>[!NOTE] Relationships
+* As the convenience yield increases -&gt; one-year futures price as a percentage of the spot price decreases
+* As inventories of a commodity decline -&gt; one-year futures price as a percentage of the spot price decreases</p>
+</blockquote>
+<h3 id="10-delivery-options">10. Delivery options</h3>
+<ul>
+<li>In contrast to forward contracts, futures contracts often provide flexibility in the delivery period for the party with the short position.</li>
+<li>The short position holder can choose to deliver at any time during a specified period, usually with a few days' notice.</li>
+</ul>
+<p>Determining futures prices becomes complicated due to the flexibility in delivery timing.</p>
+<ul>
+<li>The maturity of futures contracts raises the question of whether it should be assumed at the beginning, middle, or end of the delivery period.</li>
+</ul>
+<p>Understanding when delivery would have occurred is crucial for calculating theoretical futures prices.</p>
+<ul>
+<li>If the futures price increases with time to maturity, it is optimal for the short position holder to deliver early, as interest earned on the cash received outweighs holding the asset.</li>
+<li>In such cases, futures prices are typically calculated based on the assumption of delivery at the beginning of the delivery period.</li>
+<li>Conversely, if futures prices decrease as time to maturity increases, it is usually optimal for the short position holder to deliver as late as possible.</li>
+<li>In these circumstances, futures prices should generally be calculated assuming delivery at the end of the delivery period.</li>
+</ul>
+<h3 id="11-futures-price-expected-spot-prices">11. Futures price &amp; expected spot prices</h3>
+<blockquote>
+<p><strong>expected spot price</strong> = market's average opinion on an asset's spot price at a future time
+- Futures prices converge to spot prices at maturity, prompting an analysis of the relationship between expected spot prices and futures prices.</p>
+</blockquote>
+<p><strong>Keynes and Hicks' Argument</strong>
+- Keynes and Hicks proposed that if <strong>hedgers hold short positions</strong> and <strong>speculators hold long positions</strong>, the <strong>futures price will &lt; expected spot price</strong>.
+- This is based on the idea that speculators demand compensation for the risks they bear.</p>
+<p><strong>Modern approach - risk and return</strong>
+- The modern approach links futures prices to expected spot prices based on the relationship between <strong>risk and expected return</strong> in the economy.
+- Systematic and nonsystematic risks are considered, with <strong>SYSTEMATIC</strong> risk influencing the required expected return on an investment.
+- The investment is essentially in the asset underlying the futures contract.
+- If returns from this asset are uncorrelated with the stock market, the correct discount rate is the risk-free rate (r), so k = r.</p>
+<blockquote>
+<p>[!NOTE] CF to speculator
+- Consider: a speculator taking a long (buy) position in a futures contract lasting T years.
+- Objective: Speculator hopes the spot price of the asset will be above the futures price at the contract's end.
+- Ignoring daily settlement, treating the futures contract as a forward contract.
+- Speculator puts the present value of the futures price into a risk-free investment while simultaneously taking a long futures position.
+- Cash flows to the speculator:
+  - Today: <strong>F. e^(rT)</strong>
+  - End of Futures Contract: <strong>S(T)</strong> <em>(where F0 is the current futures price, ST is the asset price at time T, and r is the risk-free return for time T)</em></p>
+</blockquote>
+<p><strong>Relationship between futures price and expected future spot price</strong>
+- When returns are uncorrelated with the stock market, the futures price is considered an unbiased estimate of the expected future spot price.
+- Systematic risk:
+    * Positive correlation will tend to lead to a futures price lower than the expected future spot price.
+    * Negative correlation will tend to lead to a futures price higher than the expected future spot price.
+    * Only when the correlation is zero will the theoretical futures price be equal to the expected future spot price.</p>
+<p>![[Pasted image 20240202200720.png]]</p>
+<p><strong>Normal backwardation and contango</strong></p>
+<blockquote>
+<p><strong>Normal backwardation</strong> = when the futures price &lt; expected future spot price.
+<strong>Contango</strong> = futures price &gt; expected future spot price.
+- Note: These terms can also refer to the relationship between futures prices and current spot prices in certain contexts.</p>
+</blockquote>
+<p>If we assume the capital asset pricing model is true, the relationship between the futures price and the expected future spot price depends on whether the return on the asset is positively or negatively correlated with the return on the stock market.</p>
+<h2 id="chapter-9-options-markets-skipped">Chapter 9. Options markets (skipped)</h2>
+<h3 id="basics-of-options">Basics of options</h3>
+<p>There are 2 types of options: calls and puts.</p>
+<blockquote>
+<p>A <strong>call option</strong> gives the holder the right to buy the underlying asset for a certain price by a certain date.
+A <strong>put option</strong> gives the holder the right to sell the underlying asset by a certain date for a certain price.</p>
+</blockquote>
+<p>There are 4 possible positions in options markets:</p>
+<ol>
+<li>a long position in a call</li>
+<li>a short position in a call</li>
+<li>a long position in a put</li>
+<li>a short position in a put.</li>
+</ol>
+<p>Taking a short position in an option is known as <strong>writing</strong> it.</p>
+<blockquote>
+<p>[!NOTE] Terminology
+<strong>At the money</strong>: the market is trading near the strike price
+<strong>In the money</strong>: the option is profitable
+<strong>Deep in the money</strong>: the option is very profitable
+<strong>Out of the money</strong>: the option is in a loss making situation (for the buyer)</p>
+</blockquote>
+<h3 id="options-exchange">Options exchange</h3>
+<p>An exchange must specify the terms of the option contracts it trades. In particular, it must specify the size of the contract, the precise expiration time, and the strike price. In the United States one stock option contract gives the holder the right to buy or sell 100 shares. The expiration of a stock option contract is 10:59 p.m. Central Time on the Saturday immediately following the third Friday of the expiration month. Options with several different expiration months trade at any given time. Strike prices are at $2:5, $5, or $10 intervals, depending on the stock price. The strike price is generally fairly close to the stock price when trading in an option begins.</p>
+<p>The terms of a stock option are not normally adjusted for cash dividends. However, they are adjusted for stock dividends, stock splits, and rights issues. The aim of the adjustment is to keep the positions of both the writer and the buyer of a contract unchanged.</p>
+<h3 id="participants">Participants</h3>
+<p>Most options exchanges use market makers. These are individuals who are prepared to quote both a bid price (at which they are prepared to buy) and an offer price (at which they are prepared to sell). Market makers improve the liquidity of the market and ensure that there is never any delay in executing market orders. They themselves make a profit from the difference between their bid and offer prices (known as their bid–offer spread). The exchange has rules specifying upper limits for the bid–offer spread.</p>
+<p>Writers of options have potential liabilities and are required to maintain margin with their brokers. If it is not a member of the Options Clearing Corporation, the broker will maintain a margin account with a firm that is a member. This firm will in turn maintain a margin account with the Options Clearing Corporation. The Options Clearing Corporation is responsible for keeping a record of all outstanding contracts, handling exercise orders, and so on.</p>
+<p>Not all options are traded on exchanges. Many options are traded by phone in the over-the-counter market. An advantage of over-the-counter options is that they can be tailored by a financial institution to meet the particular needs of a corporate treasurer or fund manager</p>
+<blockquote>
+<p>[!example] ![[Pasted image 20240425001923.png]]</p>
+</blockquote>
+<h2 id="chapter-10-proporties-of-stock-options">Chapter 10. Proporties of stock options</h2>
+<h3 id="determinants-of-option-value">Determinants of option value</h3>
+<p>There are 6 factors affecting the value of a stock option</p>
+<ol>
+<li>the current stock price <strong>S0</strong></li>
+<li>the strike price <strong>K</strong></li>
+<li>the time to expiration <strong>T</strong></li>
+<li>the stock price volatility <strong>σ</strong></li>
+<li>the risk-free interest rate <strong>r</strong></li>
+<li>the dividends expected during the life of the option</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: center;">European Call</th>
+<th style="text-align: center;">European Put</th>
+<th style="text-align: center;">American Call</th>
+<th style="text-align: center;">American Put</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Current stock price</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">Strike price</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Time to expiration</td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Volatility</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Risk-free rate</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dividends</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="stock-price">Stock price</h4>
+<blockquote>
+<p><strong>Call more valuable/expensive as: current price ↑, strike price ↓</strong> (LHS)
+* if exercised -&gt; payoff will be current price - strike price</p>
+<p><strong>Put more valuable/expensive as: current price ↓, strike price ↑</strong> (RHS)
+* if exercised -&gt; payoff will be strike price - current price</p>
+</blockquote>
+<p>![[Pasted image 20240203181805.png]]</p>
+<h4 id="time-to-expiration">Time to expiration</h4>
+<blockquote>
+<p><strong>Good for both puts and calls; more valuable/expensive if time to maturity ↑</strong> (or at least X decrease in value)
+* E.g. Longer-life option has all the exercise opportunities open to shorter-life option—and more. The long-life option must therefore always be worth at least as much as the short-life option.</p>
+</blockquote>
+<p>![[Pasted image 20240203185451.png]]</p>
+<p>However the above is only true if ceteris paribus holds.</p>
+<p>==Example== Consider 2 European call (buy) options on a stock: one with an expiration date in 1 month, the other with an expiration date in 2 months. Suppose that a very large dividend is expected in 1.5 months. The dividend will cause the stock price to ↓, so that the short-life option could be worth more than the long-life option.</p>
+<h4 id="dividends">Dividends</h4>
+<blockquote>
+<p><strong>Good for puts, bad for calls</strong>
+* Dividends have the effect of reducing the stock price on the ex-dividend date.
+* You alr get dividend money so price ex-dividend (after dividend) date will be lower</p>
+</blockquote>
+<h4 id="volatility">Volatility</h4>
+<p>![[Pasted image 20240203185519.png]]</p>
+<blockquote>
+<p><strong>Volatility is good for both put and call holders</strong> since they have limited downside risks - they can choose simply to not exercise
+* As volatility increases, the chance that the stock will do very well or very poorly increases</p>
+</blockquote>
+<h4 id="risk-free-rate">Risk free rate</h4>
+<blockquote>
+<p><strong>Good for call, bad for put</strong> (contrast with dividends)</p>
+</blockquote>
+<p>As interest rates in economy (rfr) ↑</p>
+<ul>
+<li>investors expected return required also ↑</li>
+<li>PV of any future CF received by option HOLDERS ↓
+=&gt; Combined effects: good for calls, bad for puts</li>
+</ul>
+<p>![[Pasted image 20240203185537.png]]</p>
+<p>Note: only applicable if ceteris paribus holds. In practice:</p>
+<ul>
+<li>when interest rate (rfr) ↓, stock prices ALSO tend to ↓ (and vice versa)</li>
+<li>interest rate ↑ -&gt; stock price ↑; combined can =&gt; bad for call, good for put</li>
+<li>interest rate ↓ -&gt; stock price ↓; combined can =&gt; good for call, bad for put</li>
+</ul>
+<h3 id="assumptions">Assumptions</h3>
+<ol>
+<li>There are no transactions costs</li>
+<li>All trading profits (net of trading losses) are subject to the same tax rate</li>
+<li>Borrowing and lending are possible at the risk-free interest rate</li>
+<li>Market participants are prepared to take advantage of arbitrage opportunities as they arise</li>
+</ol>
+<p><strong>Notation</strong> (American = upper case, European = lower case)</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S(0)</td>
+<td>Current stock price</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Strike price of option</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Time to expiration of option</td>
+</tr>
+<tr>
+<td>S(T)</td>
+<td>Stock price on the expiration date</td>
+</tr>
+<tr>
+<td>r</td>
+<td>Continuously compounded risk-free rate of interest</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Value of American call option to buy one share</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Value of American put option to sell one share</td>
+</tr>
+<tr>
+<td>c</td>
+<td>Value of European call option to buy one share</td>
+</tr>
+<tr>
+<td>p</td>
+<td>Value of European put option to sell one share</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interest rate</strong> r is NOMINAL, not real. It's &gt; 0 (otherwise a risk free investment would be pretty much the same as cash)</p>
+<h3 id="upper-and-lower-bounds-for-option-prices">Upper and lower bounds for option prices</h3>
+<blockquote>
+<p>If an option price &gt; upper bound or &lt; lower bound, there are profitable opportunities for arbitrageurs.</p>
+</blockquote>
+<h4 id="upper-bound">Upper bound</h4>
+<p><strong>Call options</strong> (promise to buy - profit if it later goes up cos u bought it at cheaper price)
+* option price is never higher than stock price (if higher then can simply not exercise)</p>
+<p><strong>Put options</strong> (profit if later it goes down)
+* US: holder can sell stock for K
+    * option price is never higher than strike price (aka K is the max profit so why pay more than K for the option)
+* European: at maturity option cannot worth &gt; K (same as above)
+    * it follows that it cannot be worth more than the PV of K today (PV of K &lt; K)</p>
+<blockquote>
+<p>[!warning] Upper bounds of calls and puts for holders
+Call: <strong>C ≤ S(0)</strong>   |   <strong>c ≤ S(0)</strong>
+* If X true -&gt; arbitrage: buy the stock, sell the call option</p>
+<p>Put: <strong>P ≤ K</strong>   |   <strong>p ≤ Ke^(-rT)</strong>
+* If X true -&gt; arbitrage: writing/sell the option, invest proceeds of the sale at rfr</p>
+</blockquote>
+<h4 id="lower-bounds-non-dividend-paying">Lower bounds (non-dividend paying)</h4>
+<p><strong>Call option</strong></p>
+<blockquote>
+<p>[!quote] [FULL EXAMPLE WITH EXPLANATION] Euro call (option to buy), non dividend, strike price = 18\$, expire in 1 year (T), cost 3$. Stock price = 20, rfr = 10% pa.
+<strong>Action now</strong>
+* Buy call option <strong>(-3)</strong> (only exercise if strike &lt; spot)
+* Short/sell the stock <strong>(+20)</strong>
+* Invest that 17 for 1 year</p>
+<p><strong>Action at maturity</strong>
+* That 17 invested will turn into 17 x e^(0.1) = <strong>(+18.79)</strong>
+* If spot S(T) &gt; strike
+  * exercise option to buy stock for strike of 18 <strong>(-18)</strong>
+  * now that the stock is in my hands -&gt; deliver it to close out the short position (gaining 20 as alr written above)
+  * <strong>net profit = +18.79 - 18 = 0.79</strong>
+* If spot S(T) &lt; strike of 18:
+  * do NOT exercise option (cos would buy it for higher than market price), accept the 3$ loss from the option expiring worthlessly
+  * buy the stock at spot market price <strong>(-S(T))</strong>
+  * deliver the stock to close out the short position (+20 above, alr written)
+  * <strong>net profit = +18.79 - S(T)</strong> (since ST is &lt; strike of 18 -&gt; we know that profit &gt; 0.79)</p>
+<p>[!warning] The 0.79 above is called the <strong>lower bound</strong> for the price of a European <strong>call</strong> option.
+![[Pasted image 20240204164909.png]]</p>
+<p>[!quote] [SHORT EXAMPLE - APPLYING THE FORMULA] European call, non dividend, stock price S0 = 51, strike K = 50, T = 0.5 years, rfr = 12% pa.
+Lowerbound
+= S0 - K.e(-rT)
+= 51 - 50.e^(-0.12*0.5)
+= 3.91</p>
+</blockquote>
+<p><strong>Put option</strong></p>
+<blockquote>
+<p>[!quote] European put, non-dividend, strike K = 40, T = 0.5, cost = 1, stock price S0 = 37, rfr = 5% pa.
+<strong>Action now</strong>
+* Borrow (31 + 1) = 38 at market rfr for 6 months <strong>(+38)</strong>
+* Buy put option for 1 - option to sell stock <strong>(-1)</strong> (exercise if spot S0 &lt; strike K)
+* Buy the stock at market spot for 37 <strong>(-37)</strong></p>
+<p><strong>Action at maturity</strong>
+* Paying back the amount borrowed -&gt; 38.96 including interest <strong>(-38.96)</strong>. Where to get the funds:
+* If spot ST &lt; strike K:
+  * exercise put option, take the stock that I bought and sell it at strike <strong>(+40)</strong>
+  * <strong>net profit = -38.96 + 40 = +1.04</strong>
+* If spot ST &gt; strike K:
+  * don't exercise put
+  * instead of selling the stock through the put option, sell it at market spot rate <strong>(+ST)</strong>
+  * <strong>net profit = -38.96 + ST</strong> (since ST &gt; 40, we know profit &gt; 1.04)</p>
+<p>[!warning] The 1.04 above is called the <strong>lower bound</strong> for the price of a European <strong>put</strong> option.
+![[Pasted image 20240204212630.png]]</p>
+<p>[!quote] European call, S0 = 38, T = 0.25, rfr = 0.10, K = 40
+Lower bound
+= 40 . e^(-0.10*0.25) - 38
+= 1.01</p>
+</blockquote>
+<p><strong>Call</strong>
+No dividend
+![[Pasted image 20240216164152.png]]
+Yes dividend (D = PV of dividend)
+![[Pasted image 20240216181106.png]]</p>
+<p><strong>Put</strong>
+No dividend
+![[Pasted image 20240216164119.png]]
+Yes dividend
+![[Pasted image 20240216181150.png]]</p>
+<p>If the above are violated -&gt; arbitrage</p>
+<h3 id="put-call-parity">Put-call parity</h3>
+<p>^1e885b</p>
+<blockquote>
+<p><strong>Put–call parity</strong> is a relationship between the price, c, of a European call option on a stock and the price, p, of a European put option on a stock.
+* ensures that identical portfolios have the same value today
+* if put-call parity does not hold -&gt; arbitrage opportunity.</p>
+</blockquote>
+<p>Ok setting the scene. We've got:</p>
+<ol>
+<li>A call option - <strong>betting on the stock's price going up</strong>. If the stock performs well, you benefit from both the call option's potential profits ==(good if go up)==</li>
+<li>A put option - provides a safeguard against the stock's price dropping. If the stock performs poorly, the put option allows you to sell the stock at the agreed-upon price, minimising losses ==(not bad if go down)==</li>
+<li>Bond - guarantee a specific amount K at option's expiration date, even if stock performs poorly or call is not exercised ==(not bad if go down)==</li>
+<li>Stock - same as call, bets on the stock price going up ==(good if go up)==</li>
+</ol>
+<p>We're gonna create 2 portfolios, pick 2 securities for each that help achieve a 'balance':</p>
+<ol>
+<li>PORTFOLIO 1: <strong>Call</strong> (maximise profit) &amp; bond (<strong>minimise</strong> loss)</li>
+<li>PORTFOLIO 2: <strong>Stock</strong> (maximise profit) &amp; put (<strong>minimise</strong> loss)</li>
+</ol>
+<p>At time of maturity T:</p>
+<p>![[Pasted image 20240206035058.png]]</p>
+<p>If spot S &gt; strike K (good for call, bad for put):</p>
+<ol>
+<li><strong>PORTFOLIO 1</strong></li>
+<li><strong>call</strong>: exercised, brings in S less the strike K (S - K)</li>
+<li><strong>bond</strong>: pays K no matter what when matured (+ K)</li>
+<li>
+<p>Net: S - K + K = <strong>S</strong></p>
+</li>
+<li>
+<p><strong>PORTFOLIO 2</strong></p>
+</li>
+<li><strong>put</strong>: expires worthless (0) <em>(ignore the premium)</em></li>
+<li><strong>share</strong>: pays S no matter what when matured (+ S)</li>
+<li>Net: 0 + S = <strong>S</strong></li>
+</ol>
+<p>If spot S &lt; strike K (good for put, bad for call):</p>
+<ol>
+<li><strong>PORTFOLIO 1</strong></li>
+<li><strong>call</strong>: expires worthless (0)</li>
+<li><strong>bond</strong>: pays K no matter what when matured (+ K)</li>
+<li>
+<p>Net: <strong>K</strong></p>
+</li>
+<li>
+<p><strong>PORTFOLIO 2</strong></p>
+</li>
+<li><strong>put</strong>: exercised, brings in strike less the spot at which you bought the share (K - S)
+<em>==technically, you don't buy the share, usu you enter the put without having an actual share, then whne it matures, you buy it at the market spot rate, hence the - S==</em></li>
+<li><strong>share</strong>: pays S no matter what when matured (+ S)</li>
+<li>Net: K - S + S = <strong>K</strong></li>
+</ol>
+<p>Portfolio 1 and portfolio 2 must be equal in both scenarios (K&gt;S and S&gt;K)</p>
+<p>Current values/prices (all converted to PV):</p>
+<ul>
+<li>call: c</li>
+<li>bond: Ke^(e-rT) ==<em>basically K but PV</em>== + D (if dividend)</li>
+<li>put: p</li>
+<li>share: S</li>
+</ul>
+<blockquote>
+<p>[!warning] Put call parity for stock WITHOUT DIVIDENDs
+![[Pasted image 20240205185528.png]]</p>
+<p>WITH DIVIDENDs
+![[Pasted image 20240205185412.png]]</p>
+</blockquote>
+<p>![[Pasted image 20240425001946.png]]</p>
+<blockquote>
+<p>[!warning] Arbitrage opportunities when put–call parity does not hold. Stock price = $31; interest rate = 10%; call price = $3. Both put and call have strike price of $30 and three months to maturity (0.25)
+<strong>Case 1. Put price p = 2.25</strong>
+Put call parity LHS (portfolio 1): c + Ke-rT
+= 3 + 30.e^(-0.1*3/12)
+= 32.26
+</p>
+</blockquote>
+<p>Put call parity RHS (portfolio 2): p + S</p>
+<p>= 2.25 + 31</p>
+<p>= 33.25</p>
+<p>=&gt; Portfolio 2 (RHS) is overpriced</p>
+<blockquote></blockquote>
+<p>=&gt; Arbitrage strategy: <strong>BUY PORTFOLIO 1 (underpriced), SELL PORTFOLIO 2 (overpriced)</strong></p>
+<blockquote>
+<ul>
+<li>At T0</li>
+<li>Buy call <strong>(-3)</strong></li>
+<li>Short/Sell put <strong>(+2.25)</strong></li>
+<li>Short/Sell share <strong>(+31)</strong></li>
+<li>Invest the profits from above (-3 + 2.25 + 31) for 3 months <strong>(-30.25)</strong></li>
+<li>At T1:</li>
+<li>if spot ST &gt; strike price of 30:</li>
+<li>exercise call, able to buy the share at 30 <strong>(-30)</strong></li>
+<li>put holder (the other person) will let it expire worthlessly</li>
+<li>deliver the share that we short sold (we alr received the $ above)</li>
+<li>investment from above is now worth: <strong>(+31.02)</strong></li>
+<li>
+<p>=&gt; Net profit: 1.02</p>
+</li>
+<li>
+<p>if spot ST &lt; strike price of 30:</p>
+</li>
+<li>prices go down, put holder will exercise -&gt; we must buy share at 30 <strong>(-30)</strong></li>
+<li>our call expires worthlessly</li>
+<li>investment from above is now worth: <strong>(+31.02)</strong></li>
+<li>=&gt; Net profit: 1.02</li>
+</ul>
+<p><strong>Case 2. Put price p = 1</strong>
+Put call parity LHS: 32.26
+RHS: 1 + 31 = 32
+=&gt; portfolio 2 is underpriced</p>
+<p>Arbitrage strategy: <strong>BUY PORTFOLIO 2, SELL PORTFOLIO 1</strong> (buy put &amp; share, sell call)
+* At T0:
+  * Buy put <strong>(-1)</strong>
+  * Buy share <strong>(-31)</strong>
+  * Short/sell call <strong>(+3)</strong>
+  * Funds for all the above: borrow 29 <strong>(+29)</strong>
+* At T1
+* If spot St &gt; strike price of 30:
+  * prices go up, let put expires worthlessly
+  * call holder will exercise -&gt; we must deliver the share <strong>(+30)</strong>
+  * pay back the fund borrowed, which has turned into 29.e^(0.1 x 3/12) = <strong>(-29.73)</strong>
+  * =&gt; Net profit: 30 - 29.73 = 0.27</p>
+<ul>
+<li>if spot ST &lt; strike price of 30:</li>
+<li>prices go down, exercise put to sell share for 30 <strong>(+30)</strong></li>
+<li>call holder will let their option expires worthlessly</li>
+<li>pay back the fund borrowed, which has turned into 29.e^(0.1 x 3/12) = <strong>(-29.73)</strong></li>
+<li>=&gt; Net profit: 30 - 29.73 = 0.27</li>
+</ul>
+</blockquote>
+<h3 id="american-calls-and-puts">American calls and puts</h3>
+<p>Above = European. Now American options.</p>
+<h4 id="put-call-parity-for-us-options-find-upper-lower-bounds">Put call parity for US options - find upper &amp; lower bounds</h4>
+<p><strong>Put–call parity does not hold for American options.</strong> However, it is possible to use arbitrage arguments to obtain upper and lower bounds for the difference between the price of an American call and the price of an American put.</p>
+<blockquote>
+<p>[!warning] American call &amp; put
+![[Pasted image 20240215152508.png]]</p>
+<p>[!quote] American calls &amp; puts
+Non dividend, call strike = 20, maturity T = 5 months, call premium 1.5, stock price = 19, rfr = 0.1
+Inequality above: stock price S0 - strike K ≤ call C - put P ≤ stock price S0 - PV of K Ke^(-rt)
+19 - 20 ≤ C - P ≤ 19 - 20e^(-0.1 x 5/12)
+-1 ≤ C - P ≤ 19 - 20e^(-0.1 x 5/12)
+<strong>1 ≥ P - C ≥ 0.18</strong>
+* P - C lies btwn 0.18 and 1
+* Given call premium C = 1.5 -&gt; P must be 1.68 - 2.50
+* Aka for US put with same strike K &amp; maturity as US call:
+  * upper bound = 2.5
+  * lower bound = 1.68</p>
+</blockquote>
+<h4 id="why-its-not-optimal-to-exercise-us-call-option-early">Why it's not optimal to exercise US CALL OPTION early</h4>
+<blockquote>
+<p>[!example] 2 reasons that the early exercise of an American call option on a non-dividend paying stock is not optimal.
+<strong>1. Insurance</strong>
+A call option, when held instead of the stock itself, in effect insures the holder against the stock price falling below the strike price. Once the option has been exercised and the strike price has been exchanged for the stock price, this insurance vanishes.
+<strong>2. Time value of money</strong>
+From the perspective of the option holder, the later the strike price is paid out the better. This is because the more delayed the exercise of the option is, the more interest the option holder can earn (since it is across a longer period of time).</p>
+</blockquote>
+<p>Paraphrasing: <em>The early exercise of an American put is a trade-off between the time value of money and the insurance value of a put.</em></p>
+<h4 id="why-it-can-be-optimal-to-exercise-us-put-option-early">Why it CAN be optimal to exercise US PUT OPTION early</h4>
+<p>Short answer: as long as it is sufficiently <strong>deep in the money</strong></p>
+<p>Bounds for European and American call options when there are no dividends</p>
+<p>![[Pasted image 20240215155723.png]]</p>
+<p>Variation of price of an American or European call option on a non-dividend paying stock with the stock price S0. Curve moves in the direction of the arrows when there is an increase in the interest rate, the time to maturity, or the stock price volatility</p>
+<p>![[Pasted image 20240215155747.png]]</p>
+<p>Example: consider an extreme situation. Call option; Strike price K = 10, share price S0 is virtually 0.</p>
+<ul>
+<li>if exercise immediately -&gt; immediate gain of 10</li>
+<li>if wait -&gt; gain is &lt; 10, never exceed 10 since share price cannot be negative</li>
+<li>Also 10 now is &gt; 10 in the future</li>
+</ul>
+<p>Put option: different from a call option in that it may be optimal for an investor to forgo this insurance and exercise early in order to realize the strike price immediately.</p>
+<p><strong>In general, the early exercise of a put option becomes more attractive as:</strong>
+* <strong>S0 decreases</strong>
+* <strong>r increases</strong>
+* <strong>volatility decreases</strong></p>
+<blockquote>
+<p>[!NOTE] Why the above?
+The early exercise of an American put is attractive when the interest earned on the strike price is greater than the insurance element lost.
+* When interest rates increase, the value of the interest earned on the strike price increases making early exercise more attractive.
+* When volatility decreases, the insurance element is less valuable. Again this makes early exercise more attractive.</p>
+</blockquote>
+<h3 id="effect-of-dividends">Effect of dividends</h3>
+<p>![[Pasted image 20240215201145.png]]</p>
+<blockquote>
+<p>[!warning] Finding upper &amp; lower bounds of US options
+![[Pasted image 20240215201155.png]]</p>
+</blockquote>
+<h2 id="chapter-11-options-trading-strategies">Chapter 11. Options trading strategies</h2>
+<h2 id="chapter-12-binomial-tree-pricing">Chapter 12. Binomial tree pricing</h2>
+<h3 id="no-arbitrage-arguments-vs-risk-neutral-arguments">No arbitrage arguments vs risk-neutral arguments</h3>
+<h4 id="no-arbitrage">No arbitrage</h4>
+<p>In the no-arbitrage approach, we set up a riskless portfolio consisting of a position in the option and a position in the stock. By setting the return on the portfolio equal to the risk free interest rate, we are able to value the option.</p>
+<h4 id="risk-neutral-valuation">Risk-neutral valuation</h4>
+<p>When we use risk-neutral valuation, we first choose probabilities for the branches of the tree so that the expected return on the stock equals the risk-free interest rate. We then value the option by calculating its expected payoff and discounting this expected payoff at the risk-free interest rate.</p>
+<p>A risk-neutral world has two features that simplify the pricing of derivatives:</p>
+<ol>
+<li>The expected return on a stock (or any other investment) is the risk-free rate.</li>
+<li>The discount rate used for the expected payoff on an option (or any other instrument) is the risk-free rate.</li>
+</ol>
+<h4 id="comparison-example">Comparison - example</h4>
+<blockquote>
+<p>[!warning] No arbitrage valuation of options
+SHORT WAY (risk neutral)
+* f = value of option
+* d = transformation of current stock price if it goes down
+* u = transformation of current stock price if it goes up
+![[Pasted image 20240304012806.png]]
+![[Pasted image 20240304012856.png]]</p>
+<p>LONG WAY (no arbitrage)
+1. Up value Δ - option = Down value Δ
+Solve for Δ
+Solve for value of portfolio (any of the two sides)
+2. (Δ . current share price - f).e^(rt) = 38.4
+Solve for f = 2.23
+* ** If call, option is -, shares is +Δ<strong>
+* ** If put, opposite, shares is -Δ</strong></p>
+<p>[!quote] A stock price is currently $40. It is known that at the end of three months it will be either $45 or $35. The risk-free rate of interest with quarterly compounding is 8% per annum. Calculate the value of a three-month European put option on the stock with an exercise price of $40. Verify that no-arbitrage arguments and risk-neutral valuation arguments give the same answers.
+<strong>No arbitrage</strong>
+* -35Δ + 5 = -45Δ
+Δ = -0.5
+* Current value of portfolio: -40Δ + f
+* Portfolio must earn rfr of interest: (-40Δ + f) x e...
+f = 2.06</p>
+<p><strong>Risk neutral</strong>
+* p = probability of upward stock price movement in risk neutral world
+* This must hold true: 45 p + 35 (1 - p) = 40 x e...
+10 p = 5.8
+p = 0.58
+* Expected value of option in risk neutral world:
+f = 0 x 0.58 + 5 x 0.42 = 2.10
+* PV of f = 2.10 / e... = 2.06</p>
+</blockquote>
+<h3 id="two-step-binomial-trees">Two-step binomial trees</h3>
+<p>![[Pasted image 20240304165118.png]]</p>
+<blockquote>
+<p>[!warning] Valuation of options - 2 step
+![[Pasted image 20240304172334.png]]
+![[Pasted image 20240304165312.png]]
+Volatility:
+![[Pasted image 20240305011411.png]]</p>
+</blockquote>
+<p>Porbabilities:</p>
+<ul>
+<li>pp</li>
+<li>2p(1-p)</li>
+<li>(1-p)(1-p)</li>
+</ul>
+<p><strong>The option price is always equal to its expected payoff in a risk neutral world, discounted at the risk-free interest rate</strong></p>
+<h3 id="delta">Delta</h3>
+<blockquote>
+<p><strong>Delta</strong> of a stock option = ratio of the change in the price of option : change in the price of underlying stock
+* measures the sensitivity of the option price to the price of the stock when small changes are considered
+* # of units of the stock we should hold for each option shorted in order to create a <strong>riskless portfolio</strong>
+* <strong>delta of call = positive</strong>
+* <strong>delta of put = negative</strong></p>
+<p><strong>Delta hedging</strong> = construction of a riskless portfolio</p>
+</blockquote>
+<h2 id="chapter-13-options-pricing-black-scholes-merton-model">Chapter 13. Options pricing - Black, Scholes, Merton model</h2>
+<h3 id="basics">Basics</h3>
+<p><strong>Black–Scholes–Merton model assumptions</strong>
+1. Assumes a non-dividend-paying stock.
+2. The return on the stock in a short period is normally distributed / log normally dist in long period
+3. Returns in different non-overlapping periods are independent.</p>
+<ul>
+<li>S: Change in stock price.</li>
+<li>t: Time.</li>
+<li><strong>m</strong>: Mean of the normal distribution.</li>
+<li><strong>v</strong>: Variance of the normal distribution.</li>
+<li>Expected Return (<strong>μ</strong>): Mean of the return.</li>
+<li>Volatility (<strong>σ</strong>): Standard deviation of the return.</li>
+</ul>
+<p><strong>Lognormal vs normal</strong>
+- <strong>Short term:</strong> In the short term, the Black–Scholes–Merton model assumes that the distribution of stock price changes is <strong>normal</strong>. This means that over brief intervals, the percentage changes in stock prices are expected to follow a symmetric bell-shaped curve.
+- <strong>Long term:</strong> As we consider longer time periods, the model assumes that the distribution of future stock prices is <strong>lognormal</strong>. aka <strong>IT'S NOT ST THAT'S NORMAL BUT NATURAL LOG ST IS NORMAL</strong>. This introduces a skewness in the distribution, and it better captures the asymmetry and potential for large price movements over extended periods.</p>
+<ul>
+<li>A normal distribution is symmetrical</li>
+<li>A lognormal distribution is skewed with the mean, median, and mode all different</li>
+<li>A variable with a lognormal distribution has the property that its natural logarithm is normally distributed.</li>
+<li>![[Pasted image 20240305174810.png]]</li>
+<li>![[Pasted image 20240305174822.png]]</li>
+</ul>
+<blockquote>
+<p>[!warning] Black–Scholes–Merton assumption implies that ST (future share price) is normal
+Distribution of ln ST
+![[Pasted image 20240305021349.png]]
+Distribution of ST
+* With 95% confidence, mean - Z-score . SD &lt; ln ST &lt; mean + Z-score . SD
+* e^LHS &lt; ST &lt; e^RHS</p>
+<p>Given the range
+* mean = current price . e^(expected return rate x time)
+* var = current price^2 . e^(2 x expected return x time) . [e^(volatility/SD . volatility/SD . time) - 1]</p>
+<p>[!quote] Consider a stock with an initial price of $40, an expected return of 16% per annum, and a volatility of 20% per annum. From equation (13.2), the probability distribution of the stock price, ST, in six months is given by
+![[Pasted image 20240305014249.png]]
+* There's 95% prob that norm dist var has a value within 1.96 SD of its mean (empirical rule).
+* SD = sqrt(variance) = sqrt(0.2^2 * 6/12) = 0.1414</p>
+<p>Hence, with 95% confidence:
+Expected - 1.96.SD &lt; ln ST &lt; Expected + 1.96.SD
+![[Pasted image 20240305020658.png]]
+![[Pasted image 20240305020717.png]]
+32.55 &lt; ST &lt; 56.56</p>
+<p>OK now that we've had a range for ST, we need to find mean and variance / SD
+1. Mean of ST = Pe^(rT) = 40e^(16% . 6/12) = 43.33
+2. Variance of ST = P.P . e^(2 * r * t) . (e^(SD.SD.t) - 1)
+![[Pasted image 20240305021034.png]]</p>
+<p><strong>Conclusion</strong>
+* There's a 95% chance stock price will be [32.55 - 56.56]
+* Mean = 43.33
+* Var = 37.93</p>
+<p>[!quote] Consider a stock with an expected return of 17% per annum and a volatility of 20% per annum. The probability distribution for the rate of return (continuously compounded) realized over one year is NORMAL
+* mean = expected return - SD^2 / 2 = 0.17 - 0.2^2 / 2 = 0.15
+* SD = 20%</p>
+<p>95% confident that return realised over 1 year:
+* 15 - 1.96 x 20 = -24.2%
+* 15 + 1.96 x 20 = +54.2%</p>
+</blockquote>
+<h4 id="expected-return">Expected return</h4>
+<ul>
+<li>The higher the risk, the higher the expected return.</li>
+<li>The higher the level of interest rates, the higher the expected return required on any given stock.</li>
+</ul>
+<h4 id="volatility_1">Volatility</h4>
+<p>Our uncertainty about future stock prices increases as we look further ahead. As a rough approximation, we can say that the <strong>standard deviation of the stock price</strong> is proportional to the <strong>square root of how far ahead we are looking</strong>: <strong>SD = sqrt(n)</strong></p>
+<blockquote>
+<p>[!quote] What is meant by implied volatility? How would you calculate the volatility implied by a European put option price?
+The implied volatility is the volatility that makes the Black–Scholes–Merton price of an option equal to its market price. It is calculated by trial and error. We test in a systematic way different volatilities until we find the one that gives the European put option price when it is substituted into the Black–Scholes–Merton formula.</p>
+</blockquote>
+<h3 id="assumptions_1">Assumptions</h3>
+<ol>
+<li>Stock price behavior corresponds to the lognormal model (developed earlier in this chapter) with and constant.</li>
+<li>There are no transactions costs or taxes. All securities are perfectly divisible.</li>
+<li>There are no dividends on the stock during the life of the option.</li>
+<li>There are no riskless arbitrage opportunities.</li>
+<li>Security trading is continuous.</li>
+<li>Investors can borrow or lend at the same risk-free rate of interest.</li>
+<li>The short-term risk-free rate of interest, r, is constant.</li>
+</ol>
+<h4 id="trading-days-v-calendar-days">Trading days v. calendar days</h4>
+<p>Research shows that volatility is much higher when the exchange is open for trading than when it is closed. As a result, practitioners tend to ignore days when the exchange is closed when estimating volatility from historical data and when calculating the life of an option.</p>
+<p>![[Pasted image 20240306141316.png]]</p>
+<h3 id="calc-volatility-from-historical-data">Calc volatility from historical data</h3>
+<p>See excel</p>
+<h3 id="blackscholesmerton-modelling">Black–Scholes–Merton modelling</h3>
+<blockquote>
+<p>[!warning] The Black–Scholes–Merton formulas for the prices of European calls and puts on non dividend-paying stocks are
+![[Pasted image 20240306141705.png]]</p>
+</blockquote>
+<p>The function N(x) is the cumulative probability function for a standardized normal variable. In other words, it is the probability that a variable with a standard normal distribution will be less than x.</p>
+<p>![[Pasted image 20240306141759.png]]</p>
+<blockquote>
+<p>[!quote] The stock price six months from the expiration of an option is $42, the exercise price of the option is $40, the risk-free interest rate is 10% per annum, and the volatility is 20% per annum. This means that S0 = 42, K = 40, r = 0.1, sigma = 0:2, T = 0.5
+![[Pasted image 20240306142007.png]]</p>
+</blockquote>
+<p>![[Pasted image 20240306144817.png]]</p>
+<h3 id="risk-neutral-valuation-revisited">Risk-neutral valuation: revisited</h3>
+<blockquote>
+<p><strong>Risk neutral valuation</strong>
+Any security dependent on other traded securities can be valued on the assumption that investors are risk neutral.
+1. The expected return from all investment assets is the risk-free interest rate.
+ 2. The risk-free interest rate is the appropriate discount rate to apply to any expected future cash flow</p>
+</blockquote>
+<p><strong>Procedures - valuing derivatives</strong>
+1. Assume that the expected return from the underlying asset is the risk-free interest rate r (i.e., assume <strong>u = r</strong>).
+2. Calculate the expected payoff.
+3. Discount the expected payoff at the risk-free interest rate.</p>
+<h2 id="chapter-4-interest-rates">Chapter 4. Interest rates</h2>
+<h3 id="41-types-of-rates">4.1 | Types of rates</h3>
+<p>Two important interest rates for derivatives traders are Treasury rates and LIBOR rates. Treasury rates are the rates paid by a government on borrowings in its own currency. LIBOR rates are short-term lending rates offered by banks in the interbank market.</p>
+<ul>
+<li>Treasury rates</li>
+<li>LIBOR</li>
+<li>Repo rates</li>
+<li>Risk free rate</li>
+</ul>
+<p>The compounding frequency for an interest rate defines a unit of measurement for the interest rate.</p>
+<ul>
+<li>The compounding frequency used for an interest rate defines the units in which it is measured.</li>
+<li>The difference between an annually compounded rate and a quarterly compounded rate is analogous to the difference between a distance measured in miles and a distance measured in kilometers.</li>
+<li>Traders frequently use continuous compound ing when analyzing the value of options and more complex derivatives.</li>
+</ul>
+<h3 id="42-bond-pricing">4.2 | Bond pricing</h3>
+<blockquote>
+<p>A bond’s <strong>yield</strong> is the single discount rate that, when applied to all cash flows, gives the bond’s value equal to its market price.</p>
+<p>The <strong>par yield</strong> for a certain bond maturity is the coupon rate that causes the bond price to equal its par value. (The par value is the same as the principal value).</p>
+</blockquote>
+<h3 id="43-determining-treasury-zero-rates">4.3 | Determining Treasury zero rates</h3>
+<blockquote>
+<p>The <strong>n-year zero rate</strong> or <strong>n-year spot rate</strong> is the rate applicable to an investment lasting for n years when all of the return is realized at the end.</p>
+</blockquote>
+<p>The method most commonly used to calculate zero rates is known as the <strong>bootstrap method</strong>.</p>
+<ul>
+<li>involves starting with short-term instruments and moving progressively to longer-term instruments, making sure that the zero rates calculated at each stage are consistent with the prices of the instruments</li>
+<li>used daily by trading desks to calculate a Treasury zero-rate curve.</li>
+</ul>
+<h3 id="44-forward-rates">4.4 | Forward rates</h3>
+<p>Forward rates are the rates applicable to future periods of time implied by today’s zero rates.</p>
+<blockquote>
+<p>A <strong>forward rate agreement (FRA)</strong> is an over-the-counter agreement that an interest rate (usually LIBOR) will be exchanged for a specified interest rate during a specified future period of time.
+* An FRA can be valued by assuming that forward rates are realized and discounting the resulting payoff.</p>
+<p>[!warning] Forward rate RF
+![[Pasted image 20240329010249.png]]</p>
+</blockquote>
+<h3 id="45-term-structure-of-interest-rates">4.5 | Term structure of interest rates</h3>
+<p>It is natural to ask what determines the shape of the zero curve. Why is it sometimes downward sloping, sometimes upward sloping, and sometimes partly upward sloping and partly downward sloping?</p>
+<blockquote>
+<p><strong>expectations theory</strong>
+* simplest
+* long-term interest rates should reflect expected future short-term interest rates.
+* More precisely, it argues that a <strong>forward interest rate corresponding to a certain future period is equal to the expected future zero interest rate for that period</strong>.
+<strong>market segmentation theory</strong>
+* conjectures that <strong>there need be no relationship</strong> between short-, medium-, and long-term interest rates
+* a major investor such as a large pension fund invests in bonds of a certain maturity and does not readily switch from one maturity to another.
+* The short term interest rate is determined by <strong>supply and demand</strong> in the short-term bond market; the medium-term interest rate is determined by supply and demand in the medium-term bond market; and so on.
+<strong>liquidity preference theory</strong>
+* most appealing
+* Investors = prefer to preserve their liquidity and invest funds for <strong>short periods of time</strong>.
+* Borrowers = prefer to borrow at fixed rates for <strong>long periods of time</strong>.
+* This leads to a situation in which <strong>forward rates are greater than expected future zero rates</strong>.
+* consistent with the empirical result that yield curves tend to be upward sloping more often than they are downward sloping
+* Liquidity preference theory can be used to explain the interest rate term structures that are observed in practice. The theory argues that most individuals and most companies like to borrow long and lend short. To match the maturities of borrowers and lenders, it is necessary for financial intermediaries to raise long-term rates so that forward interest rates are higher than expected future spot interest rates.</p>
+</blockquote>
+<h2 id="chapter-3-hedging-strategies-using-futures">Chapter 3. Hedging strategies using futures</h2>
+<h3 id="31-basics">3.1 | Basics</h3>
+<p>Short hedge = short position future contracts = short sell</p>
+<p>A <strong>short</strong> hedge is appropriate when a company owns an asset and expects to sell that asset in the future. It can also be used when the company does not currently own the asset but expects to do so at some time in the future.</p>
+<p>A <strong>long</strong> hedge is appropriate when a company knows it will have to purchase an asset in the future. It can also be used to offset the risk from an existing short position.</p>
+<blockquote>
+<p>[!example] It is May 15. An oil producer has negotiated a contract to sell 1 million barrels of crude oil. The price in the sales contract is the spot price on August 15.</p>
+<p>Quotes:
+* Spot price of crude oil: $80 per barrel
+* August oil futures price: $79 per barrel (<strong>think what we're selling r gonna go down -&gt; wanna SELL HIGH -&gt; SHORT HEDGE</strong>)</p>
+<p>The oil producer can hedge with the following transactions:
+* May 15: Short 1,000 August futures contracts on crude oil
+* August 15: Close out futures position</p>
+<p>After gains or losses on the futures are taken into account, the price received by the company is close to $79 per barrel.</p>
+</blockquote>
+<p><strong>Daily settlement</strong>: futures = everyday, forward = alll at the end</p>
+<h3 id="32-basis-risk">3.2 | Basis risk</h3>
+<p>Basis risk arises from the hedger’s uncertainty regarding the difference between the spot price and futures price at the expiration of the hedge.</p>
+<blockquote>
+<p><strong>Basis = spot of asset - futures price of contract</strong></p>
+</blockquote>
+<p>As time passes, the spot price and a particular month’s futures price do not necessarily change by the same amount and, as aresult, the basis changes. An increase in the basis is referred to as a strengthening of the basis and a decrease in the basis is referred to as a weakening of the basis.</p>
+<p>![[Pasted image 20240329114341.png]]</p>
+<p>![[Pasted image 20240329114401.png]]</p>
+<p>Consider a company that uses a <strong>short hedge</strong> because it plans to sell the asset. If the basis strengthens (i.e., increases) unexpectedly, the company’s position improves because it will get a higher price for the asset after futures gains or losses are considered; if the basis weakens (i.e., decreases) unexpectedly, the company’s position worsens.</p>
+<p>-&gt; <strong>short hedge = good if basis gap goes up</strong></p>
+<p>For a company using a <strong>long hedge</strong> because it plans to buy the asset: If the basis strengthens unexpectedly, the company’s position worsens because it will pay a higher price for the asset after futures gains and losses are considered; if the basis weakens unexpectedly, the company’s position improves.</p>
+<p>-&gt; <strong>long hedge = good if basis gap goes down</strong></p>
+<p><strong>Choosing contracts</strong>
+In general, basis risk <strong>increases as the 'time difference between the hedge expiration and the delivery month' increases</strong>. A good rule of thumb is therefore to <strong>choose a delivery month that is as close as possible to, but later than, the expiration of the hedge</strong>.</p>
+<p>Suppose delivery months are March, June, September, and December for futures on a particular asset. For hedge expirations in December, January, and February, the March contract will be chosen; for hedge expirations in March, April, and May, the June contract will be chosen; and so on.</p>
+<p><strong>Perfect hedge</strong>
+- A perfect hedge completely eliminates the hedger’s risk.
+- A perfect hedge does not always lead to a better outcome than an imperfect hedge; it just leads to a more certain outcome.</p>
+<p>Consider a company that hedges its exposure to the price of an asset.</p>
+<ul>
+<li>Suppose the asset’s price movements prove to be favorable to the company.</li>
+<li>A perfect hedge totally neutralizes the company’s gain from these favorable price movements.</li>
+<li>An imperfect hedge, which only partially neutralizes the gains, might well give a better outcome.</li>
+</ul>
+<h3 id="33-cross-hedging">3.3 | Cross hedging</h3>
+<blockquote>
+<p><strong>Cross hedging</strong> occurs when the two assets are different.</p>
+<p>The <strong>hedge ratio</strong> is the ratio of
+"the size of the position taken in futures contracts : the size of the exposure"
+* When the asset underlying the futures contract is the same as the asset being hedged it is natural to use a hedge ratio of 1.0. This is the hedge ratio we have used in the examples considered so far. In Example 3.4, for instance, the hedger’s exposure was on 20,000 barrels of oil, and futures contracts were entered into for the delivery of exactly this amount of oil.
+* When cross hedging is used, setting the hedge ratio equal to 1.0 is not always optimal. The hedger should choose a value for the hedge ratio that minimizes the variance of the value of the hedged position.</p>
+</blockquote>
+<h4 id="minimum-variance-hedge-ratio">Minimum variance hedge ratio</h4>
+<p>h is the slope of the best-fit line from a linear regression of S against F.</p>
+<p>![[Pasted image 20240329115022.png]]</p>
+<p>The hedge effectiveness can be defined as the proportion of the variance that is eliminated by hedging. This is the R2 from the regression of S against F and equals 2.</p>
+<blockquote>
+<p>[!NOTE] Under what circumstances does a minimum variance hedge portfolio lead to no hedging at all?
+When the coefficient of correlation between changes in the futures price and changes in the price of the asset being hedged is zero.</p>
+</blockquote>
+<p><strong>Optimum number of contracts</strong>
+![[Pasted image 20240329115128.png]]
+![[Pasted image 20240329115615.png]]</p>
+<p><strong>Tailing the hedge</strong>
+Small adjustment made to allow for the impact of daily settlement if we're using futures instead of forwards
+![[Pasted image 20240329115249.png]]
+Va = dollar value of position being hedged = principal x spot
+Vf = dollar value of 1 futures contract = futures x size of 1 f contract</p>
+<h3 id="34-hedging-equity-portfolio">3.4 | Hedging equity portfolio</h3>
+<p>If the portfolio mirrors the index, a hedge ratio very close to 1.0 is clearly appropriate -&gt; number of futures contracts that should be shorted is</p>
+<p>![[Pasted image 20240329115822.png]]</p>
+<p>![[Pasted image 20240329115812.png]]</p>
+<blockquote>
+<p>[!quote] Suppose, for example, that a portfolio worth $5.05 million mirrors the S&amp;P 500. The index futures price is 1,010 and each futures contract is on $250 times the index. In this case,
+* VA = 5,050,000
+* VF = 1,010 x 250 = 252,500
+* so that 5,050,000 / 252,500 = 20 contracts should be shorted to hedge the portfolio.</p>
+</blockquote>
+<p>When the portfolio does not exactly mirror the index, we can use the parameter <strong>beta</strong> from the capital asset pricing model to determine the appropriate number of contracts to short.</p>
+<p>![[Pasted image 20240329120022.png]]</p>
+<p>==example== 3 months</p>
+<p>![[Pasted image 20240329120041.png]]</p>
+<p>![[Pasted image 20240329120130.png]]</p>
+<p>![[Pasted image 20240329120141.png]]</p>
+<p><strong>Why hedge an equity portfolio</strong>
+* One answer to this question is that hedging can be justified if the hedger feels that the stocks in the portfolio have been chosen well. In these circumstances, the hedger might be very uncertain about the performance of the market as a whole, but confident that the stocks in the portfolio will outperform the market (after appropriate adjustments have been made for the beta of the portfolio). A hedge using index futures removes the risk arising from market moves and leaves the hedger exposed only to the performance of the portfolio relative to the market.
+* Another reason for hedging may be that the hedger is planning to hold a portfolio for a long period of time and requires short-term protection in an uncertain market situation. The alternative strategy of selling the portfolio and buying it back later might involve unacceptably high transaction costs.</p>
+<p><strong>If we wanna lower the beta</strong>
+![[Pasted image 20240329120248.png]]</p>
+<h2 id="chapter-7-swaps">Chapter 7. Swaps</h2>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Derivatives%20exercises/" class="btn btn-neutral float-left" title="Derivatives exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Full%20stack/Doccen%20policy%20update/" class="btn btn-neutral float-right" title="Doccen policy update">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Derivatives%20exercises/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Full%20stack/Doccen%20policy%20update/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

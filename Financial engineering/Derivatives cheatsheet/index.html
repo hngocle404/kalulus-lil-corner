@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Derivatives cheatsheet - My Blog</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Derivatives cheatsheet";
+        var mkdocs_page_input_path = "Financial engineering\\Derivatives cheatsheet.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> My Blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Financial engineering</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Derivatives cheatsheet</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-5-forward-and-forward-valuation">Chapter 5. Forward and forward valuation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-10-options-valuation">Chapter 10. Options valuation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-12-options-binomial-tree-pricing">Chapter 12. Options - Binomial tree pricing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-13-black-scholes-merton-option-pricing">Chapter 13. Black-Scholes-Merton option pricing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-4-interest-rates">Chapter 4. Interest rates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chapter-3-hedging-basis-risk">Chapter 3. Hedging &amp; basis risk</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Derivatives%20exercises/">Derivatives exercises</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Derivatives%20notes/">Derivatives notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Full stack</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Full%20stack/Doccen%20policy%20update/">Doccen policy update</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Full%20stack/python/">python</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Maths</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Maths/DATA101%20Data%20engineering%20PostgreSQL/">DATA101 Data engineering PostgreSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Maths/Doccen%20tasks/">Doccen tasks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Maths/International%20Finance/">International Finance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Maths/Neural%20networks/">Neural networks</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">My Blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Financial engineering</li>
+      <li class="breadcrumb-item active">Derivatives cheatsheet</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="derivatives-cheatsheet">Derivatives cheatsheet</h1>
+<p>WE USE <strong>360 DAYS</strong> not 365</p>
+<h2 id="chapter-5-forward-and-forward-valuation">Chapter 5. Forward and forward valuation</h2>
+<p>SPI200 trade in whole points</p>
+<p>Debt futures trade in half points</p>
+<blockquote>
+<p>[!warning] Net gain from shorting
+<strong>Inflow from selling - outflow from closing position (buy) - dividend (must pay out)</strong>
+<strong>Outflow from buying + Dividend (receive) - inflow from closing position (sell)</strong></p>
+</blockquote>
+<p>![[Pasted image 20240206174607.png]]</p>
+<p>==<strong>The left column = forward price, the right column = value of the contract</strong>==</p>
+<p>You need K to find value of contract, but not for future price</p>
+<p>![[Pasted image 20240114041907.png]]</p>
+<blockquote>
+<p>[!warning] ==[If foreign involved]== Calculate forward rate given xc rate &amp; interest rates
+<strong>Forward rate = exchange rate . e ^ [(rfr local - rfr foreign)*time]</strong></p>
+<p>[!warning] ==[Basic maths]== Continuous compounding find FV
+Future amount = Principal . e^(pa interest rate * time in years)</p>
+<p>[!warning] ==[Given table]== Estimating interest rate differentials from table
+Look at one country &amp; its 2 'Prior settlement price' at 2 different times.
+* e.g. Australia September vs December: 1.0075 -&gt; 1.0000
+* % change = 1/1.0075 = 0.744% LOWER
+=&gt; Short term futures prices are DECREASING at a rate of 0.744% / 3 months = 0.744 / 3 * 12 = 2.976% per year.
+=&gt; This is also the amount by which <strong>short term Aus interest rates &gt; short term US interest rates</strong>
+![[Pasted image 20240202003335.png]]</p>
+<p>[!warning] Forward price of investment commodity
+Without income &amp; storage costs: <strong>F = S . e^(rT)</strong>
+With storage costs U (U = PV of all storage costs): <strong>F = (S + U) . e^(rT)</strong>
+If U = proportional to price of commodity -&gt; treated as negative yield: <strong>F = S.e^[(r+u)T]</strong>
+* u = storage cost per annum = proportion of spot price net of any yield earnt</p>
+<p>[!warning] Convenience &amp; carry cost
+Investment asset | cost of carry c only
+![[Pasted image 20240202195730.png]]
+Consumption asset | cost of carry c - convenience yield y
+![[Pasted image 20240202195746.png]]</p>
+</blockquote>
+<h2 id="chapter-10-options-valuation">Chapter 10. Options valuation</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: center;">European Call</th>
+<th style="text-align: center;">European Put</th>
+<th style="text-align: center;">American Call</th>
+<th style="text-align: center;">American Put</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Current stock price</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">Strike price</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Time to expiration</td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Volatility</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Risk-free rate</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dividends</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!warning] Upper bounds
+Call: <strong>C ≤ S(0)</strong>   |   <strong>c ≤ S(0)</strong>
+* If X true -&gt; arbitrage: buy the stock, sell the call option</p>
+<p>Put: <strong>P ≤ K</strong>   |   <strong>p ≤ Ke^(-rT)</strong>
+* If X true -&gt; arbitrage: writing/sell the option, invest proceeds of the sale at rfr</p>
+<p>[!warning] Lower bound
+Call option:
+![[Pasted image 20240204164909.png]]
+Put option:
+![[Pasted image 20240204212630.png]]</p>
+<p>[!warning] Put call parity for stock
+WITHOUT DIVIDENDs
+![[Pasted image 20240205185528.png]]</p>
+<p>WITH DIVIDENDs
+![[Pasted image 20240205185412.png]]</p>
+<p>Arbitrage opportunity:
+1. Find value of portfolio 1 (put call parity RHS): call &amp; bond
+2. Find value of portfolio 2 (LHS): put &amp; share
+3. Whatever is underpriced -&gt; buy underpriced portfolio, sell overpriced portfolio
+  * NOTE: portfolio 1 -&gt; BUY/SELL THE CALL ONLY, ignore the bond.</p>
+</blockquote>
+<p>example: put call parity arbitrage [[Derivatives notes#^1e885b]]</p>
+<h2 id="chapter-12-options-binomial-tree-pricing">Chapter 12. Options - Binomial tree pricing</h2>
+<blockquote>
+<p>[!NOTE]- 2 step binomial
+![[Presentation_LamDongQuy_22119146_Week10.pdf]]</p>
+<p>[!warning] Valuation of options - 1 step
+SHORT WAY
+* f = value of option
+* d = transformation of current stock price if it goes down
+* u = transformation of current stock price if it goes up
+![[Pasted image 20240304012806.png]]
+![[Pasted image 20240304012856.png]]</p>
+<p>LONG WAY
+1. Up value Δ - option = Down value Δ
+Solve for Δ
+Solve for value of portfolio (any of the two sides)
+2. (Δ . current share price - f).e^(rt) = 38.4
+Solve for f = 2.23</p>
+<p>[!warning] Valuation of options - 2 step
+![[Pasted image 20240304175612.png]]
+![[Pasted image 20240329002523.png]]
+![[Pasted image 20240304165312.png]]</p>
+</blockquote>
+<h2 id="chapter-13-black-scholes-merton-option-pricing">Chapter 13. Black-Scholes-Merton option pricing</h2>
+<p><strong>Probability Distribution of stock price (ln ST) ~ (expected value, variance)</strong> ![[Pasted image 20240305021349.png]]
+<strong>Prob dist of the cont compounded RATE OF RETURN</strong>
+σ√Δt</p>
+<p><strong>Black pricing</strong></p>
+<blockquote>
+<p>![[Pasted image 20240306141705.png]]</p>
+</blockquote>
+<p><strong>Prob of exercise call</strong> = N(d2)
+<strong>Prob of exercise put</strong> = 1 - N(d2)</p>
+<p><strong>If there's dividend</strong></p>
+<blockquote>
+<p><strong>S0 = S0 - Dividend.e^(-r.time to discount the dividend only)</strong></p>
+</blockquote>
+<p>e.g. s0 = 50, strike = 50, r = 0.1, option is 3 months</p>
+<p>If dividend is 1.5, expected in 2 months:</p>
+<p>S0 = 50 - 1.5.e^(-10% x 2/12) = 48.52 <strong>(NOT 3/12)</strong></p>
+<p><strong>Normdist</strong>
+![[Pasted image 20240306170427.png]]
+![[Pasted image 20240306170438.png]]
+![[Pasted image 20240318173155.png]]</p>
+<h2 id="chapter-4-interest-rates">Chapter 4. Interest rates</h2>
+<p><strong>Converting between different compounded rates</strong>
+![[Pasted image 20240329004353.png]]
+<strong>Finding forward rate at T2 given zero rates at T1 and T2</strong>
+![[Pasted image 20240329014141.png]]
+<strong>Valuating an FRA</strong>
+![[Pasted image 20240329014441.png]]
+<strong>Finding par yield</strong>
+![[Pasted image 20240329071130.png]]
+d = PV of 1$ received at maturity
+m = # of coupon payments / year
+c = par yield
+par = principal
+A = all the discounting factor, aka pretend pmt d is invisible</p>
+<h2 id="chapter-3-hedging-basis-risk">Chapter 3. Hedging &amp; basis risk</h2>
+<blockquote>
+<p>[!warning] Short / long hedge guide
+If what we're NEEDING TO SELL is gonna go down -&gt; wanna lock in the higher selling rate -&gt; SELL futures
+If what we're NEEDING TO BUY is gonna go down -&gt; we wanna lock in the cheaper rate -&gt; BUY futures</p>
+</blockquote>
+<p>![[Pasted image 20240329114346.png]]</p>
+<p>![[Pasted image 20240329114356.png]]</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Welcome to MkDocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Derivatives%20exercises/" class="btn btn-neutral float-right" title="Derivatives exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Derivatives%20exercises/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

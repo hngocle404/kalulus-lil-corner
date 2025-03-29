@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Neural networks - My Blog</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Neural networks";
+        var mkdocs_page_input_path = "Maths\\Neural networks.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> My Blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Financial engineering</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Financial%20engineering/Derivatives%20cheatsheet/">Derivatives cheatsheet</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Financial%20engineering/Derivatives%20exercises/">Derivatives exercises</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Financial%20engineering/Derivatives%20notes/">Derivatives notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Full stack</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Full%20stack/Doccen%20policy%20update/">Doccen policy update</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Full%20stack/python/">python</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Maths</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../DATA101%20Data%20engineering%20PostgreSQL/">DATA101 Data engineering PostgreSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Doccen%20tasks/">Doccen tasks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../International%20Finance/">International Finance</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Neural networks</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">My Blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Maths</li>
+      <li class="breadcrumb-item active">Neural networks</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>pStatQuest with Josh Starmer</p>
+<p>AutoML: [[AutoML.canvas|AutoML]]</p>
+<h2 id="definitions">Definitions</h2>
+<blockquote>
+<p>A <strong>neural network</strong> is a series of algorithms that attempt to recognize underlying relationships in a set of data through a process that mimics the way the human brain operates. A neural network consists of layers of nodes, also known as <strong>neurons</strong>. These layers include:</p>
+</blockquote>
+<ol>
+<li><strong>Input Layer</strong>: The layer that receives the input data.</li>
+<li><strong>Hidden Layers</strong>: Intermediate layers that perform computations and feature transformations.</li>
+<li><strong>Output Layer</strong>: The layer that produces the final output of the network.</li>
+</ol>
+<h2 id="directed-acyclic-graph-dag-representation">Directed Acyclic Graph (DAG) representation</h2>
+<p>A neural architecture can be represented as a Directed Acyclic Graph (DAG). Let's break this down:</p>
+<ol>
+<li><strong>Directed</strong>: The connections (edges) between nodes have a direction, indicating the flow of data.</li>
+<li><strong>Acyclic</strong>: No loops/cycles - The graph does not contain any cycles; data flows in one direction without looping back.</li>
+</ol>
+<blockquote>
+<p>[!NOTE]+ Example of a DAG - entire-based structure
+2 simplified examples of entire-structured neural architectures.
+* Each <strong>layer</strong> is specified with a different operation, such as 'convolution' and 'max pooling' operations.
+* The <strong>edge</strong> indicates the information flow.
+* The skip-connection operation used in the right example can help explore deeper and more complex neural architectures.
+![[Pasted image 20240530095539.png]]</p>
+</blockquote>
+<p>Components of the DAG:</p>
+<ul>
+<li><strong>Nodes</strong>: Represent feature tensors, which are multi-dimensional arrays of numbers. Each node performs a specific computation or operation.</li>
+<li><strong>Edges</strong>: Represent the operations applied to the data as it flows from one node to another.</li>
+</ul>
+<h2 id="formula-for-computation-at-any-node">Formula for computation at any node</h2>
+<p>The given formula (AutoML A survey of the state-of-the-art) explains the computation at any node $Z_k$ in the DAG.</p>
+<p>$$
+Z_k = \sum_{i=1}^{N_k} o_i(I_i), \quad o_i \in O
+$$
+- $Z_k$: The output feature tensor at node $k$.
+- $N_k$: The number of incoming edges (indegree) to node $Z_k$.
+- $I_i$: The $i$-th input tensor to node $Z_k$.
+- $o_i$: The operation applied to $I_i$, selected from a set of candidate operations $O$.</p>
+<h2 id="operations">Operations</h2>
+<p>The set of candidate operations OOO can include:</p>
+<ul>
+<li><strong>Convolution</strong>: Applies a filter to the input to extract features.</li>
+<li><strong>Pooling</strong>: Reduces the dimensionality of the input, keeping the most important information.</li>
+<li><strong>Activation Functions</strong>: Introduce non-linearity into the model (e.g., ReLU, sigmoid).</li>
+<li><strong>Skip Connection</strong>: Allows the input to skip certain layers, aiding in training deeper networks.</li>
+<li><strong>Concatenation</strong>: Combines inputs from multiple nodes.</li>
+<li><strong>Addition</strong>: Adds inputs from multiple nodes.</li>
+</ul>
+<h2 id="advanced-modules">Advanced modules</h2>
+<p>To enhance model performance, NAS methods often use advanced, human-designed modules as primitive operations:</p>
+<ul>
+<li><strong>Depth-wise Separable Convolution</strong>: A form of convolution that reduces computational cost and model size.</li>
+<li><strong>Dilated Convolution</strong>: Expands the receptive field without losing resolution.</li>
+<li><strong>Squeeze-and-Excitation (SE) Blocks</strong>: Improve the network's sensitivity to important features.</li>
+</ul>
+<h2 id="search-space-in-nas">Search space in NAS</h2>
+<p>The search space defines all possible neural network architectures that NAS can explore. A well-designed search space should:</p>
+<ul>
+<li><strong>Exclude Human Bias</strong>: Allow the algorithm to explore architectures that a human designer might not consider.</li>
+<li><strong>Be Flexible</strong>: Cover a wide variety of potential architectures to ensure the best possible model can be found.</li>
+</ul>
+<h3 id="1-entire-structured-search-space">1. Entire-structured search space</h3>
+<blockquote>
+<p>stacking a predefined number of nodes</p>
+</blockquote>
+<p><strong>PROS</strong>: easy to implement
+<strong>CONS</strong>:
+* deeper= better generalisation ability BUT can be onerous &amp; computationally expensive
+* lacks transferability (aka may need a new model for a larger dataset)</p>
+<p>![[Pasted image 20240530095539.png]]</p>
+<p>Left:</p>
+<ul>
+<li>simplest</li>
+</ul>
+<p>Right:</p>
+<ul>
+<li>more complex as it permits arbitrary skip connections to exist btwn the ordered nodes (these nodes have been proven effective in practice)</li>
+</ul>
+<h3 id="2-cell-based-search-space">2. Cell-based search space</h3>
+<blockquote>
+<p>Compose of a fixed number of repeating cell structures (cell = motif / block)</p>
+</blockquote>
+<p>To enable the transferability of the generated model, the cell-based search space has been proposed, in which the neural architecture is composed of a fixed num ber of repeating cell structures. This design approach is based on the observation that many well-performing human-designed models are also built by stacking a fixed number of modules.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../International%20Finance/" class="btn btn-neutral float-left" title="International Finance"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../International%20Finance/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

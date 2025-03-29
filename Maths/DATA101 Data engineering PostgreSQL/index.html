@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>DATA101 Data engineering PostgreSQL - My Blog</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "DATA101 Data engineering PostgreSQL";
+        var mkdocs_page_input_path = "Maths\\DATA101 Data engineering PostgreSQL.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> My Blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Financial engineering</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Financial%20engineering/Derivatives%20cheatsheet/">Derivatives cheatsheet</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Financial%20engineering/Derivatives%20exercises/">Derivatives exercises</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Financial%20engineering/Derivatives%20notes/">Derivatives notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Full stack</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Full%20stack/Doccen%20policy%20update/">Doccen policy update</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Full%20stack/python/">python</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Maths</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">DATA101 Data engineering PostgreSQL</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#week-1-data-engineering-and-sql-overview">Week 1. Data engineering and SQL overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#0-why-data-engineer">0. Why data engineer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-relational-algrebra">3. Relational algrebra</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#primitive-ra-operations">Primitive RA Operations</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#derived-ra-operations">Derived RA operations</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#converting-from-sql-query-to-relational-algebra">Converting from SQL query to relational algebra</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-data-engineering">4. Data engineering</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#etl">ETL</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#elt">ELT</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#et">ET</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#data-warehouse-vs-data-lakes">Data warehouse vs. data lakes</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#week-2-relational-model-and-algebra">Week 2. Relational model and algebra</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Doccen%20tasks/">Doccen tasks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../International%20Finance/">International Finance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Neural%20networks/">Neural networks</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">My Blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Maths</li>
+      <li class="breadcrumb-item active">DATA101 Data engineering PostgreSQL</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="data101-data-engineering-ucberkeley">Data101. Data engineering UCBerkeley</h1>
+<blockquote>
+<p><strong>Course notes</strong>: https://data101.org/notes/overview.html
+<strong>Schedule</strong>: https://data101.org/sp24/</p>
+</blockquote>
+<h2 id="week-1-data-engineering-and-sql-overview">Week 1. Data engineering and SQL overview</h2>
+<table>
+<thead>
+<tr>
+<th>Content</th>
+<th>Link</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lecture 1</td>
+<td><a href="https://docs.google.com/presentation/d/1XK9LbdbCfoLmVLN94tE3WT4FB4raOOv_m1oTG-yjLJk/edit#slide=id.g24f26c19f5f_0_141">Lec1</a></td>
+<td>Done</td>
+</tr>
+<tr>
+<td>Lecture 2</td>
+<td><a href="https://docs.google.com/presentation/d/1VLYLsBZMQGxyV097DBLVpWnybaQNygj_MCfyP3UbvoI/edit#slide=id.g278a9687a11_0_788">Lec2</a></td>
+<td>Done</td>
+</tr>
+<tr>
+<td>Worksheet</td>
+<td><a href="https://drive.google.com/file/d/1AQgvJuX1J1fFYFtRnSwTuVqzqA61dbcn/view">worksheet</a></td>
+<td>Done</td>
+</tr>
+<tr>
+<td>Worksheet solution</td>
+<td><a href="https://drive.google.com/file/d/1M9VsTZUr8Oe46jRgtNarOV0hYyHtOhjb/view">solution</a></td>
+<td>Done</td>
+</tr>
+<tr>
+<td>Jupyter notebook</td>
+<td><a href="https://data101.org/sp24/resources/assets/lectures/lec02/lec02.html">nb</a></td>
+<td>Done</td>
+</tr>
+<tr>
+<td>Course notes PDF</td>
+<td><a href="https://drive.google.com/file/d/1bqiD3WNLbAjQxsyLR5E4snpbKgthfk-D/view">pdf</a></td>
+<td>Done</td>
+</tr>
+<tr>
+<td>MD notes</td>
+<td><a href="https://data101.org/notes/2-relational_algebra/extended.html">link</a></td>
+<td>Done</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="0-why-data-engineer">0. Why data engineer</h3>
+<blockquote>
+<p>[!quote]- Why learn data engineering?
+![[Pasted image 20241011150544.png|centre|60%]] ![[Pasted image 20241011150614.png|centre|60%]] ![[Pasted image 20241011150643.png|centre|60%]] ![[Pasted image 20241011150737.png|centre|60%]]</p>
+</blockquote>
+<p>Major frameworks: <a href="https://mad.firstmark.com/">FirstMark | 2024 MAD (ML/AI/Data) Landscape</a></p>
+<table>
+<thead>
+<tr>
+<th>==Code-centric==</th>
+<th>==Query-centric==</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Main Storage API is files</strong><br>AWS S3, Azure File Storage, Google Cloud Storage, HDFS, …</td>
+<td><strong>Main Storage API is tables</strong><br>Snowflake, BigQuery, Redshift, Azure Synapse, Teradata (founded 1979, still relevant!!)</td>
+</tr>
+<tr>
+<td><strong>Libraries in general-purpose programming languages, lots of separation</strong><br> - Spark (Scala/Java) for batch processing<br> - Ad hoc code (Python/pandas) for exploration<br> - Metadata tracked in a separate store</td>
+<td><strong>One language/paradigm for (almost) everything</strong><br>- Batch: SQL<br>- Interactive: SQL<br>- Metadata auto-tracked in database<br>- Other bytestream data stored in files</td>
+</tr>
+</tbody>
+</table>
+<p>We're gonna be taking the <strong>query centric</strong> approach</p>
+<ul>
+<li>based on <strong>relational algebra (RA)</strong> and <strong>relational calculus (RC)</strong></li>
+<li>RA is procedural, RC is declarative (not algos but outputs, in contrast to )</li>
+</ul>
+<p><strong>SQL</strong>
+* <strong>declarative</strong>: in contrast to general purpose languages like C which are often imperative
+* <strong>abstraction</strong>: no overfitting of code to whatever task at hand</p>
+<p>![[Pasted image 20241017021421.png|centre|50%]]</p>
+<hr />
+<h3 id="3-relational-algrebra">3. Relational algrebra</h3>
+<p>Query execution has its foundation in Relational Algebra, which shares some of its concepts with Set Theory.</p>
+<p>• Let A and B be sets where A = {1, 2, 3, 4, 5} and B = {2, 3, 4, 5, 6}.</p>
+<p>• Let R and S be bags where R = {1, 1, 1, 2, 2, 4, 4}, and S = {2, 3, 3, 3, 4, 4}.</p>
+<blockquote>
+<p>[!example] ==Union== Write out A ∪ B and R ∪ S.
+1. A ∪ B = {1, 2, 3, 4, 5, 6}
+2. R ∪ S = {1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4}
+</p>
+</blockquote>
+<p>Union contains ALL elements <strong>including duplicates</strong>.</p>
+<blockquote>
+<p>[!example] ==Union== Write out A ∪ B and R ∪ S.
+- A ∪ B = {1, 2, 3, 4, 5, 6}
+- R ∪ S = {1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4}</p>
+<p>Union contains ALL elements <strong>including duplicates</strong>.</p>
+<p>[!example] ==Union== Write out A ∪ B and R ∪ S.
+A ∪ B = {1, 2, 3, 4, 5, 6}
+R ∪ S = {1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4}
+Union contains ALL elements <strong>including duplicates</strong>.</p>
+<p>==Union== Write out A ∪ B and R ∪ S.
+1. A ∪ B = {1, 2, 3, 4, 5, 6}
+2. R ∪ S = {1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4}
+</p>
+</blockquote>
+<p>Union contains ALL elements <strong>including duplicates</strong>.</p>
+<blockquote>
+<p>==Union== Write out A ∪ B and R ∪ S.
+- A ∪ B = {1, 2, 3, 4, 5, 6}
+- R ∪ S = {1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4}</p>
+<p>Union contains ALL elements <strong>including duplicates</strong>.</p>
+<p>==Union== Write out A ∪ B and R ∪ S.
+A ∪ B = {1, 2, 3, 4, 5, 6}
+R ∪ S = {1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4}
+Union contains ALL elements <strong>including duplicates</strong>.</p>
+</blockquote>
+<h4 id="primitive-ra-operations">Primitive RA Operations</h4>
+<p>Relational algebra (RA) has <strong>six</strong> primitive operators, upon which all other complex operators are formed:</p>
+<p><strong>Unary</strong>
+1. Projection
+2. Selection
+3. Renaming</p>
+<p><strong>Binary</strong></p>
+<ol>
+<li>Product</li>
+<li>Union</li>
+<li>Difference</li>
+</ol>
+<blockquote>
+<p><strong>Unary operators</strong> = each <strong>operator</strong> <code>f</code> takes as input <strong>1 operand relation</strong> <code>R</code> with <strong>schema</strong> $(B_1,…,B_m)$ and outputs an <strong>output relation <code>f(R)</code></strong>. The output relation can be unnamed.</p>
+<p><strong>Projection</strong> (<code>SELECT</code>) - selecting the desired columns, discard the rest
+$$\pi_{A_1, A_2, \dots, A_n}(R)$$
+- If the relation (table) $R$ has attributes (columns) ${B_1, B_2, ..., B_m}$, projection selects a subset ${A_1, A_2, ..., A_n}$ where $n≤m$.
+- The projection operator outputs a relation that contains the tuples of the input relation $R$, but restricted to set of attributes ${A1,…,An}$.</p>
+</blockquote>
+<p>==e.g== Imagine a table with information about students: student_id, name, age, GPA; if you project onto only the <code>name</code> and <code>GPA</code> columns, your output will be a new table that only shows the names and GPAs of the students:</p>
+<p>$$\pi_{name, GPA}(students)$$</p>
+<blockquote>
+<p><strong>Selection</strong> (<code>WHERE</code>) - selecting the desired rows, discard the rest
+$$\sigma_C(R)$$
+* The selection operator outputs a relation that contains the tuples of input relation $R$ that satisfy the row condition $C$.
+* The row condition is defined to contain attributes with boolean expressions: $=$, $&gt;$, $&lt;$, $!=$, AND ($\wedge$), OR ($\vee$), NOT ($!$), etc.
+* Because selection is a row filter, the input and output schema <strong>share the same schema</strong>, with set of attributes ${B_1, \dots, B_m}$.</p>
+</blockquote>
+<p>==e.g== You only want to see students whose GPA &gt; 3.0. This is selection: we filter rows based on the given condition. $$\sigma_{GPA&gt;3.0}(students)$$</p>
+<blockquote>
+<p><strong>Renaming</strong> (<code>AS</code>) - the renaming operator outputs a relation with the same data as the input relation, but with renamed attributes and/or relation name. $$\rho_{S(A_1, \dots, A_m)}(R)$$equivalently $$\rho_{S(B_{i_1}\rightarrow A_1, \dots, B_{i_n} \rightarrow A_n)}(R)$$
+- The number of attributes, m therefore stays consistent across the input and output relation, and the data in tuples does not change.</p>
+</blockquote>
+<p>==e.g== Imagine a table with the columns first_name and last_name. You want to rename them to given_name and family_name for clarity:</p>
+<p>$$\rho_{\text{given_name} \rightarrow \text{first_name}, \text{family_name} \rightarrow \text{last_name}}(\text{students})$$</p>
+<p>==Example of unary operations==</p>
+<p>Suppose that we have two relations with the following schema:</p>
+<ul>
+<li>$\text{titles(title_id, type, primary_title, runtime_minutes)}$</li>
+<li>$\text{people(person_id, name, born, died)}$</li>
+<li>$\pi_{\text{title_id, primary_title}}(\text{titles})$ outputs a relation with tuples of $\text{titles}$ that are restricted to the attributes $\text{title_id}$ and $\text{primary_title}$. In other words, we "drop" the other attributes $\text{type}$ and $\text{runtime_minutes}$.</li>
+<li>$\sigma_{\text{born} &gt; 1980}(\text{people})$ outputs a relation with tuples of $\text{people}$ that satisfy the condition where $\text{born} &gt; 1980$.</li>
+<li>$\rho_{\text{persons(person_id, name, birth, death)}}(\text{people})$ outputs a relation named $\text{persons}$ that has the tuples of $\text{people}$ but renames attributes $\text{born}$ and $\text{died}$ to $\text{birth}$ and $\text{death}$, respectively, and keeps $\text{person_id}$ and $\text{name}$ unchanged.</li>
+<li>$\rho_{\text{persons}(\text{born} \rightarrow \text{birth}, \text{died} \rightarrow \text{death}}(\text{people})$ does the same as the previous example but is more concise.</li>
+</ul>
+<blockquote>
+<p><strong>Binary operators</strong> = each <strong>operator</strong> <code>f</code> takes as input <strong>2 operand relations</strong> <code>R1</code> and <code>R2</code> with <strong>schemas</strong> $(B_1, \dots, B_m)$ and $(C_1, \dots, C_n)$ and outputs an <strong>output relation <code>f(R1, R2)</code></strong>. The output relation can be unnamed.</p>
+<p><strong>Product</strong> (or Cross Product, Cartesian Product) = outputs a relation that is the <strong>Cartesian product</strong> of the two input relations $R_1$ and $R_2$. (or Cross Product, Cartesian Product), $R_1 \times R_2$.
+$$R_1 \times R_2$$
+- The output relation will contain all possible combinations of tuples from $R_1$ and $R_2$, resulting in a relation with a schema that combines the attributes of both input relations.</p>
+</blockquote>
+<p>==e.g== If we have two relations:</p>
+<p>$R_1$ (with schema ${A, B}$):</p>
+<ul>
+<li>A: 1, B: X</li>
+<li>A: 2, B: Y</li>
+</ul>
+<p>$R_2$ (with schema ${C, D}$):</p>
+<ul>
+<li>C: 3, D: P</li>
+<li>C: 4, D: Q</li>
+</ul>
+<p>The product $R_1 \times R_2$ results in:</p>
+<ul>
+<li>A: 1, B: X, C: 3, D: P</li>
+<li>A: 1, B: X, C: 4, D: Q</li>
+<li>A: 2, B: Y, C: 3, D: P</li>
+<li>A: 2, B: Y, C: 4, D: Q</li>
+</ul>
+<blockquote>
+<p><strong>Union</strong> = outputs a relation that <strong>combines</strong> the tuples from both input relations $R_1$ and $R_2$.
+$$R_1 \cup R_2$$
+- The output relation includes all unique tuples from both relations. The input relations must have the same schema (same attributes).</p>
+</blockquote>
+<p>==e.g== Consider the two relations:</p>
+<p>$R_1$:</p>
+<ul>
+<li>id: 1, name: Alice</li>
+<li>id: 2, name: Bob</li>
+</ul>
+<p>$R_2$:</p>
+<ul>
+<li>id: 2, name: Bob</li>
+<li>id: 3, name: Charlie</li>
+</ul>
+<p>The union $R_1 \cup R_2$ results in:</p>
+<ul>
+<li>id: 1, name: Alice</li>
+<li>id: 2, name: Bob</li>
+<li>id: 3, name: Charlie</li>
+</ul>
+<p>Notice that Bob appears only once in the output, as the union operator <strong>removes duplicates</strong>.</p>
+<blockquote>
+<p><strong>Difference</strong> = outputs a relation containing tuples that are in the first relation $R_1$ but not in the second relation $R_2$.
+$$$R_1 - R_2$$
+- Like the union operator, the input relations must have the same schema.</p>
+</blockquote>
+<p>==e.g.== If we have:</p>
+<p>$R_1$:</p>
+<ul>
+<li>id: 1, name: Alice</li>
+<li>id: 2, name: Bob</li>
+</ul>
+<p>$R_2$:</p>
+<ul>
+<li>id: 2, name: Bob</li>
+<li>id: 3, name: Charlie</li>
+</ul>
+<p>The difference $R_1 - R_2$ results in:</p>
+<ul>
+<li>id: 1, name: Alice</li>
+</ul>
+<h4 id="derived-ra-operations">Derived RA operations</h4>
+<blockquote>
+<p><strong>Intersection</strong> = set intersection of rows in R1 and R2 (union+difference)
+$$R_1 \cap R_2$$</p>
+<p><strong>Join</strong> = special cases of Cartesian products &amp; unary operators.</p>
+<p><strong>Theta join</strong> = outputs a relation that joins two relations such that each row satisfies the condition $\theta$
+$$R_1 \bowtie_{\theta} R_2 = \sigma_{\theta}( R_1 \times R_2)$$</p>
+</blockquote>
+<p>Because it is defined with a cross product, the output schema distinguishes common attributes $A_i$ in $R_1$ and $B_j$ in $R_2$ as $R_1.A_i$ and $R_2.B_j$, respectively.</p>
+<blockquote>
+<p><strong>Equi join</strong> = special case of the theta join, where $\theta$ is an "equality condition," i.e., contains only boolean expressions involving equality ($=$) and logical AND ($\wedge$).</p>
+<p><strong>Natural join</strong> - outputs a relation that joins the two input relations $R_1$ and $R_2$ such that rows are matched on common attributes and removes duplicate attributes in the output relation schema
+$$R_1 \bowtie R_2$$
+1. cross product of $R_1$ and $R_2$.
+2. selection with equality condition $\theta$, where $\theta$ filters out rows for which shared attributes do <em>not</em> have matching values. In other words, <em>for each</em> attribute pair $R_1.A_i, R_2.B_j$ where $A_i$ in $R_1$ and $B_j$ in $R_2$ have the same attribute name ("common attributes"), only keep the tuple if its values for $R_1.A_i$ and $R_2.B_j$ match.
+3. Rename one set of common attributes back to their original name, e.g., $R_1.A_i$ is renamed to $A_i$ for each $A_i = B_j$.
+4. Drop the other set of common attributes, e.g., drop $R_2.B_j$</p>
+</blockquote>
+<p>==e.g== natural join: suppose we have the two relations</p>
+<ul>
+<li>$\text{crew(tid, pid, c, j)}$</li>
+<li>$\text{people(pid, n, b, d)}$</li>
+</ul>
+<p>The natural join of crew and people would then satisfy:</p>
+<p>$$\text{crew} \bowtie \text{people} = \pi_{\text{tid, pid, c, j, n, b, d}}\bigl(\rho_{\text{crew.pid} \rightarrow \text{pid}} \bigl( \sigma_{\text{crew.pid = people.pid}} (\text{crew} \times \text{people}) \bigr) \bigr)$$.</p>
+<p>In special cases, the natural join reduces to other operators.</p>
+<p>==e.g== Suppose we have the 3 relations:</p>
+<p>$$R(A, B), S(A, B), T(C, D)$$</p>
+<p>Then \
+$$R \bowtie S = R \cap S$$and</p>
+<p>$$R \bowtie T = R \times T$$</p>
+<h4 id="converting-from-sql-query-to-relational-algebra">Converting from SQL query to relational algebra</h4>
+<pre><code>SELECT a1, a2, …, an, agg1(d1), agg2(d2), …, aggp(dp)
+FROM R1, R2, …, Rk
+WHERE C
+GROUP BY b1, b2, …, bm
+HAVING H
+</code></pre>
+<p>We could write the SQL order of execution of the above query using extended relational algebra as follows:</p>
+<p>$$\pi_{list} \biggl( \sigma_H \biggl( \gamma_{b1, \dots, bm, agg1(d1), \dots, aggp(dp)} \bigl( \sigma_C (R1 \times \dots Rk ) \bigr) \biggr) \biggr)$$</p>
+<ul>
+<li>$list$ - the list of expressions in <code>SELECT</code>, ==e.g== $a1, \dots, an, agg1(d1), \dots, aggp(dp)$</li>
+<li>$agg1(d1), \dots aggp(dp)$ - aggregation functions on specific attributes $d1, \dots, dp$ in the cross product of $R1 \times \dots \times Rk$,</li>
+<li>$a1, \dots, an$ - a subset of the grouped attributes $b1, \dots, bm$.</li>
+</ul>
+<h3 id="4-data-engineering">4. Data engineering</h3>
+<h4 id="etl">ETL</h4>
+<blockquote>
+<p><strong>Extract</strong>: Scrape raw data from all the source systems, e.g., transactions, sensors, log files, experiments, tables, bytestreams, …
+<strong>Transform</strong>: Apply a series of rules or functions, wrangle data into schema(s)/format(s)
+<strong>Load</strong>: Load data into a data storage solution</p>
+</blockquote>
+<h4 id="elt">ELT</h4>
+<p>Load without doing a lot of transformation, with transformations done in SQL. Faster to get going, and more scalable, but requires more <strong>data warehousing</strong> knowledge (&amp; may be more expensive).</p>
+<ul>
+<li>newer (e.g., the <strong>Snowflake</strong> approach)</li>
+</ul>
+<h4 id="et">ET</h4>
+<p>For <strong>data lakes</strong> - No need to “manage” data</p>
+<ul>
+<li>Data is dumped in cheaply and massaged as needed for various use-cases</li>
+<li>Usually code-centric (<strong>Spark</strong>)</li>
+</ul>
+<h4 id="data-warehouse-vs-data-lakes">Data warehouse vs. data lakes</h4>
+<p>Essentially we have 2 extremes:</p>
+<p><strong>Data Warehouse</strong>, ~1990s <code>ETL</code>
+* “Single source of truth”: A central, organized repository of data used for analytics throughout an enterprise.
+* Design the uber-schema up-front of all of the rectangular tables you’d ever want.
+* <strong>Extract</strong> from trusted sources
+* <strong>Transform</strong> to warehouse schema using custom tools
+* <strong>Load</strong> data warehouse
+* Old school ETL solution: Informatica</p>
+<p><strong>Data Lake</strong>, ~2010s <code>ELT</code>
+* Emerged during Hadoop/Spark revolution
+* “Landing zone”: unconstrained storage for any and all data
+* Data is then analyzed on demand
+* <strong>Extract</strong> into files/storage
+* <strong>Load</strong> into storage (easy!)
+* <strong>Transform</strong> on demand for any use.
+* Create new files in the lake, catalog files as they go for reuse
+* Often code-centric</p>
+<p>New term: -&gt; Data <strong>Lakehouse</strong></p>
+<h2 id="week-2-relational-model-and-algebra">Week 2. Relational model and algebra</h2>
+<table>
+<thead>
+<tr>
+<th>Content</th>
+<th>Link</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lecture 3</td>
+<td><a href="https://docs.google.com/presentation/d/1kff-8_-2OFhiaLrG98HW2tcapxc177AKqu_25IYwGUo/edit#slide=id.g240aa56c3be_0_84">Lec3</a></td>
+<td>Done</td>
+</tr>
+<tr>
+<td>Lecture 4</td>
+<td><a href="https://docs.google.com/presentation/d/1tbShn0AWi9LyeUZXGsACpo0vXZ-sk0Dt40Xt6_5JX-4/edit#slide=id.g240c89794b3_0_987">Lec4</a></td>
+<td>Done</td>
+</tr>
+</tbody>
+</table>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Full%20stack/python/" class="btn btn-neutral float-left" title="python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Doccen%20tasks/" class="btn btn-neutral float-right" title="Doccen tasks">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Full%20stack/python/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Doccen%20tasks/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
