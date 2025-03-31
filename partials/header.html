@@ -1,15 +1,3 @@
-<!-- HEADER BAR -->
-
-
-<!-- <head>
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/text.css">
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/light.css">
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/primer_primitives.css">
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/primer.css">
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/global.css">
-  <link rel="stylesheet" href="/kalulus-lil-corner/css/stories.css">
-</head> -->
-
 <style>
   @media (max-width: 991px) {
     .sub-nav-mktg-links {
@@ -23,22 +11,33 @@
       /* Prevents text wrapping */
       gap: 10px;
       padding-bottom: 5px;
-      /* Helps prevent scrollbar overlap */
     }
 
-    /* Hide scrollbar but keep scrolling functionality */
     .sub-nav-mktg-links::-webkit-scrollbar {
       display: none;
     }
 
     .sub-nav-mktg-links {
       -ms-overflow-style: none;
-      /* Hides scrollbar for IE/Edge */
       scrollbar-width: none;
-      /* Hides scrollbar for Firefox */
+    }
+
+    /* Remove contact link and down-up arrow on mobile */
+    .btn-mktg {
+      display: none;
+    }
+
+    .sub-nav-mktg-toggle {
+      display: none;
+    }
+
+    /* Change "Kelly Not Found" to "Kelly" on mobile */
+    .sub-nav-title-link {
+      font-size: 1.5rem;
     }
   }
 </style>
+
 <div
   class="sub-nav-mktg-wrapper d-flex flex-items-center py-3 px-3 px-md-4 px-lg-5">
   <a class="sub-nav-title-link Link--primary no-underline f3-mktg d-inline-block text-bold mr-4"
@@ -84,7 +83,6 @@
       href="/kalulus-lil-corner/blog/docs/index.md">Blog</a>
 
     <!-- <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/notes.html">Notes</a> -->
-
   </div>
   <style>
     .sub-nav-mktg-link {
@@ -116,10 +114,4 @@
       -webkit-text-fill-color: transparent;
     }
   </style>
-  <a href="#footer-placeholder"
-    class="btn-mktg ml-lg-2 mt-2 mt-lg-0 d-block d-lg-inline-block btn-muted-mktg">
-    Contact
-  </a>
 </div>
-
-<!-- HEADER BAR -->
