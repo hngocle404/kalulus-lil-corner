@@ -14,10 +14,28 @@
   @media (max-width: 991px) {
     .sub-nav-mktg-links {
       display: flex;
+      flex-direction: row !important;
       flex-wrap: nowrap;
+      /* Prevents wrapping */
       overflow-x: auto;
+      /* Allows horizontal scrolling */
       white-space: nowrap;
+      /* Prevents text wrapping */
       gap: 10px;
+      padding-bottom: 5px;
+      /* Helps prevent scrollbar overlap */
+    }
+
+    /* Hide scrollbar but keep scrolling functionality */
+    .sub-nav-mktg-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .sub-nav-mktg-links {
+      -ms-overflow-style: none;
+      /* Hides scrollbar for IE/Edge */
+      scrollbar-width: none;
+      /* Hides scrollbar for Firefox */
     }
   }
 </style>
