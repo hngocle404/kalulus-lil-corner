@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.12/marked.min.js"></script>
+</head>
+
+<body>
+
+    <div id="header-container"></div>
+
+    <main>
+        <h1 id="post-title">Loading...</h1>
+        <div id="blog-content">
+            <p>Loading post...</p>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const filePath = urlParams.get("file");
+
+            if (!filePath) {
+                document.body.innerHTML = "<h2>No post selected.</h2>";
+                return;
+            }
+
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) throw new Error("File not found");
+                    return response.text();
+                })
+                .then(markdown => {
+                    document.body.innerHTML = `<h2>${filePath}</h2><pre>${markdown}</pre>`;
+                })
+                .catch(error => {
+                    console.error("Error loading file:", error);
+                    document.body.innerHTML = "<h2>Post not found.</h2>";
+                });
+        });
+
+        fetch("../partials/header.html").then(res => res.text()).then(html => document.getElementById("header-container").innerHTML = html);
+        fetch("../partials/footer.html").then(res => res.text()).then(html => document.getElementById("footer-placeholder").innerHTML = html);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const file = urlParams.get("file");
+
+        if (file) {
+            document.getElementById("post-title").innerText = file.split("/").pop().replace(".md", "");
+            fetch(`docs/${decodeURIComponent(file)}`)
+                .then(response => response.text())
+                .then(text => {
+                    document.getElementById("blog-content").innerHTML = marked.parse(text);
+                })
+                .catch(() => {
+                    document.getElementById("blog-content").innerHTML = "<p>Post not found.</p>";
+                });
+        } else {
+            document.getElementById("blog-content").innerHTML = "<p>No post selected.</p>";
+        }
+    </script>
+
+</body>
+
+</html>
