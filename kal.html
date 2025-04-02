@@ -1960,8 +1960,34 @@
         <!-- ========================================================================= -->
 
 
-        <section>
 
+
+        <section>
+          <style>
+            .page-hero__image img {
+              position: absolute;
+              z-index: -1;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: auto;
+            }
+
+            .container.page-hero__container {
+              position: relative;
+              z-index: 1;
+            }
+
+            .image-content__image-wrapper img {
+              z-index: 2;
+              position: relative;
+            }
+
+            .image-content__text {
+              z-index: 2;
+              position: relative;
+            }
+          </style>
 
 
           <div id="shopify-section-template--17112142938181__hero"
