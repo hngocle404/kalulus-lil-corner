@@ -19,38 +19,29 @@
       scrollbar-width: none;
     }
 
-    /* Remove contact button on mobile */
     .btn-mktg {
       display: none;
     }
 
-    /* Remove the arrows next to contact button on mobile */
     .sub-nav-mktg-toggle {
       display: none;
     }
 
-    /* Change "Kelly Not Found" to "Kelly" on mobile */
-    .sub-nav-title-link::after {
-      content: "Kelly";
-    }
-
-    .sub-nav-title-link {
-      font-size: 1.5rem;
-      color: inherit;
-    }
-
-    /* Hide the original text */
+    /* Hide the original text completely */
     .sub-nav-title-link {
       font-size: 0;
+      position: relative;
     }
 
+    /* Add the new text */
     .sub-nav-title-link::after {
+      content: "Kelly";
       font-size: 1.5rem;
+      position: absolute;
+      left: 0;
     }
   }
 </style>
-
-
 <div
   class="sub-nav-mktg-wrapper d-flex flex-items-center py-3 px-3 px-md-4 px-lg-5">
   <a class="sub-nav-title-link Link--primary no-underline f3-mktg d-inline-block text-bold mr-4"
@@ -87,15 +78,11 @@
   <div
     class="sub-nav-mktg-links flex-auto f4-mktg d-flex flex-column flex-lg-row with-title gap-4"
     id="sub-nav-dropdown">
-    <!-- <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/about.html">About</a> -->
     <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2"
       href="/kalulus-lil-corner/resume.html">Resume</a>
     <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2"
       href="/kalulus-lil-corner/index.html">Projects</a>
     <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2"
       href="/kalulus-lil-corner/blog/docs/index.md">Blog</a>
-
-    <!-- <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2" href="https://hngocle404.github.io/portfolio/notes.html">Notes</a> -->
   </div>
-
 </div>
