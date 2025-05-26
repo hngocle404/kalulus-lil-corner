@@ -23,6 +23,26 @@
   href="https://github.githubassets.com/assets/customer-stories-09cf584c51b5.css">
 
 <link rel="stylesheet" href="/kalulus-lil-corner/css/primer.css">
+
+<style>
+  .sub-nav-mktg-link:hover,
+  .sub-nav-title-link:hover {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .sub-nav-mktg-link:hover::after,
+  .sub-nav-title-link:hover::after {
+    content: '';
+    display: block;
+    height: 2px;
+    margin-top: 2px;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  }
+</style>
+
+
 <style>
   @media (max-width: 991px) {
     .sub-nav-mktg-links {

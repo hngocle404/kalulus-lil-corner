@@ -84,17 +84,6 @@ body {
 
 
 
-.d-lg-flex.flex-justify-between.my-4.my-lg-6 {
-  margin-bottom: 1.5rem !important;
-}
-
-@media (max-width: 767px) {
-
-  .d-lg-flex.flex-justify-between.my-4.my-lg-6 {
-    margin-bottom: 1.5rem !important;
-  }
-}
-
 
 .code_block {
   border-radius: 5px;
