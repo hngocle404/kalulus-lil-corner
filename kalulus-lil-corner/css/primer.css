@@ -20,6 +20,8 @@ body {
     font-size: var(--font-size-monospace);
 }
 
+/* MODIFICATIONS ========================================== */
+
 :root {
     --h00-size-mobile: 2.5rem;
     --h0-size-mobile: 2rem;
@@ -43,7 +45,6 @@ body {
 [data-color-mode=dark][data-dark-theme*=light] {
     color-scheme: light
 }
-
 
 .rounded-pill {
     border-radius: 100px !important;
@@ -82,6 +83,19 @@ body {
 }
 
 
+
+.d-lg-flex.flex-justify-between.my-4.my-lg-6 {
+    margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 767px) {
+
+    .d-lg-flex.flex-justify-between.my-4.my-lg-6 {
+        margin-bottom: 0.5rem !important;
+    }
+}
+
+
 .code_block {
     border-radius: 5px;
     padding: 0px 0px 22px 25px;
@@ -105,6 +119,8 @@ body {
 
 
 
+
+/* ======================================= */
 
 
 
