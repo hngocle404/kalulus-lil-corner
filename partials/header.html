@@ -46,39 +46,47 @@
       margin-top: 2px;
       background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
     }
+@media (max-width: 991px) {
+  /* Hide the dropdown arrow toggle button on mobile */
+  .sub-nav-mktg-toggle {
+    display: none !important;
+  }
 
-    @media (max-width: 991px) {
-      .sub-nav-mktg-links {
-        display: flex;
-        flex-direction: row !important;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
-        gap: 10px;
-        padding-bottom: 5px;
-      }
+  /* Display Resume and Projects horizontally on mobile */
+  .sub-nav-mktg-links {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+  }
 
-      .sub-nav-mktg-links::-webkit-scrollbar {
-        display: none;
-      }
+  .sub-nav-mktg-links::-webkit-scrollbar {
+    display: none;
+  }
 
-      .sub-nav-mktg-links {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
+  .sub-nav-mktg-links {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-      .btn-mktg {
-        display: none;
-      }
+  .sub-nav-title-link::before {
+    content: 'Kelly 404';
+  }
 
-      .sub-nav-mktg-toggle {
-        display: none;
-      }
+  .sub-nav-title-link {
+    font-size: 0; 
+    position: relative;
+  }
 
-      .sub-nav-title-link {
-        font-size: 0;
-        position: relative;
-      }
+  .sub-nav-title-link::before {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: inherit;
+  }
+}
+
     }
   </style>
 </head>
