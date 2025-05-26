@@ -82,6 +82,20 @@ body {
   border-radius: max(100px, 10vw) !important;
 }
 
+
+
+.d-lg-flex.flex-justify-between.my-4.my-lg-6 {
+  margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 767px) {
+
+  .d-lg-flex.flex-justify-between.my-4.my-lg-6 {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+
 .code_block {
   border-radius: 5px;
   padding: 0px 0px 22px 25px;
