@@ -91,7 +91,7 @@ body {
 @media (max-width: 767px) {
 
   .d-lg-flex.flex-justify-between.my-4.my-lg-6 {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
   }
 }
 
