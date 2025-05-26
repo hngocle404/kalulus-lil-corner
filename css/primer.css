@@ -10,7 +10,7 @@ body {
 :root {
   --gradient-start: #b43072;
   --gradient-end: #ee5c39;
-  --code_bg: #e4e4e4;
+  --code_bg: #717171;
   --font-monospace: 'JetBrains Mono', monospace;
   --font-size-monospace: 14px;
 }
@@ -53,7 +53,7 @@ body {
   padding: 0px;
   /* margin-top: 20px;
   margin-bottom: 20px; */
-  background: var(--code_bg);
+  background: var(--code_bg) !important;
   white-space: pre-wrap;
   font-family: var(--font-monospace);
   font-size: var(--font-size-monospace);
