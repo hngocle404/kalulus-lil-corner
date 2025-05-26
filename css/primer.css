@@ -104,38 +104,6 @@ body {
 }
 
 
-@media (max-width: 991px) {
-  .sub-nav-mktg-links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    white-space: nowrap;
-    gap: 16px;
-    padding-bottom: 5px;
-    align-items: center;
-  }
-
-  .sub-nav-mktg-links::-webkit-scrollbar {
-    display: none;
-  }
-
-  .sub-nav-mktg-links {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .btn-mktg,
-  .sub-nav-mktg-toggle {
-    display: none !important;
-  }
-
-  .sub-nav-title-link {
-    font-size: 16px;
-  }
-}
-
-
 
 
 /* ======================================= */
