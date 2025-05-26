@@ -46,7 +46,39 @@ body {
 
 
 .rounded-pill {
-border-radius: 100px !important;
+    border-radius: 100px !important;
+}
+
+@media (min-width: 576px) {
+    .rounded-pill {
+        border-radius: 100px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .rounded-pill {
+        border-radius: 100px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .rounded-pill {
+        border-radius: 100px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .rounded-pill {
+        border-radius: 100px !important;
+    }
+}
+
+.rounded-pill {
+    border-radius: 50rem !important;
+}
+
+.rounded-pill {
+    border-radius: max(100px, 10vw) !important;
 }
 
 
