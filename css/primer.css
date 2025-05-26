@@ -46,7 +46,9 @@ body {
 
 
 
-
+.rounded-pill {
+  border-radius: 10px !important;
+}
 
 .code_block {
   border-radius: 5px;
