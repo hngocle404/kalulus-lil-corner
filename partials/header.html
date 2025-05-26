@@ -59,83 +59,51 @@
 
   }
 </style>
-<!-- HEADER START -->
 <div
-  class="sub-nav-mktg-wrapper d-flex flex-items-center justify-content-between py-3 px-3 px-md-4 px-lg-5">
-  <!-- Left: Name -->
-  <a class="sub-nav-title-link Link--primary no-underline f3-mktg d-inline-block text-bold"
+  class="sub-nav-mktg-wrapper d-flex flex-items-center py-3 px-3 px-md-4 px-lg-5">
+  <a class="sub-nav-title-link Link--primary no-underline f3-mktg d-inline-block text-bold mr-4"
     href="/kalulus-lil-corner/about.html">
     Kelly Not Found
   </a>
-
-  <!-- Right: Navigation Links -->
-  <div class="d-flex flex-items-center gap-3">
-    <a class="sub-nav-mktg-link Link--primary no-underline"
+  <span>&nbsp; </span>
+  <style>
+    .sub-nav-title-link:hover {
+      background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+  <button type="button"
+    class="btn-octicon sub-nav-mktg-toggle d-lg-none p-1 flex-order-1 float-right js-toggler-target mr-n1"
+    aria-controls="sub-nav-dropdown" aria-label="Page navigation"
+    aria-expanded="false">
+    <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1"
+      width="24" data-view-component="true"
+      class="octicon octicon-chevron-down on-hidden">
+      <path
+        d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z">
+      </path>
+    </svg>
+    <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1"
+      width="24" data-view-component="true"
+      class="octicon octicon-chevron-up on-visible">
+      <path
+        d="M18.78 15.78a.749.749 0 0 1-1.06 0L12 10.061 6.28 15.78a.749.749 0 1 1-1.06-1.06l6.25-6.25a.749.749 0 0 1 1.06 0l6.25 6.25a.749.749 0 0 1 0 1.06Z">
+      </path>
+    </svg>
+  </button>
+  <div
+    class="sub-nav-mktg-links flex-auto f4-mktg d-flex flex-column flex-lg-row with-title gap-4"
+    id="sub-nav-dropdown">
+    <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2"
       href="/kalulus-lil-corner/resume.html">Resume</a>
-    <a class="sub-nav-mktg-link Link--primary no-underline"
+    <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2"
       href="/kalulus-lil-corner/index.html">Projects</a>
-    <a class="btn-mktg btn-muted-mktg" href="#contact">Contact</a>
+    <!-- <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2"
+      href="/kalulus-lil-corner/index.html">Contact</a> -->
+    <!-- <a class="sub-nav-mktg-link Link--primary no-underline py-1 py-lg-2"
+      href="/kalulus-lil-corner/selflearn.html">Self-learning CS</a> -->
   </div>
-</div>
-
-<style>
-  .sub-nav-mktg-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #e1e4e8;
-    background-color: #ffffff;
-  }
-
-  .sub-nav-title-link {
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-    color: #24292f;
-  }
-
-  .sub-nav-title-link:hover {
-    background: linear-gradient(to right, var(--gradient-start, #6f42c1), var(--gradient-end, #d73a49));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .sub-nav-mktg-link,
-  .btn-mktg {
-    font-size: 1rem;
-    text-decoration: none;
-    color: #24292f;
-    padding: 0.5rem 0.75rem;
-  }
-
-  .btn-mktg {
-    border: 1px solid #d0d7de;
-    border-radius: 6px;
-    font-weight: 600;
-    background-color: transparent;
-  }
-
-  .btn-mktg:hover {
-    background-color: #f6f8fa;
-  }
-
-  @media (max-width: 768px) {
-    .sub-nav-mktg-wrapper {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
-
-    .sub-nav-title-link {
-      font-size: 1.25rem;
-    }
-
-    .d-flex.gap-3 {
-      flex-wrap: wrap;
-    }
-  }
-</style>
-<!-- HEADER END -->
 
 
 </div>
