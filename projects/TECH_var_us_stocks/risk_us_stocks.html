@@ -225,8 +225,7 @@
             <h1 style="margin-bottom:30px;">1. Loading data</h1>
 
 
-            <div class="color-bg-subtle"
-              style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+            <div class="code_block">
               import numpy as np
               import pandas as pd
               import seaborn as sns
@@ -241,8 +240,11 @@
               %matplotlib inline
             </div>
 
-            <div class="color-bg-subtle"
-              style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+            <div class="code_block">
+              style="border-radius: 5px; padding: 0px 22px 22px 25px;
+              margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap;
+              font-family: var(--font-monospace); font-size:
+              var(--font-size-monospace);">
               end_date = datetime.now()
               start_date = datetime(end_date.year - 1, end_date.month,
               end_date.day)
@@ -270,8 +272,11 @@
               information</h1>
 
 
-            <div class="color-bg-subtle"
-              style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+            <div class="code_block">
+              style="border-radius: 5px; padding: 0px 22px 22px 25px;
+              margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap;
+              font-family: var(--font-monospace); font-size:
+              var(--font-size-monospace);">
               plt.figure(figsize = (10.5, 3))
 
               for i, stock_symbol in enumerate(stocks, start = 1):
