@@ -10,7 +10,7 @@ body {
 :root {
   --gradient-start: #b43072;
   --gradient-end: #ee5c39;
-  --code_bg: #717171;
+  --code_bg: #f1f1f1;
   --font-monospace: 'JetBrains Mono', monospace;
   --font-size-monospace: 14px;
 }
@@ -50,9 +50,8 @@ body {
 
 .code_block {
   border-radius: 5px;
-  padding: 0px;
-  /* margin-top: 20px;
-  margin-bottom: 20px; */
+  padding: 0px 0px 22px 25px;
+  margin: 20px 0px;
   background: var(--code_bg) !important;
   white-space: pre-wrap;
   font-family: var(--font-monospace);
@@ -60,19 +59,15 @@ body {
 }
 
 .output_block {
-  border: 1px solid #d1d5da;
   border-radius: 5px;
-  padding: 0px 22px 22px 25px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 0px 0px 22px 25px;
+  margin: 20px 0px;
+  background: #ffffff !important;
   white-space: pre-wrap;
   font-family: var(--font-monospace);
   font-size: var(--font-size-monospace);
+  border: 1px solid #d1d5da;
 }
-
-
-
-
 
 
 
