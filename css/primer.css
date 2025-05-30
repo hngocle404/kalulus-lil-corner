@@ -88,7 +88,7 @@ body {
 
 .code_block {
   border-radius: 5px;
-  padding: 0px 0px 22px 5px;
+  padding: 0px 0px 22px 25px;
   margin: 20px 0px;
   background: var(--code_bg) !important;
   white-space: pre-wrap;
@@ -98,7 +98,7 @@ body {
 
 .output_block {
   border-radius: 5px;
-  padding: 0px 0px 22px 5px;
+  padding: 0px 0px 22px 25px;
   margin: 20px 0px;
   background: #ffffff !important;
   white-space: pre-wrap;
