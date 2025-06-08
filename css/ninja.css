@@ -2719,7 +2719,7 @@ blockquote {
     background-color: var(--swatches--neutral-150)
 }
 
-.footer {
+/* .footer {
     border-radius: 1.5rem;
     flex-direction: column;
     justify-content: center;
@@ -2757,7 +2757,7 @@ blockquote {
     margin-bottom: 0;
     font-weight: 400;
     display: flex
-}
+} */
 
 .social-links-grid {
     grid-column-gap: .5rem;
