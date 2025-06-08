@@ -1,460 +1,775 @@
 <head>
   <meta charset="utf-8" />
-  <link rel="dns-prefetch" href="https://github.githubassets.com" />
-  <link rel="dns-prefetch" href="https://avatars.githubusercontent.com" />
-  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com" />
-  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/" />
-  <link rel="preconnect" href="https://github.githubassets.com" crossorigin />
-  <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+  <title>AI Code Generator &amp; Editor | Ninja AI</title>
+  <meta
+    content="Simplify your coding process with Ninja’s AI Code Generator &amp; Editor. Write, debug and optimize code across multiple languages using the best AI models."
+    name="description" />
+  <meta content="AI Code Generator &amp; Editor | Ninja AI"
+    property="og:title" />
+  <meta
+    content="Simplify your coding process with Ninja’s AI Code Generator &amp; Editor. Write, debug and optimize code across multiple languages using the best AI models."
+    property="og:description" />
+  <meta content="AI Code Generator &amp; Editor | Ninja AI"
+    property="twitter:title" />
+  <meta
+    content="Simplify your coding process with Ninja’s AI Code Generator &amp; Editor. Write, debug and optimize code across multiple languages using the best AI models."
+    property="twitter:description" />
+  <meta property="og:type" content="website" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-  <link rel="preload"
-    href="https://github.githubassets.com/assets/mona-sans-d1bf285e9b9b.woff2"
-    as="font" type="font/woff2" crossorigin />
+  <link
+    href="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/css/ninjatech-ai-staging-e8a7-60cd4aee05318.shared.d31dd6bfe.min.css"
+    rel="stylesheet" type="text/css" />
+  <script
+    type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
+  <link
+    href="https://cdn.prod.website-files.com/65aad5a3703dc64f1e498974/664cda09d19ed873157c2c59_Favicon.png"
+    rel="shortcut icon" type="image/x-icon" />
+  <link
+    href="https://cdn.prod.website-files.com/65aad5a3703dc64f1e498974/664cd96a960057669faeb131_NJ_icon_web_clip.png"
+    rel="apple-touch-icon" />
+  <link href="https://www.ninjatech.ai/product/ai-code-generator"
+    rel="canonical" />
+  <script async=""
+    src="https://www.googletagmanager.com/gtag/js?id=G-8NW18Q4WF2"></script>
+  <html lang="en-us">
 
-  <link crossorigin="anonymous" media="all" rel="stylesheet"
-    href="https://github.githubassets.com/assets/light_experimental-8f9de4484863.css" />
-  <link crossorigin="anonymous" media="all" rel="stylesheet"
-    href="https://github.githubassets.com/assets/dark_experimental-3fd0e0b6e826.css" />
-  <link data-color-theme="light" crossorigin="anonymous" media="all"
-    rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/light_experimental-8f9de4484863.css" />
-  <link data-color-theme="light_high_contrast" crossorigin="anonymous"
-    media="all" rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/light_high_contrast_experimental-10abdc3747c3.css" />
-  <link data-color-theme="light_colorblind" crossorigin="anonymous" media="all"
-    rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/light_colorblind_experimental-d01e00863378.css" />
-  <link data-color-theme="light_colorblind_high_contrast"
-    crossorigin="anonymous" media="all" rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/light_colorblind_high_contrast_experimental-e379dad4f96f.css" />
-  <link data-color-theme="light_tritanopia" crossorigin="anonymous" media="all"
-    rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/light_tritanopia_experimental-cda6c66472ea.css" />
-  <link data-color-theme="light_tritanopia_high_contrast"
-    crossorigin="anonymous" media="all" rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/light_tritanopia_high_contrast_experimental-b843cf381204.css" />
-  <link data-color-theme="dark" crossorigin="anonymous" media="all"
-    rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/dark_experimental-3fd0e0b6e826.css" />
-  <link data-color-theme="dark_high_contrast" crossorigin="anonymous"
-    media="all" rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/dark_high_contrast_experimental-5748739a6b50.css" />
-  <link data-color-theme="dark_colorblind" crossorigin="anonymous" media="all"
-    rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/dark_colorblind_experimental-789722e6b34a.css" />
-  <link data-color-theme="dark_colorblind_high_contrast" crossorigin="anonymous"
-    media="all" rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/dark_colorblind_high_contrast_experimental-32b00a22b284.css" />
-  <link data-color-theme="dark_tritanopia" crossorigin="anonymous" media="all"
-    rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/dark_tritanopia_experimental-43e8f3e4fb9c.css" />
-  <link data-color-theme="dark_tritanopia_high_contrast" crossorigin="anonymous"
-    media="all" rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/dark_tritanopia_high_contrast_experimental-66cec90757f5.css" />
-  <link data-color-theme="dark_dimmed" crossorigin="anonymous" media="all"
-    rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/dark_dimmed_experimental-81127d4dd148.css" />
-  <link data-color-theme="dark_dimmed_high_contrast" crossorigin="anonymous"
-    media="all" rel="stylesheet"
-    data-href="https://github.githubassets.com/assets/dark_dimmed_high_contrast_experimental-38b69e3c08d0.css" />
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "mc622le796");
+  </script>
 
-  <link crossorigin="anonymous" media="all" rel="stylesheet"
-    href="https://github.githubassets.com/assets/primer-primitives-225433424a87.css" />
-  <link crossorigin="anonymous" media="all" rel="stylesheet"
-    href="https://github.githubassets.com/assets/primer-b8b91660c29d.css" />
-  <link crossorigin="anonymous" media="all" rel="stylesheet"
-    href="https://github.githubassets.com/assets/global-9585668fcde8.css" />
-  <link crossorigin="anonymous" media="all" rel="stylesheet"
-    href="https://github.githubassets.com/assets/github-ef14fd9f242b.css" />
-  <link crossorigin="anonymous" media="all" rel="stylesheet"
-    href="https://github.githubassets.com/assets/site-f67316d89a98.css" />
-  <link crossorigin="anonymous" media="all" rel="stylesheet"
-    href="https://github.githubassets.com/assets/landing-pages-a689d1185c6b.css" />
 
-  <link crossorigin="anonymous" media="all" rel="stylesheet"
-    href="https://github.githubassets.com/assets/primer-react.f322b041d5ce5828efd8.module.css" />
-  <link crossorigin="anonymous" media="all" rel="stylesheet"
-    href="https://github.githubassets.com/assets/landing-pages.f8937ca30abf546a5008.module.css" />
+  <noscript><img height="1" width="1" style="display:none"
+      src="/kalulus-lil-corner/assets/namelogo.png" /></noscript>
 
-  <title>GitHub Issues · Project planning for developers</title>
+  <link rel="stylesheet" href="/kalulus-lil-corner/css/primer.css">
+  <link rel="stylesheet" href="/kalulus-lil-corner/css/ninja.css">
 
-  <meta name="route-pattern" content="/features/issues(.:format)"
-    data-turbo-transient />
-
-  <meta name="route-controller" content="site_landing_pages"
-    data-turbo-transient />
-
-  <meta name="route-action" content="show" data-turbo-transient />
-
-  <meta name="fetch-nonce" content="v2:c01b3bff-da2e-9e5a-4b72-87ca87f92e39" />
-
-  <meta name="current-catalog-service-hash"
-    content="3b3a86e94adb1936974b9e80c6c5c959f35b1d5f75b93677737ffa36daf92bbd" />
-
-  <meta name="selected-link" value="/features/issues" data-turbo-transient />
-  <link rel="assets" href="https://github.githubassets.com/" />
-
-  <meta name="google-site-verification"
-    content="Apib7-x98H0j5cPqHWwSMm6dNU4GmODRoqxLiDzdx9I" />
-
-  <meta name="octolytics-url"
-    content="https://collector.github.com/github/collect" />
-  <meta name="octolytics-actor-id" content="183934807" />
-  <meta name="octolytics-actor-login" content="hngocle404" />
-  <meta name="octolytics-actor-hash"
-    content="f6b808f6c8a3d7c2779b435e64e00ba061644669028c3a339080acf50338d317" />
-
-  <meta name="user-login" content="hngocle404" />
-
-  <link rel="sudo-modal" href="/sessions/sudo_modal" />
-
-  <meta name="viewport" content="width=device-width" />
-
-  <meta name="description"
-    content="GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects." />
-
-  <link rel="search" type="application/opensearchdescription+xml"
-    href="/opensearch.xml" title="GitHub" />
-
-  <link rel="fluid-icon" href="https://github.com/fluidicon.png"
-    title="GitHub" />
-
-  <link rel="shared-web-socket"
-    href="wss://alive.github.com/_sockets/u/183934807/ws?session=eyJ2IjoiVjMiLCJ1IjoxODM5MzQ4MDcsInMiOjE2ODUwNTQ0NDgsImMiOjE4NDQyNDMxMjgsInQiOjE3NDkyNzI0MTN9--bb71df3f5ec7ce9dd205aa3958bbf53af63af6605b2fe6cf65b26b40f0d4e482"
-    data-refresh-url="/_alive"
-    data-session-id="c33db1846ff7988a656cb16e4567cd0d1fda6fb5958dfbc532fadfb144c0d105" />
-  <link rel="shared-web-socket-src"
-    href="/assets-cdn/worker/socket-worker-eff89a71ae86.js" />
-
-  <meta name="hostname" content="github.com" />
-
-  <meta name="keyboard-shortcuts-preference" content="all" />
-
-  <meta name="hovercards-preference" content="true" />
-
-  <meta name="announcement-preference-hovercard" content="true" />
-
-  <meta name="expected-hostname" content="github.com" />
-
-  <meta http-equiv="x-pjax-version"
-    content="67b33e0e746c4727c54901f4f2f13dab0198f71b4413b115a54c8013ab49ee33"
-    data-turbo-track="reload" />
-
-  <meta http-equiv="x-pjax-csp-version"
-    content="53161f520790e248b982dd734532ffd3a6791dbcd9a427fac76dda1739abf49a"
-    data-turbo-track="reload" />
-
-  <meta http-equiv="x-pjax-css-version"
-    content="0bc2c2b6c0a7ae3927845d15a96ab1715a898977179eb410e7a81468bfec0bcb"
-    data-turbo-track="reload" />
-
-  <meta http-equiv="x-pjax-js-version"
-    content="2476c6834ec38790cbe19803c6d4cf92b4149ffd01510b967f0c55f432699ee6"
-    data-turbo-track="reload" />
-
-  <meta name="turbo-cache-control" content="no-preview"
-    data-turbo-transient="" />
-
-  <meta name="turbo-cache-control" content="no-cache" data-turbo-transient />
-
-  <meta name="is_logged_out_page" content="true" />
-
-  <meta name="octolytics-page-type" content="marketing" />
-
-  <meta name="octolytics-revenue-play" content="Platform" />
-
-  <link rel="alternate" hreflang="ja"
-    href="https://github.com/features/issues?locale=ja" />
-  <link rel="alternate" hreflang="ko"
-    href="https://github.com/features/issues?locale=ko" />
-  <link rel="alternate" hreflang="pt"
-    href="https://github.com/features/issues?locale=pt" />
-  <link rel="alternate" hreflang="es"
-    href="https://github.com/features/issues?locale=es" />
-
-  <link rel="canonical" href="https://github.com/features/issues"
-    data-turbo-transient />
-
-  <meta name="turbo-body-classes"
-    content="logged-in env-production page-responsive" />
-
-  <meta name="browser-stats-url"
-    content="https://api.github.com/_private/browser/stats" />
-
-  <meta name="browser-errors-url"
-    content="https://api.github.com/_private/browser/errors" />
-
-  <meta name="release" content="69e8c9abebcd599b725d29464d2cd0f4626d37c3" />
-
-  <link rel="mask-icon"
-    href="https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg"
-    color="#000000" />
-  <link rel="alternate icon" class="js-site-favicon" type="image/png"
-    href="https://github.githubassets.com/favicons/favicon.png" />
-  <link rel="icon" class="js-site-favicon" type="image/svg+xml"
-    href="https://github.githubassets.com/favicons/favicon.svg"
-    data-base-href="https://github.githubassets.com/favicons/favicon" />
-
-  <meta name="theme-color" content="#1e2327" />
-
-  <meta name="color-scheme" content="light dark" />
-
-  <meta name="msapplication-TileImage" content="/windows-tile.png" />
-
-  <meta name="msapplication-TileColor" content="#ffffff" />
-
-  <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
 </head>
 
-<div class="logged-in env-production page-responsive"
-  style="word-wrap: break-word;" data-turbo="false">
-  <div data-turbo-body class="logged-in env-production page-responsive"
-    style="word-wrap: break-word;">
-    <div class="position-relative header-wrapper js-header-wrapper">
-      <a href="#start-of-content" data-skip-target-assigned="false"
-        class="p-3 color-bg-accent-emphasis color-fg-on-emphasis show-on-focus js-skip-to-content">Skip
-        to content</a>
 
-      <span data-view-component="true"
-        class="progress-pjax-loader Progress position-fixed width-full">
-        <span style="width: 0%;" data-view-component="true"
-          class="Progress-item progress-pjax-loader-bar left-0 top-0 color-bg-accent-emphasis"></span>
-      </span>
 
-      <script crossorigin="anonymous" type="application/javascript"
-        src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-8cffd5fd8d88.js"
-        defer="defer"></script>
-      <link crossorigin="anonymous" media="all" rel="stylesheet"
-        href="https://github.githubassets.com/assets/primer-react.f322b041d5ce5828efd8.module.css" />
-      <link crossorigin="anonymous" media="all" rel="stylesheet"
-        href="https://github.githubassets.com/assets/keyboard-shortcuts-dialog.47de85e2c17af43cefd5.module.css" />
+<body>
+  <div class="page-wrapper">
+    <div class="global">
+      <div class="nav-light-bg">
+        <div class="nav-outer">
+          <div data-animation="default" data-collapse="medium"
+            data-duration="400" data-easing="ease" data-easing2="ease"
+            role="banner" class="desktop-nav-wrap w-nav">
+            <div class="desktop-navbar"><a aria-label="main" role="link"
+                href="/" class="brand w-nav-brand"><img loading="lazy"
+                  src="/kalulus-lil-corner/assets/namelogo.png"
+                  alt="" class="brand-image" /></a>
+              <div class="desktop-nav-inner">
+                <nav role="navigation" class="desktop-nav-menu w-nav-menu">
 
-      <header
-        class="HeaderMktg header-logged-out js-details-container js-header Details f4 py-3"
-        role="banner" data-is-top="true" data-color-mode="light"
-        data-light-theme="light" data-dark-theme="dark">
-        <h2 class="sr-only">Navigation Menu</h2>
 
-        <button type="button"
-          class="HeaderMktg-backdrop d-lg-none border-0 position-fixed top-0 left-0 width-full height-full js-details-target"
-          aria-label="Toggle navigation">
-          <span class="d-none">Toggle navigation</span>
-        </button>
-
-        <div
-          class="d-flex flex-column flex-lg-row flex-items-center px-3 px-md-4 px-lg-5 height-full position-relative z-1">
-          <div
-            class="d-flex flex-justify-between flex-items-center width-full width-lg-auto">
-            <div class="flex-1">
-              <button aria-label="Toggle navigation" aria-expanded="false"
-                type="button" data-view-component="true"
-                class="js-details-target js-nav-padding-recalculate js-header-menu-toggle Button--link Button--medium Button d-lg-none color-fg-inherit p-1">
-                <span class="Button-content">
-                  <span class="Button-label">
-                    <div class="HeaderMenu-toggle-bar rounded my-1"></div>
-
-                    <div class="HeaderMenu-toggle-bar rounded my-1"></div>
-
-                    <div class="HeaderMenu-toggle-bar rounded my-1"></div>
-                  </span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div data-color-mode="light" dir="ltr">
-        <div data-color-mode="light"
-          style="background-color: var(--brand-color-canvas-default);">
-          <div data-color-mode="light">
-            <div class="Primer_Brand__SubNav-module__SubNav__container___iZQjL">
-              <nav
-                class="Primer_Brand__SubNav-module__SubNav___dVoQu Primer_Brand__SubNav-module__SubNav--has-shadow___jkyC7"
-                data-testid="SubNav-root">
-                <div
-                  class="Primer_Brand__SubNav-module__SubNav--header-container-outer___tneuD">
-                  <div
-                    class="Primer_Brand__SubNav-module__SubNav__header-container___heD5O">
-                    <div
-                      class="Primer_Brand__SubNav-module__SubNav__heading-container___jlouG">
-                      <a href="https://github.com/features"
-                        class="Primer_Brand__SubNav-module__SubNav__heading___MAxf6"
-                        data-testid="SubNav-root-heading"
-                        data-ref="subnav-heading-link-3sNh2f7CD6S5c3oOyhQOUv"
-                        data-analytics-event='{"action":"features","tag":"link","location":"subnav","label":"features_link_null_subnav"}'>
-                        Kelly Not Found
-                      </a>
+                  <!-- <div data-hover="true" data-delay="0.5"
+                    data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2a82"
+                    class="desktop-nav-link-wrapper w-dropdown">
+                    <div class="desktop-nav-link w-dropdown-toggle">
+                      <div>Product</div><img
+                        src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/67995efcdc7b33665114c003_CaretDownBold_UI_Element.svg"
+                        loading="lazy" alt="" class="icon-1-rem" />
                     </div>
-                    <button
-                      class="Primer_Brand__SubNav-module__SubNav__overlay-toggle___GY93X"
-                      data-testid="SubNav-root-button" aria-expanded="false"
-                      aria-controls=":R5b:">
-                      <span class="visually-hidden">Navigation menu</span>
-                      <span
-                        class="Primer_Brand__SubNav-module__SubNav__overlay-toggle-content___GYAh4 Primer_Brand__SubNav-module__SubNav__overlay-toggle-content--end___GySmq">
-                        <svg aria-hidden="true" focusable="false"
-                          class="octicon octicon-chevron-down Primer_Brand__SubNav-module__SubNav__overlay-toggle-icon___AjCc8"
-                          viewBox="0 0 24 24" width="24" height="24"
-                          fill="currentColor" display="inline-block"
-                          overflow="visible"
-                          style="vertical-align: text-bottom;">
-                          <path
-                            d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z">
-                          </path>
-                        </svg>
-                      </span>
-                    </button>
+                    <nav class="dropdown-list-product w-dropdown-list">
+                      <div class="nav-drop-list-product">
+                        <div class="nav-link-dropdown-column-wrap _01">
+                          <div class="margin-xxsmall">
+                            <div class="dropdown-eyebrow">
+                              <div class="nav-dropdown-eyebrow-text">
+                                TECHNOLOGY</div>
+                            </div>
+                          </div><a href="/technology"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>How It Works</div>
+                          </a><a href="/product/super-ninja"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>SuperNinja</div>
+                          </a><a href="/product/ninja-llm"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>Ninja LLM</div>
+                          </a><a href="/product/deep-research"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>Deep Research</div>
+                          </a>
+                        </div>
+                        <div class="nav-link-dropdown-column-wrap _02">
+                          <div class="margin-xxsmall">
+                            <div class="dropdown-eyebrow">
+                              <div class="nav-dropdown-eyebrow-text">
+                                AGENTS</div>
+                            </div>
+                          </div><a href="/product/ai-image-generator"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>AI Image Generator
+                            </div>
+                          </a><a href="/product/ai-image-editor"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>AI Image Editor
+                            </div>
+                          </a><a href="/product/ai-video-generator"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>AI Video Generator
+                            </div>
+                          </a><a href="/product/ai-code-generator"
+                            aria-current="page"
+                            class="d-nav-drop-lk w-inline-block w--current">
+                            <div>AI Code Generator
+                            </div>
+                          </a><a href="/product/ai-writer"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>AI Writer</div>
+                          </a><a href="/product/ai-research-agent"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>AI Researcher</div>
+                          </a><a href="/product/ai-scheduling-agent"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>AI Scheduler</div>
+                          </a>
+                        </div>
+                        <div class="nav-link-dropdown-column-wrap _03">
+                          <div class="margin-xxsmall">
+                            <div class="dropdown-eyebrow">
+                              <div class="nav-dropdown-eyebrow-text">
+                                FEATURES</div>
+                            </div>
+                          </div><a href="/product/external-model-access"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>External AI Models
+                            </div>
+                          </a><a href="/product/file-upload-analysis"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>File Upload &amp;
+                              Analysis</div>
+                          </a><a href="/product/ai-prompt-tools"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>Prompt Tools</div>
+                          </a>
+                        </div>
+                      </div>
+                    </nav>
+                  </div> -->
+
+
+
+
+                  <!-- <div data-hover="true" data-delay="0.5"
+                    data-w-id="fdeda630-9914-ab5e-d2c7-985c5f49ba17"
+                    class="desktop-nav-link-wrapper w-dropdown">
+                    <div class="desktop-nav-link w-dropdown-toggle">
+                      <div>API</div><img
+                        src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/67995efcdc7b33665114c003_CaretDownBold_UI_Element.svg"
+                        loading="lazy" alt="" class="icon-1-rem" />
+                    </div>
+                    <nav class="dropdown-list-product w-dropdown-list">
+                      <div class="nav-drop-list-product">
+                        <div class="nav-link-dropdown-column-wrap _02">
+                          <div class="margin-xxsmall">
+                            <div class="dropdown-eyebrow">
+                              <div class="nav-dropdown-eyebrow-text">
+                                API</div>
+                            </div>
+                          </div><a href="/product/ninja-api"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>Ninja API</div>
+                          </a>
+                        </div>
+                        <div class="nav-link-dropdown-column-wrap _03">
+                          <div class="margin-xxsmall">
+                            <div class="dropdown-eyebrow">
+                              <div class="nav-dropdown-eyebrow-text">
+                                RESOURCES</div>
+                            </div>
+                          </div><a href="/product/api-quick-start"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>API Quick Start
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </nav>
+                  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <!-- <div data-hover="true" data-delay="0.15"
+                    data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2ab9"
+                    class="desktop-nav-link-wrapper w-dropdown">
+                    <div class="desktop-nav-link w-dropdown-toggle">
+                      <div>Solutions</div><img
+                        src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/67995efcdc7b33665114c003_CaretDownBold_UI_Element.svg"
+                        loading="lazy" alt="" class="icon-1-rem" />
+                    </div>
+                    <nav class="dropdown-list-product w-dropdown-list">
+                      <div class="nav-drop-list-product">
+                        <div class="nav-link-dropdown-column-wrap _01">
+                          <div class="margin-xxsmall">
+                            <div class="dropdown-eyebrow">
+                              <div class="nav-dropdown-eyebrow-text">
+                                USER</div>
+                            </div>
+                          </div><a href="/solutions/individuals"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>Individuals</div>
+                          </a><a href="/solutions/business"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>Business</div>
+                          </a>
+                        </div>
+                        <div class="nav-link-dropdown-column-wrap _02">
+                          <div class="margin-xxsmall">
+                            <div class="dropdown-eyebrow">
+                              <div class="nav-dropdown-eyebrow-text">
+                                APPLICATIONS
+                              </div>
+                            </div>
+                          </div><a href="/use-cases"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>Use Cases</div>
+                          </a>
+                        </div>
+                      </div>
+                    </nav>
+                  </div> -->
+
+
+
+                  <!-- <div data-hover="true" data-delay="0.15"
+                    data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2ad3"
+                    class="desktop-nav-link-wrapper w-dropdown">
+                    <div class="desktop-nav-link w-dropdown-toggle">
+                      <div>Resources</div><img
+                        src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/67995efcdc7b33665114c003_CaretDownBold_UI_Element.svg"
+                        loading="lazy" alt="" class="icon-1-rem" />
+                    </div>
+                    <nav class="dropdown-list-product w-dropdown-list">
+                      <div class="nav-drop-list-product">
+                        <div class="nav-link-dropdown-column-wrap _01">
+                          <div class="margin-xxsmall">
+                            <div class="dropdown-eyebrow">
+                              <div class="nav-dropdown-eyebrow-text">
+                                LEARN</div>
+                            </div>
+                          </div><a href="/faq"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>FAQ</div>
+                          </a><a href="/glossary"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>Glossary</div>
+                          </a>
+                        </div>
+                        <div class="nav-link-dropdown-column-wrap _02">
+                          <div class="margin-xxsmall">
+                            <div class="dropdown-eyebrow">
+                              <div class="nav-dropdown-eyebrow-text">
+                                COMPARE</div>
+                            </div>
+                          </div><a
+                            href="/ai-comparison/deepseek-vs-chatgpt-vs-ninja-ai"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>DeepSeek vs.
+                              ChatGPT vs. Ninja AI
+                            </div>
+                          </a><a
+                            href="/ai-comparison/claude-vs-chatgpt-vs-ninja-ai"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>Claude vs. ChatGPT
+                              vs. Ninja AI</div>
+                          </a><a
+                            href="/ai-comparison/gemini-vs-chatgpt-vs-ninja-ai"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>Gemini vs. ChatGPT
+                              vs. Ninja AI</div>
+                          </a><a
+                            href="/ai-comparison/perplexity-vs-chatgpt-vs-ninja-ai"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>Perplexity vs.
+                              ChatGPT vs. Ninja AI
+                            </div>
+                          </a><a href="/ai-comparison/chatbox-ai-vs-ninja-ai"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>Chatbox AI vs.
+                              Ninja AI</div>
+                          </a><a href="/ai-comparison/chaton-ai-vs-ninja-ai"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>Chaton AI vs. Ninja
+                              AI</div>
+                          </a><a href="/ai-comparison/blackbox-ai-vs-ninja-ai"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>Blackbox AI vs.
+                              Ninja AI</div>
+                          </a><a href="/ai-comparison/manus-ai-vs-ninja-ai"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>Manus AI vs. Ninja
+                              AI</div>
+                          </a>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>   -->
+                  <a data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2ae1"
+                    href="/kalulus-lil-corner/index.html"
+                    class="desktop-nav-link-wrapper w-inline-block">
+                    <div class="desktop-nav-link">
+                      <div>Posts</div>
+                    </div>
+                  </a><a data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2ae5"
+                    href="/kalulus-lil-corner/resume.html"
+                    class="desktop-nav-link-wrapper w-inline-block">
+                    <div class="desktop-nav-link">
+                      <div>Resume</div>
+                    </div>
+                  </a>
+                  <!-- <div data-hover="true" data-delay="0.15"
+                    data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2ae9"
+                    class="desktop-nav-link-wrapper w-dropdown">
+                    <div class="desktop-nav-link w-dropdown-toggle">
+                      <div>Company</div><img
+                        src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/67995efcdc7b33665114c003_CaretDownBold_UI_Element.svg"
+                        loading="lazy" alt="" class="icon-1-rem" />
+                    </div>
+                    <nav class="dropdown-list-product w-dropdown-list">
+                      <div class="nav-drop-list-product">
+                        <div class="nav-link-dropdown-column-wrap _01">
+                          <a href="/blog" class="d-nav-drop-lk w-inline-block">
+                            <div>(+84) 77 888 2602</div>
+                          </a><a href="/news"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>Zalo</div>
+                          </a><a href="/about"
+                            class="d-nav-drop-lk w-inline-block">
+                            <div>hngoc.le.404@gmail.com</div>
+                          </a><a href="/careers"
+                            class="d-nav-drop-lk last w-inline-block">
+                            <div>LinkedIn</div>
+                          </a>
+                        </div>
+                      </div>
+                    </nav>
                   </div>
-                  <ul id=":R5b:"
-                    class="Primer_Brand__SubNav-module__SubNav__links-overlay___CnpND"
-                    data-testid="SubNav-root-overlay">
-                    <li>
-                      <a href="https://github.com/features/copilot"
-                        class="Primer_Brand__SubNav-module__SubNav__link___VBkrZ"
-                        data-testid="SubNav-root-link"
-                        data-ref="subnav-link-4gEEYfnQ9Yge9LHGss3EVu"
-                        data-analytics-event='{"action":"github_copilot","tag":"link","location":"subnav","label":"github_copilot_link_null_subnav"}'>
-                        <span
-                          class="Primer_Brand__Text-module__Text___pecHN Primer_Brand__Text-module__Text-font--mona-sans___GpzSG Primer_Brand__Text-module__Text--default___DChoE Primer_Brand__Text-module__Text--100___csEom Primer_Brand__Text-module__Text--weight-semibold___Ns19j Primer_Brand__SubNav-module__SubNav__link-label___IoiSp">
-                          Projects
-                        </span>
-                      </a>
-                    </li>
-<!--                    <li>-->
-<!--                      <a href="https://github.com/features/security"-->
-<!--                        class="Primer_Brand__SubNav-module__SubNav__link___VBkrZ"-->
-<!--                        data-testid="SubNav-root-link"-->
-<!--                        data-ref="subnav-link-5pH39tAJgeZwoQQWuuWa3V"-->
-<!--                        data-analytics-event='{"action":"security","tag":"link","location":"subnav","label":"security_link_null_subnav"}'>-->
-<!--                        <span-->
-<!--                          class="Primer_Brand__Text-module__Text___pecHN Primer_Brand__Text-module__Text-font&#45;&#45;mona-sans___GpzSG Primer_Brand__Text-module__Text&#45;&#45;default___DChoE Primer_Brand__Text-module__Text&#45;&#45;100___csEom Primer_Brand__Text-module__Text&#45;&#45;weight-semibold___Ns19j Primer_Brand__SubNav-module__SubNav__link-label___IoiSp">-->
-<!--                          Resume-->
-<!--                        </span>-->
-<!--                      </a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                      <a href="https://github.com/features/actions"-->
-<!--                        class="Primer_Brand__SubNav-module__SubNav__link___VBkrZ"-->
-<!--                        data-testid="SubNav-root-link"-->
-<!--                        data-ref="subnav-link-MwaRrmt2rbmrPs1QGq1Jt"-->
-<!--                        data-analytics-event='{"action":"actions","tag":"link","location":"subnav","label":"actions_link_null_subnav"}'>-->
-<!--                        <span-->
-<!--                          class="Primer_Brand__Text-module__Text___pecHN Primer_Brand__Text-module__Text-font&#45;&#45;mona-sans___GpzSG Primer_Brand__Text-module__Text&#45;&#45;default___DChoE Primer_Brand__Text-module__Text&#45;&#45;100___csEom Primer_Brand__Text-module__Text&#45;&#45;weight-semibold___Ns19j Primer_Brand__SubNav-module__SubNav__link-label___IoiSp">-->
-<!--                          Actions-->
-<!--                        </span>-->
-<!--                      </a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                      <a href="https://github.com/features/codespaces"-->
-<!--                        class="Primer_Brand__SubNav-module__SubNav__link___VBkrZ"-->
-<!--                        data-testid="SubNav-root-link"-->
-<!--                        data-ref="subnav-link-3N1gWAAC5EoTXT7Xume3N2"-->
-<!--                        data-analytics-event='{"action":"codespaces","tag":"link","location":"subnav","label":"codespaces_link_null_subnav"}'>-->
-<!--                        <span-->
-<!--                          class="Primer_Brand__Text-module__Text___pecHN Primer_Brand__Text-module__Text-font&#45;&#45;mona-sans___GpzSG Primer_Brand__Text-module__Text&#45;&#45;default___DChoE Primer_Brand__Text-module__Text&#45;&#45;100___csEom Primer_Brand__Text-module__Text&#45;&#45;weight-semibold___Ns19j Primer_Brand__SubNav-module__SubNav__link-label___IoiSp">-->
-<!--                          Codespaces-->
-<!--                        </span>-->
-<!--                      </a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                      <a href="https://github.com/features/issues"-->
-<!--                        class="Primer_Brand__SubNav-module__SubNav__link___VBkrZ"-->
-<!--                        data-testid="SubNav-root-link"-->
-<!--                        data-ref="subnav-link-6G3IK6j5yCHHCCj1RCwGYd"-->
-<!--                        data-analytics-event='{"action":"issues","tag":"link","location":"subnav","label":"issues_link_null_subnav"}'>-->
-<!--                        <span-->
-<!--                          class="Primer_Brand__Text-module__Text___pecHN Primer_Brand__Text-module__Text-font&#45;&#45;mona-sans___GpzSG Primer_Brand__Text-module__Text&#45;&#45;default___DChoE Primer_Brand__Text-module__Text&#45;&#45;100___csEom Primer_Brand__Text-module__Text&#45;&#45;weight-semibold___Ns19j Primer_Brand__SubNav-module__SubNav__link-label___IoiSp">-->
-<!--                          Issues-->
-<!--                        </span>-->
-<!--                      </a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                      <a href="https://github.com/features/code-review"-->
-<!--                        class="Primer_Brand__SubNav-module__SubNav__link___VBkrZ"-->
-<!--                        data-testid="SubNav-root-link"-->
-<!--                        data-ref="subnav-link-4zstkAkHb1iB5xPbW83G0D"-->
-<!--                        data-analytics-event='{"action":"code_review","tag":"link","location":"subnav","label":"code_review_link_null_subnav"}'>-->
-<!--                        <span-->
-<!--                          class="Primer_Brand__Text-module__Text___pecHN Primer_Brand__Text-module__Text-font&#45;&#45;mona-sans___GpzSG Primer_Brand__Text-module__Text&#45;&#45;default___DChoE Primer_Brand__Text-module__Text&#45;&#45;100___csEom Primer_Brand__Text-module__Text&#45;&#45;weight-semibold___Ns19j Primer_Brand__SubNav-module__SubNav__link-label___IoiSp">-->
-<!--                          Code review-->
-<!--                        </span>-->
-<!--                      </a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                      <a href="https://github.com/features/discussions"-->
-<!--                        class="Primer_Brand__SubNav-module__SubNav__link___VBkrZ"-->
-<!--                        data-testid="SubNav-root-link"-->
-<!--                        data-ref="subnav-link-tL54mm6n7rcDPzx8IHzo9"-->
-<!--                        data-analytics-event='{"action":"discussions","tag":"link","location":"subnav","label":"discussions_link_null_subnav"}'>-->
-<!--                        <span-->
-<!--                          class="Primer_Brand__Text-module__Text___pecHN Primer_Brand__Text-module__Text-font&#45;&#45;mona-sans___GpzSG Primer_Brand__Text-module__Text&#45;&#45;default___DChoE Primer_Brand__Text-module__Text&#45;&#45;100___csEom Primer_Brand__Text-module__Text&#45;&#45;weight-semibold___Ns19j Primer_Brand__SubNav-module__SubNav__link-label___IoiSp">-->
-<!--                          Discussions-->
-<!--                        </span>-->
-<!--                      </a>-->
-<!--                    </li>-->
-                    <li>
-                      <a href="https://github.com/features/code-search"
-                        class="Primer_Brand__SubNav-module__SubNav__link___VBkrZ"
-                        data-testid="SubNav-root-link"
-                        data-ref="subnav-link-5mD8kuhblNYPPr72KXNrUj"
-                        data-analytics-event='{"action":"code_search","tag":"link","location":"subnav","label":"code_search_link_null_subnav"}'>
-                        <span
-                          class="Primer_Brand__Text-module__Text___pecHN Primer_Brand__Text-module__Text-font--mona-sans___GpzSG Primer_Brand__Text-module__Text--default___DChoE Primer_Brand__Text-module__Text--100___csEom Primer_Brand__Text-module__Text--weight-semibold___Ns19j Primer_Brand__SubNav-module__SubNav__link-label___IoiSp">
-                          Resume
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-              <div
-                class="Primer_Brand__SubNav-module__SubNav__anchor-menu-outer-container___sfhEf">
-                <div
-                  class="Primer_Brand__SubNav-module__SubNav__anchor-menu-container___TNidG">
+                </nav> -->
+                <div class="nav-inner-wrap">
+                  <div class="nav-button-wrap">
+                    <div class="primary-button-nav-wrap"><a
+                        href="https://myninja.ai" target="_blank"
+                        class="primary_button_nav w-button">Try
+                        Ninja</a>
+                      <div class="nav-btn-grdn-bg"></div>
+                    </div>
+                    <div class="menu-button w-nav-button">
+                      <div class="hamburger-wrapper">
+                        <div class="burger-line-light-bg dark_bg">
+                        </div>
+                        <div class="burger-line-light-bg dark_bg">
+                        </div>
+                        <div class="burger-line-light-bg dark_bg">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-<!--          <div class="Primer_Brand__Grid-module__Grid___q48mT"-->
-<!--            data-testid="Grid-:R9b:">-->
-<!--            <div-->
-<!--              class="Primer_Brand__Grid-module__Grid__column___HTpsw Primer_Brand__Grid-module__Grid__column&#45;&#45;span-12___Tn1Hg">-->
-<!--              <div class="">-->
-<!--                <div-->
-<!--                  class="Primer_Brand__Box-module__Box-paddingBlockEnd&#45;&#45;80___Sbcpv ContentfulHero-module__contentfulHeroContainer&#45;&#45;HyE8X">-->
-<!--                  <section-->
-<!--                    class="Primer_Brand__Hero-module__Hero___EM3jf Primer_Brand__Hero-module__Hero&#45;&#45;align-center___HUXm3 pb-0"-->
-<!--                    aria-labelledby="hero-section-brand-heading"-->
-<!--                    data-hpc="true">-->
-<!--                    <div-->
-<!--                      class="Primer_Brand__Grid-module__Grid___q48mT Primer_Brand__Grid-module__Grid&#45;&#45;full-width___pIgWW Primer_Brand__Hero-module__Hero-grid___ty4Y7 Primer_Brand__Hero-module__Hero-grid&#45;&#45;block-end___vzO3L"-->
-<!--                      data-testid="Grid-:R6pb:">-->
-<!--                      <div-->
-<!--                        class="Primer_Brand__Grid-module__Grid__column___HTpsw Primer_Brand__Grid-module__Grid__column&#45;&#45;medium-span-12___eT5YS">-->
-<!--                        <div-->
-<!--                          class="Primer_Brand__Stack-module__Stack___tASKe Primer_Brand__Stack-module__Stack&#45;&#45;vertical___CFzE7 Primer_Brand__Stack-module__Stack&#45;&#45;gap-none___M7T_v Primer_Brand__Stack-module__Stack&#45;&#45;align-items-center___xWKxj Primer_Brand__Stack-module__Stack&#45;&#45;justify-content-center___uZGXl Primer_Brand__Stack-module__Stack&#45;&#45;padding-none___RCMh9">-->
-<!--                          <span-->
-<!--                            class="Primer_Brand__Label-module__Label___TW0HL Primer_Brand__Label-module__Label&#45;&#45;color-purple___ZHLtp Primer_Brand__Label-module__Label&#45;&#45;size-medium___g4Jkm Primer_Brand__Hero-module__Hero-label___exV9w"-->
-<!--                            data-testid="Label">-->
-<!--                            <span-->
-<!--                              class="Primer_Brand__Label-module__Label__text____nAxj">-->
-<!--                              <span-->
-<!--                                class="Primer_Brand__Text-module__Text___pecHN Primer_Brand__Text-module__Text-font&#45;&#45;mona-sans___GpzSG Primer_Brand__Text-module__Text&#45;&#45;default___DChoE Primer_Brand__Text-module__Text&#45;&#45;100___csEom Primer_Brand__Label-module__Label__label___bD_B4">-->
-<!--                                GitHub Issues-->
-<!--                              </span>-->
-<!--                            </span>-->
-<!--                          </span>-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </section>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
+          <div class="mobile-nav-wrap">
+            <div class="mobile-nav-bar">
+              <div class="nav-wrapper v4">
+                <div class="nav-inner-wrap v4"><a aria-label="main" role="link"
+                    href="/" class="brand w-nav-brand"><img loading="lazy"
+                      src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/66c3b1689112111109d1385c_NJ_site-logo_black_capitalized.svg"
+                      alt="" class="brand-image v3" /></a>
+                  <div class="nav-action-menu">
+                    <div class="primary-button-nav-wrap"><a
+                        href="https://myninja.ai" target="_blank"
+                        class="primary_button_nav w-button">Try
+                        Ninja</a>
+                      <div class="nav-btn-grdn-bg"></div>
+                    </div>
+                    <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b0f"
+                      class="hamburger-wrapper">
+                      <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b10"
+                        class="burger-line-light-bg">
+                      </div>
+                      <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b11"
+                        class="burger-line-light-bg">
+                      </div>
+                      <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b12"
+                        class="burger-line-light-bg">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b13"
+                  class="mobile-nav-menu">
+                  <!-- <div class="mobile-nav-dropdown">
+                    <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b15"
+                      class="mobile-nav-dropdown-trigger">
+                      <div class="mobile-nav-item-label">
+                        Product</div><img
+                        src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/67995b00947418610e4b6be4_CaretDown_UI_Element.svg"
+                        loading="lazy"
+                        data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b18" alt=""
+                        class="icon-1-5-rem" />
+                    </div>
+                    <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b19"
+                      class="mobile-dropdown-content">
+                      <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b1a"
+                        class="mobile-nav-dropdown-list">
+                        <div class="dropdown-eyebrow">
+                          <div class="margin-xxsmall">
+                            <p class="nav-dropdown-eyebrow-text">
+                              TECHNOLOGY</p>
+                          </div>
+                        </div><a href="/technology"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>How It Works</div>
+                        </a><a href="/product/super-ninja"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>SuperNinja</div>
+                        </a><a href="/product/ninja-llm"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Ninja LLM</div>
+                        </a><a href="/product/deep-research"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Deep Research</div>
+                        </a>
+                        <div class="spacer-1-rem"></div>
+                        <div class="margin-xxsmall">
+                          <div class="dropdown-eyebrow">
+                            <p class="nav-dropdown-eyebrow-text">
+                              Agents</p>
+                          </div>
+                        </div><a href="/product/ai-image-generator"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>AI Image Generator
+                          </div>
+                        </a><a href="/product/ai-image-editor"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>AI Image Editor</div>
+                        </a><a href="/product/ai-video-generator"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>AI Video Generator
+                          </div>
+                        </a><a href="/product/ai-code-generator"
+                          aria-current="page"
+                          class="mobile-dropdown-item-link w-inline-block w--current">
+                          <div>AI Code Generator</div>
+                        </a><a href="/product/ai-writer"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>AI Writer</div>
+                        </a><a href="/product/ai-research-agent"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>AI Researcher</div>
+                        </a><a href="/product/ai-scheduling-agent"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>AI Scheduler</div>
+                        </a>
+                        <div class="spacer-1-rem"></div>
+                        <div class="dropdown-eyebrow">
+                          <p class="nav-dropdown-eyebrow-text">
+                            Features</p>
+                        </div><a href="/product/external-model-access"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>External AI Models
+                          </div>
+                        </a><a href="/product/file-upload-analysis"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>File Upload &amp;
+                            Analysis</div>
+                        </a><a href="/product/ai-prompt-tools"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Prompt Tools</div>
+                        </a>
+                        <div class="spacer-1-rem"></div>
+                      </div>
+                    </div>
+                  </div> -->
+
+
+
+
+
+                  <!--<div class="mobile-nav-dropdown">
+                    <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b4b"
+                      class="mobile-nav-dropdown-trigger">
+                      <div class="mobile-nav-item-label">
+                        API</div><img
+                        src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/67995b00947418610e4b6be4_CaretDown_UI_Element.svg"
+                        loading="lazy"
+                        data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b4e" alt=""
+                        class="icon-1-5-rem" />
+                    </div>
+                     <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b4f"
+                      class="mobile-dropdown-content">
+                      <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b50"
+                        class="mobile-nav-dropdown-list">
+                        <div class="dropdown-eyebrow">
+                          <div class="margin-xxsmall">
+                            <p class="nav-dropdown-eyebrow-text">
+                              API</p>
+                          </div>
+                        </div><a href="/product/ninja-api"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Ninja API</div>
+                        </a>
+                        <div class="spacer-1-rem"></div>
+                        <div class="margin-xxsmall">
+                          <div class="dropdown-eyebrow">
+                            <p class="nav-dropdown-eyebrow-text">
+                              RESOURCES</p>
+                          </div>
+                        </div><a href="/product/api-quick-start"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>API Quick Start</div>
+                        </a>
+                        <div class="spacer-1-rem"></div>
+                      </div>
+                    </div> 
+                  </div>-->
+
+
+
+
+                  <!-- <div class="mobile-nav-dropdown">
+                    <div data-w-id="0433268f-9070-89f3-dbb1-f1be82f025f7"
+                      class="mobile-nav-dropdown-trigger">
+                      <div class="mobile-nav-item-label">
+                        Solutions</div><img
+                        src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/67995b00947418610e4b6be4_CaretDown_UI_Element.svg"
+                        loading="lazy"
+                        data-w-id="0433268f-9070-89f3-dbb1-f1be82f025fa" alt=""
+                        class="icon-1-5-rem" />
+                    </div>
+                    <div data-w-id="0433268f-9070-89f3-dbb1-f1be82f025fb"
+                      class="mobile-dropdown-content">
+                      <div data-w-id="0433268f-9070-89f3-dbb1-f1be82f025fc"
+                        class="mobile-nav-dropdown-list">
+                        <div class="dropdown-eyebrow">
+                          <div class="margin-xxsmall">
+                            <p class="nav-dropdown-eyebrow-text">
+                              User</p>
+                          </div>
+                        </div><a href="/solutions/individuals"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Individuals</div>
+                        </a><a href="/solutions/business"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Business</div>
+                        </a>
+                        <div class="spacer-1-rem"></div>
+                        <div class="margin-xxsmall">
+                          <div class="dropdown-eyebrow">
+                            <p class="nav-dropdown-eyebrow-text">
+                              Applications</p>
+                          </div>
+                        </div><a href="/use-cases"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Use Cases</div>
+                        </a>
+                        <div class="spacer-1-rem"></div>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="mobile-nav-dropdown">
+                    <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b65"
+                      class="mobile-nav-dropdown-trigger">
+                      <div class="mobile-nav-item-label">
+                        Resources</div><img
+                        src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/67995b00947418610e4b6be4_CaretDown_UI_Element.svg"
+                        loading="lazy"
+                        data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b68" alt=""
+                        class="icon-1-5-rem" />
+                    </div>
+                    <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b69"
+                      class="mobile-dropdown-content">
+                      <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b6a"
+                        class="mobile-nav-dropdown-list">
+                        <div class="margin-xxsmall">
+                          <div class="dropdown-eyebrow">
+                            <p class="nav-dropdown-eyebrow-text">
+                              LEARN</p>
+                          </div>
+                        </div><a href="/faq"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>FAQ</div>
+                        </a><a href="/glossary"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Glossary</div>
+                        </a>
+                        <div class="spacer-1-rem"></div>
+                        <div class="margin-xxsmall">
+                          <div class="dropdown-eyebrow">
+                            <p class="nav-dropdown-eyebrow-text">
+                              Compare</p>
+                          </div>
+                        </div><a
+                          href="/ai-comparison/deepseek-vs-chatgpt-vs-ninja-ai"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>DeepSeek vs. ChatGPT
+                            vs. Ninja AI</div>
+                        </a><a
+                          href="/ai-comparison/claude-vs-chatgpt-vs-ninja-ai"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Claude vs. ChatGPT vs.
+                            Ninja AI</div>
+                        </a><a
+                          href="/ai-comparison/gemini-vs-chatgpt-vs-ninja-ai"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Gemini vs. ChatGPT vs.
+                            Ninja AI</div>
+                        </a><a
+                          href="/ai-comparison/perplexity-vs-chatgpt-vs-ninja-ai"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Perplexity vs. ChatGPT
+                            vs. Ninja AI</div>
+                        </a><a href="/ai-comparison/chatbox-ai-vs-ninja-ai"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Chatbox AI vs. Ninja AI
+                          </div>
+                        </a><a href="/ai-comparison/chaton-ai-vs-ninja-ai"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Chaton AI vs. Ninja AI
+                          </div>
+                        </a><a href="/ai-comparison/blackbox-ai-vs-ninja-ai"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Blackbox AI vs. Ninja
+                            AI</div>
+                        </a><a href="/ai-comparison/manus-ai-vs-ninja-ai"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Manus AI vs. Ninja AI
+                          </div>
+                        </a>
+                        <div class="spacer-1-rem"></div>
+                      </div>
+                    </div>
+                  </div> -->
+                  <a href="/pricing" class="mobile-nav-link-item">Posts</a><a
+                    href="/download" class="mobile-nav-link-item">Resume</a>
+                  <!-- <div class="mobile-nav-dropdown">
+                    <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b77"
+                      class="mobile-nav-dropdown-trigger">
+                      <div class="mobile-nav-item-label">
+                        Company</div><img
+                        src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/67995b00947418610e4b6be4_CaretDown_UI_Element.svg"
+                        loading="lazy"
+                        data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b7a" alt=""
+                        class="icon-1-5-rem" />
+                    </div>
+                    <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b7b"
+                      class="mobile-dropdown-content">
+                      <div data-w-id="371fa7a0-759c-4a39-8f52-b12cf93d2b7c"
+                        class="mobile-nav-dropdown-list">
+                        <a href="/blog"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Blog</div>
+                        </a><a href="/news"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>News</div>
+                        </a><a href="/about"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>About</div>
+                        </a><a href="/careers"
+                          class="mobile-dropdown-item-link w-inline-block">
+                          <div>Careers</div>
+                        </a>
+                        <div class="spacer-1-rem"></div>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="global-styles w-embed">
+        <style>
+          .text-style-4lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+          }
+
+          .text-style-3lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+          }
+
+          .text-style-2lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+
+          .text-style-1lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+          }
+
+          .truncate-width {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .NavbarDesktop .outer {
+            transform-style: flat !important;
+          }
+        </style>
+      </div>
     </div>
+
   </div>
-</div>
+  <script
+    src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66c3b1689112111109d136f2"
+    type="text/javascript"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/js/ninjatech-ai-staging-e8a7-60cd4aee05318.schunk.36b8fb49256177c8.js"
+    type="text/javascript"></script>
+  <script
+    src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/js/ninjatech-ai-staging-e8a7-60cd4aee05318.schunk.0d6b04f9771b60ea.js"
+    type="text/javascript"></script>
+  <script
+    src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/js/ninjatech-ai-staging-e8a7-60cd4aee05318.schunk.121b0d7ff03e0f4a.js"
+    type="text/javascript"></script>
+  <script
+    src="https://cdn.prod.website-files.com/66c3b1689112111109d136f2/js/ninjatech-ai-staging-e8a7-60cd4aee05318.959bed68.75ec86585a2ad898.js"
+    type="text/javascript"></script><!-- Google Tag Manager (noscript) -->
+  <noscript><iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-KL69Z8N8" height="0"
+      width="0" style="display:none;visibility:hidden"></iframe></noscript>
+</body>
