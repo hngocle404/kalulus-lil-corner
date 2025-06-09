@@ -7,6 +7,14 @@ body {
     margin: 0;
 }
 
+body {
+    font-family: 'Inter';
+    --wp--style--root--padding-top: 0px;
+    --wp--style--root--padding-right: var(--p-responsive-blog);
+    --wp--style--root--padding-bottom: 0px;
+    --wp--style--root--padding-left: var(--p-responsive-blog);
+}
+
 :root {
     --gradient-start: #b43072;
     --gradient-end: #ee5c39;
@@ -177,8 +185,7 @@ body {
 
 @layer primer-css-base {
 
-    /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
-    html {
+     html {
         font-size: 16px;
         font-family: sans-serif;
         -ms-text-size-adjust: 100%;
@@ -233,7 +240,7 @@ body {
     }
 
     abbr[title] {
-        border-bottom: none;
+        border-bottom: none !important;
         text-decoration: underline;
         -webkit-text-decoration: underline dotted;
         text-decoration: underline dotted
