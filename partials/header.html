@@ -229,87 +229,7 @@
       padding: 1.25em 2.375em
     }
   </style>
-  <style id='github-typography-presets-inline-css'>
-    .is-typography-preset-h1 {
-      font-size: var(--base-size-36, 36px);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-block-end: 20px;
-      margin-block-start: 0;
-    }
-
-    .is-typography-preset-h2 {
-      font-size: var(--base-size-32, 32px);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-block-end: 20px;
-      margin-block-start: 40px;
-    }
-
-    .is-typography-preset-h3 {
-      font-size: var(--base-size-28, 28px);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-block-end: 12px;
-      margin-block-start: 20px;
-    }
-
-    .is-typography-preset-h4 {
-      font-size: var(--base-size-24, 24px);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-block-end: 12px;
-      margin-block-start: 20px;
-    }
-
-    .is-typography-preset-h5 {
-      font-size: var(--base-size-20, 20px);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-block-end: 12px;
-      margin-block-start: 20px;
-    }
-
-    .is-typography-preset-h6 {
-      font-size: var(--base-size-18, 18px);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-block-end: 0;
-      margin-block-start: 20px;
-    }
-
-    .is-typography-preset-display {
-      font: var(--text-display-shorthand);
-    }
-
-    .is-typography-preset-title-large {
-      font: var(--text-title-shorthand-large);
-    }
-
-    .is-typography-preset-title-medium {
-      font: var(--text-title-shorthand-medium);
-    }
-
-    .is-typography-preset-title-small {
-      font: var(--text-title-shorthand-small);
-    }
-
-    .is-typography-preset-subtitle {
-      font: var(--text-subtitle-shorthand);
-    }
-
-    .is-typography-preset-body-large {
-      font: var(--text-body-shorthand-large);
-    }
-
-    .is-typography-preset-body-medium {
-      font: var(--text-body-shorthand-medium);
-    }
-
-    .is-typography-preset-body-small {
-      font: var(--text-body-shorthand-small);
-    }
-  </style>
+   
   <style id='global-styles-inline-css'>
     :root {
       --wp--preset--aspect-ratio--square: 1;
@@ -617,7 +537,7 @@
       background-color: #32373c;
       border-width: 0;
       color: #fff;
-      font-family: inherit;
+      font-family: 'Inter';
       font-size: inherit;
       line-height: inherit;
       padding: calc(0.667em + 2px) calc(1.333em + 2px);
@@ -902,17 +822,20 @@
   <div data-color-mode="light" data-light-theme="light"
     data-light-theme="light_dimmed" class="pt-header pt-lg-0">
     <header id="header"
-      class="header position-fixed position-lg-static pb-lg-header z-4 top-0 left-0 right-0 d-flex flex-column flex-items-stretch color-bg-default"
-      data-sticky-navigation=".sticky-navigation">
+      class="header position-fixed position-lg-static pb-lg-header z-4 top-0 left-0 right-0 d-flex flex-column flex-items-stretch color-bg-default">
 
       <div
         class="position-relative container-xl width-full mx-auto p-responsive-blog">
         <div
           class="d-flex flex-items-center flex-justify-between pt-3 pb-3 color-fg-default">
 
-          <a href="\kalulus-lil-corner"
-            class="Header-link position-relative d-flex flex-items-center color-fg-default">
+<style>
+.logo-link {
+  margin-left: -8px;}
+</style>
 
+<a href="\kalulus-lil-corner"
+  class="Header-link logo-link position-relative d-flex flex-items-center color-fg-default">
 
             <img src="\kalulus-lil-corner\assets\icon.png" alt="My Logo"
               width="32" height="32" class="d-block" />
@@ -921,7 +844,7 @@
           <span class="d-inline-block ml-2 f1-mktg f2-md-mktg"
             style="opacity: 0.3;">
           </span>
-          <a class="d-inline-block Header-link font-weight-semibold ml-2 f2 color-fg-default"
+          <a class="d-inline-block Header-link font-weight-bold ml-2 f2 color-fg-default"
             href="https://github.blog/">
             Kelly not found</a>
 

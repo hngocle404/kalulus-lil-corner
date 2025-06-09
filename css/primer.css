@@ -1,9 +1,9 @@
 /* <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-0a1f715ee9fb.css"> */
 body {
-    transform: scale(0.80);
+    transform: scale(0. 90);
     transform-origin: top left;
-    width: calc(100% / 0.80);
-    height: calc(100vh / 0.80);
+    width: calc(100% / 0.90);
+    height: calc(100vh / 0.90);
     margin: 0;
 }
 
