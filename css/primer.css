@@ -6,7 +6,7 @@ body {
     height: calc(100vh / 0.9);
     margin: 0;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Inter+Tight:wght@100..900&display=swap');
 body {
     font-family: 'Inter';
     --wp--style--root--padding-top: 0px;
