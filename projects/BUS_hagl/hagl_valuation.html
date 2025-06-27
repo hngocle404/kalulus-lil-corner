@@ -2093,43 +2093,62 @@ WACC or a 10bps increase in TGR would prompt a SELL of HAG’s share.
 
 
 </main>
-    <script>
-function toggleTab(tabId) {
-const allItems = document.querySelectorAll('.card-item');
+<script>
+    function toggleTab(tabId) {
+        const allItems = document.querySelectorAll('.card-item');
 
-allItems.forEach(item => {
-item.style.display = 'none';
-});
+        allItems.forEach(item => {
+            item.style.display = 'none';
+        });
 
-if (tabId === 'all') {
-allItems.forEach(item => {
-item.style.display = 'block';
-});
-} else {
-const selectedItems = document.querySelectorAll(`.${tabId}`);
-selectedItems.forEach(item => {
-item.style.display = 'block';
-});
-}
-const allButtons = document.querySelectorAll('[data-view-component="true"]');
-allButtons.forEach(button => {
-button.classList.remove('color-bg-subtle');
-button.classList.add('color-bg-default');
-button.style.backgroundColor = '';
-});
-const activeButton = document.querySelector(`[onclick="toggleTab('${tabId}')"]`);
-if (activeButton) {
-activeButton.classList.remove('color-bg-default');
-activeButton.classList.add('color-bg-subtle');
-activeButton.style.backgroundColor = '#e6e6e6';
-}
-}
+        if (tabId === 'all') {
+            allItems.forEach(item => {
+                item.style.display = 'block';
+            });
+        } else {
+            const selectedItems = document.querySelectorAll(`.${tabId}`);
+            selectedItems.forEach(item => {
+                item.style.display = 'block';
+            });
+        }
+        const allButtons = document.querySelectorAll('[data-view-component="true"]');
+        allButtons.forEach(button => {
+            button.classList.remove('color-bg-subtle');
+            button.classList.add('color-bg-default');
+            button.style.backgroundColor = '';
+        });
+        const activeButton = document.querySelector(`[onclick="toggleTab('${tabId}')"]`);
+        if (activeButton) {
+            activeButton.classList.remove('color-bg-default');
+            activeButton.classList.add('color-bg-subtle');
+            activeButton.style.backgroundColor = '#e6e6e6';
+        }
+    }
 
-document.addEventListener('DOMContentLoaded', () => {
-toggleTab('all');
-});
+    function toggleCollapsible(button) {
+        const content = button.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        toggleTab('all');
+
+        const collapsibleButtons = document.querySelectorAll('.collapsible');
+        collapsibleButtons.forEach(button => {
+            const content = button.nextElementSibling;
+            if (content && content.classList.contains('content')) {
+                content.style.display = 'none';
+            }
+            button.addEventListener('click', function () {
+                toggleCollapsible(this);
+            });
+        });
+    });
 </script>
-
 
 <!-- ======================================================================================== -->
 
