@@ -914,9 +914,37 @@
 </head>
 
 <body>
+<style>
+hr {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+div[data-color-mode="light"] > hr:first-child {
+  margin-top: 0 !important;
+}
+
+div[data-color-mode="light"] {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.footer {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body > div[data-color-mode="light"] {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body > div[data-color-mode="light"] > * {
+  margin-top: 0 !important;
+}
+</style>
   <div data-color-mode="light" data-light-theme="light" data-light-theme="light">
-  <hr
-    style="border: none; border-top: 1px solid #ccc; width: 100%;">
+<hr>
 
     <footer class="footer pt-2">
 
@@ -936,12 +964,14 @@
               </svg>
             </a>
           </div> -->
+
+
 <hr>
 
 <div class="col-12 col-lg-4 mb-5">
   <a href="\kalulus-lil-corner"
-     class="color-fg-default" aria-label="Go to GitHub homepage">
-    <img src="\kalulus-lil-corner\assets\namelogo.png" alt="Kalulu's logo" height="120" ưidth ='auto'>
+     class="color-fg-default">
+    <img src="\kalulus-lil-corner\assets\namelogo.png" alt="Kalulu's logo" height="140" width ='auto'>
   </a>
 </div>
 
