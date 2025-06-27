@@ -657,7 +657,7 @@ flex-items-stretch color-bg-default">
             style="opacity: 0.3;">
           </span>
           <a class="d-inline-block Header-link font-weight-bold ml-2 f2 color-fg-default"
-            href="https://github.blog/">
+            href="/kalulus-lil-corner">
             Kelly not found</a>
 
 
@@ -665,6 +665,10 @@ flex-items-stretch color-bg-default">
             <ul id="secondary-navigation"
               class="secondary-navigation flex-items-center flex-nowrap list-style-none ml-4"
               aria-hidden="false">
+              <li><a href="/kalulus-lil-corner/about.html"
+                  class="position-relative d-flex flex-items-center flex-start no-wrap py-2 px-4 f4 lh-condensed-ultra Link--secondary color-fg-default text-medium"><span
+                    class="menu-item-label">About</span></a>
+              </li>
               <li><a href="/kalulus-lil-corner/assets/NGOCLE_resume.png"
                   class="position-relative d-flex flex-items-center flex-start no-wrap py-2 px-4 f4 lh-condensed-ultra Link--secondary color-fg-default text-medium"><span
                     class="menu-item-label">Resume</span></a>
@@ -752,7 +756,6 @@ flex-items-stretch color-bg-default">
             </a> -->
 
 
-
 <a class="Button Button--size-medium Button--secondary ml-3"
   onclick="showContactPopup(event)"
   style="border: none !important; background-color: #f6f8fa !important; cursor: pointer;">
@@ -792,7 +795,6 @@ flex-items-stretch color-bg-default">
     document.getElementById('contactPopup').style.display = 'none';
   }
 
-  // Close popup when clicking outside
   document.getElementById('contactPopup').addEventListener('click', function (event) {
     if (event.target === this) {
       hideContactPopup();
