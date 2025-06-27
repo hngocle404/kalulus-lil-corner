@@ -739,7 +739,7 @@ flex-items-stretch color-bg-default">
               </span>
 
             </a> -->
-<a class="Button Button--size-medium Button--secondary ml-3"
+<!-- <a class="Button Button--size-medium Button--secondary ml-3"
   href="https://github.com/enterprise/contact?ref_cta=contact20sales&#038;ref_loc=banner&#038;ref_page=blog"
   style="border: none !important; background-color: #f6f8fa !important;">
   <span class="Button__text">
@@ -749,7 +749,61 @@ flex-items-stretch color-bg-default">
     </span>
   </span>
 
-            </a>
+            </a> -->
+
+
+
+<a class="Button Button--size-medium Button--secondary ml-3"
+  onclick="showContactPopup(event)"
+  style="border: none !important; background-color: #f6f8fa !important; cursor: pointer;">
+  <span class="Button__text">
+    <span
+      class="Text Text--200 Text--antialiased Text--weight-semibold Button--label Button--label-medium Button--label-secondary">
+      Contact
+    </span>
+  </span>
+</a>
+
+<div id="contactPopup"
+  style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+  <div
+    style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    <h3 style="margin: 0 0 20px 0; color: #333;">Contact Information</h3>
+    <p style="margin: 10px 0; font-size: 16px; color: #555;">
+      <strong>Email:</strong> hngoc.le.404@gmail.com
+    </p>
+    <p style="margin: 10px 0; font-size: 16px; color: #555;">
+      <strong>Phone:</strong> (+84) 077 888 2602
+    </p>
+    <button onclick="hideContactPopup()"
+      style="margin-top: 20px; padding: 10px 20px; background-color: #f6f8fa; border: none; border-radius: 6px; cursor: pointer; font-size: 14px;">
+      Close
+    </button>
+  </div>
+</div>
+
+<script>
+  function showContactPopup(event) {
+    event.preventDefault();
+    document.getElementById('contactPopup').style.display = 'flex';
+  }
+
+  function hideContactPopup() {
+    document.getElementById('contactPopup').style.display = 'none';
+  }
+
+  // Close popup when clicking outside
+  document.getElementById('contactPopup').addEventListener('click', function (event) {
+    if (event.target === this) {
+      hideContactPopup();
+    }
+  });
+</script>
+
+
+
+
+
           </div>
 
           <div class="d-flex d-lg-none flex-items-center flex-1 mr-n2">
@@ -802,15 +856,17 @@ flex-items-stretch color-bg-default">
 </style>
 
 <nav aria-label="Mobile navigation" class="ml-2 d-flex custom-nav">
-  <!-- <a href="https://github.blog/changelog/"
+  <a href="/kalulus-lil-corner/assets/resume.pdf"
     class="px-3 py-2 text-medium f4 color-fg-default text-decoration-none">
     Resume
-  </a> -->
-  <a href="https://docs.github.com/"
+  </a>
+  <a href="/kalulus-lil-corner"
     class="px-3 py-2 text-medium f4 color-fg-default text-decoration-none">
     Projects
   </a>
-<a href="https://github.blog/changelog/"
+
+
+<a href="/kalulus-lil-corner/about.html"
   class="px-3 py-2 text-medium f4 color-fg-default text-decoration-none">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
