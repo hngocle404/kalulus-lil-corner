@@ -17,11 +17,13 @@ body {
   font-size: var(--font-size-monospace);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', sans-serif;
-}
     hr {
         margin: 70px 0 50px 0 !important;
+    }
+
+    h1 {
+        margin-top: 50px !important;
+        margin-bottom: 10px !important
     }
 </style>
 
@@ -169,7 +171,7 @@ The dataset can be accessed <a href="https://drive.google.com/file/d/1LIvIdqdHDF
 
 <!-- body text -->
 
-<h1 style="margin-bottom:30px;">1. Loading libraries and data</h1>
+<h1>1. Loading libraries and data</h1>
 
 
 <div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
@@ -226,7 +228,7 @@ Description of variables:
 
 <!-- body text -->
 <hr style="margin: 50px 0;">
-<h1 style="margin-bottom:30px;">2. Data wrangling</h1>
+<h1>2. Data wrangling</h1>
 
 First we will be checking for any duplicated Loan IDs in the data set.
 
@@ -363,7 +365,7 @@ Since there are no missing values, we can proceed with the model training.
 
 <!-- body text -->
 <hr style="margin: 50px 0;">
-<h1 style="margin-bottom:30px;">
+<h1>
   3. Building K-nearest-neighbour model
 </h1>
 
@@ -518,7 +520,7 @@ k_nearest_neighbours_model(test_1, train, 3)
 
 <!-- body text -->
 <hr style="margin: 50px 0;">
-<h1 style="margin-bottom:30px;">
+<h1>
   4. Evaluating accuracy of KNN model
 </h1>
 

@@ -104,28 +104,6 @@ body {
 }
 
 
-.code_block {
-    border-radius: 5px;
-    padding: 0px 0px 22px 25px;
-    margin: 20px 0px;
-    background: var(--code_bg) !important;
-    white-space: pre-wrap;
-    font-family: var(--font-monospace);
-    font-size: var(--font-size-monospace);
-}
-
-.output_block {
-    border-radius: 5px;
-    padding: 0px 0px 22px 25px;
-    margin: 20px 0px;
-    background: #ffffff !important;
-    white-space: pre-wrap;
-    font-family: var(--font-monospace);
-    font-size: var(--font-size-monospace);
-    border: 1px solid #d1d5da;
-}
-
-
 
 
 /* ======================================= */
@@ -560,15 +538,6 @@ body {
         box-shadow: inset 0 -1px 0 var(--borderColor-neutral-muted, var(--color-neutral-muted))
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin-top: 0;
-        margin-bottom: 0
-    }
 
     h1 {
         font-size: var(--h1-size, 32px);
