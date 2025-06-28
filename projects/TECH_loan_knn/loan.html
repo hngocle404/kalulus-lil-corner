@@ -273,17 +273,17 @@ dtypes: float64(5), int64(1), object(7)
 
 
 <p> 
-  <code style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+  <code>
     Gender</code>,  
-  <code style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+  <code>
     Married</code>, 
-  <code style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+  <code>
     Education</code>, 
-  <code style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+  <code>
     Self_Employed</code>, 
-  <code style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+  <code>
     Property_Area</code>, and
-  <code style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+  <code>
     Loan_Status</code> are categorical data; hence, they will be converted into dummy variables in a subsequent section.
 </p>
 
@@ -377,7 +377,7 @@ Since there are no missing values, we can proceed with the model training.
 
 Firstly, we need to make all categorical data variables understandable for 
 machines. To achieve this, I'll convert them into dummy variables using the 
-<code style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+<code>
 LabelEncoder()</code>.
 
 <div class="code_block">
@@ -584,7 +584,7 @@ test set as much as possible.</p>
 <p>This process, aimed at improving the performance of a\
  classifier, is commonly referred to as feature selection or, more broadly, feature engineering.
 
-I will be using simple linear regression from   <code style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+I will be using simple linear regression from   <code>
  statsmodels</code> to have a quick glimpse 
 into what variables have the most significant influence on the response variable.
 

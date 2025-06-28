@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Inter+Tight:wght@100..900&display=swap');
 
+:root {
+    --gradient-start: #b43072;
+    --gradient-end: #ee5c39;
+    --code_bg: #e1e4e6;
+    --font-monospace: 'JetBrains Mono', monospace;
+    --font-size-monospace: 14px;
+}
+
 .code_block {
     border-radius: 5px;
     padding: 0px 0px 22px 25px;
@@ -20,6 +28,7 @@
     font-size: var(--font-size-monospace);
     border: 1px solid #d1d5da;
 }
+
 code {
 font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;
 }
