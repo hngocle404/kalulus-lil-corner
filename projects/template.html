@@ -179,6 +179,89 @@ VaR method: Parametric
 
 
 
+<div>
+    <button style="margin: 10px 0; padding: 10px 10px;" class="collapsible">
+        Strategic analysis
+    </button>
+    <div class="content">
+
+        <p>
+            <strong>
+                SWOT analysis</strong> involves examining a company’s 4 areas:
+            ‘strengths’, ‘weak
+            nesses’, ‘opportunities’, ‘threats’. Strengths and weaknesses
+            constitute internal attributes within HAG,
+            while opportunities and threats pertain to external factors in the
+            environment. SWOT Analysis aids in
+            the evaluation of an organisation’s resource capabilities and
+            deficiencies, along with its market oppor
+            tunities and external threats to future prospects (Thompson et al.,
+            2007). Henceforth, it yields insights
+            into (1) aligning the HAG’s strategy and (2) determining the
+            immediacy for the firm to address its
+            resource shortcomings and safeguard against specific external
+            threats (Thompson Strickland, 2001).
+        </p>
+
+
+
+
+    </div>
+</div>
+
+<div>
+    <button class="collapsible">
+        Stock valuation </button>
+    <div class="content">
+        <p>
+            Given that HAG (1) presently has a high amount of debt, (2) pays no
+            dividends, and (3) exhibits rela
+            tively volatile earnings, the implied share price for HAG will be
+            compute through a mix of intrinsic and
+            relative valuation approaches, including the discounted cash flow
+            (DCF) model, adjusted present value
+            (APV) model, and comparable company analysis (CCA). After the
+            allocation of suitable weightings
+            to each valuation method, the project combines these models to
+            formulate a comprehensive estimate
+            of HAG’s value.</p>
+
+        <strong>
+            Discounted cash flow (DCF)
+        </strong>
+        <p>
+            For DCF analysis, I first forecast HAG’s revenue using simple
+            linear regression applied to historical data. Then pro-forma
+            statements are generated, and the Weighted
+            Average Cost of Capital (WACC) as well as Terminal Growth Rate (TGR)
+            are computed under a set
+            of assumptions. The firm’s enterprise value is then determined by
+            discounted projected cash flow for
+            the year 2023- 2028, and the implied share price is obtained by
+            dividing this value by the number of
+            outstanding shares.
+        </p>
+
+
+
+
+        <p>
+            I assign a higher weight to the APV model than the DCF model due to
+            HAG’s existing high
+            level of debt. The collective weight assigned to intrinsic valuation
+            methods surpasses that allocated
+            to relative valuation, attributable to a predominant interest in
+            evaluating HAG’s performance over an
+            extended period of time rather than examining cross-sectional
+            differences among various stocks. Em
+            pirical studies, including those by Kaplan Ruback (1995), Berkman et
+            al. (2000), Kim Ritter (1999),
+            and Lee et al. (1999), affirm the superiority of intrinsic
+            valuations when used for such assessment.
+        </p>
+
+    </div>
+</div>
 
 
 
@@ -201,7 +284,7 @@ VaR method: Parametric
 
 
 </main>
-    <script>
+<script>
 function toggleTab(tabId) {
 const allItems = document.querySelectorAll('.card-item');
 
@@ -241,6 +324,64 @@ toggleTab('all');
 
 <!-- ======================================================================================== -->
 
+
+<script>
+    function toggleTab(tabId) {
+        const allItems = document.querySelectorAll('.card-item');
+
+        allItems.forEach(item => {
+            item.style.display = 'none';
+        });
+
+        if (tabId === 'all') {
+            allItems.forEach(item => {
+                item.style.display = 'block';
+            });
+        } else {
+            const selectedItems = document.querySelectorAll(`.${tabId}`);
+            selectedItems.forEach(item => {
+                item.style.display = 'block';
+            });
+        }
+        const allButtons = document.querySelectorAll('[data-view-component="true"]');
+        allButtons.forEach(button => {
+            button.classList.remove('color-bg-subtle');
+            button.classList.add('color-bg-default');
+            button.style.backgroundColor = '';
+        });
+        const activeButton = document.querySelector(`[onclick="toggleTab('${tabId}')"]`);
+        if (activeButton) {
+            activeButton.classList.remove('color-bg-default');
+            activeButton.classList.add('color-bg-subtle');
+            activeButton.style.backgroundColor = '#e6e6e6';
+        }
+    }
+
+    function toggleCollapsible(button) {
+        const content = button.nextElementSibling;
+        const isActive = button.classList.contains('active');
+
+        content.style.display = isActive ? 'none' : 'block';
+
+        button.classList.toggle('active');
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        toggleTab('all');
+
+        const collapsibleButtons = document.querySelectorAll('.collapsible');
+        collapsibleButtons.forEach(button => {
+            const content = button.nextElementSibling;
+            if (content && content.classList.contains('content')) {
+                content.style.display = 'none';
+            }
+            button.addEventListener('click', function () {
+                toggleCollapsible(this);
+            });
+        });
+    });
+</script>
 
 
 <div id="footer-placeholder"></div>
