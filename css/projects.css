@@ -36,3 +36,51 @@ font-family: 'Inter' !important;
 margin-top: 10;
 margin-bottom: 5
 }
+
+
+.collapsible {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible .icon {
+    display: inline-flex;
+    margin-left: 8px;
+}
+
+.collapsible .icon-up {
+    display: none;
+}
+
+.collapsible.active .icon-down {
+    display: none;
+}
+
+.collapsible.active .icon-up {
+    display: inline-flex;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.color-bg-subtle {
+    border-radius: 5px;
+    padding: 22px 22px 22px 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+}

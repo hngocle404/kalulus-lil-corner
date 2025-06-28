@@ -1,267 +1,139 @@
 <!DOCTYPE html>
-<html lang="en" data-color-mode="light" data-light-theme="light" data-dark-theme="dark_tritanopia" data-a11y-animated-images="system" data-a11y-link-underlines="true">
+<html lang="en" data-color-mode="light" data-light-theme="light"
+    data-dark-theme="dark_tritanopia" data-a11y-animated-images="system"
+    data-a11y-link-underlines="true">
+
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
-<meta charset="utf-8">
-<link rel="dns-prefetch" href="https://github.githubassets.com">
-<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
-<link rel="preconnect" href="https://avatars.githubusercontent.com">
-<link rel="preload" href="https://github.githubassets.com/assets/mona-sans-d1bf285e9b9b.woff2" as="font" type="font/woff2" crossorigin>
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/light-3e154969b9f9.css">
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark-9c5b7a476542.css">
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-primitives-4cf0d59ab51a.css">
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-0a1f715ee9fb.css">
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/global-e41ff91f8baa.css">
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/github-d3b66f11d613.css">
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/site-ae5a61253375.css">
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/customer-stories-09cf584c51b5.css">
-<link rel="stylesheet" href="/kalulus-lil-corner/css/primer.css">
-<link rel="stylesheet" href="/kalulus-lil-corner/css/projects.css">
 
-<title>Kelly's project</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Hi there kind stranger!">
-<meta property="og:title" content="Welcome to Kelly's website!">
-<meta property="og:image" content="assets/linkphoto.png">
-<meta property="og:url" content="https://hngocle404.github.io/kalulus-lil-corner/">
-<meta property="og:type" content="website">
-<link rel="icon" href="assets/icon.png" type="image/png">
+    <style>
+        :root {
+            --gradient-start: #b43072;
+            --gradient-end: #ee5c39;
+            --font-monospace: 'JetBrains Mono', monospace;
+            --font-size-monospace: 14px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .monospace {
+            font-family: var(--font-monospace);
+            font-size: var(--font-size-monospace);
+        }
+
+        hr {
+            margin: 70px 0 50px 0 !important;
+        }
+
+        h1 {
+            margin-top: 50px !important;
+            margin-bottom: 10px !important
+        }
+    </style>
+
+    <link rel="stylesheet" href="\kalulus-lil-corner\css\primer.css"> 
+    <link rel="stylesheet" href="\kalulus-lil-corner\css\projects.css"> 
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="https://github.githubassets.com">
+    <link rel="preconnect" href="https://github.githubassets.com" crossorigin>
+    <link rel="preconnect" href="https://avatars.githubusercontent.com">
+    <link rel="preload"
+        href="https://github.githubassets.com/assets/mona-sans-d1bf285e9b9b.woff2"
+        as="font" type="font/woff2" crossorigin>
+    <link crossorigin="anonymous" media="all" rel="stylesheet"
+        href="https://github.githubassets.com/assets/light-3e154969b9f9.css">
+    <link crossorigin="anonymous" media="all" rel="stylesheet"
+        href="https://github.githubassets.com/assets/dark-9c5b7a476542.css">
+    <link crossorigin="anonymous" media="all" rel="stylesheet"
+        href="https://github.githubassets.com/assets/primer-primitives-4cf0d59ab51a.css">
+    <link crossorigin="anonymous" media="all" rel="stylesheet"
+        href="https://github.githubassets.com/assets/primer-0a1f715ee9fb.css">
+    <link crossorigin="anonymous" media="all" rel="stylesheet"
+        href="https://github.githubassets.com/assets/global-e41ff91f8baa.css">
+    <link crossorigin="anonymous" media="all" rel="stylesheet"
+        href="https://github.githubassets.com/assets/github-d3b66f11d613.css">
+    <link crossorigin="anonymous" media="all" rel="stylesheet"
+        href="https://github.githubassets.com/assets/site-ae5a61253375.css">
+    <link crossorigin="anonymous" media="all" rel="stylesheet"
+        href="https://github.githubassets.com/assets/customer-stories-09cf584c51b5.css">
+    <title>Kelly's portfolio</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hi there kind stranger!">
+    <meta property="og:title" content="Welcome to Kelly's website!">
+    <meta property="og:description"
+        content="Explore Kelly's projects, stories, and more.">
+    <meta property="og:image" content="assets/linkphoto.png">
+    <meta property="og:url" content="https://hngocle404.github.io/portfolio/">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="assets/icon.png" type="image/png">
+
 </head>
-<body class="page-responsive f4" style="word-wrap: break-word;">
-<div data-turbo-body class="page-responsive f4" style="word-wrap: break-word;">
-<div class="position-relative header-wrapper js-header-wrapper">
-<span data-view-component="true" class="progress-pjax-loader Progress position-fixed width-full">
-<span style="width: 0%;" data-view-component="true" class="Progress-item progress-pjax-loader-bar left-0 top-0 color-bg-accent-emphasis"></span>
-</span>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/primer-react-765944243383.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-core-705befca9f47.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-lib-7b7b5264f6c1.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/octicons-react-45c3a19dd792.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-0e630d-04276437489b.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js-4896ddd4b7bb.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_catalyst_lib_index_js-node_modules_github_hotkey_dist_index_js-no-d67c7f-bd7d077cdcb1.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_ui-commands_ui-commands_ts-d25fac54a6bc.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-cb3d4f30c9ed.js"></script>
-
-<div id="header-placeholder"></div>
-<script>
-fetch('/kalulus-lil-corner/partials/header.html')
-.then(response => response.text())
-.then(data => {
-document.getElementById('header-placeholder').innerHTML = data;
-window.showContactPopup = function (event) {
-event.preventDefault();
-const popup = document.getElementById('contactPopup');
-if (popup) {
-popup.style.display = 'flex';
-}
-};
-window.hideContactPopup = function () {
-const popup = document.getElementById('contactPopup');
-if (popup) {
-popup.style.display = 'none';
-}
-};
-});
-</script>
-
-</div>
-<main class="font-mktg">
-<div class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-state position-sticky width-full sub-nav-mktg-shadow ctas-always-visible"></div>
-<div class="border-bottom">
-<div class="pt-9 pb-4 overflow-hidden px-3">
-<div class="container-xl">
-<div class="p-responsive">
-
-
-<!-- ====== DO NOT TOUCH ABOVE THIS LINE ! ================================================================================== -->
-
-
-
-<p class="color-fg-muted f3-mktg text-normal mb-1">
-    Python
-</p>
-<h1 class="h3-mktg color-fg-default mb-3 mb-md-6">
-    Stock analysis & Value-at-Risk estimation for major US tech companies
-</h1>
-</div>
-</div>
-</div>
-</div>
-
-
-
-<!-- ==================================================================================== -->
-
-
-
-
-<div class="px-3 pb-8 pt-5">
-<div class="container-xl">
-<div class="p-responsive">
-<div class="d-lg-flex flex-justify-between my-4 my-lg-6 ">
-
-
-
-
-<!-- SUMMARY -->
-<p>
-<strong>Objectives</strong>
-
-<br>
-1. Exploratory data analysis
-<br>
-2. Data visualisation
-<br>
-3. Predictive modelling
-<br><br>
-
-
-<strong>Scope</strong>
-<br>
-This project focuses on examining 4 prominent technology stocks
-i.e. Apple Inc. (AAPL), Amazon.com Inc. (AMZN), Alphabet Inc.
-(GOOG), and Microsoft Corporation (MSFT). The analysis spans a
-one-year period, from 28th January, 2023, to 28th January, 2024,
-covering 252 trading days.
-<br><br>
-<strong>Project outline</strong>
-<br>
-The project begins with importing libraries and loading stock
-data for the aforementioned companies (Section 2). Then in
-Section 3, we will be conducting some basic analysis of the
-stock performance, covering closing prices, trading volumes,
-moving averages, and daily returns. Section 4 - 'Risk Analysis -
-Value at Risk' - explores historical, parametric, and Monte
-Carlo approaches to computing a stock's Value at Risk. The
-project concludes with some potential areas for improvement in
-future projects.
-</p>
-
-
-
-<!-- IMAGE -->
-<div style="margin-bottom: 30px;">
-<img src="20.jpg"
-style="width: 100%; height: 300px; object-fit: cover; object-position: 0 55%; border-radius: 8px;">
-</div>
-
-</div> 
-
-
-
-<!-- BODY -->
-<h1>1. Loading data</h1>
-
-<p>
-The project begins with importing libraries and loading stock
-data for the aforementioned companies (Section 2). Then in
-Section 3, we will be conducting some basic analysis of the
-stock performance, covering closing prices, trading volumes,
-moving averages, and daily returns. Section 4 - 'Risk Analysis -
-Value at Risk' - explores historical, parametric, and Monte
-Carlo approaches to computing a stock's Value at Risk. The
-project concludes with some potential areas for improvement in
-future projects.
-</p>
-
-<div class="code_block">
-import numpy as np
-</div>
-
-<div class="output_block">
-Stock: AMZN
-VaR method: Parametric
-</div>
 
 
 
+<body class="logged-in env-production page-responsive f4"
+    style="word-wrap: break-word;">
+    <div data-turbo-body class="logged-in env-production page-responsive f4"
+        style="word-wrap: break-word;">
+        <div class="position-relative header-wrapper js-header-wrapper ">
+            <a href="#start-of-content" data-skip-target-assigned="false"
+                class="p-3 color-bg-accent-emphasis color-fg-on-emphasis show-on-focus js-skip-to-content">Skip
+                to content</a>
 
+            <span data-view-component="true"
+                class="progress-pjax-loader Progress position-fixed width-full">
+                <span style="width: 0%;" data-view-component="true"
+                    class="Progress-item progress-pjax-loader-bar left-0 top-0 color-bg-accent-emphasis"></span>
+            </span>
+            <link crossorigin="anonymous" media="all" rel="stylesheet"
+                href="https://github.githubassets.com/assets/primer-react.9fa170e9435ed4b922b9.module.css" />
 
+            <div id="header-placeholder"></div>
+            <script>
+                fetch('/kalulus-lil-corner/partials/header.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('header-placeholder').innerHTML = data;
 
-<div>
-    <button style="margin: 10px 0; padding: 10px 10px;" class="collapsible">
-        Strategic analysis
-    </button>
-    <div class="content">
+                        window.showContactPopup = function (event) {
+                            event.preventDefault();
+                            const popup = document.getElementById('contactPopup');
+                            if (popup) {
+                                popup.style.display = 'flex';
+                            }
+                        };
 
-        <p>
-            <strong>
-                SWOT analysis</strong> involves examining a company’s 4 areas:
-            ‘strengths’, ‘weak
-            nesses’, ‘opportunities’, ‘threats’. Strengths and weaknesses
-            constitute internal attributes within HAG,
-            while opportunities and threats pertain to external factors in the
-            environment. SWOT Analysis aids in
-            the evaluation of an organisation’s resource capabilities and
-            deficiencies, along with its market oppor
-            tunities and external threats to future prospects (Thompson et al.,
-            2007). Henceforth, it yields insights
-            into (1) aligning the HAG’s strategy and (2) determining the
-            immediacy for the firm to address its
-            resource shortcomings and safeguard against specific external
-            threats (Thompson Strickland, 2001).
-        </p>
+                        window.hideContactPopup = function () {
+                            const popup = document.getElementById('contactPopup');
+                            if (popup) {
+                                popup.style.display = 'none';
+                            }
+                        };
+                    });
+            </script>
 
 
+            <main class="font-mktg">
+                <div
+                    class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-state position-sticky width-full sub-nav-mktg-shadow ctas-always-visible">
+                </div>
+                <!-- ==================================================================================== -->
 
 
-    </div>
-</div>
 
-<div>
-    <button class="collapsible">
-        Stock valuation </button>
-    <div class="content">
-        <p>
-            Given that HAG (1) presently has a high amount of debt, (2) pays no
-            dividends, and (3) exhibits rela
-            tively volatile earnings, the implied share price for HAG will be
-            compute through a mix of intrinsic and
-            relative valuation approaches, including the discounted cash flow
-            (DCF) model, adjusted present value
-            (APV) model, and comparable company analysis (CCA). After the
-            allocation of suitable weightings
-            to each valuation method, the project combines these models to
-            formulate a comprehensive estimate
-            of HAG’s value.</p>
 
-        <strong>
-            Discounted cash flow (DCF)
-        </strong>
-        <p>
-            For DCF analysis, I first forecast HAG’s revenue using simple
-            linear regression applied to historical data. Then pro-forma
-            statements are generated, and the Weighted
-            Average Cost of Capital (WACC) as well as Terminal Growth Rate (TGR)
-            are computed under a set
-            of assumptions. The firm’s enterprise value is then determined by
-            discounted projected cash flow for
-            the year 2023- 2028, and the implied share price is obtained by
-            dividing this value by the number of
-            outstanding shares.
-        </p>
 
 
 
 
-        <p>
-            I assign a higher weight to the APV model than the DCF model due to
-            HAG’s existing high
-            level of debt. The collective weight assigned to intrinsic valuation
-            methods surpasses that allocated
-            to relative valuation, attributable to a predominant interest in
-            evaluating HAG’s performance over an
-            extended period of time rather than examining cross-sectional
-            differences among various stocks. Em
-            pirical studies, including those by Kaplan Ruback (1995), Berkman et
-            al. (2000), Kim Ritter (1999),
-            and Lee et al. (1999), affirm the superiority of intrinsic
-            valuations when used for such assessment.
-        </p>
 
-    </div>
-</div>
 
 
 
@@ -270,130 +142,352 @@ VaR method: Parametric
 
 
 
+                <div class="border-bottom">
+                    <div class="pt-9 pb-4 overflow-hidden px-3">
+                        <div class="container-xl">
 
+                            <div class="p-responsive">
 
+                                <p
+                                    class="color-fg-muted f3-mktg text-normal mb-1">
+                                    Machine learning
+                                </p>
+                                <h1
+                                    class="h3-mktg color-fg-default mb-3 mb-md-6">
+                                    Loan approval prediction using
+                                    k-Nearest-Neighbour model built from scratch
+                                </h1>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
 
+                <div class="px-3 pb-8 pt-5">
+                    <div class="container-xl">
 
+                        <div class="p-responsive">
 
+                            <div class="my-4 my-lg-6">
 
 
 
 
-<!-- ====== DO NOT TOUCH BELOW THIS LINE ! ================================================================================== -->
-
-
-</main>
-<script>
-function toggleTab(tabId) {
-const allItems = document.querySelectorAll('.card-item');
 
-allItems.forEach(item => {
-item.style.display = 'none';
-});
-
-if (tabId === 'all') {
-allItems.forEach(item => {
-item.style.display = 'block';
-});
-} else {
-const selectedItems = document.querySelectorAll(`.${tabId}`);
-selectedItems.forEach(item => {
-item.style.display = 'block';
-});
-}
-const allButtons = document.querySelectorAll('[data-view-component="true"]');
-allButtons.forEach(button => {
-button.classList.remove('color-bg-subtle');
-button.classList.add('color-bg-default');
-button.style.backgroundColor = '';
-});
-const activeButton = document.querySelector(`[onclick="toggleTab('${tabId}')"]`);
-if (activeButton) {
-activeButton.classList.remove('color-bg-default');
-activeButton.classList.add('color-bg-subtle');
-activeButton.style.backgroundColor = '#e6e6e6';
-}
-}
+                                <!-- SUMMARY -->
+                                <p>
+                                    <strong>Objectives</strong>
+
+                                    <br>
+                                    1. Data wrangling: Undertake thorough data
+                                    wrangling processes to ensure data quality
+                                    and prepare it for further analysis. <br>
+                                    2. Prediction: Construct a
+                                    k-Nearest-Neighbour (KNN) model from scratch
+                                    to predict loan approval status based on the
+                                    provided dataset. <br>
+
+                                    3. Feature engineering: Apply simple linear
+                                    regression to assess the relevancy of
+                                    predictor variables in order to enhance the
+                                    predictive capabilities of the KNN model.
+                                    <br><br>
+                                    <strong>Scope</strong>
+                                    <br>
+                                    The dataset can be accessed <a
+                                        href="https://drive.google.com/file/d/1LIvIdqdHDFEGnfzIgEh4L6GFirzsE3US/view?usp=sharing">here</a>.
+                                    It encompasses information from 598 loan
+                                    applications, covering variables like
+                                    Gender, Marital Status, Dependents,
+                                    Education, Self-Employed status, Applicant
+                                    Income, Coapplicant Income, Loan Amount,
+                                    Loan Amount Term, Credit History, and
+                                    Property Area.
+                                    <br><br>
+                                    <strong>Project outline</strong>
+                                    <br>
+                                    The project begins with importing necessary
+                                    libraries and loading the loan dataset for
+                                    analysis (Section 2). Subsequently, Section
+                                    3 analyses the dataset, covering descriptive
+                                    statistics, handling missing values, and
+                                    ensuring data integrity. Section 4 is
+                                    dedicated to constructing the
+                                    K-nearest-neighbour model. Section 5
+                                    evaluates the accuracy of the constructed
+                                    model while Section 6 further explores a
+                                    simple feature engineering approach using
+                                    simple linear regression to refine the
+                                    model.
+                                </p>
+                            </div>
+
+
+                            <!-- IMAGE -->
+                            <div style="margin-bottom: 30px;">
+                                <img src="banner.jpg"
+                                    style="width: 100%; height: 400px; object-fit: cover; object-position: 0 50%; border-radius: 8px;">
+                            </div>
+
+
+
+
+                            <!-- body text -->
+
+                            <h1>1. Loading libraries and data</h1>
+
+
+      
+                            <code
+                                style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+    info()</code>
+                            to quickly view the data types of each of the
+                            variables.
+
+                            <div class="color-bg-subtle"
+                                style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+                                data.info()
+                            </div>
+                            <div class="output_block">
+                                RangeIndex: 598 entries, 0 to 597
+                                Data columns (total 13 columns):
+                                # Column Non-Null Count Dtype
+                                --- ------ -------------- -----
+                                0 Loan_ID 598 non-null object
+                                1 Gender 598 non-null object
+                                2 Married 598 non-null object
+                                3 Dependents 586 non-null float64
+                                4 Education 598 non-null object
+                                5 Self_Employed 598 non-null object
+                                6 ApplicantIncome 598 non-null int64
+                                7 CoapplicantIncome 598 non-null float64
+                                8 LoanAmount 577 non-null float64
+                                9 Loan_Amount_Term 584 non-null float64
+                                10 Credit_History 549 non-null float64
+                                11 Property_Area 598 non-null object
+                                12 Loan_Status 598 non-null object
+                                dtypes: float64(5), int64(1), object(7)
+                            </div>
+
+
+                            <p>
+                                <code
+                                    style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+    Gender</code>,
+                                <code
+                                    style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+    Married</code>,
+                                <code
+                                    style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+    Education</code>,
+                                <code
+                                    style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+    Self_Employed</code>,
+                                <code
+                                    style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+    Property_Area</code>, and
+                                <code
+                                    style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+    Loan_Status</code> are categorical data; hence, they will be converted into
+                                dummy variables in a subsequent section.
+                            </p>
+
+
+
+                            <div class="color-bg-subtle"
+                                style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+                                data.describe()
+                            </div>
+
+                            <div style="text-align: center; margin: 1%;">
+                                <img src="\kalulus-lil-corner\projects\TECH_loan_knn\3.png" style="width: 60%;">
+                            </div>
+
+                            <div class="color-bg-subtle"
+                                style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+                                data.isna().sum()
+                            </div>
+                            <div class="output_block">
+                                Loan_ID 0
+                                Gender 0
+                                Married 0
+                                Dependents 12
+                                Education 0
+                                Self_Employed 0
+                                ApplicantIncome 0
+                                CoapplicantIncome 0
+                                LoanAmount 21
+                                Loan_Amount_Term 14
+                                Credit_History 49
+                                Property_Area 0
+                                Loan_Status 0
+                                dtype: int64
+                            </div>
+
+
+
+                            <!-- body text -->
+                            <hr style="margin: 50px 0;">
+                            <h1>
+                                3. Building K-nearest-neighbour model
+                            </h1>
+
+
+                            <h2 style="margin-bottom:20px;">
+                                3.1. Categorical data transformation
+                            </h2>
+
+                            Firstly, we need to make all categorical data
+                            variables understandable for
+                            machines. To achieve this, I'll convert them into
+                            dummy variables using the
+                            <code
+                                style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
+LabelEncoder()</code>.
+
+                            <div class="color-bg-subtle"
+                                style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+                                categorical = [
+                                'Gender',
+                                'Married',
+                                'Education',
+                                'Self_Employed',
+                                'Property_Area',
+                                'Loan_Status'
+                                ]
+                                label_encoder = LabelEncoder()
+                                for col in categorical:
+                                data[col] =
+                                label_encoder.fit_transform(data[col])
 
-document.addEventListener('DOMContentLoaded', () => {
-toggleTab('all');
-});
-</script>
+                                display(data.head())
 
+                            </div>
+                  
 
-<!-- ======================================================================================== -->
 
 
-<script>
-    function toggleTab(tabId) {
-        const allItems = document.querySelectorAll('.card-item');
+                            <h2 style="margin-bottom:20px;">
+                                4.2. Splitting data into train set and test set
+                            </h2>
 
-        allItems.forEach(item => {
-            item.style.display = 'none';
-        });
 
-        if (tabId === 'all') {
-            allItems.forEach(item => {
-                item.style.display = 'block';
-            });
-        } else {
-            const selectedItems = document.querySelectorAll(`.${tabId}`);
-            selectedItems.forEach(item => {
-                item.style.display = 'block';
-            });
-        }
-        const allButtons = document.querySelectorAll('[data-view-component="true"]');
-        allButtons.forEach(button => {
-            button.classList.remove('color-bg-subtle');
-            button.classList.add('color-bg-default');
-            button.style.backgroundColor = '';
-        });
-        const activeButton = document.querySelector(`[onclick="toggleTab('${tabId}')"]`);
-        if (activeButton) {
-            activeButton.classList.remove('color-bg-default');
-            activeButton.classList.add('color-bg-subtle');
-            activeButton.style.backgroundColor = '#e6e6e6';
-        }
-    }
+                            <div class="color-bg-subtle"
+                                style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+                                train, test = train_test_split(
+                                data,
+                                test_size = 0.2,
+                                random_state = 2024)
+                                train = train.reset_index(drop = True)
+                                test = test.reset_index(drop = True)
+                                display(train)
+                                display(test)
+                            </div>
 
-    function toggleCollapsible(button) {
-        const content = button.nextElementSibling;
-        const isActive = button.classList.contains('active');
+                        </div>
+                     
 
-        content.style.display = isActive ? 'none' : 'block';
+                        <h2 style="margin-bottom:20px;">
+                            4.3. Constructing the k-NN model
+                        </h2>
 
-        button.classList.toggle('active');
-    }
 
+                        <div class="color-bg-subtle"
+                            style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+                            features = ['Credit_History', 'Married']
+                            train_features = train.copy()[['Loan_ID',
+                            'Loan_Status', 'Credit_History', 'Married']]
+                            display(train_features.head(2))
+                            test_features = test.copy()[['Loan_ID',
+                            'Loan_Status', 'Credit_History', 'Married']]
+                            display(test_features.head(2))
+                        </div>
 
-    document.addEventListener('DOMContentLoaded', () => {
-        toggleTab('all');
 
-        const collapsibleButtons = document.querySelectorAll('.collapsible');
-        collapsibleButtons.forEach(button => {
-            const content = button.nextElementSibling;
-            if (content && content.classList.contains('content')) {
-                content.style.display = 'none';
-            }
-            button.addEventListener('click', function () {
-                toggleCollapsible(this);
-            });
-        });
-    });
-</script>
+                        <div style="text-align: center; margin: 1%;">
+                            <img src="11.png" style="width: 30%;">
+                        </div>
 
+                        <div class="color-bg-subtle"
+                            style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+                            evaluate_accuracy(test_features, train_features, 3)
+                        </div>
+                        <div class="color-bg-default"
+                            style="border: 1px solid #d1d5da; border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+                            Accuracy: 80.83%
+                        </div>
 
-<div id="footer-placeholder"></div>
-<script>
-fetch('/kalulus-lil-corner/partials/footer.html')
-.then(response => response.text())
-.then(data => {
-document.getElementById('footer-placeholder').innerHTML = data;
-});
-</script>
+                        <div style="text-align: center; margin: 1%;">
+                            <img src="12.png" style="width: 40%;">
+                        </div>
 
 
-</body>
+                        The accuracy of the model has improved significantly
+                        from 61.67% to 80.83% for the sets above.
 
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- ======================================================================================== -->
+            <div id="footer-placeholder"></div>
+            <script>
+                fetch('https://hngocle404.github.io/portfolio/partials/footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('footer-placeholder').innerHTML = data;
+                    });
+            </script>
