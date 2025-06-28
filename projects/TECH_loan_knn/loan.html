@@ -27,7 +27,8 @@ body {
     }
 </style>
 
-<link rel="stylesheet" href="../../css/primer.css"> <!-- ZOOOOOOOOOOOOOM -->
+<link rel="stylesheet" href="\kalulus-lil-corner\css\primer.css">
+<link rel="stylesheet" href="\kalulus-lil-corner\css\projects.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 <meta charset="utf-8">
@@ -53,8 +54,7 @@ body {
 <meta property="og:url" content="https://hngocle404.github.io/portfolio/">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/icon.png" type="image/png">
-<link rel="stylesheet" href="\kalulus-lil-corner\css\primer.css">
-<link rel="stylesheet" href="\kalulus-lil-corner\css\projects.css">
+
 </head>
 
 
@@ -175,7 +175,7 @@ The dataset can be accessed <a href="https://drive.google.com/file/d/1LIvIdqdHDF
 <h1>1. Loading libraries and data</h1>
 
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 import numpy as np
 import seaborn as sns
 from IPython.display import display
@@ -195,7 +195,7 @@ pd.set_option('display.max_rows', 30)
 pd.set_option('display.max_columns', None)
 </div>
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 data = pd.read_csv('CSV_Loan data.csv')
 display(data)
 </div>
@@ -233,12 +233,12 @@ Description of variables:
 
 First we will be checking for any duplicated Loan IDs in the data set.
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 duplicates = data['Loan_ID'].duplicated()
 print(f'Duplicates: {duplicates.sum()}')
 </div>
 
-<div class="color-bg-default" style="border: 1px solid #d1d5da; border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="output_block">
 Duplicates: 0
 </div>
 
@@ -247,10 +247,10 @@ Since there are no issues with duplicated data, next we can use
     info()</code>
 to quickly view the data types of each of the variables.
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 data.info()
 </div>
-<div class="color-bg-default" style="border: 1px solid #d1d5da; border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="output_block">
 RangeIndex: 598 entries, 0 to 597
 Data columns (total 13 columns):
  #   Column             Non-Null Count  Dtype  
@@ -289,7 +289,7 @@ dtypes: float64(5), int64(1), object(7)
 
 
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 data.describe()
 </div>
 
@@ -297,10 +297,10 @@ data.describe()
   <img src="3.png" style="width: 60%;">       
 </div>
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 data.isna().sum()
 </div>
-<div class="color-bg-default" style="border: 1px solid #d1d5da; border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="output_block">
 Loan_ID               0
 Gender                0
 Married               0
@@ -319,7 +319,7 @@ dtype: int64
 
 After discovering the number of blank fields in the dataset, I will employ the data imputation method of replacing both numerical and categorical attributes with the mode (for categorical) or mean (for numerical) values.
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 data['Dependents'] = data['Dependents'].fillna(data['Dependents'].mean())
 data['LoanAmount'] = data['LoanAmount'].fillna(data['LoanAmount'].mean())
 data['Loan_Amount_Term'] = data['Loan_Amount_Term'].fillna(data['Loan_Amount_Term'].mean())
@@ -327,7 +327,7 @@ data['Credit_History'] = data['Credit_History'].fillna(data['Credit_History'].me
 
 data.isna().sum()</div>
 
-<div class="color-bg-default" style="border: 1px solid #d1d5da; border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="output_block">
 
 Loan_ID              0
 Gender               0
@@ -380,7 +380,7 @@ machines. To achieve this, I'll convert them into dummy variables using the
 <code style="font-family: var(--font-monospace); font-size: var(--font-size-monospace); font-weight: 700; color: var(--gradient-start); background-color: #f0f0f0; border-radius: 2px; padding: 2px 5px; margin-right: 5px;">
 LabelEncoder()</code>.
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 categorical = [
     'Gender',
     'Married',
@@ -407,7 +407,7 @@ display(data.head())
 </h2>
 
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 train, test = train_test_split(
     data,
     test_size = 0.2, 
@@ -434,7 +434,7 @@ display(test)
 </h2>
 
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 def distance(point1, point2):
   '''
   Input:
@@ -446,7 +446,7 @@ def distance(point1, point2):
   return np.sqrt(np.sum((point1 - point2)**2))
 </div>
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 def fast_distances(input_row, train_set):
   '''
   Input:
@@ -471,7 +471,7 @@ def fast_distances(input_row, train_set):
   return distances
 </div>
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 def k_nearest_neighbours_model(input_row, train_set, k):
   '''
   Input:
@@ -497,12 +497,12 @@ def k_nearest_neighbours_model(input_row, train_set, k):
 
 Quick example:
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 test_1 = test.iloc[5]
 k_nearest_neighbours_model(test_1, train, 3)
 </div>
 
-<div class="color-bg-default" style="border: 1px solid #d1d5da; border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="output_block">
 1
 </div>
 
@@ -529,7 +529,7 @@ k_nearest_neighbours_model(test_1, train, 3)
 Now that a k-NN model has been constructed and tested for some individual instances, let's see how accurate it is on the whole test set.
 
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 def evaluate_accuracy(test_set, train_set, k):
     '''
     Input:
@@ -560,12 +560,12 @@ def evaluate_accuracy(test_set, train_set, k):
     return test_accuracy_table.head(2)
 </div>
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 evaluate_accuracy(test, train, 3)
 </div>
 
 
-<div class="color-bg-default" style="border: 1px solid #d1d5da; border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="output_block">
 Accuracy: 61.67%
 </div>
 
@@ -590,7 +590,7 @@ into what variables have the most significant influence on the response variable
 
 </p>
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 import statsmodels.formula.api as smf
 
 reg = smf.ols(
@@ -616,7 +616,7 @@ reg.summary()
 </div>
 
 
-<div class="color-bg-default" style="border: 1px solid #d1d5da; border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="output_block">
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 [2] The condition number is large, 5.73e+04. This might indicate that there are
@@ -624,7 +624,7 @@ strong multicollinearity or other numerical problems.
 In the regression results presented, Credit_History and Married emerge as two significant determinants of an individual's loan status. Let's proceed by creating a training set and a test set using only these two attributes.
 </div>
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 features = ['Credit_History', 'Married']
 train_features = train.copy()[['Loan_ID', 'Loan_Status', 'Credit_History', 'Married']]
 display(train_features.head(2))
@@ -637,10 +637,10 @@ display(test_features.head(2))
   <img src="11.png" style="width: 30%;">       
 </div>
 
-<div class="color-bg-subtle" style="border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="code_block">
 evaluate_accuracy(test_features, train_features, 3)
 </div>
-<div class="color-bg-default" style="border: 1px solid #d1d5da; border-radius: 5px; padding: 0px 22px 22px 25px; margin-top: 20px; margin-bottom: 20px; white-space: pre-wrap; font-family: var(--font-monospace); font-size: var(--font-size-monospace);">
+<div class="output_block">
 Accuracy: 80.83%
 </div>
 
