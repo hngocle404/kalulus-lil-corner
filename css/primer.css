@@ -18,7 +18,7 @@ body {
 :root {
     --gradient-start: #b43072;
     --gradient-end: #ee5c39;
-    --code_bg: #f1f1f1;
+    --code_bg: #f5f5f5;
     --font-monospace: 'JetBrains Mono', monospace;
     --font-size-monospace: 14px;
 }
