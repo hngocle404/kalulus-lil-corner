@@ -132,9 +132,8 @@ class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-s
 <div class="container-xl">
 
 <div class="p-responsive">
-<p class="color-fg-muted f3-mktg text-normal mb-1">Python</p>
-<h1 class="h3-mktg color-fg-default mb-3 mb-md-6"> Stock analysis
-& Value-at-Risk estimation for major US tech companies</h1>
+<p class="color-fg-muted f3-mktg text-normal mb-1">ETL & Financial ML</p>
+<h1 class="h3-mktg color-fg-default mb-3 mb-md-6">ETL pipeline to prepare financial data for ML and comparing backtest overfit extent on different cross validation methods</h1>
 </div>
 </div>
 </div>
@@ -157,40 +156,45 @@ class="sub-nav-mktg js-toggler-container z-3 customer-stories-subnav js-sticky-s
 <strong>Objectives</strong>
 
 <br>
-1. Exploratory data analysis: Conduct a thorough analysis of
-real-time financial data to identify patterns and trends.
+1. Create a simple ETL pipeline to clean and feature engineer YAHOO financial data & visualise using Streamlit
 <br>
-3. Predictive modelling: Implement models to forecast stock
-movements and calculate Value at Risk (VaR).
+2. Use H20 AutoML to evaluate whether Rolling Window or Combinatorial Purged K-Fold has a higher chance of backtest overfit by calculating the Deflated Sharpe Ratio.
 <br><br>
-<strong>Scope</strong>
+<strong>Note</strong>
 <br>
-This project focuses on examining 4 prominent technology stocks
-i.e. Apple Inc. (AAPL), Amazon.com Inc. (AMZN), Alphabet Inc.
-(GOOG), and Microsoft Corporation (MSFT). The analysis spans a
-one-year period, from 28th January, 2023, to 28th January, 2024,
-covering 252 trading days.
+Don't have time to train all the models & deploy & update this project so it's pretty much a preview for now.
 <br><br>
 <strong>Project outline</strong>
 <br>
-The project begins 
+Essentially there are 2 modules to this project:<br>
+<a style="font-weight: bold">Part 1 (ETL)</a> is where I load financial data and do some cleaning on it and do some feature engineering then load it to the database (local).
+<br>
+<a style="font-weight: bold">Part 2 (ML)</a> is where I will be loading the transformed data from Part 1, train models using H2O, then calculate DSR to see which of the 2 common financial cross validation methods is more prone to backtest overfit. 
+This section is inspired by Lopez De Prado's book 'Advances in Financial Machine Learning'.
 </p>
 </div>
 
 
 <!-- IMAGE -->
-<div style="margin-bottom: 30px;">
+<!-- <div style="margin-bottom: 30px;">
 <img src="3.PNG"
 style="width: 100%; height: 300px; object-fit: cover; object-position: 0 55%; border-radius: 8px;">
-</div>
+</div> -->
 
 
 
 
 <!-- body text -->
 
-<h1 style="margin-bottom:30px;">1. Loading data</h1>
+<h1 style="margin-bottom:30px;">1. ETL pipeline</h1>
 
+
+
+
+
+
+
+<embed src="streamlitpdf.pdf" type="application/pdf" width="100%" height="600px">
 
 <div class="code_block">
 import numpy as np
